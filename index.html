@@ -6,11 +6,20 @@
 <title>Advance CRM | Inteligência Comercial</title>
 <style>
 :root{--navy:#142d48;--navy2:#1c3c5c;--green:#24966b;--bg:#f3f6f8;--surface:#fff;--text:#1d2935;--muted:#718096;--line:#e4eaf0;--red:#c84d4d;--amber:#b7791f;--shadow:0 8px 24px rgba(20,45,72,.07)}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 Inter,Segoe UI,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:248px;background:var(--navy);color:#fff;padding:22px 15px;display:flex;flex-direction:column;z-index:5}.brand{display:flex;align-items:center;gap:11px;padding:3px 9px 25px}.brand-mark{width:39px;height:39px;border-radius:11px;background:var(--green);display:grid;place-items:center;font-weight:800;font-size:20px}.brand strong{display:block;font-size:15px;letter-spacing:.7px}.brand small{color:#a9bdce;font-size:10px;letter-spacing:1.2px}.nav-label{font-size:10px;color:#89a2b8;letter-spacing:1.4px;padding:12px 12px 7px}.nav button{width:100%;border:0;background:transparent;color:#d5e0e9;padding:11px 12px;text-align:left;border-radius:8px;margin:2px 0;display:flex;gap:12px;align-items:center}.nav button:hover,.nav button.active{background:#254663;color:#fff}.nav .ico{width:18px;text-align:center;font-size:16px}.side-bottom{margin-top:auto;border-top:1px solid #34516b;padding:15px 10px 0;color:#a9bdce;font-size:11px}.main{margin-left:248px;min-height:100vh}.topbar{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 30px;position:sticky;top:0;z-index:4}.crumb{color:var(--muted);font-size:12px}.top-actions{display:flex;align-items:center;gap:10px}.avatar{width:32px;height:32px;background:#e2f1eb;color:#18734f;border-radius:50%;display:grid;place-items:center;font-weight:700}.content{padding:28px 30px;max-width:1500px;margin:auto}.page-head{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:22px}.page-head h1{margin:0 0 5px;font-size:24px;color:var(--navy)}.page-head p{margin:0;color:var(--muted)}.btn{border:1px solid var(--line);background:#fff;color:var(--text);padding:9px 13px;border-radius:8px;font-weight:600;display:inline-flex;gap:7px;align-items:center}.btn:hover{background:#f7fafc}.btn.primary{background:var(--green);border-color:var(--green);color:#fff}.btn.dark{background:var(--navy);color:#fff;border-color:var(--navy)}.btn.danger{color:var(--red);border-color:#f5d2d2;background:#fdf2f2}.btn.danger:hover{background:#fae1e1}.btn.small{padding:6px 9px;font-size:12px}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:20px}.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:var(--shadow)}.stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.stat-icon{width:31px;height:31px;border-radius:9px;background:#edf6f2;color:var(--green);display:grid;place-items:center}.stat strong{display:block;font-size:27px;color:var(--navy);margin:10px 0 1px}.stat small{color:var(--muted)}.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:16px}.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:var(--shadow);min-width:0}.panel h3{margin:0 0 15px;font-size:15px;color:var(--navy)}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:760px}th{text-align:left;color:#7b8997;font-size:10px;text-transform:uppercase;letter-spacing:.7px;background:#f8fafb;padding:11px 12px;white-space:nowrap}td{padding:12px;border-top:1px solid var(--line);vertical-align:middle}tbody tr:hover{background:#fbfcfd}.muted{color:var(--muted)}.pill{display:inline-block;padding:4px 8px;border-radius:30px;background:#edf1f5;color:#536273;font-size:11px;font-weight:650;white-space:nowrap}.pill.green{background:#e4f4ec;color:#19734e}.pill.amber{background:#fff4dc;color:#98650d}.pill.red{background:#fdeaea;color:#a43e3e}.pill.blue{background:#e8f1fb;color:#315f91}.toolbar{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:14px}.field{display:flex;flex-direction:column;gap:5px;min-width:0}.field label{font-size:12px;font-weight:650;color:#526171}.field input,.field select,.field textarea,.toolbar input,.toolbar select{border:1px solid #dce4eb;border-radius:8px;padding:9px 10px;background:#fff;color:var(--text);outline:none;min-width:0}.field input:focus,.field select:focus,.field textarea:focus,.toolbar input:focus{border-color:#69ad91;box-shadow:0 0 0 3px #e4f3ec}.toolbar input{min-width:220px}.toolbar select{min-width:150px}.empty{padding:35px;text-align:center;color:var(--muted)}.empty b{display:block;color:var(--navy);margin-bottom:5px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.field.full{grid-column:1/-1}.field textarea{min-height:78px;resize:vertical}.modal-back{position:fixed;inset:0;background:rgba(13,29,44,.48);z-index:10;display:none;align-items:center;justify-content:center;padding:18px}.modal-back.show{display:flex}.modal{background:#fff;border-radius:14px;width:min(950px,100%);max-height:92vh;overflow:auto;box-shadow:0 20px 70px #071a2b55}.modal-head{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.modal-head h2{margin:0;color:var(--navy);font-size:18px}.modal-body{padding:20px 22px}.modal-foot{padding:14px 22px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:9px}.close{border:0;background:transparent;font-size:22px;color:var(--muted)}.notice{background:#eef6f3;border:1px solid #d4e9df;color:#28684f;padding:12px 14px;border-radius:9px;margin-bottom:16px}.notice.warn{background:#fff7e8;border-color:#f4e3bc;color:#8b641a}.activity{border-left:2px solid #dce9e3;margin-left:7px;padding:0 0 17px 17px;position:relative}.activity:before{content:"";position:absolute;width:9px;height:9px;background:var(--green);border-radius:50%;left:-5.5px;top:4px}.activity:last-child{padding-bottom:0}.activity strong{display:block}.activity small{color:var(--muted)}.bar-row{display:grid;grid-template-columns:140px 1fr 30px;align-items:center;gap:10px;margin:13px 0;font-size:12px}.bar{height:8px;background:#edf1f4;border-radius:20px;overflow:hidden}.bar i{display:block;height:100%;background:var(--green);border-radius:20px}.settings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.hide{display:none!important}.mobile-menu{display:none}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 Inter,Segoe UI,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:248px;background:var(--navy);color:#fff;padding:22px 15px;display:flex;flex-direction:column;z-index:5}.brand{display:flex;align-items:center;gap:11px;padding:3px 9px 25px}.brand-mark{width:39px;height:39px;border-radius:11px;background:var(--green);display:grid;place-items:center;font-weight:800;font-size:20px}.brand strong{display:block;font-size:15px;letter-spacing:.7px}.brand small{color:#a9bdce;font-size:10px;letter-spacing:1.2px}.nav-label{font-size:10px;color:#89a2b8;letter-spacing:1.4px;padding:12px 12px 7px}.nav button{width:100%;border:0;background:transparent;color:#d5e0e9;padding:11px 12px;text-align:left;border-radius:8px;margin:2px 0;display:flex;gap:12px;align-items:center}.nav button:hover,.nav button.active{background:#254663;color:#fff}.nav .ico{width:18px;text-align:center;font-size:16px}.side-bottom{margin-top:auto;border-top:1px solid #34516b;padding:15px 10px 0;color:#a9bdce;font-size:11px}.main{margin-left:248px;min-height:100vh}.topbar{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 30px;position:sticky;top:0;z-index:4}.crumb{color:var(--muted);font-size:12px}.top-actions{display:flex;align-items:center;gap:10px}.avatar{width:32px;height:32px;background:#e2f1eb;color:#18734f;border-radius:50%;display:grid;place-items:center;font-weight:700}.content{padding:28px 30px;max-width:1500px;margin:auto}.page-head{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:22px}.page-head h1{margin:0 0 5px;font-size:24px;color:var(--navy)}.page-head p{margin:0;color:var(--muted)}.btn{border:1px solid var(--line);background:#fff;color:var(--text);padding:9px 13px;border-radius:8px;font-weight:600;display:inline-flex;gap:7px;align-items:center}.btn:hover{background:#f7fafc}.btn.primary{background:var(--green);border-color:var(--green);color:#fff}.btn.dark{background:var(--navy);color:#fff;border-color:var(--navy)}.btn.danger{color:var(--red);border-color:#f5d2d2;background:#fdf2f2}.btn.danger:hover{background:#fae1e1}.btn.small{padding:6px 9px;font-size:12px}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:20px}.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:var(--shadow)}.stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.stat-icon{width:31px;height:31px;border-radius:9px;background:#edf6f2;color:var(--green);display:grid;place-items:center}.stat strong{display:block;font-size:27px;color:var(--navy);margin:10px 0 1px}.stat small{color:var(--muted)}.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:16px}.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:var(--shadow);min-width:0}.panel h3{margin:0 0 15px;font-size:15px;color:var(--navy)}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:760px}th{text-align:left;color:#7b8997;font-size:10px;text-transform:uppercase;letter-spacing:.7px;background:#f8fafb;padding:11px 12px;white-space:nowrap}td{padding:12px;border-top:1px solid var(--line);vertical-align:middle}tbody tr:hover{background:#fbfcfd}.muted{color:var(--muted)}.pill{display:inline-block;padding:4px 8px;border-radius:30px;background:#edf1f5;color:#536273;font-size:11px;font-weight:650;white-space:nowrap}.pill.green{background:#e4f4ec;color:#19734e}.pill.amber{background:#fff4dc;color:#98650d}.pill.red{background:#fdeaea;color:#a43e3e}.pill.blue{background:#e8f1fb;color:#315f91}.pill.purple{background:#f3e8fb;color:#7b3191}.toolbar{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:14px}.field{display:flex;flex-direction:column;gap:5px;min-width:0}.field label{font-size:12px;font-weight:650;color:#526171}.field input,.field select,.field textarea,.toolbar input,.toolbar select{border:1px solid #dce4eb;border-radius:8px;padding:9px 10px;background:#fff;color:var(--text);outline:none;min-width:0}.field input:focus,.field select:focus,.field textarea:focus,.toolbar input:focus{border-color:#69ad91;box-shadow:0 0 0 3px #e4f3ec}.toolbar input{min-width:220px}.toolbar select{min-width:150px}.empty{padding:35px;text-align:center;color:var(--muted)}.empty b{display:block;color:var(--navy);margin-bottom:5px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.field.full{grid-column:1/-1}.field textarea{min-height:78px;resize:vertical}.modal-back{position:fixed;inset:0;background:rgba(13,29,44,.48);z-index:10;display:none;align-items:center;justify-content:center;padding:18px}.modal-back.show{display:flex}.modal{background:#fff;border-radius:14px;width:min(950px,100%);max-height:92vh;overflow:auto;box-shadow:0 20px 70px #071a2b55}.modal-head{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.modal-head h2{margin:0;color:var(--navy);font-size:18px}.modal-body{padding:20px 22px}.modal-foot{padding:14px 22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:9px}.close{border:0;background:transparent;font-size:22px;color:var(--muted)}.notice{background:#eef6f3;border:1px solid #d4e9df;color:#28684f;padding:12px 14px;border-radius:9px;margin-bottom:16px}.notice.warn{background:#fff7e8;border-color:#f4e3bc;color:#8b641a}.activity-card{border-left:2px solid var(--line);margin-left:7px;padding:8px 0 8px 17px;position:relative;cursor:pointer;transition:0.15s}.activity-card:hover{opacity:0.8}.activity-card:before{content:"";position:absolute;width:9px;height:9px;background:var(--green);border-radius:50%;left:-5.5px;top:12px}.activity-card.done{opacity:0.5;text-decoration:line-through;border-left-color:var(--red)}.activity-card.done:before{background:var(--red)}.bar-row{display:grid;grid-template-columns:160px 1fr 35px;align-items:center;gap:10px;margin:13px 0;font-size:12px}.bar{height:8px;background:#edf1f4;border-radius:20px;overflow:hidden}.bar i{display:block;height:100%;background:var(--green);border-radius:20px}.settings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.hide{display:none!important}.mobile-menu{display:none}
 
 .product-item-row { background: #f8fafb; border: 1px solid var(--line); border-radius: 8px; padding: 12px; margin-bottom: 10px; position: relative; }
-.product-item-grid { display: grid; grid-template-columns: 2fr 3fr 1fr 1fr 1.2fr auto; gap: 8px; align-items: end; }
-@media(max-width: 900px) { .product-item-grid { grid-template-columns: 1fr; } }
+.product-item-grid { display: grid; grid-template-columns: 2fr 3fr 1fr 1fr 1fr 1fr 1.2fr auto; gap: 8px; align-items: end; }
+@media(max-width: 1100px) { .product-item-grid { grid-template-columns: 1fr; } }
+
+/* Kanban Styles */
+.kanban-board { display: grid; grid-template-columns: repeat(7, minmax(240px, 1fr)); gap: 14px; overflow-x: auto; padding-bottom: 15px; align-items: start; }
+.kanban-col { background: #f8fafb; border: 1px solid var(--line); border-radius: 10px; padding: 12px; min-height: 500px; display: flex; flex-direction: column; }
+.kanban-col h4 { margin: 0 0 12px 0; font-size: 13px; color: var(--navy); display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--line); padding-bottom: 8px; }
+.kanban-cards { display: flex; flex-direction: column; gap: 10px; min-height: 400px; }
+.kanban-card { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 12px; box-shadow: 0 2px 5px rgba(0,0,0,.04); cursor: grab; transition: transform .1s; }
+.kanban-card:active { cursor: grabbing; }
+.kanban-card:hover { border-color: var(--navy); }
 </style>
 </head>
 <body>
@@ -21,6 +30,7 @@
   <nav class="nav" id="nav">
     <button class="active" data-page="dashboard"><span class="ico">▦</span>Dashboard</button>
     <button data-page="opportunities"><span class="ico">◎</span>Oportunidades</button>
+    <button data-page="petronect"><span class="ico">◈</span>Petronect</button>
     <button data-page="companies"><span class="ico">▣</span>Empresas</button>
     <button data-page="contacts"><span class="ico">♙</span>Contatos</button>
     <button data-page="activities"><span class="ico">◷</span>Histórico de atividades</button>
@@ -28,28 +38,38 @@
   </nav>
   <div class="nav-label">SISTEMA</div>
   <nav class="nav"><button data-page="reports"><span class="ico">▤</span>Relatórios</button><button data-page="settings"><span class="ico">⚙</span>Backup e configurações</button></nav>
-  <div class="side-bottom">Advance CRM · Versão 1.3<br>Dados armazenados neste navegador</div>
+  <div class="side-bottom">Advance CRM · Versão 2.1<br>Dados armazenados neste navegador</div>
 </aside>
 <main class="main">
   <header class="topbar"><div style="display:flex;align-items:center;gap:12px"><button class="btn mobile-menu" id="menuBtn">☰</button><span class="crumb">Advance Tintas / <b id="crumb">Dashboard</b></span></div><div class="top-actions"><span class="muted" style="font-size:12px">Modo offline</span><div class="avatar">A</div></div></header>
   <section class="content" id="content"></section>
 </main>
 </div>
-<div class="modal-back" id="modalBack"><div class="modal"><div class="modal-head"><h2 id="modalTitle">Cadastro</h2><button class="close" id="modalClose">×</button></div><div class="modal-body" id="modalBody"></div><div class="modal-foot"><button class="btn" id="modalCancel">Cancelar</button><button class="btn primary" id="modalSave">Salvar registro</button></div></div></div>
+<div class="modal-back" id="modalBack">
+ <div class="modal">
+  <div class="modal-head"><h2 id="modalTitle">Cadastro</h2><button class="close" id="modalCloseBtn">×</button></div>
+  <div class="modal-body" id="modalBody"></div>
+  <div class="modal-foot" id="modalFoot">
+   <button class="btn" id="modalCancelBtn">Cancelar</button>
+   <button class="btn primary" id="modalSaveBtn">Salvar registro</button>
+  </div>
+ </div>
+</div>
 <input type="file" id="importFile" accept=".json,application/json" class="hide">
 <script>
 const DBKEY='advance_crm_v1';
-const emptyDB=()=>({opportunities:[],companies:[],contacts:[],activities:[]});
+const emptyDB=()=>({opportunities:[],petronect:[],companies:[],contacts:[],activities:[]});
 let db=loadDB(),page='dashboard',modalSaveFn=null;
+
 function loadDB(){try{return {...emptyDB(),...JSON.parse(localStorage.getItem(DBKEY)||'{}')}}catch(e){return emptyDB()}}
 function saveDB(){localStorage.setItem(DBKEY,JSON.stringify(db));}
+
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const today=()=>new Date().toISOString().slice(0,10);
 const fmtDate=d=>d?new Date(d+'T12:00:00').toLocaleDateString('pt-BR'):'—';
 const money=v=>v?Number(v).toLocaleString('pt-BR',{style:'currency',currency:'BRL'}):'—';
 
-// Máscaras de formatação automática
 function maskCNPJ(v){
  v = v.replace(/\D/g,"").slice(0,14);
  v = v.replace(/^(\d{2})(\d)/,"$1.$2");
@@ -72,7 +92,6 @@ function maskPhone(v){
  return v;
 }
 
-// Gerador de ID Inteligente: Sigla + Mês (2 digitos) + Ano (4 digitos) + Sequencial (4 digitos)
 function generateCustomId(prefix, list){
  const now = new Date();
  const month = String(now.getMonth() + 1).padStart(2, '0');
@@ -84,34 +103,85 @@ function generateCustomId(prefix, list){
 }
 
 const statusOptions=['Novo lead','Pesquisa em andamento','Contato identificado','Primeiro contato feito','Em negociação','Cotação solicitada','Proposta enviada','Homologação','Vendor List aprovado','Sem retorno','Perdido','Cliente ativo','Reativar futuramente'];
+const petronectStatusOptions=['Declinada','Analisando','Sala de colaboração','Postada','Ganha','Perdida','Encerrada'];
 const vendorOptions=['Não iniciado','Mapear requisitos','Documentação enviada','Em análise','Aprovado','Reprovado','Não se aplica'];
-const pillClass=s=>['Cliente ativo','Vendor List aprovado','Aprovado'].includes(s)?'green':['Perdido','Reprovado'].includes(s)?'red':['Em negociação','Homologação','Em análise','Documentação enviada'].includes(s)?'amber':'blue';
+
+const pillClass=s=>['Cliente ativo','Vendor List aprovado','Aprovado','Ganha','Postada'].includes(s)?'green':['Perdido','Reprovado','Declinada','Perdida'].includes(s)?'red':['Em negociação','Homologação','Em análise','Documentação enviada','Sala de colaboração'].includes(s)?'amber':['Analisando','Encerrada'].includes(s)?'purple':'blue';
 
 function setPage(p){page=p;$('#sidebar').classList.remove('open');document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===p));render()}
 $('#nav').addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)setPage(b.dataset.page)});
-document.querySelectorAll('.side-bottom').length;document.querySelectorAll('.nav button[data-page]').forEach(b=>b.addEventListener('click',()=>setPage(b.dataset.page)));
+document.querySelectorAll('.nav button[data-page]').forEach(b=>b.addEventListener('click',()=>setPage(b.dataset.page)));
 $('#menuBtn').onclick=()=>$('#sidebar').classList.toggle('open');
+
+function closeModal(){$('#modalBack').classList.remove('show');modalSaveFn=null;}
+$('#modalCloseBtn').onclick = closeModal;
+$('#modalCancelBtn').onclick = closeModal;
+$('#modalSaveBtn').onclick = () => { if(modalSaveFn) modalSaveFn(); };
+
+function openModal(title,body,save,customFoot=''){
+ $('#modalTitle').textContent=title;
+ $('#modalBody').innerHTML=body;
+ modalSaveFn=save;
+ 
+ let foot=$('#modalFoot');
+ if(customFoot){
+  foot.innerHTML=customFoot;
+ } else {
+  foot.innerHTML=`<button class="btn" id="modalCancelBtn" onclick="closeModal()">Cancelar</button><button class="btn primary" id="modalSaveBtn">Salvar registro</button>`;
+  $('#modalSaveBtn').onclick = () => { if(modalSaveFn) modalSaveFn(); };
+ }
+ $('#modalBack').classList.add('show');
+}
 
 function head(title,sub,action=''){return `<div class="page-head"><div><h1>${title}</h1><p>${sub}</p></div>${action}</div>`}
 function stat(label,value,icon,sub){return `<div class="stat"><div class="stat-top"><span>${label}</span><span class="stat-icon">${icon}</span></div><strong>${value}</strong><small>${sub}</small></div>`}
-function render(){const names={dashboard:'Dashboard',opportunities:'Oportunidades',companies:'Empresas',contacts:'Contatos','activities':'Histórico de atividades',vendor:'Vendor List',reports:'Relatórios',settings:'Backup e configurações'};$('#crumb').textContent=names[page];const root=$('#content');({dashboard:dashboardPage,opportunities:opportunitiesPage,companies:companiesPage,contacts:contactsPage,activities:activitiesPage,vendor:vendorPage,reports:reportsPage,settings:settingsPage}[page]||dashboardPage)(root)}
+function render(){const names={dashboard:'Dashboard',opportunities:'Oportunidades',petronect:'Petronect',companies:'Empresas',contacts:'Contatos','activities':'Histórico de atividades',vendor:'Vendor List',reports:'Relatórios',settings:'Backup e configurações'};$('#crumb').textContent=names[page]||'Dashboard';const root=$('#content');({dashboard:dashboardPage,opportunities:opportunitiesPage,petronect:petronectPage,companies:companiesPage,contacts:contactsPage,activities:activitiesPage,vendor:vendorPage,reports:reportsPage,settings:settingsPage}[page]||dashboardPage)(root)}
 
 function dashboardPage(root){
- const open=db.opportunities.filter(o=>!['Perdido','Cliente ativo'].includes(o.status)).length, overdue=db.opportunities.filter(o=>o.nextDate&&o.nextDate<today()&&!['Perdido','Cliente ativo'].includes(o.status)).length;
- const high=db.opportunities.filter(o=>o.priority==='Alta').length, approved=db.opportunities.filter(o=>o.vendor==='Aprovado').length;
+ const open=db.opportunities.filter(o=>!['Perdido','Cliente ativo'].includes(o.status)&&!o.done).length;
+ const overdue=db.opportunities.filter(o=>o.nextDate&&o.nextDate<today()&&!['Perdido','Cliente ativo'].includes(o.status)&&!o.done).length;
+ const petronectActive=db.petronect.filter(p=>!['Declinada','Ganha','Perdida','Encerrada'].includes(p.status)).length;
  const recent=[...db.activities].sort((a,b)=>(b.date||'').localeCompare(a.date||'')).slice(0,6);
- const due=db.opportunities.filter(o=>o.nextDate).sort((a,b)=>a.nextDate.localeCompare(b.nextDate)).slice(0,6);
+ 
+ // Acompanhamentos de Oportunidades + Editais Petronect pendentes
+ let oppDue=db.opportunities.filter(o=>o.nextDate&&!o.done&&!['Perdido','Cliente ativo'].includes(o.status)).map(o=>({type:'opp', id:o.id, title:o.company||'Empresa não informada', date:o.nextDate, desc:o.nextAction||'Follow-up'}));
+ let petronectDue=db.petronect.filter(p=>p.closingDate&&p.status!=='Declinada'&&!['Ganha','Perdida','Encerrada'].includes(p.status)).map(p=>{
+  let isExpired = p.closingDate < today();
+  let isTomorrow = (new Date(p.closingDate+'T12:00:00') - new Date(today()+'T12:00:00') === 86400000);
+  let alertType = isExpired ? 'Vencido' : (isTomorrow ? 'Vence Amanhã' : 'Agendado');
+  return {type:'petronect', id:p.id, title:'Petronect: '+p.opportunity, date:p.closingDate, desc:'Encerramento edital', alertType};
+ });
+
+ let combinedDue = [...oppDue, ...petronectDue].sort((a,b)=>a.date.localeCompare(b.date)).slice(0,8);
+
  root.innerHTML=head('Painel de prospecção','Acompanhe sua carteira, atividades e evolução comercial.',`<button class="btn primary" onclick="openOpportunity()">＋ Nova oportunidade</button>`)+
- `<div class="cards">${stat('Empresas cadastradas',db.companies.length,'▣','Base de empresas')}${stat('Oportunidades abertas',open,'◎','Em andamento')}${stat('Vendor Lists aprovados',approved,'✓','Homologações concluídas')}${stat('Follow-ups atrasados',overdue,'◷','Precisam de atenção')}</div>
- <div class="grid2"><div class="panel"><h3>Pipeline comercial</h3>${statusOptions.slice(0,9).map(s=>{let n=db.opportunities.filter(o=>o.status===s).length;return `<div class="bar-row"><span>${esc(s)}</span><div class="bar"><i style="width:${db.opportunities.length?100*n/db.opportunities.length:0}%"></i></div><b>${n}</b></div>`}).join('')||'<div class="empty">Cadastre oportunidades para visualizar o pipeline.</div>'}</div>
- <div class="panel"><h3>Próximos acompanhamentos</h3>${due.length?due.map(o=>`<div class="activity"><strong>${esc(o.company||'Empresa não informada')}</strong><small>${fmtDate(o.nextDate)} · ${esc(o.nextAction||'Follow-up')}</small><div style="margin-top:5px"><span class="pill ${o.nextDate<today()?'red':'blue'}">${o.nextDate<today()?'Atrasado':'Agendado'}</span></div></div>`).join(''):'<div class="empty"><b>Nenhum acompanhamento agendado</b>Cadastre uma próxima ação em suas oportunidades.</div>'}</div></div>
+ `<div class="cards">${stat('Empresas cadastradas',db.companies.length,'▣','Base de empresas')}${stat('Oportunidades abertas',open,'◎','Em andamento')}${stat('Editais Petronect Ativos',petronectActive,'◈','Monitoramento')}${stat('Follow-ups atrasados',overdue,'◷','Precisam de atenção')}</div>
+ <div class="grid2">
+  <div class="panel"><h3>Pipeline comercial</h3>${statusOptions.slice(0,9).map(s=>{let n=db.opportunities.filter(o=>o.status===s&&!o.done).length;return `<div class="bar-row"><span>${esc(s)}</span><div class="bar"><i style="width:${db.opportunities.length?100*n/db.opportunities.length:0}%"></i></div><b>${n}</b></div>`}).join('')||'<div class="empty">Cadastre oportunidades para visualizar o pipeline.</div>'}</div>
+  <div class="panel"><h3>Próximos acompanhamentos e Prazos</h3>${combinedDue.length?combinedDue.map(item=>{
+   let isExp = item.date < today();
+   let isTom = item.date === new Date(new Date().getTime()+86400000).toISOString().slice(0,10);
+   let cardStyle = isExp ? 'background:#fdeaea;border-left:2px solid var(--red);' : (isTom ? 'background:#fffbe6;border-left:2px solid var(--amber);' : '');
+   let badgeText = isExp ? 'Vencido' : (isTom ? 'Vence Amanhã' : 'Agendado');
+   let badgeClass = isExp ? 'red' : (isTom ? 'amber' : 'blue');
+   
+   return `<div class="activity-card" style="${cardStyle}" onclick="${item.type==='opp'?'openOpportunity(\''+item.id+'\')':'openPetronectModal(\''+item.id+'\')'}">
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+     <strong>${esc(item.title)}</strong>
+     ${item.type==='opp'?`<button class="btn small" onclick="event.stopPropagation(); toggleOpportunityDone('${item.id}')" title="Concluir">✓</button>`:''}
+    </div>
+    <small>${fmtDate(item.date)} · ${esc(item.desc)}</small>
+    <div style="margin-top:5px"><span class="pill ${badgeClass}">${badgeText}</span> <span class="pill" style="font-size:10px;">${item.type==='petronect'?'Edital Petronect':'Oportunidade'}</span></div>
+   </div>`;
+  }).join(''):'<div class="empty"><b>Nenhum acompanhamento pendente</b>Suas tarefas e prazos estão em dia!</div>'}</div>
+ </div>
  <div class="panel" style="margin-top:16px"><h3>Atividades recentes</h3>${recent.length?`<div class="table-wrap"><table><thead><tr><th>Data</th><th>Empresa</th><th>Atividade</th><th>Resultado</th></tr></thead><tbody>${recent.map(a=>`<tr><td>${fmtDate(a.date)}</td><td>${esc(a.company)}</td><td>${esc(a.type)}</td><td>${esc(a.summary||'—')}</td></tr>`).join('')}</tbody></table></div>`:'<div class="empty">Seu histórico aparecerá aqui conforme você registrar contatos.</div>'}</div>`;
 }
 
 function toolbar(placeholder,filters=''){return `<div class="toolbar"><input id="search" placeholder="${placeholder}">${filters}<button class="btn small" onclick="exportCSVCurrent()">⇩ Exportar CSV</button></div>`}
 
 function opportunitiesPage(root){
- root.innerHTML=head('Oportunidades','Registre licitações, contratos, projetos e potenciais negócios.',`<button class="btn primary" onclick="openOpportunity()">＋ Nova oportunidade</button>`)+toolbar('Buscar empresa, produto, processo ou CNPJ...',`<select id="statusFilter"><option value="">Todos os status</option>${statusOptions.map(s=>`<option>${s}</option>`).join('')}</select><select id="priorityFilter"><option value="">Todas prioridades</option><option>Alta</option><option>Média</option><option>Baixa</option></select>`)+`<div class="panel"><div class="table-wrap"><table><thead><tr><th>ID</th><th>Empresa / oportunidade</th><th>Produtos / Itens</th><th>Origem / processo</th><th>Potencial</th><th>Status</th><th>Próximo contato</th><th>Ações</th></tr></thead><tbody id="rows"></tbody></table></div></div>`;
+ root.innerHTML=head('Oportunidades','Registre licitações, contratos, projetos e potenciais negócios.',`<button class="btn primary" onclick="openOpportunity()">＋ Nova oportunidade</button>`)+toolbar('Buscar empresa, produto, processo ou CNPJ...',`<select id="statusFilter"><option value="">Todos os status</option>${statusOptions.map(s=>`<option>${s}</option>`).join('')}</select><select id="priorityFilter"><option value="">Todas prioridades</option><option>Alta</option><option>Média</option><option>Baixa</option></select>`)+`<div class="panel"><div class="table-wrap"><table><thead><tr><th>Status</th><th>ID</th><th>Empresa / oportunidade</th><th>Produtos / Itens</th><th>Origem / processo</th><th>Potencial</th><th>Status</th><th>Próximo contato</th><th>Ações</th></tr></thead><tbody id="rows"></tbody></table></div></div>`;
  const draw=()=>{
   let q=$('#search').value.toLowerCase(),s=$('#statusFilter').value,p=$('#priorityFilter').value;
   let arr=db.opportunities.filter(o=>{
@@ -119,12 +189,12 @@ function opportunitiesPage(root){
    let matchText=[o.id,o.company,prodText,o.process,o.cnpj,o.source,o.address].join(' ').toLowerCase();
    return matchText.includes(q)&&(!s||o.status===s)&&(!p||o.priority===p);
   });
-  $('#rows').innerHTML=arr.length?arr.map(o=>{
-   let prodSummary=(o.products||[]).length > 0 ? `${o.products.length} item(ns) - ${o.products[0].name}${o.products.length>1?' (...)':''}` : 'Nenhum produto';
-   return `<tr>
+  $('#rows').innerHTML=arr.length?arr.map(o=>`
+   <tr style="${o.done?'opacity:0.5;background:#f9f9f9;':''}">
+    <td style="text-align:center;"><input type="checkbox" ${o.done?'checked':''} onchange="toggleOpportunityDone('${o.id}')" title="Marcar como concluído"></td>
     <td><code style="font-size:12px;background:#edf1f5;padding:2px 6px;border-radius:4px;color:var(--navy);font-weight:700;">${esc(o.id)}</code></td>
-    <td><b>${esc(o.company||'Sem empresa')}</b><div class="muted">${esc(o.city||'')}${o.uf?'/'+esc(o.uf):''} · ${esc(o.segment||'')}</div></td>
-    <td>${esc(prodSummary)}</td>
+    <td><b style="${o.done?'text-decoration:line-through;':''}">${esc(o.company||'Sem empresa')}</b><div class="muted">${esc(o.city||'')}${o.uf?'/'+esc(o.uf):''} · ${esc(o.segment||'')}</div></td>
+    <td>${esc((o.products||[]).length > 0 ? `${o.products.length} item(ns)` : '0')}</td>
     <td>${esc(o.source||'—')}<div class="muted">${esc(o.process||'')}</div></td>
     <td><span class="pill ${o.priority==='Alta'?'green':''}">${esc(o.priority||'—')}</span></td>
     <td><span class="pill ${pillClass(o.status)}">${esc(o.status)}</span></td>
@@ -135,10 +205,266 @@ function opportunitiesPage(root){
       <button class="btn small danger" onclick="deleteOpportunity('${o.id}')">Excluir</button>
      </div>
     </td>
-   </tr>`;
-  }).join(''):`<tr><td colspan="8"><div class="empty"><b>Nenhuma oportunidade encontrada</b>Experimente alterar os filtros ou cadastrar uma oportunidade.</div></td></tr>`;
+   </tr>
+  `).join(''):`<tr><td colspan="9"><div class="empty"><b>Nenhuma oportunidade encontrada</b>Experimente alterar os filtros ou cadastrar uma oportunidade.</div></td></tr>`;
  };
  $('#search').oninput=draw;$('#statusFilter').onchange=draw;$('#priorityFilter').onchange=draw;draw();
+}
+
+function toggleOpportunityDone(id){
+ let opp = db.opportunities.find(o => o.id === id);
+ if(opp){ opp.done = !opp.done; saveDB(); render(); }
+}
+
+function toggleActivityDone(actId){
+ let act = db.activities.find(a => a.id === actId);
+ if(act){ act.done = !act.done; saveDB(); render(); }
+}
+
+/* ==========================================
+   MÓDULO PETRONECT
+   ========================================== */
+let petronectViewMode = 'table';
+
+function petronectPage(root){
+ root.innerHTML=head('Portal Petronect','Gerenciamento de editais, prazos de postagem e itens Petronect.',`
+  <div style="display:flex;gap:8px;align-items:center;">
+   <div style="background:#edf1f5;padding:3px;border-radius:8px;display:flex;gap:3px;">
+    <button class="btn small ${petronectViewMode==='table'?'primary':''}" onclick="petronectViewMode='table';render()">📋 Tabela</button>
+    <button class="btn small ${petronectViewMode==='kanban'?'primary':''}" onclick="petronectViewMode='kanban';render()">📊 Kanban</button>
+   </div>
+   <button class="btn primary" onclick="openPetronectModal()">＋ Novo Edital Petronect</button>
+  </div>
+ `)+toolbar('Buscar edital, oportunidade, cidade ou item...',`<select id="petronectStatusFilter"><option value="">Todos os status</option>${petronectStatusOptions.map(s=>`<option>${s}</option>`).join('')}</select>`)+`<div id="petronectContent"></div>`;
+
+ const draw=()=>{
+  let q=$('#search').value.toLowerCase(),s=$('#petronectStatusFilter').value;
+  let arr=db.petronect.filter(p=>{
+   let itemText=(p.items||[]).map(i=>i.item+' '+i.summary+' '+i.obs).join(' ');
+   let matchText=[p.id,p.opportunity,p.city,p.uf,p.closingDate,itemText].join(' ').toLowerCase();
+   return matchText.includes(q)&&(!s||p.status===s);
+  });
+
+  let container = $('#petronectContent');
+  if(!container) return;
+
+  if(petronectViewMode === 'table'){
+   container.innerHTML = `<div class="panel"><div class="table-wrap"><table><thead><tr><th>ID</th><th>Data</th><th>Oportunidade / Edital</th><th>Status Petronect</th><th>Encerramento</th><th>Trimestre</th><th>Cidade/UF</th><th>Itens</th><th>Ações</th></tr></thead><tbody id="petronectRows"></tbody></table></div></div>`;
+   
+   let rowsEl = $('#petronectRows');
+   rowsEl.innerHTML = arr.length ? arr.map(p=>{
+    let isDeclined = p.status === 'Declinada';
+    let isExpired = p.closingDate && p.closingDate < today() && !['Ganha','Perdida','Declinada','Encerrada'].includes(p.status);
+    let isTomorrow = p.closingDate && (new Date(p.closingDate+'T12:00:00') - new Date(today()+'T12:00:00') === 86400000) && p.status !== 'Declinada';
+    
+    let rowBg = '';
+    if(isExpired) rowBg = 'background:#fdeaea;';
+    else if(isTomorrow) rowBg = 'background:#fffbe6;';
+
+    return `
+     <tr style="${isDeclined?'opacity:0.4;text-decoration:line-through;':''} ${rowBg}">
+      <td><code style="font-size:12px;background:#edf1f5;padding:2px 6px;border-radius:4px;color:var(--navy);font-weight:700;">${esc(p.id)}</code></td>
+      <td>${fmtDate(p.date)}</td>
+      <td><b>${esc(p.opportunity)}</b></td>
+      <td><span class="pill ${pillClass(p.status)}">${esc(p.status)}</span></td>
+      <td>${fmtDate(p.closingDate)} ${p.closingTime?'('+p.closingTime+')':''} ${isExpired?'<span style="color:var(--red);font-weight:bold;">⚠️ Vencido</span>':''} ${isTomorrow?'<span style="color:var(--amber);font-weight:bold;">⚠️ Vence Amanhã</span>':''}</td>
+      <td><b>${esc(p.quarter||'—')}</b></td>
+      <td>${esc(p.city||'—')}${p.uf?'/'+esc(p.uf):''}</td>
+      <td>${(p.items||[]).length} item(ns)</td>
+      <td>
+       <div style="display:flex;gap:5px;">
+        <button class="btn small" onclick="openPetronectModal('${p.id}')">Editar</button>
+        <button class="btn small danger" onclick="deletePetronect('${p.id}')">Excluir</button>
+       </div>
+      </td>
+     </tr>
+    `;
+   }).join('') : `<tr><td colspan="9"><div class="empty"><b>Nenhum edital Petronect encontrado</b>Cadastre um novo edital para iniciar.</div></td></tr>`;
+  } else {
+   container.innerHTML = `
+    <div class="kanban-board">
+     ${petronectStatusOptions.map(status=>{
+      let colItems = arr.filter(p=>p.status===status);
+      return `
+       <div class="kanban-col" ondragover="event.preventDefault()" ondrop="dropPetronect(event, '${status}')">
+        <h4><span>${esc(status)}</span> <span class="pill">${colItems.length}</span></h4>
+        <div class="kanban-cards">
+         ${colItems.map(p=>`
+          <div class="kanban-card" draggable="true" ondragstart="dragPetronect(event, '${p.id}')" style="${p.status==='Declinada'?'opacity:0.5;text-decoration:line-through;':''}">
+           <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+            <code style="font-size:11px;font-weight:bold;color:var(--navy);">${esc(p.id)}</code>
+            <span class="pill ${pillClass(p.status)}" style="font-size:10px;padding:2px 6px;">${esc(p.quarter||'')}</span>
+           </div>
+           <b style="font-size:13px;display:block;margin-bottom:4px;">${esc(p.opportunity)}</b>
+           <div class="muted" style="font-size:12px;margin-bottom:8px;">Prazo: ${fmtDate(p.closingDate)}</div>
+           <div style="display:flex;justify-content:flex-end;gap:4px;">
+            <button class="btn small" onclick="openPetronectModal('${p.id}')">Editar</button>
+           </div>
+          </div>
+         `).join('')}
+        </div>
+       </div>
+      `;
+     }).join('')}
+    </div>
+   `;
+  }
+ };
+
+ $('#search').oninput=draw;
+ $('#petronectStatusFilter').onchange=draw;
+ draw();
+}
+
+let draggedPetronectId = null;
+function dragPetronect(e, id){ draggedPetronectId = id; }
+function dropPetronect(e, newStatus){
+ e.preventDefault();
+ if(!draggedPetronectId) return;
+ let item = db.petronect.find(p=>p.id === draggedPetronectId);
+ if(item){
+  item.status = newStatus;
+  saveDB();
+  render();
+ }
+ draggedPetronectId = null;
+}
+function deletePetronect(id){
+ if(confirm('Tem certeza que deseja excluir este edital Petronect?')){
+  db.petronect = db.petronect.filter(p=>p.id !== id);
+  saveDB();
+  render();
+ }
+}
+
+/* Gestão de Itens Dinâmicos Petronect */
+let currentPetronectItems = [];
+
+function renderPetronectItems(){
+ let container = $('#petronectItemsContainer');
+ if(!container) return;
+ container.innerHTML = currentPetronectItems.map((item, index)=>`
+  <div class="product-item-row" data-index="${index}">
+   <div class="product-item-grid">
+    <div class="field"><label>Item</label><input type="text" value="${esc(item.item)}" oninput="updatePetronectItem(${index}, 'item', this.value)"></div>
+    <div class="field"><label>Resumo / Descrição</label><input type="text" value="${esc(item.summary)}" oninput="updatePetronectItem(${index}, 'summary', this.value)"></div>
+    <div class="field"><label>Quantidade</label><input type="number" value="${item.qty||1}" oninput="updatePetronectItem(${index}, 'qty', this.value)"></div>
+    <div class="field"><label>Unidade</label><input type="text" value="${esc(item.unit||'UN')}" oninput="updatePetronectItem(${index}, 'unit', this.value)" placeholder="Litros, Mililitros, UN..."></div>
+    <div class="field"><label>Volume</label><input type="number" step="0.01" value="${item.volume||1}" oninput="updatePetronectItem(${index}, 'volume', this.value)"></div>
+    <div class="field"><label>Cor</label><input type="text" value="${esc(item.color||'')}" oninput="updatePetronectItem(${index}, 'color', this.value)" placeholder="Ex: Azul"></div>
+    <div class="field"><label>Obs</label><input type="text" value="${esc(item.obs||'')}" oninput="updatePetronectItem(${index}, 'obs', this.value)"></div>
+    <div style="padding-bottom:2px;"><button type="button" class="btn small danger" onclick="removePetronectItem(${index})">✕</button></div>
+   </div>
+   <div style="margin-top:6px;font-size:12px;color:var(--muted);text-align:right;">
+    Cálculo (Qtd / Volume se Litros/Mililitros): <b>${calcPetronectTotal(item)}</b>
+   </div>
+  </div>
+ `).join('') || '<div class="empty" style="padding:15px;font-size:13px;">Nenhum item adicionado. Clique no botão abaixo para incluir.</div>';
+}
+
+function addPetronectItem(){
+ currentPetronectItems.push({item:'', summary:'', qty:1, unit:'UN', volume:1, color:'', obs:''});
+ renderPetronectItems();
+}
+
+function removePetronectItem(index){
+ currentPetronectItems.splice(index, 1);
+ renderPetronectItems();
+}
+
+function updatePetronectItem(index, fieldName, val){
+ if(currentPetronectItems[index]){
+  currentPetronectItems[index][fieldName] = val;
+  if(['qty','unit','volume'].includes(fieldName)){
+   let row = document.querySelector(`.product-item-row[data-index="${index}"]`);
+   if(row){
+    let item = currentPetronectItems[index];
+    let unitLower = (item.unit||'').toLowerCase();
+    let computed = (unitLower.includes('litro') || unitLower.includes('ml') || unitLower.includes('mililitro')) ? ((Number(item.qty)||0) / (Number(item.volume)||1)).toFixed(2) : (item.qty||0);
+    row.querySelector('b').textContent = computed + ' (' + item.unit + ')';
+   }
+  }
+ }
+}
+
+function calcPetronectTotal(item){
+ let unitLower = (item.unit||'').toLowerCase();
+ if(unitLower.includes('litro') || unitLower.includes('mililitro') || unitLower.includes('ml')){
+  let q = Number(item.qty)||0;
+  let v = Number(item.volume)||1;
+  return (q / v).toFixed(2) + ' (Convertido)';
+ }
+ return (item.qty||0) + ' ' + (item.unit||'UN');
+}
+
+function computeQuarter(dateStr){
+ if(!dateStr) return '';
+ let month = parseInt(dateStr.split('-')[1], 10);
+ if(month >= 1 && month <= 3) return 'Q1';
+ if(month >= 4 && month <= 6) return 'Q2';
+ if(month >= 7 && month <= 9) return 'Q3';
+ return 'Q4';
+}
+
+function handleClosingDateChange(dateVal){
+ let qVal = computeQuarter(dateVal);
+ if($('#pn_quarter')) $('#pn_quarter').value = qVal;
+}
+
+function openPetronectModal(id=null){
+ let p = db.petronect.find(x=>x.id===id)||{};
+ currentPetronectItems = p.items ? JSON.parse(JSON.stringify(p.items)) : [];
+
+ openModal(id?'Editar Edital Petronect':'Novo Edital Petronect',`<div class="form-grid">
+  ${id?`<div class="field full"><label>ID do Registro</label><input type="text" readonly value="${esc(p.id)}" style="background:#eee;font-weight:700;"></div>`:''}
+  ${field('Data de Cadastro','pn_date',p.date||today(),'date')}
+  ${field('Status Petronect','pn_status',p.status||'Analisando','text',petronectStatusOptions)}
+  ${field('Oportunidade / Número do Edital','pn_opportunity',p.opportunity)}
+  ${field('Data de Encerramento','pn_closing',p.closingDate,'date')}
+  <div class="field"><label>Trimestre (Automático)</label><input id="pn_quarter" type="text" readonly value="${esc(p.quarter||'Q1')}" style="background:#edf1f5;font-weight:700;"></div>
+  ${field('Hora Limite','pn_time',p.closingTime||'23:59','time')}
+  ${field('Cidade','pn_city',p.city)}
+  ${field('UF','pn_uf',p.uf)}
+
+  <div class="field full">
+   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+    <label style="font-size:13px;font-weight:700;color:var(--navy);">Itens / Produtos / Serviços Petronect</label>
+    <button type="button" class="btn small primary" onclick="addPetronectItem()">＋ Adicionar Item</button>
+   </div>
+   <div id="petronectItemsContainer" style="max-height:320px;overflow-y:auto;border:1px solid var(--line);padding:10px;border-radius:8px;background:#fff;"></div>
+  </div>
+
+  ${field('Observações','pn_obs',p.obs,'textarea',null,true)}
+ </div>`,()=>{
+  let opp = val('pn_opportunity');
+  if(!opp){alert('Informe a oportunidade / número do edital.');return}
+
+  let closingVal = val('pn_closing');
+  let quarterVal = computeQuarter(closingVal);
+  let recordId = p.id ? p.id : generateCustomId('PN', db.petronect);
+
+  let data = {
+   id: recordId,
+   date: val('pn_date'),
+   status: val('pn_status'),
+   opportunity: opp,
+   closingDate: closingVal,
+   quarter: quarterVal,
+   closingTime: val('pn_time'),
+   city: val('pn_city'),
+   uf: val('pn_uf').toUpperCase(),
+   items: currentPetronectItems,
+   obs: val('pn_obs')
+  };
+
+  if(p.id) db.petronect = db.petronect.map(x=>x.id===id?data:x);
+  else db.petronect.unshift(data);
+
+  saveDB(); closeModal(); render();
+ });
+
+ renderPetronectItems();
+ if($('#pn_closing')) $('#pn_closing').oninput = e => handleClosingDateChange(e.target.value);
 }
 
 function companiesPage(root){
@@ -152,8 +478,20 @@ function contactsPage(root){
 }
 
 function activitiesPage(root){
- root.innerHTML=head('Histórico de atividades','Registre ligações, e-mails, reuniões e retornos realizados.',`<button class="btn primary" onclick="openActivity()">＋ Registrar atividade</button>`)+toolbar('Buscar empresa, contato ou resumo...')+`<div class="panel"><div class="table-wrap"><table><thead><tr><th>ID</th><th>Data</th><th>Empresa</th><th>Contato</th><th>Tipo</th><th>Resumo / resultado</th><th>Próximo passo</th><th>Ações</th></tr></thead><tbody id="rows"></tbody></table></div></div>`;
- const draw=()=>{let q=$('#search').value.toLowerCase(),arr=[...db.activities].sort((a,b)=>(b.date||'').localeCompare(a.date||'')).filter(a=>[a.id,a.company,a.contact,a.type,a.summary].join(' ').toLowerCase().includes(q));$('#rows').innerHTML=arr.length?arr.map(a=>`<tr><td><code style="font-size:12px;background:#edf1f5;padding:2px 6px;border-radius:4px;color:var(--navy);font-weight:700;">${esc(a.id)}</code></td><td>${fmtDate(a.date)}</td><td>${esc(a.company)}</td><td>${esc(a.contact||'—')}</td><td>${esc(a.type)}</td><td>${esc(a.summary||'—')}</td><td>${esc(a.next||'—')}</td><td><button class="btn small danger" onclick="deleteActivity('${a.id}')">Excluir</button></td></tr>`).join(''):'<tr><td colspan="8"><div class="empty">Nenhuma atividade registrada.</div></td></tr>'};$('#search').oninput=draw;draw();
+ root.innerHTML=head('Histórico de atividades','Registre ligações, e-mails, reuniões e retornos realizados.',`<button class="btn primary" onclick="openActivity()">＋ Registrar atividade</button>`)+toolbar('Buscar empresa, contato ou resumo...')+`<div class="panel"><div class="table-wrap"><table><thead><tr><th>Concluído</th><th>ID</th><th>Data</th><th>Empresa</th><th>Contato</th><th>Tipo</th><th>Resumo / resultado</th><th>Próximo passo</th><th>Ações</th></tr></thead><tbody id="rows"></tbody></table></div></div>`;
+ const draw=()=>{let q=$('#search').value.toLowerCase(),arr=[...db.activities].sort((a,b)=>(b.date||'').localeCompare(a.date||'')).filter(a=>[a.id,a.company,a.contact,a.type,a.summary].join(' ').toLowerCase().includes(q));$('#rows').innerHTML=arr.length?arr.map(a=>`
+  <tr style="${a.done?'opacity:0.5;background:#f9f9f9;':''}">
+   <td style="text-align:center;"><input type="checkbox" ${a.done?'checked':''} onchange="toggleActivityDone('${a.id}')"></td>
+   <td><code style="font-size:12px;background:#edf1f5;padding:2px 6px;border-radius:4px;color:var(--navy);font-weight:700;">${esc(a.id)}</code></td>
+   <td>${fmtDate(a.date)}</td>
+   <td><b style="${a.done?'text-decoration:line-through;':''}">${esc(a.company)}</b></td>
+   <td>${esc(a.contact||'—')}</td>
+   <td>${esc(a.type)}</td>
+   <td>${esc(a.summary||'—')}</td>
+   <td>${esc(a.next||'—')}</td>
+   <td><button class="btn small danger" onclick="deleteActivity('${a.id}')">Excluir</button></td>
+  </tr>
+ `).join(''):'<tr><td colspan="9"><div class="empty">Nenhuma atividade registrada.</div></td></tr>'};$('#search').oninput=draw;draw();
 }
 
 function vendorPage(root){
@@ -166,7 +504,7 @@ function reportsPage(root){
  let years = [...new Set(db.opportunities.map(o => (o.created||today()).slice(0,4)))].sort().reverse();
  if(!years.includes(String(currentYear))) years.unshift(String(currentYear));
 
- root.innerHTML=head('Relatórios','Visão consolidada da atividade de prospecção.',`<div style="display:flex;align-items:center;gap:8px;"><label style="font-size:12px;font-weight:650;">Filtrar Ano:</label><select id="reportYearFilter" onchange="renderReportsData()">${years.map(y=>`<option value="${y}" ${y==currentYear?'selected':''}>${y}</option>`).join('')}</select></div>`)+
+ root.innerHTML=head('Relatórios','Visão analítica completa de vendas, prospecção e pipeline comercial.',`<div style="display:flex;align-items:center;gap:8px;"><label style="font-size:12px;font-weight:650;">Filtrar Ano:</label><select id="reportYearFilter" onchange="renderReportsData()">${years.map(y=>`<option value="${y}" ${y==currentYear?'selected':''}>${y}</option>`).join('')}</select></div>`)+
  `<div id="reportsContent"></div>`;
  renderReportsData();
 }
@@ -175,9 +513,12 @@ function renderReportsData(){
  let selYear = $('#reportYearFilter')?.value || String(new Date().getFullYear());
  let filteredOpps = db.opportunities.filter(o => (o.created||today()).startsWith(selYear));
 
+ let totalOpps = filteredOpps.length;
  let totalVal = filteredOpps.reduce((acc,o)=> acc + (Number(o.value)||0), 0);
- 
- // Cálculo do Pipeline Ponderado (Probabilidade estimada por status)
+ let activeClients = filteredOpps.filter(o=>o.status==='Cliente ativo').length;
+ let lostOpps = filteredOpps.filter(o=>o.status==='Perdido').length;
+ let conversionRate = totalOpps > 0 ? ((activeClients / totalOpps) * 100).toFixed(1) : 0;
+
  const weights = {'Novo lead':0.1, 'Pesquisa em andamento':0.2, 'Contato identificado':0.3, 'Primeiro contato feito':0.4, 'Em negociação':0.5, 'Cotação solicitada':0.7, 'Proposta enviada':0.8, 'Homologação':0.85, 'Vendor List aprovado':0.9, 'Cliente ativo':1.0, 'Perdido':0, 'Sem retorno':0.1, 'Reativar futuramente':0.1};
  let weightedVal = filteredOpps.reduce((acc,o)=>{
   let w = weights[o.status] ?? 0.3;
@@ -186,29 +527,32 @@ function renderReportsData(){
 
  let byStatus=statusOptions.map(s=>({s,n:filteredOpps.filter(o=>o.status===s).length})).filter(x=>x.n);
  let bySource=[...new Set(filteredOpps.map(o=>o.source).filter(Boolean))].map(s=>({s,n:filteredOpps.filter(o=>o.source===s).length}));
+ let byPriority=['Alta','Média','Baixa','Normal'].map(p=>({p,n:filteredOpps.filter(o=>(o.priority||'Normal')===p).length})).filter(x=>x.n);
 
  let container = $('#reportsContent');
  if(!container) return;
 
- container.innerHTML = `<div class="cards">
-  ${stat('Oportunidades ('+selYear+')',filteredOpps.length,'◎','Registros no ano')}
-  ${stat('Valor Total Bruto',money(totalVal),'＄','Soma das cotações')}
-  ${stat('Pipeline Ponderado',money(weightedVal),'↗','Previsão realista')}
-  ${stat('Clientes Ativos',filteredOpps.filter(o=>o.status==='Cliente ativo').length,'★','Convertidos no ano')}
+ container.innerHTML = `
+ <div class="cards">
+  ${stat('Total de Oportunidades',totalOpps,'◎','Registros no ano '+selYear)}
+  ${stat('Valor Bruto Total',money(totalVal),'＄','Soma dos orçamentos')}
+  ${stat('Pipeline Ponderado',money(weightedVal),'↗','Previsão de fechamento')}
+  ${stat('Taxa de Conversão',conversionRate+'%','★',activeClients+' clientes fechados')}
  </div>
  <div class="grid2">
-  <div class="panel"><h3>Oportunidades por status (${selYear})</h3>${byStatus.length?byStatus.map(x=>`<div class="bar-row"><span>${esc(x.s)}</span><div class="bar"><i style="width:${100*x.n/Math.max(1,filteredOpps.length)}%"></i></div><b>${x.n}</b></div>`).join(''):'<div class="empty">Sem dados para exibir.</div>'}</div>
-  <div class="panel"><h3>Origem das oportunidades (${selYear})</h3>${bySource.length?bySource.map(x=>`<div class="bar-row"><span>${esc(x.s)}</span><div class="bar"><i style="width:${100*x.n/Math.max(1,filteredOpps.length)}%"></i></div><b>${x.n}</b></div>`).join(''):'<div class="empty">Sem dados para exibir.</div>'}</div>
+  <div class="panel"><h3>Oportunidades por Status (${selYear})</h3>${byStatus.length?byStatus.map(x=>`<div class="bar-row"><span>${esc(x.s)}</span><div class="bar"><i style="width:${100*x.n/Math.max(1,totalOpps)}%"></i></div><b>${x.n}</b></div>`).join(''):'<div class="empty">Sem dados para exibir.</div>'}</div>
+  <div class="panel"><h3>Origem Comercial (${selYear})</h3>${bySource.length?bySource.map(x=>`<div class="bar-row"><span>${esc(x.s)}</span><div class="bar"><i style="width:${100*x.n/Math.max(1,totalOpps)}%"></i></div><b>${x.n}</b></div>`).join(''):'<div class="empty">Sem dados para exibir.</div>'}</div>
+ </div>
+ <div class="grid2" style="margin-top:16px;">
+  <div class="panel"><h3>Distribuição por Prioridade</h3>${byPriority.length?byPriority.map(x=>`<div class="bar-row"><span>${esc(x.p)}</span><div class="bar"><i style="width:${100*x.n/Math.max(1,totalOpps)}%"></i></div><b>${x.n}</b></div>`).join(''):'<div class="empty">Sem dados.</div>'}</div>
+  <div class="panel"><h3>Resumo de Performance</h3><div style="padding:10px 0;font-size:13px;line-height:1.6;"><div>• Negócios convertidos (Clientes Ativos): <b>${activeClients}</b></div><div>• Oportunidades perdidas: <b>${lostOpps}</b></div><div>• Total de empresas na base: <b>${db.companies.length}</b></div><div>• Total de contatos cadastrados: <b>${db.contacts.length}</b></div><div>• Atividades registradas: <b>${db.activities.length}</b></div></div></div>
  </div>`;
 }
 
 function settingsPage(root){
- root.innerHTML=head('Backup e configurações','Proteja seus dados e mantenha uma cópia fora do navegador.')+`<div class="notice warn"><b>Importante:</b> os registros ficam armazenados neste navegador e neste perfil de usuário. Limpar os dados do navegador pode apagar sua base. Faça backups regulares.</div><div class="settings-grid"><div class="panel"><h3>Exportar backup completo</h3><p class="muted">Gera um arquivo JSON com empresas, oportunidades, contatos e atividades. Guarde em local seguro.</p><button class="btn primary" onclick="backup()">⇩ Baixar backup JSON</button></div><div class="panel"><h3>Restaurar backup</h3><p class="muted">Importe um backup JSON gerado por este sistema. A restauração substitui os dados atuais.</p><button class="btn" onclick="$('#importFile').click()">⇧ Selecionar arquivo de backup</button></div><div class="panel"><h3>Exportar oportunidades</h3><p class="muted">Baixe sua lista de oportunidades em formato CSV para abrir no Excel.</p><button class="btn" onclick="exportCSV(db.opportunities,'advance_oportunidades.csv')">⇩ Exportar CSV</button></div><div class="panel"><h3>Dados locais</h3><p class="muted">Registros neste navegador:</p><b>${db.companies.length}</b> empresas · <b>${db.opportunities.length}</b> oportunidades · <b>${db.contacts.length}</b> contatos · <b>${db.activities.length}</b> atividades</div></div>`;
+ root.innerHTML=head('Backup e configurações','Proteja seus dados e mantenha uma cópia fora do navegador.')+`<div class="notice warn"><b>Importante:</b> os registros ficam armazenados neste navegador e neste perfil de usuário. Limpar os dados do navegador pode apagar sua base. Faça backups regulares.</div><div class="settings-grid"><div class="panel"><h3>Exportar backup completo</h3><p class="muted">Gera um arquivo JSON com empresas, oportunidades, contatos e atividades. Guarde em local seguro.</p><button class="btn primary" onclick="backup()">⇩ Baixar backup JSON</button></div><div class="panel"><h3>Restaurar backup</h3><p class="muted">Importe um backup JSON gerado por este sistema. A restauração substitui os dados atuais.</p><button class="btn" onclick="$('#importFile').click()">⇧ Selecionar arquivo de backup</button></div><div class="panel"><h3>Exportar oportunidades</h3><p class="muted">Baixe sua lista de oportunidades em formato CSV para abrir no Excel.</p><button class="btn" onclick="exportCSV(db.opportunities,'advance_oportunidades.csv')">⇩ Exportar CSV</button></div><div class="panel"><h3>Dados locais</h3><p class="muted">Registros neste navegador:</p><b>${db.companies.length}</b> empresas · <b>${db.opportunities.length}</b> oportunidades · <b>${db.petronect.length}</b> editais Petronect · <b>${db.contacts.length}</b> contatos</div></div>`;
 }
 
-function openModal(title,body,save){$('#modalTitle').textContent=title;$('#modalBody').innerHTML=body;modalSaveFn=save;$('#modalBack').classList.add('show')}
-function closeModal(){$('#modalBack').classList.remove('show');modalSaveFn=null}
-$('#modalClose').onclick=$('#modalCancel').onclick=closeModal;$('#modalSave').onclick=()=>{if(modalSaveFn)modalSaveFn()};
 function val(id){return document.getElementById(id)?.value?.trim()||''}
 function field(label,id,value='',type='text',opts=null,full=false){
  let input='';
@@ -233,37 +577,25 @@ function deleteActivity(id){if(confirm('Tem certeza que deseja excluir esta ativ
 
 /* Gestão da Lista de Produtos Dinâmica na Oportunidade */
 let currentProductsList = [];
-
 function renderProductItems(){
  let container = $('#productItemsContainer');
  if(!container) return;
  container.innerHTML = currentProductsList.map((item, index)=>`
   <div class="product-item-row" data-index="${index}">
    <div class="product-item-grid">
-    <div class="field"><label>Produto / item</label><input type="text" class="pi-name" value="${esc(item.name)}" oninput="updateProductItem(${index}, 'name', this.value)"></div>
-    <div class="field"><label>Descrição / especificação</label><input type="text" class="pi-desc" value="${esc(item.desc)}" oninput="updateProductItem(${index}, 'desc', this.value)"></div>
-    <div class="field"><label>Quantidade</label><input type="number" class="pi-qty" value="${item.qty||1}" oninput="updateProductItem(${index}, 'qty', this.value)"></div>
-    <div class="field"><label>Unidade</label><input type="text" class="pi-unit" value="${esc(item.unit||'UN')}" oninput="updateProductItem(${index}, 'unit', this.value)"></div>
-    <div class="field"><label>Valor unitário (R$)</label><input type="number" step="0.01" class="pi-val" value="${item.unitValue||0}" oninput="updateProductItem(${index}, 'unitValue', this.value)"></div>
+    <div class="field"><label>Produto / item</label><input type="text" value="${esc(item.name)}" oninput="updateProductItem(${index}, 'name', this.value)"></div>
+    <div class="field"><label>Descrição / especificação</label><input type="text" value="${esc(item.desc)}" oninput="updateProductItem(${index}, 'desc', this.value)"></div>
+    <div class="field"><label>Quantidade</label><input type="number" value="${item.qty||1}" oninput="updateProductItem(${index}, 'qty', this.value)"></div>
+    <div class="field"><label>Unidade</label><input type="text" value="${esc(item.unit||'UN')}" oninput="updateProductItem(${index}, 'unit', this.value)"></div>
+    <div class="field"><label>Valor unitário (R$)</label><input type="number" step="0.01" value="${item.unitValue||0}" oninput="updateProductItem(${index}, 'unitValue', this.value)"></div>
     <div style="padding-bottom:2px;"><button type="button" class="btn small danger" onclick="removeProductItem(${index})">✕</button></div>
    </div>
-   <div style="margin-top:6px;font-size:12px;color:var(--muted);text-align:right;">
-    Valor total do item: <b class="pi-total">${money((Number(item.qty)||0)*(Number(item.unitValue)||0))}</b>
-   </div>
+   <div style="margin-top:6px;font-size:12px;color:var(--muted);text-align:right;">Valor total: <b class="pi-total">${money((Number(item.qty)||0)*(Number(item.unitValue)||0))}</b></div>
   </div>
- `).join('') || '<div class="empty" style="padding:15px;font-size:13px;">Nenhum produto adicionado. Clique no botão abaixo para incluir.</div>';
+ `).join('') || '<div class="empty" style="padding:15px;font-size:13px;">Nenhum produto adicionado.</div>';
 }
-
-function addProductItem(){
- currentProductsList.push({name:'', desc:'', qty:1, unit:'UN', unitValue:0});
- renderProductItems();
-}
-
-function removeProductItem(index){
- currentProductsList.splice(index, 1);
- renderProductItems();
-}
-
+function addProductItem(){ currentProductsList.push({name:'', desc:'', qty:1, unit:'UN', unitValue:0}); renderProductItems(); }
+function removeProductItem(index){ currentProductsList.splice(index, 1); renderProductItems(); }
 function updateProductItem(index, fieldName, val){
  if(currentProductsList[index]){
   currentProductsList[index][fieldName] = val;
@@ -278,7 +610,6 @@ function updateProductItem(index, fieldName, val){
  }
 }
 
-// Autocompletar empresa ao digitar o nome na Oportunidade
 function handleCompanyAutoFill(companyName){
  let found = db.companies.find(c => c.name.toLowerCase() === companyName.toLowerCase());
  if(found){
@@ -300,10 +631,10 @@ function openOpportunity(id=null){
   currentProductsList.push({name: o.product, desc: '', qty: o.quantity||1, unit: 'UN', unitValue: o.value||0});
  }
 
- // Histórico vinculado à oportunidade (atividades da empresa)
  let companyActivities = o.company ? db.activities.filter(a => a.company.toLowerCase() === o.company.toLowerCase()).sort((a,b)=>(b.date||'').localeCompare(a.date||'')) : [];
 
  openModal(id?'Editar oportunidade':'Nova oportunidade',`<div class="form-grid">
+  ${id?`<div class="field full"><label>ID do Registro</label><input type="text" readonly value="${esc(o.id)}" style="background:#eee;font-weight:700;"></div>`:''}
   <div class="field"><label>Empresa / razão social</label><input id="o_company" type="text" value="${esc(o.company)}" oninput="handleCompanyAutoFill(this.value)"></div>
   ${field('CNPJ','o_cnpj',o.cnpj)}
   ${field('Endereço completo','o_address',o.address,'text',null,true)}
@@ -330,16 +661,15 @@ function openOpportunity(id=null){
     <label style="font-size:13px;font-weight:700;color:var(--navy);">Produtos / Itens da Oportunidade</label>
     <button type="button" class="btn small primary" onclick="addProductItem()">＋ Adicionar Item</button>
    </div>
-   <div id="productItemsContainer" style="max-height:300px;overflow-y:auto;border:1px solid var(--line);padding:10px;border-radius:8px;background:#fff;"></div>
+   <div id="productItemsContainer" style="max-height:280px;overflow-y:auto;border:1px solid var(--line);padding:10px;border-radius:8px;background:#fff;"></div>
   </div>
 
-  ${id && companyActivities.length > 0 ? `
   <div class="field full">
    <label style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;">Histórico de Atividades desta Empresa</label>
-   <div style="border:1px solid var(--line);padding:10px;border-radius:8px;background:#f8fafb;max-height:200px;overflow-y:auto;">
-    ${companyActivities.map(a=>`<div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #e4eaf0;font-size:12px;"><b>${fmtDate(a.date)}</b> · [${esc(a.type)}] ${esc(a.summary||'—')}</div>`).join('')}
+   <div style="border:1px solid var(--line);padding:10px;border-radius:8px;background:#f8fafb;max-height:180px;overflow-y:auto;">
+    ${companyActivities.length > 0 ? companyActivities.map(a=>`<div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #e4eaf0;font-size:12px;"><b>${fmtDate(a.date)}</b> · [${esc(a.type)}] ${esc(a.summary||'—')} <div class="muted">Próximo passo: ${esc(a.next||'—')}</div></div>`).join('') : '<div class="empty" style="padding:10px;font-size:12px;">Nenhuma atividade registrada.</div>'}
    </div>
-  </div>` : ''}
+  </div>
 
   ${field('Próxima ação','o_next',o.nextAction,'text',null,true)}
   ${field('Data do próximo contato','o_nextdate',o.nextDate,'date')}
@@ -378,6 +708,7 @@ function openOpportunity(id=null){
    nextAction:val('o_next'),
    nextDate:val('o_nextdate'),
    notes:val('o_notes'),
+   done:o.done||false,
    created:o.created||today(),
    updated:today()
   };
@@ -391,7 +722,9 @@ function openOpportunity(id=null){
   }
   saveDB(); closeModal(); render();
  });
+
  renderProductItems();
+ if($('#modalSaveBtn')) $('#modalSaveBtn').onclick = () => { if(modalSaveFn) modalSaveFn(); };
 }
 
 function editOpportunity(id){openOpportunity(id)}
@@ -408,15 +741,66 @@ function openContact(id=null){
 }
 function editContact(id){openContact(id)}
 
-function openActivity(){
- openModal('Registrar atividade',`<div class="form-grid">${field('Data','a_date',today(),'date')}${field('Empresa','a_company','')}${field('Contato','a_contact','')}${field('Tipo de atividade','a_type','Ligação','text',['Pesquisa','Ligação','E-mail','WhatsApp','LinkedIn','Reunião','Envio de apresentação','Cotação','Follow-up','Homologação','Outro'])}${field('Resumo / resultado','a_summary','','textarea',null,true)}${field('Objeção / necessidade identificada','a_objection','','textarea',null,true)}${field('Próximo passo','a_next','','textarea',null,true)}</div>`,()=>{let company=val('a_company');if(!company){alert('Informe a empresa.');return}let recordId = generateCustomId('AT', db.activities);db.activities.unshift({id:recordId,date:val('a_date'),company,contact:val('a_contact'),type:val('a_type'),summary:val('a_summary'),objection:val('a_objection'),next:val('a_next')});let opp=db.opportunities.find(o=>o.company.toLowerCase()===company.toLowerCase());if(opp){opp.lastContact=val('a_date');if(val('a_next'))opp.nextAction=val('a_next')}saveDB();closeModal();render()})
+function openActivity(oppId = null){
+ let opp = oppId ? db.opportunities.find(o => o.id === oppId) : null;
+ let defaultCompany = opp ? opp.company : '';
+ let defaultContact = opp ? opp.contact : '';
+ let defaultNext = opp ? opp.nextAction : '';
+ let defaultNextDate = opp ? opp.nextDate : today();
+
+ openModal('Registrar atividade',`<div class="form-grid">
+  ${field('Data','a_date',today(),'date')}
+  ${field('Empresa','a_company',defaultCompany)}
+  ${field('Contato','a_contact',defaultContact)}
+  ${field('Tipo de atividade','a_type','Ligação','text',['Pesquisa','Ligação','E-mail','WhatsApp','LinkedIn','Reunião','Envio de apresentação','Cotação','Follow-up','Homologação','Outro'])}
+  ${field('Resumo / resultado','a_summary','','textarea',null,true)}
+  ${field('Objeção / necessidade identificada','a_objection','','textarea',null,true)}
+  ${field('Próximo passo','a_next',defaultNext,'textarea',null,true)}
+  ${field('Nova data do próximo contato','a_nextdate',defaultNextDate,'date')}
+ </div>`,()=>{
+  let company=val('a_company');
+  if(!company){alert('Informe a empresa.');return}
+
+  let recordId = generateCustomId('AT', db.activities);
+  let nextDateVal = val('a_nextdate');
+  let nextStepVal = val('a_next');
+
+  db.activities.unshift({
+   id:recordId,
+   date:val('a_date'),
+   company,
+   contact:val('a_contact'),
+   type:val('a_type'),
+   summary:val('a_summary'),
+   objection:val('a_objection'),
+   next:nextStepVal,
+   done:false
+  });
+
+  let oppMatch = db.opportunities.find(o => o.company.toLowerCase() === company.toLowerCase() || o.id === oppId);
+  if(oppMatch){
+   oppMatch.lastContact = val('a_date');
+   if(nextStepVal) oppMatch.nextAction = nextStepVal;
+   if(nextDateVal) oppMatch.nextDate = nextDateVal;
+  }
+
+  saveDB(); closeModal(); render();
+ });
 }
 
 function backup(){let blob=new Blob([JSON.stringify({...db,backupDate:new Date().toISOString(),app:'Advance CRM'},null,2)],{type:'application/json'});downloadBlob(blob,'advance_crm_backup_'+today()+'.json')}
 function downloadBlob(blob,name){let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
 $('#importFile').onchange=e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let data=JSON.parse(r.result);if(!data||!Array.isArray(data.opportunities))throw Error();if(confirm('A restauração substituirá todos os dados atuais. Deseja continuar?')){db={...emptyDB(),...data};saveDB();render();alert('Backup restaurado com sucesso.')}}catch(err){alert('Arquivo inválido ou incompatível.')}e.target.value=''};r.readAsText(f)};
 function exportCSV(rows,name){if(!rows.length){alert('Não há registros para exportar.');return}let keys=Object.keys(rows[0]),csv=[keys.join(';'),...rows.map(r=>keys.map(k=>'"'+String(r[k]??'').replace(/"/g,'""')+'"').join(';'))].join('\r\n');downloadBlob(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'}),name)}
-function exportCSVCurrent(){if(page==='opportunities')exportCSV(db.opportunities,'advance_oportunidades.csv');else if(page==='companies')exportCSV(db.companies,'advance_empresas.csv');else if(page==='contacts')exportCSV(db.contacts,'advance_contatos.csv');else if(page==='activities')exportCSV(db.activities,'advance_atividades.csv')}
+function exportCSVCurrent(){
+ if(page==='opportunities')exportCSV(db.opportunities,'advance_oportunidades.csv');
+ else if(page==='petronect')exportCSV(db.petronect,'advance_petronect.csv');
+ else if(page==='companies')exportCSV(db.companies,'advance_empresas.csv');
+ else if(page==='contacts')exportCSV(db.contacts,'advance_contatos.csv');
+ else if(page==='activities')exportCSV(db.activities,'advance_atividades.csv');
+}
+
+document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>setPage(b.dataset.page)));
 render();
 </script>
 </body>
