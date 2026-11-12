@@ -1,0 +1,29 @@
+ADVANCE CRM — VERSÃO 1.0
+
+COMO ABRIR
+1. Extraia o arquivo ZIP para uma pasta no seu computador.
+2. Abra a pasta e dê dois cliques em index.html.
+3. O sistema abrirá no navegador (Chrome ou Edge).
+
+ARMAZENAMENTO
+Os dados são guardados no LocalStorage do navegador e perfil utilizados.
+Não limpe os dados do navegador sem antes fazer backup.
+Acesse "Backup e configurações" para baixar um backup JSON.
+Guarde esse arquivo em outro local (ex.: OneDrive, Google Drive ou pendrive).
+Para restaurar, selecione o arquivo JSON de backup.
+
+RECOMENDAÇÕES
+- Use sempre o mesmo navegador e perfil.
+- Faça backup ao final de cada dia de trabalho ou ao menos semanalmente.
+- Não compartilhe a pasta/perfil sem avaliar a confidencialidade dos dados.
+- Esta versão é local e não possui autenticação nem sincronização entre dispositivos.
+
+ARQUITETURA
+HTML + CSS + JavaScript puro; LocalStorage como camada de persistência.
+A camada de dados está centralizada no objeto db e nas funções loadDB/saveDB,
+facilitando uma futura migração para uma API e banco de dados online.
+
+LIMITAÇÕES DA VERSÃO 1.0
+- Não consulta automaticamente PNCP, Compras.gov ou sites de terceiros.
+- Não valida CNPJ nem verifica e-mails/telefones automaticamente.
+- Não tem multiusuário, login ou sincronização na nuvem.
