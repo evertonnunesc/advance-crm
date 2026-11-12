@@ -6,9 +6,12 @@
 <title>Advance CRM | Inteligência Comercial</title>
 <style>
 :root{--navy:#142d48;--navy2:#1c3c5c;--green:#24966b;--bg:#f3f6f8;--surface:#fff;--text:#1d2935;--muted:#718096;--line:#e4eaf0;--red:#c84d4d;--amber:#b7791f;--shadow:0 8px 24px rgba(20,45,72,.07)}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 Inter,Segoe UI,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:248px;background:var(--navy);color:#fff;padding:22px 15px;display:flex;flex-direction:column;z-index:5}.brand{display:flex;align-items:center;gap:11px;padding:3px 9px 25px}.brand-mark{width:39px;height:39px;border-radius:11px;background:var(--green);display:grid;place-items:center;font-weight:800;font-size:20px}.brand strong{display:block;font-size:15px;letter-spacing:.7px}.brand small{color:#a9bdce;font-size:10px;letter-spacing:1.2px}.nav-label{font-size:10px;color:#89a2b8;letter-spacing:1.4px;padding:12px 12px 7px}.nav button{width:100%;border:0;background:transparent;color:#d5e0e9;padding:11px 12px;text-align:left;border-radius:8px;margin:2px 0;display:flex;gap:12px;align-items:center}.nav button:hover,.nav button.active{background:#254663;color:#fff}.nav .ico{width:18px;text-align:center;font-size:16px}.side-bottom{margin-top:auto;border-top:1px solid #34516b;padding:15px 10px 0;color:#a9bdce;font-size:11px}.main{margin-left:248px;min-height:100vh}.topbar{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 30px;position:sticky;top:0;z-index:4}.crumb{color:var(--muted);font-size:12px}.top-actions{display:flex;align-items:center;gap:10px}.avatar{width:32px;height:32px;background:#e2f1eb;color:#18734f;border-radius:50%;display:grid;place-items:center;font-weight:700}.content{padding:28px 30px;max-width:1500px;margin:auto}.page-head{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:22px}.page-head h1{margin:0 0 5px;font-size:24px;color:var(--navy)}.page-head p{margin:0;color:var(--muted)}.btn{border:1px solid var(--line);background:#fff;color:var(--text);padding:9px 13px;border-radius:8px;font-weight:600;display:inline-flex;gap:7px;align-items:center}.btn:hover{background:#f7fafc}.btn.primary{background:var(--green);border-color:var(--green);color:#fff}.btn.dark{background:var(--navy);color:#fff;border-color:var(--navy)}.btn.danger{color:var(--red)}.btn.small{padding:6px 9px;font-size:12px}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:20px}.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:var(--shadow)}.stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.stat-icon{width:31px;height:31px;border-radius:9px;background:#edf6f2;color:var(--green);display:grid;place-items:center}.stat strong{display:block;font-size:27px;color:var(--navy);margin:10px 0 1px}.stat small{color:var(--muted)}.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:16px}.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:var(--shadow);min-width:0}.panel h3{margin:0 0 15px;font-size:15px;color:var(--navy)}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:760px}th{text-align:left;color:#7b8997;font-size:10px;text-transform:uppercase;letter-spacing:.7px;background:#f8fafb;padding:11px 12px;white-space:nowrap}td{padding:12px;border-top:1px solid var(--line);vertical-align:middle}tbody tr:hover{background:#fbfcfd}.muted{color:var(--muted)}.pill{display:inline-block;padding:4px 8px;border-radius:30px;background:#edf1f5;color:#536273;font-size:11px;font-weight:650;white-space:nowrap}.pill.green{background:#e4f4ec;color:#19734e}.pill.amber{background:#fff4dc;color:#98650d}.pill.red{background:#fdeaea;color:#a43e3e}.pill.blue{background:#e8f1fb;color:#315f91}.toolbar{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:14px}.field{display:flex;flex-direction:column;gap:5px;min-width:0}.field label{font-size:12px;font-weight:650;color:#526171}.field input,.field select,.field textarea,.toolbar input,.toolbar select{border:1px solid #dce4eb;border-radius:8px;padding:9px 10px;background:#fff;color:var(--text);outline:none;min-width:0}.field input:focus,.field select:focus,.field textarea:focus,.toolbar input:focus{border-color:#69ad91;box-shadow:0 0 0 3px #e4f3ec}.toolbar input{min-width:220px}.toolbar select{min-width:150px}.empty{padding:35px;text-align:center;color:var(--muted)}.empty b{display:block;color:var(--navy);margin-bottom:5px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.field.full{grid-column:1/-1}.field textarea{min-height:78px;resize:vertical}.modal-back{position:fixed;inset:0;background:rgba(13,29,44,.48);z-index:10;display:none;align-items:center;justify-content:center;padding:18px}.modal-back.show{display:flex}.modal{background:#fff;border-radius:14px;width:min(760px,100%);max-height:92vh;overflow:auto;box-shadow:0 20px 70px #071a2b55}.modal-head{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.modal-head h2{margin:0;color:var(--navy);font-size:18px}.modal-body{padding:20px 22px}.modal-foot{padding:14px 22px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:9px}.close{border:0;background:transparent;font-size:22px;color:var(--muted)}.notice{background:#eef6f3;border:1px solid #d4e9df;color:#28684f;padding:12px 14px;border-radius:9px;margin-bottom:16px}.notice.warn{background:#fff7e8;border-color:#f4e3bc;color:#8b641a}.activity{border-left:2px solid #dce9e3;margin-left:7px;padding:0 0 17px 17px;position:relative}.activity:before{content:"";position:absolute;width:9px;height:9px;background:var(--green);border-radius:50%;left:-5.5px;top:4px}.activity:last-child{padding-bottom:0}.activity strong{display:block}.activity small{color:var(--muted)}.bar-row{display:grid;grid-template-columns:140px 1fr 30px;align-items:center;gap:10px;margin:13px 0;font-size:12px}.bar{height:8px;background:#edf1f4;border-radius:20px;overflow:hidden}.bar i{display:block;height:100%;background:var(--green);border-radius:20px}.settings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.hide{display:none!important}.mobile-menu{display:none}
-@media(max-width:1050px){.cards{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.sidebar{width:220px}.main{margin-left:220px}}
-@media(max-width:720px){.sidebar{transform:translateX(-100%);transition:.2s;width:250px}.sidebar.open{transform:translateX(0)}.main{margin-left:0}.topbar{padding:0 15px}.mobile-menu{display:inline-flex}.content{padding:20px 14px}.page-head{align-items:flex-start;flex-direction:column}.cards{gap:9px}.stat{padding:13px}.stat strong{font-size:23px}.form-grid,.settings-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.toolbar input{width:100%;min-width:0}.toolbar select{flex:1}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 Inter,Segoe UI,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:248px;background:var(--navy);color:#fff;padding:22px 15px;display:flex;flex-direction:column;z-index:5}.brand{display:flex;align-items:center;gap:11px;padding:3px 9px 25px}.brand-mark{width:39px;height:39px;border-radius:11px;background:var(--green);display:grid;place-items:center;font-weight:800;font-size:20px}.brand strong{display:block;font-size:15px;letter-spacing:.7px}.brand small{color:#a9bdce;font-size:10px;letter-spacing:1.2px}.nav-label{font-size:10px;color:#89a2b8;letter-spacing:1.4px;padding:12px 12px 7px}.nav button{width:100%;border:0;background:transparent;color:#d5e0e9;padding:11px 12px;text-align:left;border-radius:8px;margin:2px 0;display:flex;gap:12px;align-items:center}.nav button:hover,.nav button.active{background:#254663;color:#fff}.nav .ico{width:18px;text-align:center;font-size:16px}.side-bottom{margin-top:auto;border-top:1px solid #34516b;padding:15px 10px 0;color:#a9bdce;font-size:11px}.main{margin-left:248px;min-height:100vh}.topbar{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 30px;position:sticky;top:0;z-index:4}.crumb{color:var(--muted);font-size:12px}.top-actions{display:flex;align-items:center;gap:10px}.avatar{width:32px;height:32px;background:#e2f1eb;color:#18734f;border-radius:50%;display:grid;place-items:center;font-weight:700}.content{padding:28px 30px;max-width:1500px;margin:auto}.page-head{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:22px}.page-head h1{margin:0 0 5px;font-size:24px;color:var(--navy)}.page-head p{margin:0;color:var(--muted)}.btn{border:1px solid var(--line);background:#fff;color:var(--text);padding:9px 13px;border-radius:8px;font-weight:600;display:inline-flex;gap:7px;align-items:center}.btn:hover{background:#f7fafc}.btn.primary{background:var(--green);border-color:var(--green);color:#fff}.btn.dark{background:var(--navy);color:#fff;border-color:var(--navy)}.btn.danger{color:var(--red);border-color:#f5d2d2;background:#fdf2f2}.btn.danger:hover{background:#fae1e1}.btn.small{padding:6px 9px;font-size:12px}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:20px}.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:var(--shadow)}.stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.stat-icon{width:31px;height:31px;border-radius:9px;background:#edf6f2;color:var(--green);display:grid;place-items:center}.stat strong{display:block;font-size:27px;color:var(--navy);margin:10px 0 1px}.stat small{color:var(--muted)}.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:16px}.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:var(--shadow);min-width:0}.panel h3{margin:0 0 15px;font-size:15px;color:var(--navy)}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:760px}th{text-align:left;color:#7b8997;font-size:10px;text-transform:uppercase;letter-spacing:.7px;background:#f8fafb;padding:11px 12px;white-space:nowrap}td{padding:12px;border-top:1px solid var(--line);vertical-align:middle}tbody tr:hover{background:#fbfcfd}.muted{color:var(--muted)}.pill{display:inline-block;padding:4px 8px;border-radius:30px;background:#edf1f5;color:#536273;font-size:11px;font-weight:650;white-space:nowrap}.pill.green{background:#e4f4ec;color:#19734e}.pill.amber{background:#fff4dc;color:#98650d}.pill.red{background:#fdeaea;color:#a43e3e}.pill.blue{background:#e8f1fb;color:#315f91}.toolbar{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:14px}.field{display:flex;flex-direction:column;gap:5px;min-width:0}.field label{font-size:12px;font-weight:650;color:#526171}.field input,.field select,.field textarea,.toolbar input,.toolbar select{border:1px solid #dce4eb;border-radius:8px;padding:9px 10px;background:#fff;color:var(--text);outline:none;min-width:0}.field input:focus,.field select:focus,.field textarea:focus,.toolbar input:focus{border-color:#69ad91;box-shadow:0 0 0 3px #e4f3ec}.toolbar input{min-width:220px}.toolbar select{min-width:150px}.empty{padding:35px;text-align:center;color:var(--muted)}.empty b{display:block;color:var(--navy);margin-bottom:5px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.field.full{grid-column:1/-1}.field textarea{min-height:78px;resize:vertical}.modal-back{position:fixed;inset:0;background:rgba(13,29,44,.48);z-index:10;display:none;align-items:center;justify-content:center;padding:18px}.modal-back.show{display:flex}.modal{background:#fff;border-radius:14px;width:min(950px,100%);max-height:92vh;overflow:auto;box-shadow:0 20px 70px #071a2b55}.modal-head{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.modal-head h2{margin:0;color:var(--navy);font-size:18px}.modal-body{padding:20px 22px}.modal-foot{padding:14px 22px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:9px}.close{border:0;background:transparent;font-size:22px;color:var(--muted)}.notice{background:#eef6f3;border:1px solid #d4e9df;color:#28684f;padding:12px 14px;border-radius:9px;margin-bottom:16px}.notice.warn{background:#fff7e8;border-color:#f4e3bc;color:#8b641a}.activity{border-left:2px solid #dce9e3;margin-left:7px;padding:0 0 17px 17px;position:relative}.activity:before{content:"";position:absolute;width:9px;height:9px;background:var(--green);border-radius:50%;left:-5.5px;top:4px}.activity:last-child{padding-bottom:0}.activity strong{display:block}.activity small{color:var(--muted)}.bar-row{display:grid;grid-template-columns:140px 1fr 30px;align-items:center;gap:10px;margin:13px 0;font-size:12px}.bar{height:8px;background:#edf1f4;border-radius:20px;overflow:hidden}.bar i{display:block;height:100%;background:var(--green);border-radius:20px}.settings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.hide{display:none!important}.mobile-menu{display:none}
+
+/* Estilo para lista dinâmica de produtos na oportunidade */
+.product-item-row { background: #f8fafb; border: 1px solid var(--line); border-radius: 8px; padding: 12px; margin-bottom: 10px; position: relative; }
+.product-item-grid { display: grid; grid-template-columns: 2fr 3fr 1fr 1fr 1.2fr auto; gap: 8px; align-items: end; }
+@media(max-width: 900px) { .product-item-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -26,7 +29,7 @@
   </nav>
   <div class="nav-label">SISTEMA</div>
   <nav class="nav"><button data-page="reports"><span class="ico">▤</span>Relatórios</button><button data-page="settings"><span class="ico">⚙</span>Backup e configurações</button></nav>
-  <div class="side-bottom">Advance CRM · Versão 1.0<br>Dados armazenados neste navegador</div>
+  <div class="side-bottom">Advance CRM · Versão 1.1<br>Dados armazenados neste navegador</div>
 </aside>
 <main class="main">
   <header class="topbar"><div style="display:flex;align-items:center;gap:12px"><button class="btn mobile-menu" id="menuBtn">☰</button><span class="crumb">Advance Tintas / <b id="crumb">Dashboard</b></span></div><div class="top-actions"><span class="muted" style="font-size:12px">Modo offline</span><div class="avatar">A</div></div></header>
@@ -69,68 +72,233 @@ function dashboardPage(root){
  <div class="panel" style="margin-top:16px"><h3>Atividades recentes</h3>${recent.length?`<div class="table-wrap"><table><thead><tr><th>Data</th><th>Empresa</th><th>Atividade</th><th>Resultado</th></tr></thead><tbody>${recent.map(a=>`<tr><td>${fmtDate(a.date)}</td><td>${esc(a.company)}</td><td>${esc(a.type)}</td><td>${esc(a.summary||'—')}</td></tr>`).join('')}</tbody></table></div>`:'<div class="empty">Seu histórico aparecerá aqui conforme você registrar contatos.</div>'}</div>`;
 }
 function toolbar(placeholder,filters=''){return `<div class="toolbar"><input id="search" placeholder="${placeholder}">${filters}<button class="btn small" onclick="exportCSVCurrent()">⇩ Exportar CSV</button></div>`}
+
 function opportunitiesPage(root){
- root.innerHTML=head('Oportunidades','Registre licitações, contratos, projetos e potenciais negócios.',`<button class="btn primary" onclick="openOpportunity()">＋ Nova oportunidade</button>`)+toolbar('Buscar empresa, produto, processo ou CNPJ...',`<select id="statusFilter"><option value="">Todos os status</option>${statusOptions.map(s=>`<option>${s}</option>`).join('')}</select><select id="priorityFilter"><option value="">Todas prioridades</option><option>Alta</option><option>Média</option><option>Baixa</option></select>`)+`<div class="panel"><div class="table-wrap"><table><thead><tr><th>Empresa / oportunidade</th><th>Produto</th><th>Origem / processo</th><th>Potencial</th><th>Status</th><th>Próximo contato</th><th></th></tr></thead><tbody id="rows"></tbody></table></div></div>`;
- const draw=()=>{let q=$('#search').value.toLowerCase(),s=$('#statusFilter').value,p=$('#priorityFilter').value;let arr=db.opportunities.filter(o=>([o.company,o.product,o.process,o.cnpj,o.source].join(' ').toLowerCase().includes(q))&&(!s||o.status===s)&&(!p||o.priority===p));$('#rows').innerHTML=arr.length?arr.map(o=>`<tr><td><b>${esc(o.company||'Sem empresa')}</b><div class="muted">${esc(o.city||'')}${o.uf?'/'+esc(o.uf):''} · ${esc(o.segment||'')}</div></td><td>${esc(o.product||'—')}</td><td>${esc(o.source||'—')}<div class="muted">${esc(o.process||'')}</div></td><td><span class="pill ${o.priority==='Alta'?'green':''}">${esc(o.priority||'—')}</span></td><td><span class="pill ${pillClass(o.status)}">${esc(o.status)}</span></td><td>${fmtDate(o.nextDate)}</td><td><button class="btn small" onclick="editOpportunity('${o.id}')">Editar</button></td></tr>`).join(''):`<tr><td colspan="7"><div class="empty"><b>Nenhuma oportunidade encontrada</b>Experimente alterar os filtros ou cadastrar uma oportunidade.</div></td></tr>`};
+ root.innerHTML=head('Oportunidades','Registre licitações, contratos, projetos e potenciais negócios.',`<button class="btn primary" onclick="openOpportunity()">＋ Nova oportunidade</button>`)+toolbar('Buscar empresa, produto, processo ou CNPJ...',`<select id="statusFilter"><option value="">Todos os status</option>${statusOptions.map(s=>`<option>${s}</option>`).join('')}</select><select id="priorityFilter"><option value="">Todas prioridades</option><option>Alta</option><option>Média</option><option>Baixa</option></select>`)+`<div class="panel"><div class="table-wrap"><table><thead><tr><th>Empresa / oportunidade</th><th>Produtos / Itens</th><th>Origem / processo</th><th>Potencial</th><th>Status</th><th>Próximo contato</th><th>Ações</th></tr></thead><tbody id="rows"></tbody></table></div></div>`;
+ const draw=()=>{
+  let q=$('#search').value.toLowerCase(),s=$('#statusFilter').value,p=$('#priorityFilter').value;
+  let arr=db.opportunities.filter(o=>{
+   let prodText=(o.products||[]).map(i=>i.name+' '+i.desc).join(' ');
+   let matchText=[o.company,prodText,o.process,o.cnpj,o.source,o.address].join(' ').toLowerCase();
+   return matchText.includes(q)&&(!s||o.status===s)&&(!p||o.priority===p);
+  });
+  $('#rows').innerHTML=arr.length?arr.map(o=>{
+   let prodSummary=(o.products||[]).length > 0 ? `${o.products.length} item(ns) - ${o.products[0].name}${o.products.length>1?' (...)':''}` : 'Nenhum produto';
+   return `<tr>
+    <td><b>${esc(o.company||'Sem empresa')}</b><div class="muted">${esc(o.city||'')}${o.uf?'/'+esc(o.uf):''} · ${esc(o.segment||'')}</div></td>
+    <td>${esc(prodSummary)}</td>
+    <td>${esc(o.source||'—')}<div class="muted">${esc(o.process||'')}</div></td>
+    <td><span class="pill ${o.priority==='Alta'?'green':''}">${esc(o.priority||'—')}</span></td>
+    <td><span class="pill ${pillClass(o.status)}">${esc(o.status)}</span></td>
+    <td>${fmtDate(o.nextDate)}</td>
+    <td>
+     <div style="display:flex;gap:5px;">
+      <button class="btn small" onclick="editOpportunity('${o.id}')">Editar</button>
+      <button class="btn small danger" onclick="deleteOpportunity('${o.id}')">Excluir</button>
+     </div>
+    </td>
+   </tr>`;
+  }).join(''):`<tr><td colspan="7"><div class="empty"><b>Nenhuma oportunidade encontrada</b>Experimente alterar os filtros ou cadastrar uma oportunidade.</div></td></tr>`;
+ };
  $('#search').oninput=draw;$('#statusFilter').onchange=draw;$('#priorityFilter').onchange=draw;draw();
 }
+
 function companiesPage(root){
- root.innerHTML=head('Empresas','Sua base de contas e potenciais clientes.',`<button class="btn primary" onclick="openCompany()">＋ Nova empresa</button>`)+toolbar('Buscar por empresa, CNPJ, cidade ou segmento...')+`<div class="panel"><div class="table-wrap"><table><thead><tr><th>Empresa</th><th>CNPJ</th><th>Segmento</th><th>Localização</th><th>Oportunidades</th><th>Contato</th><th></th></tr></thead><tbody id="rows"></tbody></table></div></div>`;
- const draw=()=>{let q=$('#search').value.toLowerCase(),arr=db.companies.filter(c=>[c.name,c.cnpj,c.segment,c.city].join(' ').toLowerCase().includes(q));$('#rows').innerHTML=arr.length?arr.map(c=>`<tr><td><b>${esc(c.name)}</b><div class="muted">${esc(c.trade||'')}</div></td><td>${esc(c.cnpj||'—')}</td><td>${esc(c.segment||'—')}</td><td>${esc(c.city||'—')}${c.uf?'/'+esc(c.uf):''}</td><td>${db.opportunities.filter(o=>o.companyId===c.id).length}</td><td>${esc(c.phone||c.email||'—')}</td><td><button class="btn small" onclick="editCompany('${c.id}')">Editar</button></td></tr>`).join(''):'<tr><td colspan="7"><div class="empty">Nenhuma empresa cadastrada.</div></td></tr>'};$('#search').oninput=draw;draw();
+ root.innerHTML=head('Empresas','Sua base de contas e potenciais clientes.',`<button class="btn primary" onclick="openCompany()">＋ Nova empresa</button>`)+toolbar('Buscar por empresa, CNPJ, cidade ou segmento...')+`<div class="panel"><div class="table-wrap"><table><thead><tr><th>Empresa</th><th>CNPJ</th><th>Segmento</th><th>Localização</th><th>Oportunidades</th><th>Contato</th><th>Ações</th></tr></thead><tbody id="rows"></tbody></table></div></div>`;
+ const draw=()=>{let q=$('#search').value.toLowerCase(),arr=db.companies.filter(c=>[c.name,c.cnpj,c.segment,c.city].join(' ').toLowerCase().includes(q));$('#rows').innerHTML=arr.length?arr.map(c=>`<tr><td><b>${esc(c.name)}</b><div class="muted">${esc(c.trade||'')}</div></td><td>${esc(c.cnpj||'—')}</td><td>${esc(c.segment||'—')}</td><td>${esc(c.city||'—')}${c.uf?'/'+esc(c.uf):''}</td><td>${db.opportunities.filter(o=>o.companyId===c.id).length}</td><td>${esc(c.phone||c.email||'—')}</td><td><div style="display:flex;gap:5px;"><button class="btn small" onclick="editCompany('${c.id}')">Editar</button><button class="btn small danger" onclick="deleteCompany('${c.id}')">Excluir</button></div></td></tr>`).join(''):'<tr><td colspan="7"><div class="empty">Nenhuma empresa cadastrada.</div></td></tr>'};$('#search').oninput=draw;draw();
 }
+
 function contactsPage(root){
- root.innerHTML=head('Contatos','Compradores, suprimentos, engenharia e responsáveis por homologação.',`<button class="btn primary" onclick="openContact()">＋ Novo contato</button>`)+toolbar('Buscar nome, empresa, cargo, e-mail...')+`<div class="panel"><div class="table-wrap"><table><thead><tr><th>Nome</th><th>Empresa</th><th>Cargo / área</th><th>Telefone</th><th>E-mail</th><th>Último contato</th><th></th></tr></thead><tbody id="rows"></tbody></table></div></div>`;
- const draw=()=>{let q=$('#search').value.toLowerCase(),arr=db.contacts.filter(c=>[c.name,c.company,c.role,c.email,c.phone].join(' ').toLowerCase().includes(q));$('#rows').innerHTML=arr.length?arr.map(c=>`<tr><td><b>${esc(c.name)}</b></td><td>${esc(c.company||'—')}</td><td>${esc(c.role||'—')}</td><td>${esc(c.phone||'—')}</td><td>${esc(c.email||'—')}</td><td>${fmtDate(c.lastDate)}</td><td><button class="btn small" onclick="editContact('${c.id}')">Editar</button></td></tr>`).join(''):'<tr><td colspan="7"><div class="empty">Nenhum contato cadastrado.</div></td></tr>'};$('#search').oninput=draw;draw();
+ root.innerHTML=head('Contatos','Compradores, suprimentos, engenharia e responsáveis por homologação.',`<button class="btn primary" onclick="openContact()">＋ Novo contato</button>`)+toolbar('Buscar nome, empresa, cargo, e-mail...')+`<div class="panel"><div class="table-wrap"><table><thead><tr><th>Nome</th><th>Empresa</th><th>Cargo / área</th><th>Telefone</th><th>E-mail</th><th>Último contato</th><th>Ações</th></tr></thead><tbody id="rows"></tbody></table></div></div>`;
+ const draw=()=>{let q=$('#search').value.toLowerCase(),arr=db.contacts.filter(c=>[c.name,c.company,c.role,c.email,c.phone].join(' ').toLowerCase().includes(q));$('#rows').innerHTML=arr.length?arr.map(c=>`<tr><td><b>${esc(c.name)}</b></td><td>${esc(c.company||'—')}</td><td>${esc(c.role||'—')}</td><td>${esc(c.phone||'—')}</td><td>${esc(c.email||'—')}</td><td>${fmtDate(c.lastDate)}</td><td><div style="display:flex;gap:5px;"><button class="btn small" onclick="editContact('${c.id}')">Editar</button><button class="btn small danger" onclick="deleteContact('${c.id}')">Excluir</button></div></td></tr>`).join(''):'<tr><td colspan="7"><div class="empty">Nenhum contato cadastrado.</div></td></tr>'};$('#search').oninput=draw;draw();
 }
+
 function activitiesPage(root){
- root.innerHTML=head('Histórico de atividades','Registre ligações, e-mails, reuniões e retornos realizados.',`<button class="btn primary" onclick="openActivity()">＋ Registrar atividade</button>`)+toolbar('Buscar empresa, contato ou resumo...')+`<div class="panel"><div class="table-wrap"><table><thead><tr><th>Data</th><th>Empresa</th><th>Contato</th><th>Tipo</th><th>Resumo / resultado</th><th>Próximo passo</th></tr></thead><tbody id="rows"></tbody></table></div></div>`;
- const draw=()=>{let q=$('#search').value.toLowerCase(),arr=[...db.activities].sort((a,b)=>(b.date||'').localeCompare(a.date||'')).filter(a=>[a.company,a.contact,a.type,a.summary].join(' ').toLowerCase().includes(q));$('#rows').innerHTML=arr.length?arr.map(a=>`<tr><td>${fmtDate(a.date)}</td><td>${esc(a.company)}</td><td>${esc(a.contact||'—')}</td><td>${esc(a.type)}</td><td>${esc(a.summary||'—')}</td><td>${esc(a.next||'—')}</td></tr>`).join(''):'<tr><td colspan="6"><div class="empty">Nenhuma atividade registrada.</div></td></tr>'};$('#search').oninput=draw;draw();
+ root.innerHTML=head('Histórico de atividades','Registre ligações, e-mails, reuniões e retornos realizados.',`<button class="btn primary" onclick="openActivity()">＋ Registrar atividade</button>`)+toolbar('Buscar empresa, contato ou resumo...')+`<div class="panel"><div class="table-wrap"><table><thead><tr><th>Data</th><th>Empresa</th><th>Contato</th><th>Tipo</th><th>Resumo / resultado</th><th>Próximo passo</th><th>Ações</th></tr></thead><tbody id="rows"></tbody></table></div></div>`;
+ const draw=()=>{let q=$('#search').value.toLowerCase(),arr=[...db.activities].sort((a,b)=>(b.date||'').localeCompare(a.date||'')).filter(a=>[a.company,a.contact,a.type,a.summary].join(' ').toLowerCase().includes(q));$('#rows').innerHTML=arr.length?arr.map(a=>`<tr><td>${fmtDate(a.date)}</td><td>${esc(a.company)}</td><td>${esc(a.contact||'—')}</td><td>${esc(a.type)}</td><td>${esc(a.summary||'—')}</td><td>${esc(a.next||'—')}</td><td><button class="btn small danger" onclick="deleteActivity('${a.id}')">Excluir</button></td></tr>`).join(''):'<tr><td colspan="7"><div class="empty">Nenhuma atividade registrada.</div></td></tr>'};$('#search').oninput=draw;draw();
 }
+
 function vendorPage(root){
  let arr=db.opportunities.filter(o=>o.vendor&&o.vendor!=='Não iniciado'&&o.vendor!=='Não se aplica');
- root.innerHTML=head('Vendor List','Acompanhe cadastros, documentação e homologações de fornecedores.',`<button class="btn primary" onclick="setPage('opportunities')">＋ Gerenciar oportunidades</button>`)+`<div class="cards">${stat('Em mapeamento',arr.filter(o=>o.vendor==='Mapear requisitos').length,'⌕','Requisitos a identificar')}${stat('Documentação enviada',arr.filter(o=>o.vendor==='Documentação enviada').length,'⇧','Aguardando análise')}${stat('Em análise',arr.filter(o=>o.vendor==='Em análise').length,'◷','Processos pendentes')}${stat('Aprovados',arr.filter(o=>o.vendor==='Aprovado').length,'✓','Fornecedores homologados')}</div><div class="panel"><div class="table-wrap"><table><thead><tr><th>Empresa</th><th>Produto / família</th><th>Status Vendor List</th><th>Status comercial</th><th>Próxima ação</th></tr></thead><tbody>${arr.length?arr.map(o=>`<tr><td><b>${esc(o.company)}</b></td><td>${esc(o.product||'—')}</td><td><span class="pill ${pillClass(o.vendor)}">${esc(o.vendor)}</span></td><td>${esc(o.status)}</td><td>${esc(o.nextAction||'—')}</td></tr>`).join(''):'<tr><td colspan="5"><div class="empty">Nenhum processo de Vendor List iniciado.<br>Atualize o campo Vendor List nas oportunidades.</div></td></tr>'}</tbody></table></div></div>`;
+ root.innerHTML=head('Vendor List','Acompanhe cadastros, documentação e homologações de fornecedores.',`<button class="btn primary" onclick="setPage('opportunities')">＋ Gerenciar oportunidades</button>`)+`<div class="cards">${stat('Em mapeamento',arr.filter(o=>o.vendor==='Mapear requisitos').length,'⌕','Requisitos a identificar')}${stat('Documentação enviada',arr.filter(o=>o.vendor==='Documentação enviada').length,'⇧','Aguardando análise')}${stat('Em análise',arr.filter(o=>o.vendor==='Em análise').length,'◷','Processos pendentes')}${stat('Aprovados',arr.filter(o=>o.vendor==='Aprovado').length,'✓','Fornecedores homologados')}</div><div class="panel"><div class="table-wrap"><table><thead><tr><th>Empresa</th><th>Quantidade de Itens</th><th>Status Vendor List</th><th>Status comercial</th><th>Próxima ação</th></tr></thead><tbody>${arr.length?arr.map(o=>`<tr><td><b>${esc(o.company)}</b></td><td>${(o.products||[]).length} item(ns)</td><td><span class="pill ${pillClass(o.vendor)}">${esc(o.vendor)}</span></td><td>${esc(o.status)}</td><td>${esc(o.nextAction||'—')}</td></tr>`).join(''):'<tr><td colspan="5"><div class="empty">Nenhum processo de Vendor List iniciado.<br>Atualize o campo Vendor List nas oportunidades.</div></td></tr>'}</tbody></table></div></div>`;
 }
+
 function reportsPage(root){
  let byStatus=statusOptions.map(s=>({s,n:db.opportunities.filter(o=>o.status===s).length})).filter(x=>x.n);
  let bySource=[...new Set(db.opportunities.map(o=>o.source).filter(Boolean))].map(s=>({s,n:db.opportunities.filter(o=>o.source===s).length}));
  root.innerHTML=head('Relatórios','Visão consolidada da atividade de prospecção.')+`<div class="cards">${stat('Total de oportunidades',db.opportunities.length,'◎','Registros cadastrados')}${stat('Potencial alto',db.opportunities.filter(o=>o.priority==='Alta').length,'↗','Prioridade alta')}${stat('Cotações solicitadas',db.opportunities.filter(o=>o.status==='Cotação solicitada').length,'＄','Demanda comercial')}${stat('Clientes ativos',db.opportunities.filter(o=>o.status==='Cliente ativo').length,'★','Relacionamentos convertidos')}</div><div class="grid2"><div class="panel"><h3>Oportunidades por status</h3>${byStatus.length?byStatus.map(x=>`<div class="bar-row"><span>${esc(x.s)}</span><div class="bar"><i style="width:${100*x.n/Math.max(1,db.opportunities.length)}%"></i></div><b>${x.n}</b></div>`).join(''):'<div class="empty">Sem dados para exibir.</div>'}</div><div class="panel"><h3>Origem das oportunidades</h3>${bySource.length?bySource.map(x=>`<div class="bar-row"><span>${esc(x.s)}</span><div class="bar"><i style="width:${100*x.n/Math.max(1,db.opportunities.length)}%"></i></div><b>${x.n}</b></div>`).join(''):'<div class="empty">Sem dados para exibir.</div>'}</div></div>`;
 }
+
 function settingsPage(root){
  root.innerHTML=head('Backup e configurações','Proteja seus dados e mantenha uma cópia fora do navegador.')+`<div class="notice warn"><b>Importante:</b> os registros ficam armazenados neste navegador e neste perfil de usuário. Limpar os dados do navegador pode apagar sua base. Faça backups regulares.</div><div class="settings-grid"><div class="panel"><h3>Exportar backup completo</h3><p class="muted">Gera um arquivo JSON com empresas, oportunidades, contatos e atividades. Guarde em local seguro.</p><button class="btn primary" onclick="backup()">⇩ Baixar backup JSON</button></div><div class="panel"><h3>Restaurar backup</h3><p class="muted">Importe um backup JSON gerado por este sistema. A restauração substitui os dados atuais.</p><button class="btn" onclick="$('#importFile').click()">⇧ Selecionar arquivo de backup</button></div><div class="panel"><h3>Exportar oportunidades</h3><p class="muted">Baixe sua lista de oportunidades em formato CSV para abrir no Excel.</p><button class="btn" onclick="exportCSV(db.opportunities,'advance_oportunidades.csv')">⇩ Exportar CSV</button></div><div class="panel"><h3>Dados locais</h3><p class="muted">Registros neste navegador:</p><b>${db.companies.length}</b> empresas · <b>${db.opportunities.length}</b> oportunidades · <b>${db.contacts.length}</b> contatos · <b>${db.activities.length}</b> atividades</div></div>`;
 }
+
 function openModal(title,body,save){$('#modalTitle').textContent=title;$('#modalBody').innerHTML=body;modalSaveFn=save;$('#modalBack').classList.add('show')}
 function closeModal(){$('#modalBack').classList.remove('show');modalSaveFn=null}
 $('#modalClose').onclick=$('#modalCancel').onclick=closeModal;$('#modalSave').onclick=()=>{if(modalSaveFn)modalSaveFn()};
 function val(id){return document.getElementById(id)?.value?.trim()||''}
 function field(label,id,value='',type='text',opts=null,full=false){let input=opts?`<select id="${id}">${opts.map(x=>`<option ${x===value?'selected':''}>${esc(x)}</option>`).join('')}</select>`:type==='textarea'?`<textarea id="${id}">${esc(value)}</textarea>`:`<input id="${id}" type="${type}" value="${esc(value)}">`;return `<div class="field ${full?'full':''}"><label>${label}</label>${input}</div>`}
+
+/* Funções de Exclusão */
+function deleteOpportunity(id){if(confirm('Tem certeza que deseja excluir esta oportunidade?')){db.opportunities=db.opportunities.filter(o=>o.id!==id);saveDB();render();}}
+function deleteCompany(id){if(confirm('Tem certeza que deseja excluir esta empresa?')){db.companies=db.companies.filter(c=>c.id!==id);saveDB();render();}}
+function deleteContact(id){if(confirm('Tem certeza que deseja excluir este contato?')){db.contacts=db.contacts.filter(c=>c.id!==id);saveDB();render();}}
+function deleteActivity(id){if(confirm('Tem certeza que deseja excluir esta atividade?')){db.activities=db.activities.filter(a=>a.id!==id);saveDB();render();}}
+
+/* Gestão da Lista de Produtos Dinâmica na Oportunidade */
+let currentProductsList = [];
+
+function renderProductItems(){
+ let container = $('#productItemsContainer');
+ if(!container) return;
+ container.innerHTML = currentProductsList.map((item, index)=>`
+  <div class="product-item-row" data-index="${index}">
+   <div class="product-item-grid">
+    <div class="field"><label>Produto / item</label><input type="text" class="pi-name" value="${esc(item.name)}" oninput="updateProductItem(${index}, 'name', this.value)"></div>
+    <div class="field"><label>Descrição / especificação</label><input type="text" class="pi-desc" value="${esc(item.desc)}" oninput="updateProductItem(${index}, 'desc', this.value)"></div>
+    <div class="field"><label>Quantidade</label><input type="number" class="pi-qty" value="${item.qty||1}" oninput="updateProductItem(${index}, 'qty', this.value)"></div>
+    <div class="field"><label>Unidade</label><input type="text" class="pi-unit" value="${esc(item.unit||'UN')}" oninput="updateProductItem(${index}, 'unit', this.value)"></div>
+    <div class="field"><label>Valor unitário (R$)</label><input type="number" step="0.01" class="pi-val" value="${item.unitValue||0}" oninput="updateProductItem(${index}, 'unitValue', this.value)"></div>
+    <div style="padding-bottom:2px;"><button type="button" class="btn small danger" onclick="removeProductItem(${index})">✕</button></div>
+   </div>
+   <div style="margin-top:6px;font-size:12px;color:var(--muted);text-align:right;">
+    Valor total do item: <b class="pi-total">${money((Number(item.qty)||0)*(Number(item.unitValue)||0))}</b>
+   </div>
+  </div>
+ `).join('') || '<div class="empty" style="padding:15px;font-size:13px;">Nenhum produto adicionado. Clique no botão abaixo para incluir.</div>';
+}
+
+function addProductItem(){
+ currentProductsList.push({name:'', desc:'', qty:1, unit:'UN', unitValue:0});
+ renderProductItems();
+}
+
+function removeProductItem(index){
+ currentProductsList.splice(index, 1);
+ renderProductItems();
+}
+
+function updateProductItem(index, fieldName, val){
+ if(currentProductsList[index]){
+  currentProductsList[index][fieldName] = val;
+  if(fieldName === 'qty' || fieldName === 'unitValue'){
+   let row = document.querySelector(`.product-item-row[data-index="${index}"]`);
+   if(row){
+    let q = Number(currentProductsList[index].qty)||0;
+    let v = Number(currentProductsList[index].unitValue)||0;
+    row.querySelector('.pi-total').textContent = money(q * v);
+   }
+  }
+ }
+}
+
 function openOpportunity(id=null){
  let o=db.opportunities.find(x=>x.id===id)||{};
+ currentProductsList = o.products ? JSON.parse(JSON.stringify(o.products)) : [];
+ if(currentProductsList.length === 0 && o.product){
+  currentProductsList.push({name: o.product, desc: '', qty: o.quantity||1, unit: 'UN', unitValue: o.value||0});
+ }
+
  openModal(id?'Editar oportunidade':'Nova oportunidade',`<div class="form-grid">
- ${field('Empresa / razão social','o_company',o.company)}${field('CNPJ','o_cnpj',o.cnpj)}
- ${field('Segmento','o_segment',o.segment,'text',['Distribuidor','Indústria','Construtora','Integrador / aplicador','Revenda','Órgão público','Manutenção industrial','Outro'])}${field('Cidade','o_city',o.city)}
- ${field('UF','o_uf',o.uf)}${field('Produto / item de interesse','o_product',o.product)}
- ${field('Origem da oportunidade','o_source',o.source,'text',['PNCP','Compras.gov.br','Portal estadual/municipal','Portal privado','Indicação','LinkedIn','Pesquisa Google','Outro'])}${field('Nº do processo / licitação','o_process',o.process)}
- ${field('Órgão comprador','o_buyer',o.buyer)}${field('Quantidade','o_quantity',o.quantity,'number')}
- ${field('Valor homologado (R$)','o_value',o.value,'number')}${field('Data de homologação','o_date',o.date,'date')}
- ${field('Potencial comercial','o_potential',o.potential||'A validar','text',['Alto','Médio','Baixo','A validar'])}${field('Prioridade','o_priority',o.priority||'Normal','text',['Urgente','Alta','Normal','Baixa'])}
- ${field('Status comercial','o_status',o.status||'Novo lead','text',statusOptions)}${field('Status Vendor List','o_vendor',o.vendor||'Não iniciado','text',vendorOptions)}
- ${field('Contato principal','o_contact',o.contact)}${field('Telefone','o_phone',o.phone,'tel')}
- ${field('E-mail','o_email',o.email,'email')}${field('Site / LinkedIn','o_site',o.site)}
- ${field('Link do edital / fonte','o_link',o.link,'url',null,true)}${field('Próxima ação','o_next',o.nextAction,'text',null,true)}
- ${field('Data do próximo contato','o_nextdate',o.nextDate,'date')}${field('Observações','o_notes',o.notes,'textarea',null,true)}
- </div>`,()=>{let company=val('o_company');if(!company){alert('Informe o nome da empresa.');return}
- let data={id:o.id||uid('OP'),company,cnpj:val('o_cnpj'),segment:val('o_segment'),city:val('o_city'),uf:val('o_uf').toUpperCase(),product:val('o_product'),source:val('o_source'),process:val('o_process'),buyer:val('o_buyer'),quantity:val('o_quantity'),value:val('o_value'),date:val('o_date'),potential:val('o_potential'),priority:val('o_priority'),status:val('o_status'),vendor:val('o_vendor'),contact:val('o_contact'),phone:val('o_phone'),email:val('o_email'),site:val('o_site'),link:val('o_link'),nextAction:val('o_next'),nextDate:val('o_nextdate'),notes:val('o_notes'),created:o.created||today(),updated:today()};
- if(o.id)db.opportunities=db.opportunities.map(x=>x.id===id?data:x);else db.opportunities.unshift(data);
- if(!db.companies.some(c=>c.name.toLowerCase()===company.toLowerCase()))db.companies.push({id:uid('EM'),name:company,cnpj:data.cnpj,segment:data.segment,city:data.city,uf:data.uf,phone:data.phone,email:data.email,site:data.site});
- saveDB();closeModal();render();
+  ${field('Empresa / razão social','o_company',o.company)}
+  ${field('CNPJ','o_cnpj',o.cnpj)}
+  ${field('Endereço completo','o_address',o.address,'text',null,true)}
+  ${field('Segmento','o_segment',o.segment,'text',['Distribuidor','Indústria','Construtora','Integrador / aplicador','Revenda','Órgão público','Manutenção industrial','Outro'])}
+  ${field('Cidade','o_city',o.city)}
+  ${field('UF','o_uf',o.uf)}
+  ${field('Origem da oportunidade','o_source',o.source,'text',['PNCP','Compras.gov.br','Portal estadual/municipal','Portal privado','Indicação','LinkedIn','Pesquisa Google','Outro'])}
+  ${field('Nº do processo / licitação','o_process',o.process)}
+  ${field('Órgão comprador','o_buyer',o.buyer)}
+  ${field('Vigência / prazo do contrato','o_contract_term',o.contractTerm,'text')}
+  ${field('Responsável interno','o_owner',o.owner,'text')}
+  ${field('Potencial comercial','o_potential',o.potential||'A validar','text',['Alto','Médio','Baixo','A validar'])}
+  ${field('Prioridade','o_priority',o.priority||'Normal','text',['Urgente','Alta','Normal','Baixa'])}
+  ${field('Status comercial','o_status',o.status||'Novo lead','text',statusOptions)}
+  ${field('Status Vendor List','o_vendor',o.vendor||'Não iniciado','text',vendorOptions)}
+  ${field('Contato principal','o_contact',o.contact)}
+  ${field('Telefone','o_phone',o.phone,'tel')}
+  ${field('E-mail','o_email',o.email,'email')}
+  ${field('Site / LinkedIn','o_site',o.site)}
+  ${field('Link do edital / fonte','o_link',o.link,'url',null,true)}
+  
+  <div class="field full">
+   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+    <label style="font-size:13px;font-weight:700;color:var(--navy);">Produtos / Itens da Oportunidade</label>
+    <button type="button" class="btn small primary" onclick="addProductItem()">＋ Adicionar Item</button>
+   </div>
+   <div id="productItemsContainer" style="max-height:300px;overflow-y:auto;border:1px solid var(--line);padding:10px;border-radius:8px;background:#fff;"></div>
+  </div>
+
+  ${field('Próxima ação','o_next',o.nextAction,'text',null,true)}
+  ${field('Data do próximo contato','o_nextdate',o.nextDate,'date')}
+  ${field('Observações','o_notes',o.notes,'textarea',null,true)}
+ </div>`,()=>{
+  let company=val('o_company');
+  if(!company){alert('Informe o nome da empresa.');return}
+
+  // Calcular valor total geral somando todos os itens
+  let totalValue = currentProductsList.reduce((acc, item)=> acc + ((Number(item.qty)||0)*(Number(item.unitValue)||0)), 0);
+
+  let data={
+   id:o.id||uid('OP'),
+   company,
+   cnpj:val('o_cnpj'),
+   address:val('o_address'),
+   segment:val('o_segment'),
+   city:val('o_city'),
+   uf:val('o_uf').toUpperCase(),
+   products: currentProductsList,
+   value: totalValue, // valor consolidado para relatórios
+   source:val('o_source'),
+   process:val('o_process'),
+   buyer:val('o_buyer'),
+   contractTerm:val('o_contract_term'),
+   owner:val('o_owner'),
+   potential:val('o_potential'),
+   priority:val('o_priority'),
+   status:val('o_status'),
+   vendor:val('o_vendor'),
+   contact:val('o_contact'),
+   phone:val('o_phone'),
+   email:val('o_email'),
+   site:val('o_site'),
+   link:val('o_link'),
+   nextAction:val('o_next'),
+   nextDate:val('o_nextdate'),
+   notes:val('o_notes'),
+   created:o.created||today(),
+   updated:today()
+  };
+
+  if(o.id) db.opportunities=db.opportunities.map(x=>x.id===id?data:x);
+  else db.opportunities.unshift(data);
+
+  if(!db.companies.some(c=>c.name.toLowerCase()===company.toLowerCase())){
+   db.companies.push({id:uid('EM'),name:company,cnpj:data.cnpj,address:data.address,segment:data.segment,city:data.city,uf:data.uf,phone:data.phone,email:data.email,site:data.site});
+  }
+  saveDB(); closeModal(); render();
  });
+ renderProductItems();
 }
+
 function editOpportunity(id){openOpportunity(id)}
-function openCompany(id=null){let c=db.companies.find(x=>x.id===id)||{};openModal(id?'Editar empresa':'Nova empresa',`<div class="form-grid">${field('Razão social / empresa','c_name',c.name)}${field('Nome fantasia','c_trade',c.trade)}${field('CNPJ','c_cnpj',c.cnpj)}${field('Segmento','c_segment',c.segment)}${field('Cidade','c_city',c.city)}${field('UF','c_uf',c.uf)}${field('Telefone','c_phone',c.phone,'tel')}${field('E-mail','c_email',c.email,'email')}${field('Site','c_site',c.site,'url')}${field('Observações','c_notes',c.notes,'textarea',null,true)}</div>`,()=>{let name=val('c_name');if(!name){alert('Informe o nome da empresa.');return}let d={id:c.id||uid('EM'),name,trade:val('c_trade'),cnpj:val('c_cnpj'),segment:val('c_segment'),city:val('c_city'),uf:val('c_uf'),phone:val('c_phone'),email:val('c_email'),site:val('c_site'),notes:val('c_notes')};if(c.id)db.companies=db.companies.map(x=>x.id===id?d:x);else db.companies.unshift(d);saveDB();closeModal();render()})}
+
+function openCompany(id=null){
+ let c=db.companies.find(x=>x.id===id)||{};
+ openModal(id?'Editar empresa':'Nova empresa',`<div class="form-grid">${field('Razão social / empresa','c_name',c.name)}${field('Nome fantasia','c_trade',c.trade)}${field('CNPJ','c_cnpj',c.cnpj)}${field('Endereço','c_address',c.address,'text',null,true)}${field('Segmento','c_segment',c.segment)}${field('Cidade','c_city',c.city)}${field('UF','c_uf',c.uf)}${field('Telefone','c_phone',c.phone,'tel')}${field('E-mail','c_email',c.email,'email')}${field('Site','c_site',c.site,'url')}${field('Observações','c_notes',c.notes,'textarea',null,true)}</div>`,()=>{let name=val('c_name');if(!name){alert('Informe o nome da empresa.');return}let d={id:c.id||uid('EM'),name,trade:val('c_trade'),cnpj:val('c_cnpj'),address:val('c_address'),segment:val('c_segment'),city:val('c_city'),uf:val('c_uf'),phone:val('c_phone'),email:val('c_email'),site:val('c_site'),notes:val('c_notes')};if(c.id)db.companies=db.companies.map(x=>x.id===id?d:x);else db.companies.unshift(d);saveDB();closeModal();render()})
+}
 function editCompany(id){openCompany(id)}
-function openContact(id=null){let c=db.contacts.find(x=>x.id===id)||{};openModal(id?'Editar contato':'Novo contato',`<div class="form-grid">${field('Nome do contato','ct_name',c.name)}${field('Empresa','ct_company',c.company)}${field('Cargo / área','ct_role',c.role)}${field('Papel na compra','ct_rolebuy',c.rolebuy||'Compras','text',['Compras','Suprimentos','Engenharia','Manutenção','Obras','Comercial','Diretoria','Cadastro de fornecedores','Outro'])}${field('Telefone','ct_phone',c.phone,'tel')}${field('E-mail','ct_email',c.email,'email')}${field('LinkedIn','ct_link',c.linkedin,'url')}${field('Canal preferido','ct_channel',c.channel||'E-mail','text',['E-mail','Telefone','WhatsApp','LinkedIn','Portal','Presencial'])}${field('Última validação','ct_date',c.lastDate||today(),'date')}${field('Observações','ct_notes',c.notes,'textarea',null,true)}</div>`,()=>{let name=val('ct_name');if(!name){alert('Informe o nome do contato.');return}let d={id:c.id||uid('CT'),name,company:val('ct_company'),role:val('ct_role'),rolebuy:val('ct_rolebuy'),phone:val('ct_phone'),email:val('ct_email'),linkedin:val('ct_link'),channel:val('ct_channel'),lastDate:val('ct_date'),notes:val('ct_notes')};if(c.id)db.contacts=db.contacts.map(x=>x.id===id?d:x);else db.contacts.unshift(d);saveDB();closeModal();render()})}
+
+function openContact(id=null){
+ let c=db.contacts.find(x=>x.id===id)||{};
+ openModal(id?'Editar contato':'Novo contato',`<div class="form-grid">${field('Nome do contato','ct_name',c.name)}${field('Empresa','ct_company',c.company)}${field('Cargo / área','ct_role',c.role)}${field('Papel na compra','ct_rolebuy',c.rolebuy||'Compras','text',['Compras','Suprimentos','Engenharia','Manutenção','Obras','Comercial','Diretoria','Cadastro de fornecedores','Outro'])}${field('Telefone','ct_phone',c.phone,'tel')}${field('E-mail','ct_email',c.email,'email')}${field('LinkedIn','ct_link',c.linkedin,'url')}${field('Canal preferido','ct_channel',c.channel||'E-mail','text',['E-mail','Telefone','WhatsApp','LinkedIn','Portal','Presencial'])}${field('Última validação','ct_date',c.lastDate||today(),'date')}${field('Observações','ct_notes',c.notes,'textarea',null,true)}</div>`,()=>{let name=val('ct_name');if(!name){alert('Informe o nome do contato.');return}let d={id:c.id||uid('CT'),name,company:val('ct_company'),role:val('ct_role'),rolebuy:val('ct_rolebuy'),phone:val('ct_phone'),email:val('ct_email'),linkedin:val('ct_link'),channel:val('ct_channel'),lastDate:val('ct_date'),notes:val('ct_notes')};if(c.id)db.contacts=db.contacts.map(x=>x.id===id?d:x);else db.contacts.unshift(d);saveDB();closeModal();render()})
+}
 function editContact(id){openContact(id)}
-function openActivity(){openModal('Registrar atividade',`<div class="form-grid">${field('Data','a_date',today(),'date')}${field('Empresa','a_company','')}${field('Contato','a_contact','')}${field('Tipo de atividade','a_type','Ligação','text',['Pesquisa','Ligação','E-mail','WhatsApp','LinkedIn','Reunião','Envio de apresentação','Cotação','Follow-up','Homologação','Outro'])}${field('Resumo / resultado','a_summary','','textarea',null,true)}${field('Objeção / necessidade identificada','a_objection','','textarea',null,true)}${field('Próximo passo','a_next','','textarea',null,true)}</div>`,()=>{let company=val('a_company');if(!company){alert('Informe a empresa.');return}db.activities.unshift({id:uid('AT'),date:val('a_date'),company,contact:val('a_contact'),type:val('a_type'),summary:val('a_summary'),objection:val('a_objection'),next:val('a_next')});let opp=db.opportunities.find(o=>o.company.toLowerCase()===company.toLowerCase());if(opp){opp.lastContact=val('a_date');if(val('a_next'))opp.nextAction=val('a_next')}saveDB();closeModal();render()})}
+
+function openActivity(){
+ openModal('Registrar atividade',`<div class="form-grid">${field('Data','a_date',today(),'date')}${field('Empresa','a_company','')}${field('Contato','a_contact','')}${field('Tipo de atividade','a_type','Ligação','text',['Pesquisa','Ligação','E-mail','WhatsApp','LinkedIn','Reunião','Envio de apresentação','Cotação','Follow-up','Homologação','Outro'])}${field('Resumo / resultado','a_summary','','textarea',null,true)}${field('Objeção / necessidade identificada','a_objection','','textarea',null,true)}${field('Próximo passo','a_next','','textarea',null,true)}</div>`,()=>{let company=val('a_company');if(!company){alert('Informe a empresa.');return}db.activities.unshift({id:uid('AT'),date:val('a_date'),company,contact:val('a_contact'),type:val('a_type'),summary:val('a_summary'),objection:val('a_objection'),next:val('a_next')});let opp=db.opportunities.find(o=>o.company.toLowerCase()===company.toLowerCase());if(opp){opp.lastContact=val('a_date');if(val('a_next'))opp.nextAction=val('a_next')}saveDB();closeModal();render()})
+}
+
 function backup(){let blob=new Blob([JSON.stringify({...db,backupDate:new Date().toISOString(),app:'Advance CRM'},null,2)],{type:'application/json'});downloadBlob(blob,'advance_crm_backup_'+today()+'.json')}
 function downloadBlob(blob,name){let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
 $('#importFile').onchange=e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let data=JSON.parse(r.result);if(!data||!Array.isArray(data.opportunities))throw Error();if(confirm('A restauração substituirá todos os dados atuais. Deseja continuar?')){db={...emptyDB(),...data};saveDB();render();alert('Backup restaurado com sucesso.')}}catch(err){alert('Arquivo inválido ou incompatível.')}e.target.value=''};r.readAsText(f)};
@@ -138,4 +306,5 @@ function exportCSV(rows,name){if(!rows.length){alert('Não há registros para ex
 function exportCSVCurrent(){if(page==='opportunities')exportCSV(db.opportunities,'advance_oportunidades.csv');else if(page==='companies')exportCSV(db.companies,'advance_empresas.csv');else if(page==='contacts')exportCSV(db.contacts,'advance_contatos.csv');else if(page==='activities')exportCSV(db.activities,'advance_atividades.csv')}
 render();
 </script>
-</body></html>
+</body>
+</html>
