@@ -10,7 +10,8 @@
 
 .product-item-row { background: #f8fafb; border: 1px solid var(--line); border-radius: 8px; padding: 12px; margin-bottom: 10px; position: relative; }
 .product-item-grid { display: grid; grid-template-columns: 2fr 3fr 1fr 1fr 1fr 1fr 1.2fr auto; gap: 8px; align-items: end; }
-@media(max-width: 1100px) { .product-item-grid { grid-template-columns: 1fr; } }
+.contact-item-grid { display: grid; grid-template-columns: 2fr 2fr 2fr 1.5fr auto; gap: 8px; align-items: end; }
+@media(max-width: 1100px) { .product-item-grid, .contact-item-grid { grid-template-columns: 1fr; } }
 
 /* Kanban Styles */
 .kanban-board { display: grid; grid-template-columns: repeat(7, minmax(240px, 1fr)); gap: 14px; overflow-x: auto; padding-bottom: 15px; align-items: start; }
@@ -25,7 +26,7 @@
 <body>
 <div class="app">
 <aside class="sidebar" id="sidebar">
-  <div class="brand"><div class="brand-mark">A</div><div><strong>ADVANCE TINTAS</strong><small>Criado por: Everton Nunes</small></div></div>
+  <div class="brand"><div class="brand-mark">A</div><div><strong>ADVANCE TINTAS</strong><small>Desenvolvido por: Everton Nunes</small></div></div>
   <div class="nav-label">GESTÃO COMERCIAL</div>
   <nav class="nav" id="nav">
     <button class="active" data-page="dashboard"><span class="ico">▦</span>Dashboard</button>
@@ -38,7 +39,7 @@
   </nav>
   <div class="nav-label">SISTEMA</div>
   <nav class="nav"><button data-page="reports"><span class="ico">▤</span>Relatórios</button><button data-page="settings"><span class="ico">⚙</span>Backup e configurações</button></nav>
-  <div class="side-bottom">Advance CRM · Versão 2.1<br>Dados armazenados neste navegador</div>
+  <div class="side-bottom">Advance CRM · Versão 2.2<br>Dados armazenados neste navegador</div>
 </aside>
 <main class="main">
   <header class="topbar"><div style="display:flex;align-items:center;gap:12px"><button class="btn mobile-menu" id="menuBtn">☰</button><span class="crumb">Advance Tintas / <b id="crumb">Dashboard</b></span></div><div class="top-actions"><span class="muted" style="font-size:12px">Modo offline</span><div class="avatar">A</div></div></header>
@@ -143,7 +144,6 @@ function dashboardPage(root){
  const petronectActive=db.petronect.filter(p=>!['Declinada','Ganha','Perdida','Encerrada'].includes(p.status)).length;
  const recent=[...db.activities].sort((a,b)=>(b.date||'').localeCompare(a.date||'')).slice(0,6);
  
- // Acompanhamentos de Oportunidades + Editais Petronect pendentes
  let oppDue=db.opportunities.filter(o=>o.nextDate&&!o.done&&!['Perdido','Cliente ativo'].includes(o.status)).map(o=>({type:'opp', id:o.id, title:o.company||'Empresa não informada', date:o.nextDate, desc:o.nextAction||'Follow-up'}));
  let petronectDue=db.petronect.filter(p=>p.closingDate&&p.status!=='Declinada'&&!['Ganha','Perdida','Encerrada'].includes(p.status)).map(p=>{
   let isExpired = p.closingDate < today();
@@ -415,27 +415,40 @@ function openPetronectModal(id=null){
  let p = db.petronect.find(x=>x.id===id)||{};
  currentPetronectItems = p.items ? JSON.parse(JSON.stringify(p.items)) : [];
 
- openModal(id?'Editar Edital Petronect':'Novo Edital Petronect',`<div class="form-grid">
-  ${id?`<div class="field full"><label>ID do Registro</label><input type="text" readonly value="${esc(p.id)}" style="background:#eee;font-weight:700;"></div>`:''}
-  ${field('Data de Cadastro','pn_date',p.date||today(),'date')}
-  ${field('Status Petronect','pn_status',p.status||'Analisando','text',petronectStatusOptions)}
-  ${field('Oportunidade / Número do Edital','pn_opportunity',p.opportunity)}
-  ${field('Data de Encerramento','pn_closing',p.closingDate,'date')}
-  <div class="field"><label>Trimestre (Automático)</label><input id="pn_quarter" type="text" readonly value="${esc(p.quarter||'Q1')}" style="background:#edf1f5;font-weight:700;"></div>
-  ${field('Hora Limite','pn_time',p.closingTime||'23:59','time')}
-  ${field('Cidade','pn_city',p.city)}
-  ${field('UF','pn_uf',p.uf)}
-
-  <div class="field full">
-   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-    <label style="font-size:13px;font-weight:700;color:var(--navy);">Itens / Produtos / Serviços Petronect</label>
-    <button type="button" class="btn small primary" onclick="addPetronectItem()">＋ Adicionar Item</button>
+ openModal(id?'Editar Edital Petronect':'Novo Edital Petronect',`
+  <div style="display:flex;flex-direction:column;gap:20px;">
+   ${id?`<div class="field"><label>ID do Registro</label><input type="text" readonly value="${esc(p.id)}" style="background:#eee;font-weight:700;"></div>`:''}
+   
+   <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
+    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Informações do Edital</h3>
+    <div class="form-grid">
+     ${field('Data de Cadastro','pn_date',p.date||today(),'date')}
+     ${field('Status Petronect','pn_status',p.status||'Analisando','text',petronectStatusOptions)}
+     ${field('Oportunidade / Número do Edital','pn_opportunity',p.opportunity)}
+     ${field('Data de Encerramento','pn_closing',p.closingDate,'date')}
+     <div class="field"><label>Trimestre (Automático)</label><input id="pn_quarter" type="text" readonly value="${esc(p.quarter||'Q1')}" style="background:#edf1f5;font-weight:700;"></div>
+     ${field('Hora Limite','pn_time',p.closingTime||'23:59','time')}
+     ${field('Cidade','pn_city',p.city)}
+     ${field('UF','pn_uf',p.uf)}
+    </div>
    </div>
-   <div id="petronectItemsContainer" style="max-height:320px;overflow-y:auto;border:1px solid var(--line);padding:10px;border-radius:8px;background:#fff;"></div>
-  </div>
 
-  ${field('Observações','pn_obs',p.obs,'textarea',null,true)}
- </div>`,()=>{
+   <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;">
+     <h3 style="margin:0;font-size:14px;color:var(--navy);">📦 2. Itens / Produtos / Serviços Petronect</h3>
+     <button type="button" class="btn small primary" onclick="addPetronectItem()">＋ Adicionar Item</button>
+    </div>
+    <div id="petronectItemsContainer" style="max-height:320px;overflow-y:auto;border:1px solid var(--line);padding:10px;border-radius:8px;background:#fff;"></div>
+   </div>
+
+   <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
+    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">📝 3. Observações</h3>
+    <div class="form-grid">
+     <div class="field full">${field('Observações','pn_obs',p.obs,'textarea',null,true)}</div>
+    </div>
+   </div>
+  </div>
+ `,()=>{
   let opp = val('pn_opportunity');
   if(!opp){alert('Informe a oportunidade / número do edital.');return}
 
@@ -562,8 +575,8 @@ function field(label,id,value='',type='text',opts=null,full=false){
   input=`<textarea id="${id}">${esc(value)}</textarea>`;
  } else {
   let onEv = '';
-  if(id.includes('cnpj') || id === 'c_cnpj' || id === 'o_cnpj') onEv = `oninput="this.value=maskCNPJ(this.value)"`;
-  if(id.includes('phone') || id === 'c_phone' || id === 'o_phone') onEv = `oninput="this.value=maskPhone(this.value)"`;
+  if(id.includes('cnpj') || id === 'c_cnpj' || id === 'o_cnpj' || id === 'o_buyer_cnpj') onEv = `oninput="this.value=maskCNPJ(this.value)"`;
+  if(id.includes('phone') || id === 'c_phone' || id === 'o_phone' || id.includes('phone')) onEv = `oninput="this.value=maskPhone(this.value)"`;
   input=`<input id="${id}" type="${type}" value="${esc(value)}" ${onEv}>`;
  }
  return `<div class="field ${full?'full':''}"><label>${label}</label>${input}</div>`;
@@ -618,126 +631,267 @@ function handleCompanyAutoFill(companyName){
   if($('#o_segment') && found.segment) $('#o_segment').value = found.segment;
   if($('#o_city') && !$('#o_city').value) $('#o_city').value = found.city || '';
   if($('#o_uf') && !$('#o_uf').value) $('#o_uf').value = found.uf || '';
-  if($('#o_phone') && !$('#o_phone').value) $('#o_phone').value = found.phone || '';
-  if($('#o_email') && !$('#o_email').value) $('#o_email').value = found.email || '';
-  if($('#o_site') && !$('#o_site').value) $('#o_site').value = found.site || '';
  }
 }
 
-function openOpportunity(id=null){
- let o=db.opportunities.find(x=>x.id===id)||{};
- currentProductsList = o.products ? JSON.parse(JSON.stringify(o.products)) : [];
- if(currentProductsList.length === 0 && o.product){
-  currentProductsList.push({name: o.product, desc: '', qty: o.quantity||1, unit: 'UN', unitValue: o.value||0});
- }
+/* Gestão de Contatos Dinâmicos na Oportunidade (Direto na Janela) */
+let currentOpportunityContacts = [];
 
- let companyActivities = o.company ? db.activities.filter(a => a.company.toLowerCase() === o.company.toLowerCase()).sort((a,b)=>(b.date||'').localeCompare(a.date||'')) : [];
+function renderOpportunityContacts(){
+  let container = $('#opportunityContactsContainer');
+  if(!container) return;
+  container.innerHTML = currentOpportunityContacts.map((c, index)=>`
+    <div class="product-item-row" data-contact-index="${index}">
+      <div class="contact-item-grid">
+        <div class="field"><label>Nome do contato</label><input type="text" value="${esc(c.name)}" oninput="updateOpportunityContact(${index}, 'name', this.value)"></div>
+        <div class="field"><label>Cargo / área</label><input type="text" value="${esc(c.role)}" oninput="updateOpportunityContact(${index}, 'role', this.value)"></div>
+        <div class="field"><label>E-mail</label><input type="email" value="${esc(c.email)}" oninput="updateOpportunityContact(${index}, 'email', this.value)"></div>
+        <div class="field"><label>Telefone</label><input type="text" value="${esc(c.phone)}" oninput="this.value=maskPhone(this.value); updateOpportunityContact(${index}, 'phone', this.value)"></div>
+        <div style="padding-bottom:2px;"><button type="button" class="btn small danger" onclick="removeOpportunityContact(${index})">✕</button></div>
+      </div>
+    </div>
+  `).join('') || '<div class="empty" style="padding:15px;font-size:13px;">Nenhum contato adicionado. Clique em "Adicionar Contato" para incluir.</div>';
+}
 
- openModal(id?'Editar oportunidade':'Nova oportunidade',`<div class="form-grid">
-  ${id?`<div class="field full"><label>ID do Registro</label><input type="text" readonly value="${esc(o.id)}" style="background:#eee;font-weight:700;"></div>`:''}
-  <div class="field"><label>Empresa / razão social</label><input id="o_company" type="text" value="${esc(o.company)}" oninput="handleCompanyAutoFill(this.value)"></div>
-  ${field('CNPJ','o_cnpj',o.cnpj)}
-  ${field('Endereço completo','o_address',o.address,'text',null,true)}
-  ${field('Segmento','o_segment',o.segment,'text',['Distribuidor','Indústria','Construtora','Integrador / aplicador','Revenda','Órgão público','Manutenção industrial','Outro'])}
-  ${field('Cidade','o_city',o.city)}
-  ${field('UF','o_uf',o.uf)}
-  ${field('Origem da oportunidade','o_source',o.source,'text',['PNCP','Compras.gov.br','Portal estadual/municipal','Portal privado','Indicação','LinkedIn','Pesquisa Google','Outro'])}
-  ${field('Nº do processo / licitação','o_process',o.process)}
-  ${field('Órgão comprador','o_buyer',o.buyer)}
-  ${field('Vigência / prazo do contrato','o_contract_term',o.contractTerm,'text')}
-  ${field('Responsável interno','o_owner',o.owner,'text')}
-  ${field('Potencial comercial','o_potential',o.potential||'A validar','text',['Alto','Médio','Baixo','A validar'])}
-  ${field('Prioridade','o_priority',o.priority||'Normal','text',['Urgente','Alta','Normal','Baixa'])}
-  ${field('Status comercial','o_status',o.status||'Novo lead','text',statusOptions)}
-  ${field('Status Vendor List','o_vendor',o.vendor||'Não iniciado','text',vendorOptions)}
-  ${field('Contato principal','o_contact',o.contact)}
-  ${field('Telefone','o_phone',o.phone,'tel')}
-  ${field('E-mail','o_email',o.email,'email')}
-  ${field('Site / LinkedIn','o_site',o.site)}
-  ${field('Link do edital / fonte','o_link',o.link,'url',null,true)}
-  
-  <div class="field full">
-   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-    <label style="font-size:13px;font-weight:700;color:var(--navy);">Produtos / Itens da Oportunidade</label>
-    <button type="button" class="btn small primary" onclick="addProductItem()">＋ Adicionar Item</button>
-   </div>
-   <div id="productItemsContainer" style="max-height:280px;overflow-y:auto;border:1px solid var(--line);padding:10px;border-radius:8px;background:#fff;"></div>
-  </div>
+function addOpportunityContactItem(){
+  currentOpportunityContacts.push({name:'', role:'', email:'', phone:'', rolebuy:'Compras'});
+  renderOpportunityContacts();
+}
 
-  <div class="field full">
-   <label style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;">Histórico de Atividades desta Empresa</label>
-   <div style="border:1px solid var(--line);padding:10px;border-radius:8px;background:#f8fafb;max-height:180px;overflow-y:auto;">
-    ${companyActivities.length > 0 ? companyActivities.map(a=>`<div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #e4eaf0;font-size:12px;"><b>${fmtDate(a.date)}</b> · [${esc(a.type)}] ${esc(a.summary||'—')} <div class="muted">Próximo passo: ${esc(a.next||'—')}</div></div>`).join('') : '<div class="empty" style="padding:10px;font-size:12px;">Nenhuma atividade registrada.</div>'}
-   </div>
-  </div>
+function removeOpportunityContact(index){
+  currentOpportunityContacts.splice(index, 1);
+  renderOpportunityContacts();
+}
 
-  ${field('Próxima ação','o_next',o.nextAction,'text',null,true)}
-  ${field('Data do próximo contato','o_nextdate',o.nextDate,'date')}
-  ${field('Observações','o_notes',o.notes,'textarea',null,true)}
- </div>`,()=>{
-  let company=val('o_company');
-  if(!company){alert('Informe o nome da empresa.');return}
-
-  let totalValue = currentProductsList.reduce((acc, item)=> acc + ((Number(item.qty)||0)*(Number(item.unitValue)||0)), 0);
-  let recordId = o.id ? o.id : generateCustomId('OP', db.opportunities);
-
-  let data={
-   id: recordId,
-   company,
-   cnpj:val('o_cnpj'),
-   address:val('o_address'),
-   segment:val('o_segment'),
-   city:val('o_city'),
-   uf:val('o_uf').toUpperCase(),
-   products: currentProductsList,
-   value: totalValue,
-   source:val('o_source'),
-   process:val('o_process'),
-   buyer:val('o_buyer'),
-   contractTerm:val('o_contract_term'),
-   owner:val('o_owner'),
-   potential:val('o_potential'),
-   priority:val('o_priority'),
-   status:val('o_status'),
-   vendor:val('o_vendor'),
-   contact:val('o_contact'),
-   phone:val('o_phone'),
-   email:val('o_email'),
-   site:val('o_site'),
-   link:val('o_link'),
-   nextAction:val('o_next'),
-   nextDate:val('o_nextdate'),
-   notes:val('o_notes'),
-   done:o.done||false,
-   created:o.created||today(),
-   updated:today()
-  };
-
-  if(o.id) db.opportunities=db.opportunities.map(x=>x.id===id?data:x);
-  else db.opportunities.unshift(data);
-
-  if(!db.companies.some(c=>c.name.toLowerCase()===company.toLowerCase())){
-   let compId = generateCustomId('EM', db.companies);
-   db.companies.push({id:compId,name:company,cnpj:data.cnpj,address:data.address,segment:data.segment,city:data.city,uf:data.uf,phone:data.phone,email:data.email,site:data.site});
+function updateOpportunityContact(index, fieldName, val){
+  if(currentOpportunityContacts[index]){
+    currentOpportunityContacts[index][fieldName] = val;
   }
-  saveDB(); closeModal(); render();
- });
+}
 
- renderProductItems();
- if($('#modalSaveBtn')) $('#modalSaveBtn').onclick = () => { if(modalSaveFn) modalSaveFn(); };
+function openOpportunity(id=null){
+  let o=db.opportunities.find(x=>x.id===id)||{};
+  currentProductsList = o.products ? JSON.parse(JSON.stringify(o.products)) : [];
+  if(currentProductsList.length === 0 && o.product){
+    currentProductsList.push({name: o.product, desc: '', qty: o.quantity||1, unit: 'UN', unitValue: o.value||0});
+  }
+
+  currentOpportunityContacts = o.contactsList ? JSON.parse(JSON.stringify(o.contactsList)) : [];
+  let companyActivities = o.company ? db.activities.filter(a => a.company.toLowerCase() === o.company.toLowerCase()).sort((a,b)=>(b.date||'').localeCompare(a.date||'')) : [];
+
+  openModal(id?'Editar oportunidade':'Nova oportunidade', `
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      
+      ${id?`<div class="field"><label>ID do Registro</label><input type="text" readonly value="${esc(o.id)}" style="background:#eee;font-weight:700;"></div>`:''}
+
+      <!-- SEÇÃO 1: DADOS PRINCIPAIS -->
+      <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
+        <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Dados Principais da Empresa</h3>
+        <div class="form-grid">
+          <div class="field"><label>Empresa / razão social</label><input id="o_company" type="text" value="${esc(o.company)}" oninput="handleCompanyAutoFill(this.value)"></div>
+          ${field('CNPJ','o_cnpj',o.cnpj)}
+          ${field('Segmento','o_segment',o.segment,'text',['Distribuidor','Indústria','Construtora','Integrador / aplicador','Revenda','Órgão público','Manutenção industrial','Outro'])}
+          ${field('Cidade','o_city',o.city)}
+          ${field('UF','o_uf',o.uf)}
+          <div class="field full">${field('Endereço completo','o_address',o.address,'text',null,true)}</div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 2: DETALHES COMERCIAIS E LICITAÇÃO -->
+      <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
+        <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">📋 2. Informações Comerciais e Licitação</h3>
+        <div class="form-grid">
+          ${field('Origem da oportunidade','o_source',o.source,'text',['PNCP','Compras.gov.br','Portal estadual/municipal','Portal privado','Indicação','LinkedIn','Pesquisa Google','Outro'])}
+          ${field('Nº do processo / licitação','o_process',o.process)}
+          ${field('Vigência / prazo do contrato','o_contract_term',o.contractTerm,'text')}
+          ${field('Responsável interno','o_owner',o.owner,'text')}
+          ${field('Potencial comercial','o_potential',o.potential||'A validar','text',['Alto','Médio','Baixo','A validar'])}
+          ${field('Prioridade','o_priority',o.priority||'Normal','text',['Urgente','Alta','Normal','Baixa'])}
+          ${field('Status comercial','o_status',o.status||'Novo lead','text',statusOptions)}
+          ${field('Status Vendor List','o_vendor',o.vendor||'Não iniciado','text',vendorOptions)}
+          <div class="field full">${field('Link do edital / fonte','o_link',o.link,'url',null,true)}</div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 3: ÓRGÃO COMPRADOR -->
+      <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
+        <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">🏛️ 3. Órgão Comprador</h3>
+        <div class="form-grid">
+          ${field('Nome do órgão comprador','o_buyer',o.buyer)}
+          ${field('CNPJ do órgão','o_buyer_cnpj',o.buyerCnpj)}
+          ${field('Responsável no órgão','o_buyer_resp',o.buyerResp)}
+          ${field('Cargo do responsável','o_buyer_cargo',o.buyerCargo)}
+          <div class="field full">${field('Endereço do órgão','o_buyer_address',o.buyerAddress,'text',null,true)}</div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 4: CONTATOS DA OPORTUNIDADE -->
+      <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;">
+          <h3 style="margin:0;font-size:14px;color:var(--navy);">👥 4. Contatos da Oportunidade</h3>
+          <button type="button" class="btn small primary" onclick="addOpportunityContactItem()">＋ Adicionar Contato</button>
+        </div>
+        <div id="opportunityContactsContainer" style="max-height:280px;overflow-y:auto;border:1px solid var(--line);padding:10px;border-radius:8px;background:#fff;"></div>
+      </div>
+
+      <!-- SEÇÃO 5: PRODUTOS E ITENS -->
+      <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;">
+          <h3 style="margin:0;font-size:14px;color:var(--navy);">📦 5. Produtos / Itens da Oportunidade</h3>
+          <button type="button" class="btn small primary" onclick="addProductItem()">＋ Adicionar Item</button>
+        </div>
+        <div id="productItemsContainer" style="max-height:280px;overflow-y:auto;border:1px solid var(--line);padding:10px;border-radius:8px;background:#fff;"></div>
+      </div>
+
+      <!-- SEÇÃO 6: ACOMPANHAMENTO E HISTÓRICO -->
+      <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
+        <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">🕒 6. Acompanhamento e Histórico</h3>
+        <div class="form-grid">
+          ${field('Próxima ação','o_next',o.nextAction,'text',null,true)}
+          ${field('Data do próximo contato','o_nextdate',o.nextDate,'date')}
+          <div class="field full">${field('Observações','o_notes',o.notes,'textarea',null,true)}</div>
+        </div>
+        
+        <div style="margin-top:15px;">
+          <label style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;display:block;">Histórico de Atividades Anteriores</label>
+          <div style="border:1px solid var(--line);padding:10px;border-radius:8px;background:#fff;max-height:180px;overflow-y:auto;">
+            ${companyActivities.length > 0 ? companyActivities.map(a=>`<div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #e4eaf0;font-size:12px;"><b>${fmtDate(a.date)}</b> · [${esc(a.type)}] ${esc(a.summary||'—')} <div class="muted">Próximo passo: ${esc(a.next||'—')}</div></div>`).join('') : '<div class="empty" style="padding:10px;font-size:12px;">Nenhuma atividade registrada para esta empresa.</div>'}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  `, ()=>{
+    let company=val('o_company');
+    if(!company){alert('Informe o nome da empresa.');return}
+
+    let totalValue = currentProductsList.reduce((acc, item)=> acc + ((Number(item.qty)||0)*(Number(item.unitValue)||0)), 0);
+    let recordId = o.id ? o.id : generateCustomId('OP', db.opportunities);
+
+    // Salva os contatos associados também na base geral de Contatos do CRM
+    currentOpportunityContacts.forEach(c => {
+      if(c.name && !db.contacts.some(existing => existing.name.toLowerCase() === c.name.toLowerCase() && existing.company.toLowerCase() === company.toLowerCase())){
+        db.contacts.unshift({
+          id: generateCustomId('CT', db.contacts),
+          name: c.name,
+          company: company,
+          role: c.role || '',
+          rolebuy: c.rolebuy || 'Compras',
+          phone: c.phone || '',
+          email: c.email || '',
+          lastDate: today(),
+          notes: 'Cadastrado via Oportunidade'
+        });
+      }
+    });
+
+    let data={
+      id: recordId,
+      company,
+      cnpj:val('o_cnpj'),
+      address:val('o_address'),
+      segment:val('o_segment'),
+      city:val('o_city'),
+      uf:val('o_uf').toUpperCase(),
+      products: currentProductsList,
+      contactsList: currentOpportunityContacts,
+      value: totalValue,
+      source:val('o_source'),
+      process:val('o_process'),
+      buyer:val('o_buyer'),
+      buyerCnpj:val('o_buyer_cnpj'),
+      buyerResp:val('o_buyer_resp'),
+      buyerCargo:val('o_buyer_cargo'),
+      buyerAddress:val('o_buyer_address'),
+      contractTerm:val('o_contract_term'),
+      owner:val('o_owner'),
+      potential:val('o_potential'),
+      priority:val('o_priority'),
+      status:val('o_status'),
+      vendor:val('o_vendor'),
+      nextAction:val('o_next'),
+      nextDate:val('o_nextdate'),
+      notes:val('o_notes'),
+      done:o.done||false,
+      created:o.created||today(),
+      updated:today()
+    };
+
+    if(o.id) db.opportunities=db.opportunities.map(x=>x.id===id?data:x);
+    else db.opportunities.unshift(data);
+
+    if(!db.companies.some(c=>c.name.toLowerCase()===company.toLowerCase())){
+      let compId = generateCustomId('EM', db.companies);
+      db.companies.push({id:compId,name:company,cnpj:data.cnpj,address:data.address,segment:data.segment,city:data.city,uf:data.uf});
+    }
+    saveDB(); closeModal(); render();
+  });
+
+  renderProductItems();
+  renderOpportunityContacts();
+  if($('#modalSaveBtn')) $('#modalSaveBtn').onclick = () => { if(modalSaveFn) modalSaveFn(); };
 }
 
 function editOpportunity(id){openOpportunity(id)}
 
 function openCompany(id=null){
  let c=db.companies.find(x=>x.id===id)||{};
- openModal(id?'Editar empresa':'Nova empresa',`<div class="form-grid">${field('Razão social / empresa','c_name',c.name)}${field('Nome fantasia','c_trade',c.trade)}${field('CNPJ','c_cnpj',c.cnpj)}${field('Endereço','c_address',c.address,'text',null,true)}${field('Segmento','c_segment',c.segment)}${field('Cidade','c_city',c.city)}${field('UF','c_uf',c.uf)}${field('Telefone','c_phone',c.phone,'tel')}${field('E-mail','c_email',c.email,'email')}${field('Site','c_site',c.site,'url')}${field('Observações','c_notes',c.notes,'textarea',null,true)}</div>`,()=>{let name=val('c_name');if(!name){alert('Informe o nome da empresa.');return}let recordId = c.id ? c.id : generateCustomId('EM', db.companies);let d={id:recordId,name,trade:val('c_trade'),cnpj:val('c_cnpj'),address:val('c_address'),segment:val('c_segment'),city:val('c_city'),uf:val('c_uf'),phone:val('c_phone'),email:val('c_email'),site:val('c_site'),notes:val('c_notes')};if(c.id)db.companies=db.companies.map(x=>x.id===id?d:x);else db.companies.unshift(d);saveDB();closeModal();render()})
+ openModal(id?'Editar empresa':'Nova empresa',`
+  <div style="display:flex;flex-direction:column;gap:20px;">
+   ${id?`<div class="field"><label>ID do Registro</label><input type="text" readonly value="${esc(c.id)}" style="background:#eee;font-weight:700;"></div>`:''}
+   <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
+    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Dados da Empresa</h3>
+    <div class="form-grid">
+     ${field('Razão social / empresa','c_name',c.name)}
+     ${field('Nome fantasia','c_trade',c.trade)}
+     ${field('CNPJ','c_cnpj',c.cnpj)}
+     ${field('Segmento','c_segment',c.segment)}
+     ${field('Cidade','c_city',c.city)}
+     ${field('UF','c_uf',c.uf)}
+     <div class="field full">${field('Endereço','c_address',c.address,'text',null,true)}</div>
+    </div>
+   </div>
+   <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
+    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">📞 2. Contato e Observações</h3>
+    <div class="form-grid">
+     ${field('Telefone','c_phone',c.phone,'tel')}
+     ${field('E-mail','c_email',c.email,'email')}
+     <div class="field full">${field('Site','c_site',c.site,'url')}</div>
+     <div class="field full">${field('Observações','c_notes',c.notes,'textarea',null,true)}</div>
+    </div>
+   </div>
+  </div>
+ `,()=>{let name=val('c_name');if(!name){alert('Informe o nome da empresa.');return}let recordId = c.id ? c.id : generateCustomId('EM', db.companies);let d={id:recordId,name,trade:val('c_trade'),cnpj:val('c_cnpj'),address:val('c_address'),segment:val('c_segment'),city:val('c_city'),uf:val('c_uf'),phone:val('c_phone'),email:val('c_email'),site:val('c_site'),notes:val('c_notes')};if(c.id)db.companies=db.companies.map(x=>x.id===id?d:x);else db.companies.unshift(d);saveDB();closeModal();render()})
 }
 function editCompany(id){openCompany(id)}
 
 function openContact(id=null){
  let c=db.contacts.find(x=>x.id===id)||{};
- openModal(id?'Editar contato':'Novo contato',`<div class="form-grid">${field('Nome do contato','ct_name',c.name)}${field('Empresa','ct_company',c.company)}${field('Cargo / área','ct_role',c.role)}${field('Papel na compra','ct_rolebuy',c.rolebuy||'Compras','text',['Compras','Suprimentos','Engenharia','Manutenção','Obras','Comercial','Diretoria','Cadastro de fornecedores','Outro'])}${field('Telefone','ct_phone',c.phone,'tel')}${field('E-mail','ct_email',c.email,'email')}${field('LinkedIn','ct_link',c.linkedin,'url')}${field('Canal preferido','ct_channel',c.channel||'E-mail','text',['E-mail','Telefone','WhatsApp','LinkedIn','Portal','Presencial'])}${field('Última validação','ct_date',c.lastDate||today(),'date')}${field('Observações','ct_notes',c.notes,'textarea',null,true)}</div>`,()=>{let name=val('ct_name');if(!name){alert('Informe o nome do contato.');return}let recordId = c.id ? c.id : generateCustomId('CT', db.contacts);let d={id:recordId,name,company:val('ct_company'),role:val('ct_role'),rolebuy:val('ct_rolebuy'),phone:val('ct_phone'),email:val('ct_email'),linkedin:val('ct_link'),channel:val('ct_channel'),lastDate:val('ct_date'),notes:val('ct_notes')};if(c.id)db.contacts=db.contacts.map(x=>x.id===id?d:x);else db.contacts.unshift(d);saveDB();closeModal();render()})
+ openModal(id?'Editar contato':'Novo contato',`
+  <div style="display:flex;flex-direction:column;gap:20px;">
+   ${id?`<div class="field"><label>ID do Registro</label><input type="text" readonly value="${esc(c.id)}" style="background:#eee;font-weight:700;"></div>`:''}
+   <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
+    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Informações do Contato</h3>
+    <div class="form-grid">
+     ${field('Nome do contato','ct_name',c.name)}
+     ${field('Empresa','ct_company',c.company)}
+     ${field('Cargo / área','ct_role',c.role)}
+     ${field('Papel na compra','ct_rolebuy',c.rolebuy||'Compras','text',['Compras','Suprimentos','Engenharia','Manutenção','Obras','Comercial','Diretoria','Cadastro de fornecedores','Outro'])}
+    </div>
+   </div>
+   <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
+    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">📞 2. Comunicação e Detalhes</h3>
+    <div class="form-grid">
+     ${field('Telefone','ct_phone',c.phone,'tel')}
+     ${field('E-mail','ct_email',c.email,'email')}
+     ${field('LinkedIn','ct_link',c.linkedin,'url')}
+     ${field('Canal preferido','ct_channel',c.channel||'E-mail','text',['E-mail','Telefone','WhatsApp','LinkedIn','Portal','Presencial'])}
+     ${field('Última validação','ct_date',c.lastDate||today(),'date')}
+     <div class="field full">${field('Observações','ct_notes',c.notes,'textarea',null,true)}</div>
+    </div>
+   </div>
+  </div>
+ `,()=>{let name=val('ct_name');if(!name){alert('Informe o nome do contato.');return}let recordId = c.id ? c.id : generateCustomId('CT', db.contacts);let d={id:recordId,name,company:val('ct_company'),role:val('ct_role'),rolebuy:val('ct_rolebuy'),phone:val('ct_phone'),email:val('ct_email'),linkedin:val('ct_link'),channel:val('ct_channel'),lastDate:val('ct_date'),notes:val('ct_notes')};if(c.id)db.contacts=db.contacts.map(x=>x.id===id?d:x);else db.contacts.unshift(d);saveDB();closeModal();render()})
 }
 function editContact(id){openContact(id)}
 
@@ -748,16 +902,28 @@ function openActivity(oppId = null){
  let defaultNext = opp ? opp.nextAction : '';
  let defaultNextDate = opp ? opp.nextDate : today();
 
- openModal('Registrar atividade',`<div class="form-grid">
-  ${field('Data','a_date',today(),'date')}
-  ${field('Empresa','a_company',defaultCompany)}
-  ${field('Contato','a_contact',defaultContact)}
-  ${field('Tipo de atividade','a_type','Ligação','text',['Pesquisa','Ligação','E-mail','WhatsApp','LinkedIn','Reunião','Envio de apresentação','Cotação','Follow-up','Homologação','Outro'])}
-  ${field('Resumo / resultado','a_summary','','textarea',null,true)}
-  ${field('Objeção / necessidade identificada','a_objection','','textarea',null,true)}
-  ${field('Próximo passo','a_next',defaultNext,'textarea',null,true)}
-  ${field('Nova data do próximo contato','a_nextdate',defaultNextDate,'date')}
- </div>`,()=>{
+ openModal('Registrar atividade',`
+  <div style="display:flex;flex-direction:column;gap:20px;">
+   <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
+    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Dados da Atividade</h3>
+    <div class="form-grid">
+     ${field('Data','a_date',today(),'date')}
+     ${field('Tipo de atividade','a_type','Ligação','text',['Pesquisa','Ligação','E-mail','WhatsApp','LinkedIn','Reunião','Envio de apresentação','Cotação','Follow-up','Homologação','Outro'])}
+     ${field('Empresa','a_company',defaultCompany)}
+     ${field('Contato','a_contact',defaultContact)}
+    </div>
+   </div>
+   <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
+    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">📋 2. Detalhes e Próximos Passos</h3>
+    <div class="form-grid">
+     <div class="field full">${field('Resumo / resultado','a_summary','','textarea',null,true)}</div>
+     <div class="field full">${field('Objeção / necessidade identificada','a_objection','','textarea',null,true)}</div>
+     <div class="field full">${field('Próximo passo','a_next',defaultNext,'textarea',null,true)}</div>
+     ${field('Nova data do próximo contato','a_nextdate',defaultNextDate,'date')}
+    </div>
+   </div>
+  </div>
+ `,()=>{
   let company=val('a_company');
   if(!company){alert('Informe a empresa.');return}
 
