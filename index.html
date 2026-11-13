@@ -6,31 +6,30 @@
 <title>Advance CRM | DESENVOLVIDO POR: EVERTON NUNES</title>
 <style>
 :root{--navy:#142d48;--navy2:#1c3c5c;--green:#24966b;--bg:#f3f6f8;--surface:#fff;--text:#1d2935;--muted:#718096;--line:#e4eaf0;--red:#c84d4d;--amber:#b7791f;--shadow:0 8px 24px rgba(20,45,72,.07)}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 Inter,Segoe UI,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:248px;background:var(--navy);color:#fff;padding:22px 15px;display:flex;flex-direction:column;z-index:5}.brand{display:flex;align-items:center;gap:11px;padding:3px 9px 25px}.brand-mark{width:39px;height:39px;border-radius:11px;background:var(--green);display:grid;place-items:center;font-weight:800;font-size:20px}.brand strong{display:block;font-size:14px;letter-spacing:.5px}.brand small{color:#a9bdce;font-size:9px;letter-spacing:.8px}.nav-label{font-size:10px;color:#89a2b8;letter-spacing:1.4px;padding:12px 12px 7px}.nav button{width:100%;border:0;background:transparent;color:#d5e0e9;padding:11px 12px;text-align:left;border-radius:8px;margin:2px 0;display:flex;gap:12px;align-items:center}.nav button:hover,.nav button.active{background:#254663;color:#fff}.nav .ico{width:18px;text-align:center;font-size:16px}.side-bottom{margin-top:auto;border-top:1px solid #34516b;padding:15px 10px 0;color:#a9bdce;font-size:11px}.main{margin-left:248px;min-height:100vh}.topbar{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 30px;position:sticky;top:0;z-index:4}.crumb{color:var(--muted);font-size:12px}.top-actions{display:flex;align-items:center;gap:10px}.avatar{width:32px;height:32px;background:#e2f1eb;color:#18734f;border-radius:50%;display:grid;place-items:center;font-weight:700}.content{padding:28px 30px;max-width:1650px;margin:auto}.page-head{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:22px}.page-head h1{margin:0 0 5px;font-size:24px;color:var(--navy)}.page-head p{margin:0;color:var(--muted)}.btn{border:1px solid var(--line);background:#fff;color:var(--text);padding:9px 13px;border-radius:8px;font-weight:600;display:inline-flex;gap:7px;align-items:center}.btn:hover{background:#f7fafc}.btn.primary{background:var(--green);border-color:var(--green);color:#fff}.btn.dark{background:var(--navy);color:#fff;border-color:var(--navy)}.btn.danger{color:var(--red);border-color:#f5d2d2;background:#fdf2f2}.btn.danger:hover{background:#fae1e1}.btn.small{padding:6px 9px;font-size:12px}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:20px}.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:var(--shadow)}.stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.stat-icon{width:31px;height:31px;border-radius:9px;background:#edf6f2;color:var(--green);display:grid;place-items:center}.stat strong{display:block;font-size:27px;color:var(--navy);margin:10px 0 1px}.stat small{color:var(--muted)}.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:16px}.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:var(--shadow);min-width:0}.panel h3{margin:0 0 15px;font-size:15px;color:var(--navy)}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:760px}th{text-align:left;color:#7b8997;font-size:10px;text-transform:uppercase;letter-spacing:.7px;background:#f8fafb;padding:11px 12px;white-space:nowrap}td{padding:12px;border-top:1px solid var(--line);vertical-align:middle}tbody tr:hover{background:#fbfcfd}.muted{color:var(--muted)}.pill{display:inline-block;padding:4px 8px;border-radius:30px;background:#edf1f5;color:#536273;font-size:11px;font-weight:650;white-space:nowrap}.pill.green{background:#e4f4ec;color:#19734e}.pill.amber{background:#fff4dc;color:#98650d}.pill.red{background:#fdeaea;color:#a43e3e}.pill.blue{background:#e8f1fb;color:#315f91}.pill.purple{background:#f3e8fb;color:#7b3191}.toolbar{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:14px}.field{display:flex;flex-direction:column;gap:5px;min-width:0}.field label{font-size:11px;font-weight:650;color:#526171;white-space:nowrap}.field input,.field select,.field textarea,.toolbar input,.toolbar select{border:1px solid #dce4eb;border-radius:8px;padding:8px 9px;background:#fff;color:var(--text);outline:none;min-width:0;font-size:13px}.field input:focus,.field select:focus,.field textarea:focus,.toolbar input:focus{border-color:#69ad91;box-shadow:0 0 0 3px #e4f3ec}.toolbar input{min-width:220px}.toolbar select{min-width:150px}.empty{padding:35px;text-align:center;color:var(--muted)}.empty b{display:block;color:var(--navy);margin-bottom:5px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.field.full{grid-column:1/-1}.field textarea{min-height:78px;resize:vertical}.modal-back{position:fixed;inset:0;background:rgba(13,29,44,.48);z-index:10;display:none;align-items:center;justify-content:center;padding:18px}.modal-back.show{display:flex}.modal{background:#fff;border-radius:14px;width:min(1250px,100%);max-height:94vh;overflow:auto;box-shadow:0 20px 70px #071a2b55}.modal-head{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.modal-head h2{margin:0;color:var(--navy);font-size:18px}.modal-body{padding:20px 22px}.modal-foot{padding:14px 22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:9px}.close{border:0;background:transparent;font-size:22px;color:var(--muted)}.notice{background:#eef6f3;border:1px solid #d4e9df;color:#28684f;padding:12px 14px;border-radius:9px;margin-bottom:16px}.notice.warn{background:#fff7e8;border-color:#f4e3bc;color:#8b641a}
+[data-theme="dark"]{--navy:#1a202c;--navy2:#2d3748;--green:#319795;--bg:#121212;--surface:#1e1e1e;--text:#e2e8f0;--muted:#a0aec0;--line:#2d3748;--red:#e53e3e;--amber:#d69e2e;--shadow:0 8px 24px rgba(0,0,0,.3)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 Inter,Segoe UI,Arial,sans-serif;transition:background .3s,color .3s}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:248px;background:var(--navy);color:#fff;padding:22px 15px;display:flex;flex-direction:column;z-index:5}.brand{display:flex;align-items:center;gap:11px;padding:3px 9px 25px}.brand-mark{width:39px;height:39px;border-radius:11px;background:var(--green);display:grid;place-items:center;font-weight:800;font-size:20px}.brand strong{display:block;font-size:14px;letter-spacing:.5px}.brand small{color:#a9bdce;font-size:9px;letter-spacing:.8px}.nav-label{font-size:10px;color:#89a2b8;letter-spacing:1.4px;padding:12px 12px 7px}.nav button{width:100%;border:0;background:transparent;color:#d5e0e9;padding:11px 12px;text-align:left;border-radius:8px;margin:2px 0;display:flex;gap:12px;align-items:center}.nav button:hover,.nav button.active{background:#254663;color:#fff}.nav .ico{width:18px;text-align:center;font-size:16px}.side-bottom{margin-top:auto;border-top:1px solid #34516b;padding:15px 10px 0;color:#a9bdce;font-size:11px}.main{margin-left:248px;min-height:100vh}.topbar{height:68px;background:var(--surface);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 30px;position:sticky;top:0;z-index:4}.crumb{color:var(--muted);font-size:12px}.top-actions{display:flex;align-items:center;gap:10px}.avatar{width:32px;height:32px;background:#e2f1eb;color:#18734f;border-radius:50%;display:grid;place-items:center;font-weight:700}.content{padding:28px 30px;max-width:1650px;margin:auto}.page-head{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:22px}.page-head h1{margin:0 0 5px;font-size:24px;color:var(--text)}.page-head p{margin:0;color:var(--muted)}.btn{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:9px 13px;border-radius:8px;font-weight:600;display:inline-flex;gap:7px;align-items:center}.btn:hover{opacity:0.9}.btn.primary{background:var(--green);border-color:var(--green);color:#fff}.btn.dark{background:var(--navy);color:#fff;border-color:var(--navy)}.btn.danger{color:var(--red);border-color:#f5d2d2;background:var(--surface)}.btn.small{padding:6px 9px;font-size:12px}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:20px}.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:var(--shadow)}.stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.stat-icon{width:31px;height:31px;border-radius:9px;background:var(--line);color:var(--green);display:grid;place-items:center}.stat strong{display:block;font-size:27px;color:var(--text);margin:10px 0 1px}.stat small{color:var(--muted)}.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:16px}.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:var(--shadow);min-width:0}.panel h3{margin:0 0 15px;font-size:15px;color:var(--text)}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:760px}th{text-align:left;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.7px;background:var(--line);padding:11px 12px;white-space:nowrap}td{padding:12px;border-top:1px solid var(--line);vertical-align:middle}tbody tr:hover{opacity:0.95}.muted{color:var(--muted)}.pill{display:inline-block;padding:4px 8px;border-radius:30px;background:var(--line);color:var(--text);font-size:11px;font-weight:650;white-space:nowrap}.pill.green{background:#e4f4ec;color:#19734e}.pill.amber{background:#fff4dc;color:#98650d}.pill.red{background:#fdeaea;color:#a43e3e}.pill.blue{background:#e8f1fb;color:#315f91}.pill.purple{background:#f3e8fb;color:#7b3191}.toolbar{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:14px}.field{display:flex;flex-direction:column;gap:5px;min-width:0}.field label{font-size:11px;font-weight:650;color:var(--muted);white-space:nowrap}.field input,.field select,.field textarea,.toolbar input,.toolbar select{border:1px solid var(--line);border-radius:8px;padding:8px 9px;background:var(--surface);color:var(--text);outline:none;min-width:0;font-size:13px}.field input:focus,.field select:focus,.field textarea:focus,.toolbar input:focus{border-color:var(--green);box-shadow:0 0 0 3px var(--line)}.toolbar input{min-width:220px}.toolbar select{min-width:150px}.empty{padding:35px;text-align:center;color:var(--muted)}.empty b{display:block;color:var(--text);margin-bottom:5px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.field.full{grid-column:1/-1}.field textarea{min-height:78px;resize:vertical}.modal-back{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10;display:none;align-items:center;justify-content:center;padding:18px}.modal-back.show{display:flex}.modal{background:var(--surface);border-radius:14px;width:min(1300px,100%);max-height:94vh;overflow:auto;box-shadow:0 20px 70px rgba(0,0,0,.5)}.modal-head{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.modal-head h2{margin:0;color:var(--text);font-size:18px}.modal-body{padding:20px 22px}.modal-foot{padding:14px 22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:9px}.close{border:0;background:transparent;font-size:22px;color:var(--muted)}.notice{background:var(--surface);border:1px solid var(--line);color:var(--text);padding:12px 14px;border-radius:9px;margin-bottom:16px}.notice.warn{background:var(--surface);border-color:var(--amber);color:var(--amber)}
 
 .due-scroll-container { max-height: 380px; overflow-y: auto; padding-right: 4px; display: flex; flex-direction: column; gap: 8px; }
-.due-scroll-container::-webkit-scrollbar { width: 6px; }
-.due-scroll-container::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-.activity-card { width: 100%; border-left: 3px solid var(--line); padding: 12px; position: relative; cursor: pointer; transition: 0.15s; background: #fff; border-radius: 6px; border: 1px solid var(--line); }
-.activity-card:hover { border-color: var(--navy); }
+.activity-card { width: 100%; border-left: 3px solid var(--line); padding: 12px; position: relative; cursor: pointer; transition: 0.15s; background: var(--surface); border-radius: 6px; border: 1px solid var(--line); }
+.activity-card:hover { border-color: var(--green); }
 
-.bar-row{display:grid;grid-template-columns:160px 1fr 35px;align-items:center;gap:10px;margin:13px 0;font-size:12px}.bar{height:8px;background:#edf1f4;border-radius:20px;overflow:hidden}.bar i{display:block;height:100%;background:var(--green);border-radius:20px}.settings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.hide{display:none!important}.mobile-menu{display:none}
+.bar-row{display:grid;grid-template-columns:160px 1fr 35px;align-items:center;gap:10px;margin:13px 0;font-size:12px}.bar{height:8px;background:var(--line);border-radius:20px;overflow:hidden}.bar i{display:block;height:100%;background:var(--green);border-radius:20px}.settings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.hide{display:none!important}.mobile-menu{display:none}
 
-.product-item-row { background: #f8fafb; border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; position: relative; }
-.product-item-grid { display: grid; grid-template-columns: 80px 2.5fr 100px 110px 90px 110px 130px 40px; gap: 8px; align-items: end; }
-
+.product-item-row { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; position: relative; }
 .kanban-board { display: grid; grid-template-columns: repeat(7, minmax(240px, 1fr)); gap: 14px; overflow-x: auto; padding-bottom: 15px; align-items: start; }
-.kanban-col { background: #f8fafb; border: 1px solid var(--line); border-radius: 10px; padding: 12px; min-height: 500px; display: flex; flex-direction: column; }
-.kanban-col h4 { margin: 0 0 12px 0; font-size: 13px; color: var(--navy); display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--line); padding-bottom: 8px; }
+.kanban-col { background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 12px; min-height: 500px; display: flex; flex-direction: column; }
+.kanban-col h4 { margin: 0 0 12px 0; font-size: 13px; color: var(--text); display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--line); padding-bottom: 8px; }
 .kanban-cards { display: flex; flex-direction: column; gap: 10px; min-height: 400px; }
-.kanban-card { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 12px; box-shadow: 0 2px 5px rgba(0,0,0,.04); cursor: grab; transition: transform .1s; }
-.kanban-card:active { cursor: grabbing; }
-.kanban-card:hover { border-color: var(--navy); }
+.kanban-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px; box-shadow: 0 2px 5px rgba(0,0,0,.04); cursor: grab; }
+.kanban-card:hover { border-color: var(--green); }
 
-.pricing-item-grid { display: grid; grid-template-columns: 75px 1.8fr 75px 90px 80px 90px 110px 95px 90px 40px; gap: 6px; align-items: end; }
+.pricing-item-grid { display: grid; grid-template-columns: 70px 1.6fr 70px 85px 75px 85px 95px 80px 80px 85px 35px; gap: 5px; align-items: end; }
+.accordion-header { background: var(--bg); padding: 10px 14px; border-radius: 8px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 13px; border: 1px solid var(--line); margin-bottom: 10px; }
+.accordion-content { display: none; margin-bottom: 15px; }
+.accordion-content.show { display: grid; }
 </style>
 </head>
-<body>
+<body data-theme="light">
 <div class="app">
 <aside class="sidebar" id="sidebar">
   <div class="brand"><div class="brand-mark">A</div><div><strong>ADVANCE TINTAS</strong><small>DESENVOLVIDO POR: EVERTON NUNES</small></div></div>
@@ -46,13 +45,24 @@
   </nav>
   <div class="nav-label">SISTEMA</div>
   <nav class="nav"><button data-page="reports"><span class="ico">▤</span>Relatórios</button><button data-page="settings"><span class="ico">⚙</span>Backup e configurações</button></nav>
-  <div class="side-bottom">Advance CRM · Versão 3.2<br>Dados armazenados neste navegador</div>
+  <div class="side-bottom">Advance CRM · Versão 3.3<br>Dados armazenados neste navegador</div>
 </aside>
 <main class="main">
-  <header class="topbar"><div style="display:flex;align-items:center;gap:12px"><button class="btn mobile-menu" id="menuBtn">☰</button><span class="crumb">Advance Tintas / <b id="crumb">Dashboard</b></span></div><div class="top-actions"><span class="muted" style="font-size:12px">Modo offline</span><div class="avatar">A</div></div></header>
+  <header class="topbar">
+    <div style="display:flex;align-items:center;gap:12px">
+      <button class="btn mobile-menu" id="menuBtn">☰</button>
+      <span class="crumb">Advance Tintas / <b id="crumb">Dashboard</b></span>
+    </div>
+    <div class="top-actions">
+      <button class="btn small" onclick="toggleTheme()" title="Alternar Modo Escuro/Claro">🌓 Tema</button>
+      <span class="muted" style="font-size:12px">Modo offline</span>
+      <div class="avatar">A</div>
+    </div>
+  </header>
   <section class="content" id="content"></section>
 </main>
 </div>
+
 <div class="modal-back" id="modalBack">
  <div class="modal">
   <div class="modal-head"><h2 id="modalTitle">Cadastro</h2><button class="close" id="modalCloseBtn">×</button></div>
@@ -64,8 +74,9 @@
  </div>
 </div>
 <input type="file" id="importFile" accept=".json,application/json" class="hide">
+
 <script>
-const DBKEY='advance_crm_v1';
+const DBKEY='advance_crm_v3';
 const emptyDB=()=>({opportunities:[],petronect:[],companies:[],contacts:[],activities:[],licitacoes:[]});
 let db=loadDB(),page='dashboard',modalSaveFn=null;
 
@@ -78,6 +89,63 @@ const today=()=>new Date().toISOString().slice(0,10);
 const fmtDate=d=>d?new Date(d+'T12:00:00').toLocaleDateString('pt-BR'):'—';
 const money=v=>v?Number(v).toLocaleString('pt-BR',{style:'currency',currency:'BRL'}):'—';
 
+function toggleTheme(){
+  let current = document.body.getAttribute('data-theme');
+  let next = current === 'dark' ? 'light' : 'dark';
+  document.body.setAttribute('data-theme', next);
+  localStorage.setItem('advance_theme', next);
+}
+let savedTheme = localStorage.getItem('advance_theme') || 'light';
+document.body.setAttribute('data-theme', savedTheme);
+
+function exportToOutlook(title, date, desc, location='Portal Petronect'){
+  if(!date){ alert('Nenhuma data definida para exportação.'); return; }
+  let dStart = date.replace(/-/g, '') + 'T120000Z';
+  let dEnd = date.replace(/-/g, '') + 'T130000Z';
+  let icsContent = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Advance CRM//PT\nBEGIN:VEVENT\nSUMMARY:" + title + "\nDESCRIPTION:" + desc + "\nLOCATION:" + location + "\nDTSTART:" + dStart + "\nDTEND:" + dEnd + "\nEND:VEVENT\nEND:VCALENDAR";
+  let blob = new Blob([icsContent], {type: 'text/calendar;charset=utf-8'});
+  let url = URL.createObjectURL(blob);
+  let a = document.createElement('a');
+  a.href = url;
+  a.download = title.replace(/[^a-z0-9]/gi, '_').toLowerCase() + '_outlook.ics';
+  a.click();
+  setTimeout(()=>URL.revokeObjectURL(url), 1000);
+}
+
+function generatePetronectPDF(id){
+  let p = db.petronect.find(x => x.id === id);
+  if(!p) return;
+  let w = window.open('', '_blank');
+  let itemsHtml = (p.items||[]).map((item, idx)=>{
+    let qty = Number(item.qty)||1;
+    let unit = (item.unit||'').trim();
+    let vol = Number(item.volume)||1;
+    let isLiter = unit.toLowerCase().includes('litro') || unit.toLowerCase().includes('ml');
+    let compQty = isLiter ? (vol > 0 ? (qty/vol).toFixed(2) : qty) : qty;
+    let fp = Number(item.fullPrice)||0;
+    let icms = Number(item.icmsDiscountFactor)||1;
+    let disc = Number(item.discountPct)||0;
+    let baseIcms = fp * icms;
+    let finalP = baseIcms * (1 - (disc/100));
+    return `<tr><td>${idx+1}</td><td>${esc(item.itemCode||'—')}</td><td>${esc(item.summary)}</td><td>${qty} ${unit}</td><td>${vol}L</td><td>${esc(item.color||'—')}</td><td><b>${money(finalP)}</b></td></tr>`;
+  }).join('');
+
+  w.document.write(`
+    <html><head><title>Proposta Edital ${esc(p.opportunity)}</title>
+    <style>body{font-family:Arial,sans-serif;padding:30px;color:#333;}h2{color:#142d48;border-bottom:2px solid #142d48;padding-bottom:5px;}table{width:100%;border-collapse:collapse;margin-top:20px;}th,td{border:1px solid #ddd;padding:8px;font-size:12px;text-align:left;}th{background:#f8fafb;}</style>
+    </head><body>
+    <h2>ADVANCE TINTAS - PROPOSTA COMERCIAL</h2>
+    <p><b>Edital / Oportunidade:</b> ${esc(p.opportunity)}</p>
+    <p><b>Data de Encerramento:</b> ${fmtDate(p.closingDate)} às ${esc(p.closingTime||'23:59')}</p>
+    <p><b>Local:</b> ${esc(p.city||'—')}/${esc(p.uf||'—')}</p>
+    <h3>Relação de Itens da Proposta</h3>
+    <table><thead><tr><th>#</th><th>Item</th><th>Descritivo</th><th>Qtd</th><th>Volume</th><th>Cor</th><th>Preço Final</th></tr></thead><tbody>${itemsHtml}</tbody></table>
+    <p style="margin-top:30px;font-size:11px;color:#77;text-align:right;">Gerado por Advance CRM em ${today()}</p>
+    <script>window.print();<\/script></body></html>
+  `);
+  w.document.close();
+}
+
 function maskCNPJ(v){
  v = v.replace(/\D/g,"").slice(0,14);
  v = v.replace(/^(\d{2})(\d)/,"$1.$2");
@@ -88,15 +156,10 @@ function maskCNPJ(v){
 }
 function maskPhone(v){
  v = v.replace(/\D/g,"").slice(0,11);
- if(v.length > 10){
-  v = v.replace(/^(\d{2})(\d{5})(\d{4}).*/,"($1) $2-$3");
- } else if(v.length > 5){
-  v = v.replace(/^(\d{2})(\d{4})(\d{0,4}).*/,"($1) $2-$3");
- } else if(v.length > 2){
-  v = v.replace(/^(\d{2})(\d{0,5})/,"($1) $2");
- } else if(v.length > 0){
-  v = v.replace(/^(\d*)/,"($1");
- }
+ if(v.length > 10){ v = v.replace(/^(\d{2})(\d{5})(\d{4}).*/,"($1) $2-$3"); }
+ else if(v.length > 5){ v = v.replace(/^(\d{2})(\d{4})(\d{0,4}).*/,"($1) $2-$3"); }
+ else if(v.length > 2){ v = v.replace(/^(\d{2})(\d{0,5})/,"($1) $2"); }
+ else if(v.length > 0){ v = v.replace(/^(\d*)/,"($1"); }
  return v;
 }
 
@@ -113,7 +176,6 @@ function generateCustomId(prefix, list){
 const statusOptions=['Novo lead','Pesquisa em andamento','Contato identificado','Primeiro contato feito','Em negociação','Cotação solicitada','Proposta enviada','Homologação','Vendor List aprovado','Sem retorno','Perdido','Cliente ativo','Reativar futuramente'];
 const petronectStatusOptions=['Declinada','Analisando','Sala de colaboração','Postada','Ganha','Perdida','Encerrada'];
 const vendorOptions=['Não iniciado','Mapear requisitos','Documentação enviada','Em análise','Aprovado','Reprovado','Não se aplica'];
-
 const pillClass=s=>['Cliente ativo','Vendor List aprovado','Aprovado','Ganha','Postada','Sim'].includes(s)?'green':['Perdido','Reprovado','Declinada','Perdida','Não'].includes(s)?'red':['Em negociação','Homologação','Em análise','Documentação enviada','Sala de colaboração','Pendente'].includes(s)?'amber':['Analisando','Encerrada'].includes(s)?'purple':'blue';
 
 function setPage(p){page=p;$('#sidebar').classList.remove('open');document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===p));render()}
@@ -130,11 +192,9 @@ function openModal(title,body,save,customFoot=''){
  $('#modalTitle').textContent=title;
  $('#modalBody').innerHTML=body;
  modalSaveFn=save;
- 
  let foot=$('#modalFoot');
- if(customFoot){
-  foot.innerHTML=customFoot;
- } else {
+ if(customFoot){ foot.innerHTML=customFoot; }
+ else {
   foot.innerHTML=`<button class="btn" id="modalCancelBtn" onclick="closeModal()">Cancelar</button><button class="btn primary" id="modalSaveBtn">Salvar registro</button>`;
   $('#modalSaveBtn').onclick = () => { if(modalSaveFn) modalSaveFn(); };
  }
@@ -174,11 +234,13 @@ function dashboardPage(root){
       let isTom = item.date === new Date(new Date().getTime()+86400000).toISOString().slice(0,10);
       let badgeText = isExp ? 'Vencido' : (isTom ? 'Vence Amanhã' : 'Agendado');
       let badgeClass = isExp ? 'red' : (isTom ? 'amber' : 'blue');
-      
       return `<div class="activity-card" onclick="${item.type==='opp'?'openOpportunity(\''+item.id+'\')':'openPetronectModal(\''+item.id+'\')'}">
        <div style="display:flex;justify-content:space-between;align-items:center;">
         <strong>${esc(item.title)}</strong>
-        ${item.type==='opp'?`<button class="btn small" onclick="event.stopPropagation(); toggleOpportunityDone('${item.id}')" title="Concluir">✓</button>`:''}
+        <div style="display:flex;gap:4px;">
+         <button class="btn small" onclick="event.stopPropagation(); exportToOutlook('${esc(item.title)}', '${item.date}', '${esc(item.desc)}')" title="Exportar para Outlook (.ics)">📅 Outlook</button>
+         ${item.type==='opp'?`<button class="btn small" onclick="event.stopPropagation(); toggleOpportunityDone('${item.id}')" title="Concluir">✓</button>`:''}
+        </div>
        </div>
        <small style="display:block;margin:4px 0;">${fmtDate(item.date)} · ${esc(item.desc)}</small>
        <div><span class="pill ${badgeClass}" style="font-size:10px;padding:2px 6px;">${badgeText}</span> <span class="pill" style="font-size:9px;padding:2px 4px;">${item.type==='petronect'?'Edital':'Oportunidade'}</span></div>
@@ -203,9 +265,9 @@ function opportunitiesPage(root){
    return matchText.includes(q)&&(!s||o.status===s)&&(!p||o.priority===p);
   });
   $('#rows').innerHTML=arr.length?arr.map(o=>`
-   <tr style="${o.done?'opacity:0.5;background:#f9f9f9;':''}">
+   <tr style="${o.done?'opacity:0.5;background:var(--bg);':''}">
     <td style="text-align:center;"><input type="checkbox" ${o.done?'checked':''} onchange="toggleOpportunityDone('${o.id}')" title="Marcar como concluído"></td>
-    <td><code style="font-size:12px;background:#edf1f5;padding:2px 6px;border-radius:4px;color:var(--navy);font-weight:700;">${esc(o.id)}</code></td>
+    <td><code style="font-size:12px;background:var(--line);padding:2px 6px;border-radius:4px;color:var(--text);font-weight:700;">${esc(o.id)}</code></td>
     <td><b style="${o.done?'text-decoration:line-through;':''}">${esc(o.company||'Sem empresa')}</b><div class="muted">${esc(o.city||'')}${o.uf?'/'+esc(o.uf):''} · ${esc(o.segment||'')}</div></td>
     <td>${esc((o.products||[]).length > 0 ? `${o.products.length} item(ns)` : '0')}</td>
     <td>${esc(o.source||'—')}<div class="muted">${esc(o.process||'')}</div></td>
@@ -234,15 +296,12 @@ function toggleActivityDone(actId){
  if(act){ act.done = !act.done; saveDB(); render(); }
 }
 
-/* ==========================================
-   MÓDULO PETRONECT & PRECIFICAÇÃO
-   ========================================== */
 let petronectViewMode = 'table';
 
 function petronectPage(root){
  root.innerHTML=head('Portal Petronect','Gerenciamento de editais, prazos de postagem e precificação de propostas.',`
   <div style="display:flex;gap:8px;align-items:center;">
-   <div style="background:#edf1f5;padding:3px;border-radius:8px;display:flex;gap:3px;">
+   <div style="background:var(--line);padding:3px;border-radius:8px;display:flex;gap:3px;">
     <button class="btn small ${petronectViewMode==='table'?'primary':''}" onclick="petronectViewMode='table';render()">📋 Tabela</button>
     <button class="btn small ${petronectViewMode==='kanban'?'primary':''}" onclick="petronectViewMode='kanban';render()">📊 Kanban</button>
    </div>
@@ -263,7 +322,6 @@ function petronectPage(root){
 
   if(petronectViewMode === 'table'){
    container.innerHTML = `<div class="panel"><div class="table-wrap"><table><thead><tr><th>ID</th><th>Data</th><th>Oportunidade / Edital</th><th>Participar?</th><th>Status Petronect</th><th>Encerramento</th><th>Trimestre</th><th>Cidade/UF</th><th>Ações</th></tr></thead><tbody id="petronectRows"></tbody></table></div></div>`;
-   
    let rowsEl = $('#petronectRows');
    rowsEl.innerHTML = arr.length ? arr.map(p=>{
     let isDeclined = p.status === 'Declinada';
@@ -272,7 +330,7 @@ function petronectPage(root){
 
     return `
      <tr style="${isDeclined?'opacity:0.4;text-decoration:line-through;':''}">
-      <td><code style="font-size:12px;background:#edf1f5;padding:2px 6px;border-radius:4px;color:var(--navy);font-weight:700;">${esc(p.id)}</code></td>
+      <td><code style="font-size:12px;background:var(--line);padding:2px 6px;border-radius:4px;color:var(--text);font-weight:700;">${esc(p.id)}</code></td>
       <td>${fmtDate(p.date)}</td>
       <td><b>${esc(p.opportunity)}</b></td>
       <td><span class="pill ${pillClass(p.participate||'Pendente')}">${esc(p.participate||'Pendente')}</span></td>
@@ -281,9 +339,10 @@ function petronectPage(root){
       <td><b>${esc(p.quarter||'—')}</b></td>
       <td>${esc(p.city||'—')}${p.uf?'/'+esc(p.uf):''}</td>
       <td>
-       <div style="display:flex;gap:5px;">
+       <div style="display:flex;gap:4px;">
+        <button class="btn small" onclick="exportToOutlook('Edital Petronect: ${esc(p.opportunity)}', '${p.closingDate}', 'Prazo final de envio da proposta Petronect')" title="Outlook">📅</button>
         <button class="btn small" onclick="openPetronectModal('${p.id}')">Editar</button>
-        <button class="btn small danger" onclick="deletePetronect('${p.id}')">Excluir</button>
+        <button class="btn small danger" onclick="deletePetronect('${p.id}')">✕</button>
        </div>
       </td>
      </tr>
@@ -301,12 +360,13 @@ function petronectPage(root){
          ${colItems.map(p=>`
           <div class="kanban-card" draggable="true" ondragstart="dragPetronect(event, '${p.id}')" style="${p.status==='Declinada'?'opacity:0.5;text-decoration:line-through;':''}">
            <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
-            <code style="font-size:11px;font-weight:bold;color:var(--navy);">${esc(p.id)}</code>
+            <code style="font-size:11px;font-weight:bold;color:var(--text);">${esc(p.id)}</code>
             <span class="pill ${pillClass(p.participate||'Pendente')}" style="font-size:10px;padding:2px 6px;">Part: ${esc(p.participate||'Pendente')}</span>
            </div>
            <b style="font-size:13px;display:block;margin-bottom:4px;">${esc(p.opportunity)}</b>
            <div class="muted" style="font-size:12px;margin-bottom:8px;">Prazo: ${fmtDate(p.closingDate)}</div>
            <div style="display:flex;justify-content:flex-end;gap:4px;">
+            <button class="btn small" onclick="exportToOutlook('Edital: ${esc(p.opportunity)}', '${p.closingDate}', 'Prazo edital')">📅</button>
             <button class="btn small" onclick="openPetronectModal('${p.id}')">Editar</button>
            </div>
           </div>
@@ -331,11 +391,7 @@ function dropPetronect(e, newStatus){
  e.preventDefault();
  if(!draggedPetronectId) return;
  let item = db.petronect.find(p=>p.id === draggedPetronectId);
- if(item){
-  item.status = newStatus;
-  saveDB();
-  render();
- }
+ if(item){ item.status = newStatus; saveDB(); render(); }
  draggedPetronectId = null;
 }
 function deletePetronect(id){
@@ -365,10 +421,15 @@ function renderPetronectItems(){
   let fullPrice = Number(item.fullPrice) || 0;
   let icmsDiscountFactor = Number(item.icmsDiscountFactor) || 1; 
   let discountPct = Number(item.discountPct) || 0; 
+  let costPrice = Number(item.costPrice) || 0;
 
   let stepIcmsVal = fullPrice * icmsDiscountFactor;
   let finalPrice = stepIcmsVal * (1 - (discountPct / 100));
   let pricePerLiter = isLiter ? (volume > 0 ? (finalPrice / volume) : 0) : 0;
+  
+  // Simulador de Margem de Lucro
+  let profitMargin = costPrice > 0 ? (((finalPrice - (costPrice * (isLiter ? computedTotalQty : qty))) / finalPrice) * 100).toFixed(1) : '—';
+  let marginColor = (profitMargin !== '—' && Number(profitMargin) < 10) ? 'var(--red)' : 'var(--green)';
 
   if(!isParticipating){
    return `
@@ -380,7 +441,7 @@ function renderPetronectItems(){
       <div class="field"><label>Unidade</label><input type="text" value="${esc(unit)}" oninput="updatePetronectItem(${index}, 'unit', this.value)" placeholder="Litros, Galão"></div>
       <div class="field"><label>Volume (L)</label><input type="number" step="0.01" value="${volume}" oninput="updatePetronectItem(${index}, 'volume', this.value)"></div>
       <div class="field"><label>Cor do Item</label><input type="text" value="${esc(item.color||'')}" oninput="updatePetronectItem(${index}, 'color', this.value)"></div>
-      <div class="field"><label>Total Calc</label><input type="text" readonly value="${computedTotalQty} ${isLiter?'L':unit}" style="background:#edf1f5;font-weight:700;"></div>
+      <div class="field"><label>Total Calc</label><input type="text" readonly value="${computedTotalQty} ${isLiter?'L':unit}" style="background:var(--line);font-weight:700;"></div>
       <div style="padding-bottom:2px;"><button type="button" class="btn small danger" onclick="removePetronectItem(${index})">✕</button></div>
      </div>
     </div>
@@ -398,13 +459,15 @@ function renderPetronectItems(){
       <div class="field"><label>Preço Cheio</label><input type="number" step="0.01" value="${fullPrice}" oninput="updatePetronectItem(${index}, 'fullPrice', this.value)"></div>
       <div class="field"><label>Fator ICMS</label><input type="number" step="0.01" value="${icmsDiscountFactor}" oninput="updatePetronectItem(${index}, 'icmsDiscountFactor', this.value)"></div>
       <div class="field"><label>Desc (%)</label><input type="number" step="0.1" value="${discountPct}" oninput="updatePetronectItem(${index}, 'discountPct', this.value)"></div>
+      <div class="field"><label>Custo Base</label><input type="number" step="0.01" value="${costPrice}" oninput="updatePetronectItem(${index}, 'costPrice', this.value)"></div>
       <div style="padding-bottom:2px;"><button type="button" class="btn small danger" onclick="removePetronectItem(${index})">✕</button></div>
      </div>
-     <div style="margin-top:6px;font-size:11px;color:var(--navy);display:flex;justify-content:space-between;border-top:1px dashed var(--line);padding-top:4px;flex-wrap:wrap;gap:8px;">
+     <div style="margin-top:6px;font-size:11px;color:var(--text);display:flex;justify-content:space-between;border-top:1px dashed var(--line);padding-top:4px;flex-wrap:wrap;gap:8px;">
       <span>Total Qtd: <b>${computedTotalQty} ${isLiter?'L':unit}</b></span>
       <span>Base c/ ICMS: <b>${money(stepIcmsVal)}</b></span>
       <span>Preço Final c/ Desconto: <b style="color:var(--green);">${money(finalPrice)}</b></span>
-      <span>Preço por Litro: <b>${isLiter ? money(pricePerLiter) + ' / L' : 'N/A'}</b></span>
+      <span>Preço/Litro: <b>${isLiter ? money(pricePerLiter) + ' / L' : 'N/A'}</b></span>
+      <span>Margem Lucro: <b style="color:${marginColor};">${profitMargin}${profitMargin!=='—'?'%':''}</b></span>
      </div>
     </div>
    `;
@@ -413,7 +476,7 @@ function renderPetronectItems(){
 }
 
 function addPetronectItem(){
- currentPetronectItems.push({itemCode:'', summary:'', qty:141.8, unit:'Litros', volume:3.6, color:'', fullPrice:692.36, icmsDiscountFactor:0.82, discountPct:35});
+ currentPetronectItems.push({itemCode:'', summary:'', qty:141.8, unit:'Litros', volume:3.6, color:'', fullPrice:692.36, icmsDiscountFactor:0.82, discountPct:35, costPrice:0});
  renderPetronectItems();
 }
 
@@ -444,17 +507,21 @@ function updatePricingRowCalculations(index){
  let fullPrice = Number(item.fullPrice) || 0;
  let icmsDiscountFactor = Number(item.icmsDiscountFactor) || 1;
  let discountPct = Number(item.discountPct) || 0;
+ let costPrice = Number(item.costPrice) || 0;
 
  let stepIcmsVal = fullPrice * icmsDiscountFactor;
  let finalPrice = stepIcmsVal * (1 - (discountPct / 100));
  let pricePerLiter = isLiter ? (volume > 0 ? (finalPrice / volume) : 0) : 0;
+ let profitMargin = costPrice > 0 ? (((finalPrice - (costPrice * (isLiter ? computedTotalQty : qty))) / finalPrice) * 100).toFixed(1) : '—';
+ let marginColor = (profitMargin !== '—' && Number(profitMargin) < 10) ? 'var(--red)' : 'var(--green)';
 
  let spans = row.querySelectorAll('div[style*="margin-top"] span');
- if(spans.length >= 4){
+ if(spans.length >= 5){
   spans[0].innerHTML = `Total Qtd: <b>${computedTotalQty} ${isLiter?'L':unit}</b>`;
   spans[1].innerHTML = `Base c/ ICMS: <b>${money(stepIcmsVal)}</b>`;
   spans[2].innerHTML = `Preço Final c/ Desconto: <b style="color:var(--green);">${money(finalPrice)}</b>`;
-  spans[3].innerHTML = `Preço por Litro: <b>${isLiter ? money(pricePerLiter) + ' / L' : 'N/A'}</b>`;
+  spans[3].innerHTML = `Preço/Litro: <b>${isLiter ? money(pricePerLiter) + ' / L' : 'N/A'}</b>`;
+  spans[4].innerHTML = `Margem Lucro: <b style="color:${marginColor};">${profitMargin}${profitMargin!=='—'?'%':''}</b>`;
  }
 }
 
@@ -472,27 +539,26 @@ function handleClosingDateChange(dateVal){
  if($('#pn_quarter')) $('#pn_quarter').value = qVal;
 }
 
-function toggleParticipationBlock(val){
- renderPetronectItems();
-}
+function toggleParticipationBlock(val){ renderPetronectItems(); }
+function toggleAccordion(id){ $('#'+id).classList.toggle('show'); }
 
 function openPetronectModal(id=null){
  let p = db.petronect.find(x=>x.id===id)||{};
  currentPetronectItems = p.items ? JSON.parse(JSON.stringify(p.items)) : [];
 
  openModal(id?'Editar Edital Petronect':'Novo Edital Petronect',`
-  <div style="display:flex;flex-direction:column;gap:20px;">
-   ${id?`<div class="field"><label>ID do Registro</label><input type="text" readonly value="${esc(p.id)}" style="background:#eee;font-weight:700;"></div>`:''}
+  <div style="display:flex;flex-direction:column;gap:15px;">
+   ${id?`<div style="display:flex;justify-content:space-between;align-items:center;"><div class="field" style="flex:1;"><label>ID do Registro</label><input type="text" readonly value="${esc(p.id)}" style="background:var(--line);font-weight:700;"></div><div><button type="button" class="btn primary" onclick="generatePetronectPDF('${p.id}')">📄 Gerar Proposta PDF</button></div></div>`:''}
    
-   <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
-    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Informações do Edital e Decisão</h3>
+   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Informações do Edital e Decisão</h3>
     <div class="form-grid">
      ${field('Data de Cadastro','pn_date',p.date||today(),'date')}
      ${field('Status Petronect','pn_status',p.status||'Analisando','text',petronectStatusOptions)}
      <div class="field"><label>Vai Participar?</label><select id="pn_participate" onchange="toggleParticipationBlock(this.value)"><option ${p.participate==='Pendente'?'selected':''}>Pendente</option><option ${p.participate==='Sim'?'selected':''}>Sim</option><option ${p.participate==='Não'?'selected':''}>Não</option></select></div>
      ${field('Oportunidade / Número do Edital','pn_opportunity',p.opportunity)}
      ${field('Data de Encerramento','pn_closing',p.closingDate,'date')}
-     <div class="field"><label>Trimestre (Automático)</label><input id="pn_quarter" type="text" readonly value="${esc(p.quarter||'Q1')}" style="background:#edf1f5;font-weight:700;"></div>
+     <div class="field"><label>Trimestre (Automático)</label><input id="pn_quarter" type="text" readonly value="${esc(p.quarter||'Q1')}" style="background:var(--line);font-weight:700;"></div>
      ${field('Hora Limite','pn_time',p.closingTime||'23:59','time')}
      ${field('Prazo de Entrega Proposta','pn_delivery',p.deliveryTime||'30 dias','text')}
      ${field('Cidade','pn_city',p.city)}
@@ -500,25 +566,22 @@ function openPetronectModal(id=null){
     </div>
    </div>
 
-   <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
+   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;">
-     <h3 style="margin:0;font-size:14px;color:var(--navy);">📦 Itens / Descritivo do Edital (Proposta)</h3>
+     <h3 style="margin:0;font-size:14px;color:var(--text);">📦 Itens / Descritivo do Edital (Proposta)</h3>
      <button type="button" class="btn small primary" onclick="addPetronectItem()">＋ Adicionar Item</button>
     </div>
-    <div id="petronectItemsContainer" style="max-height:400px;overflow-y:auto;border:1px solid var(--line);padding:10px;border-radius:8px;background:#fff;"></div>
+    <div id="petronectItemsContainer" style="max-height:380px;overflow-y:auto;border:1px solid var(--line);padding:10px;border-radius:8px;background:var(--surface);"></div>
    </div>
 
-   <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
-    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">📝 Observações</h3>
-    <div class="form-grid">
-     <div class="field full">${field('Observações','pn_obs',p.obs,'textarea',null,true)}</div>
-    </div>
+   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📝 Observações</h3>
+    <div class="form-grid"><div class="field full">${field('Observações','pn_obs',p.obs,'textarea',null,true)}</div></div>
    </div>
   </div>
  `,()=>{
   let opp = val('pn_opportunity');
   if(!opp){alert('Informe a oportunidade / número do edital.');return}
-
   let closingVal = val('pn_closing');
   let quarterVal = computeQuarter(closingVal);
   let recordId = p.id ? p.id : generateCustomId('PN', db.petronect);
@@ -551,20 +614,20 @@ function openPetronectModal(id=null){
 
 function companiesPage(root){
  root.innerHTML=head('Empresas','Sua base de contas e potenciais clientes.',`<button class="btn primary" onclick="openCompany()">＋ Nova empresa</button>`)+toolbar('Buscar por empresa, CNPJ, cidade ou segmento...')+`<div class="panel"><div class="table-wrap"><table><thead><tr><th>ID</th><th>Empresa</th><th>CNPJ</th><th>Segmento</th><th>Localização</th><th>Oportunidades</th><th>Contato</th><th>Ações</th></tr></thead><tbody id="rows"></tbody></table></div></div>`;
- const draw=()=>{let q=$('#search').value.toLowerCase(),arr=db.companies.filter(c=>[c.id,c.name,c.cnpj,c.segment,c.city].join(' ').toLowerCase().includes(q));$('#rows').innerHTML=arr.length?arr.map(c=>`<tr><td><code style="font-size:12px;background:#edf1f5;padding:2px 6px;border-radius:4px;color:var(--navy);font-weight:700;">${esc(c.id)}</code></td><td><b>${esc(c.name)}</b><div class="muted">${esc(c.trade||'')}</div></td><td>${esc(c.cnpj||'—')}</td><td>${esc(c.segment||'—')}</td><td>${esc(c.city||'—')}${c.uf?'/'+esc(c.uf):''}</td><td>${db.opportunities.filter(o=>o.companyId===c.id).length}</td><td>${esc(c.phone||c.email||'—')}</td><td><div style="display:flex;gap:5px;"><button class="btn small" onclick="editCompany('${c.id}')">Editar</button><button class="btn small danger" onclick="deleteCompany('${c.id}')">Excluir</button></div></td></tr>`).join(''):'<tr><td colspan="8"><div class="empty">Nenhuma empresa cadastrada.</div></td></tr>'};$('#search').oninput=draw;draw();
+ const draw=()=>{let q=$('#search').value.toLowerCase(),arr=db.companies.filter(c=>[c.id,c.name,c.cnpj,c.segment,c.city].join(' ').toLowerCase().includes(q));$('#rows').innerHTML=arr.length?arr.map(c=>`<tr><td><code style="font-size:12px;background:var(--line);padding:2px 6px;border-radius:4px;color:var(--text);font-weight:700;">${esc(c.id)}</code></td><td><b>${esc(c.name)}</b><div class="muted">${esc(c.trade||'')}</div></td><td>${esc(c.cnpj||'—')}</td><td>${esc(c.segment||'—')}</td><td>${esc(c.city||'—')}${c.uf?'/'+esc(c.uf):''}</td><td>${db.opportunities.filter(o=>o.companyId===c.id).length}</td><td>${esc(c.phone||c.email||'—')}</td><td><div style="display:flex;gap:5px;"><button class="btn small" onclick="editCompany('${c.id}')">Editar</button><button class="btn small danger" onclick="deleteCompany('${c.id}')">Excluir</button></div></td></tr>`).join(''):'<tr><td colspan="8"><div class="empty">Nenhuma empresa cadastrada.</div></td></tr>'};$('#search').oninput=draw;draw();
 }
 
 function contactsPage(root){
  root.innerHTML=head('Contatos','Compradores, suprimentos, engenharia e responsáveis por homologação.',`<button class="btn primary" onclick="openContact()">＋ Novo contato</button>`)+toolbar('Buscar nome, empresa, cargo, e-mail...')+`<div class="panel"><div class="table-wrap"><table><thead><tr><th>ID</th><th>Nome</th><th>Empresa</th><th>Cargo / área</th><th>Telefone</th><th>E-mail</th><th>Último contato</th><th>Ações</th></tr></thead><tbody id="rows"></tbody></table></div></div>`;
- const draw=()=>{let q=$('#search').value.toLowerCase(),arr=db.contacts.filter(c=>[c.id,c.name,c.company,c.role,c.email,c.phone].join(' ').toLowerCase().includes(q));$('#rows').innerHTML=arr.length?arr.map(c=>`<tr><td><code style="font-size:12px;background:#edf1f5;padding:2px 6px;border-radius:4px;color:var(--navy);font-weight:700;">${esc(c.id)}</code></td><td><b>${esc(c.name)}</b></td><td>${esc(c.company||'—')}</td><td>${esc(c.role||'—')}</td><td>${esc(c.phone||'—')}</td><td>${esc(c.email||'—')}</td><td>${fmtDate(c.lastDate)}</td><td><div style="display:flex;gap:5px;"><button class="btn small" onclick="editContact('${c.id}')">Editar</button><button class="btn small danger" onclick="deleteContact('${c.id}')">Excluir</button></div></td></tr>`).join(''):'<tr><td colspan="8"><div class="empty">Nenhum contato cadastrado.</div></td></tr>'};$('#search').oninput=draw;draw();
+ const draw=()=>{let q=$('#search').value.toLowerCase(),arr=db.contacts.filter(c=>[c.id,c.name,c.company,c.role,c.email,c.phone].join(' ').toLowerCase().includes(q));$('#rows').innerHTML=arr.length?arr.map(c=>`<tr><td><code style="font-size:12px;background:var(--line);padding:2px 6px;border-radius:4px;color:var(--text);font-weight:700;">${esc(c.id)}</code></td><td><b>${esc(c.name)}</b></td><td>${esc(c.company||'—')}</td><td>${esc(c.role||'—')}</td><td>${esc(c.phone||'—')}</td><td>${esc(c.email||'—')}</td><td>${fmtDate(c.lastDate)}</td><td><div style="display:flex;gap:5px;"><button class="btn small" onclick="editContact('${c.id}')">Editar</button><button class="btn small danger" onclick="deleteContact('${c.id}')">Excluir</button></div></td></tr>`).join(''):'<tr><td colspan="8"><div class="empty">Nenhum contato cadastrado.</div></td></tr>'};$('#search').oninput=draw;draw();
 }
 
 function activitiesPage(root){
  root.innerHTML=head('Histórico de atividades','Registre ligações, e-mails, reuniões e retornos realizados.',`<button class="btn primary" onclick="openActivity()">＋ Registrar atividade</button>`)+toolbar('Buscar empresa, contato ou resumo...')+`<div class="panel"><div class="table-wrap"><table><thead><tr><th>Concluído</th><th>ID</th><th>Data</th><th>Empresa</th><th>Contato</th><th>Tipo</th><th>Resumo / resultado</th><th>Próximo passo</th><th>Ações</th></tr></thead><tbody id="rows"></tbody></table></div></div>`;
  const draw=()=>{let q=$('#search').value.toLowerCase(),arr=[...db.activities].sort((a,b)=>(b.date||'').localeCompare(a.date||'')).filter(a=>[a.id,a.company,a.contact,a.type,a.summary].join(' ').toLowerCase().includes(q));$('#rows').innerHTML=arr.length?arr.map(a=>`
-  <tr style="${a.done?'opacity:0.5;background:#f9f9f9;':''}">
+  <tr style="${a.done?'opacity:0.5;background:var(--bg);':''}">
    <td style="text-align:center;"><input type="checkbox" ${a.done?'checked':''} onchange="toggleActivityDone('${a.id}')"></td>
-   <td><code style="font-size:12px;background:#edf1f5;padding:2px 6px;border-radius:4px;color:var(--navy);font-weight:700;">${esc(a.id)}</code></td>
+   <td><code style="font-size:12px;background:var(--line);padding:2px 6px;border-radius:4px;color:var(--text);font-weight:700;">${esc(a.id)}</code></td>
    <td>${fmtDate(a.date)}</td>
    <td><b style="${a.done?'text-decoration:line-through;':''}">${esc(a.company)}</b></td>
    <td>${esc(a.contact||'—')}</td>
@@ -578,7 +641,7 @@ function activitiesPage(root){
 
 function vendorPage(root){
  let arr=db.opportunities.filter(o=>o.vendor&&o.vendor!=='Não iniciado'&&o.vendor!=='Não se aplica');
- root.innerHTML=head('Vendor List','Acompanhe cadastros, documentação e homologações de fornecedores.',`<button class="btn primary" onclick="setPage('opportunities')">＋ Gerenciar oportunidades</button>`)+`<div class="cards">${stat('Em mapeamento',arr.filter(o=>o.vendor==='Mapear requisitos').length,'⌕','Requisitos a identificar')}${stat('Documentação enviada',arr.filter(o=>o.vendor==='Documentação enviada').length,'⇧','Aguardando análise')}${stat('Em análise',arr.filter(o=>o.vendor==='Em análise').length,'◷','Processos pendentes')}${stat('Aprovados',arr.filter(o=>o.vendor==='Aprovado').length,'✓','Fornecedores homologados')}</div><div class="panel"><div class="table-wrap"><table><thead><tr><th>ID</th><th>Empresa</th><th>Quantidade de Itens</th><th>Status Vendor List</th><th>Status comercial</th><th>Próxima ação</th></tr></thead><tbody>${arr.length?arr.map(o=>`<tr><td><code style="font-size:12px;background:#edf1f5;padding:2px 6px;border-radius:4px;color:var(--navy);font-weight:700;">${esc(o.id)}</code></td><td><b>${esc(o.company)}</b></td><td>${(o.products||[]).length} item(ns)</td><td><span class="pill ${pillClass(o.vendor)}">${esc(o.vendor)}</span></td><td>${esc(o.status)}</td><td>${esc(o.nextAction||'—')}</td></tr>`).join(''):'<tr><td colspan="6"><div class="empty">Nenhum processo de Vendor List iniciado.<br>Atualize o campo Vendor List nas oportunidades.</div></td></tr>'}</tbody></table></div></div>`;
+ root.innerHTML=head('Vendor List','Acompanhe cadastros, documentação e homologações de fornecedores.',`<button class="btn primary" onclick="setPage('opportunities')">＋ Gerenciar oportunidades</button>`)+`<div class="cards">${stat('Em mapeamento',arr.filter(o=>o.vendor==='Mapear requisitos').length,'⌕','Requisitos a identificar')}${stat('Documentação enviada',arr.filter(o=>o.vendor==='Documentação enviada').length,'⇧','Aguardando análise')}${stat('Em análise',arr.filter(o=>o.vendor==='Em análise').length,'◷','Processos pendentes')}${stat('Aprovados',arr.filter(o=>o.vendor==='Aprovado').length,'✓','Fornecedores homologados')}</div><div class="panel"><div class="table-wrap"><table><thead><tr><th>ID</th><th>Empresa</th><th>Quantidade de Itens</th><th>Status Vendor List</th><th>Status comercial</th><th>Próxima ação</th></tr></thead><tbody>${arr.length?arr.map(o=>`<tr><td><code style="font-size:12px;background:var(--line);padding:2px 6px;border-radius:4px;color:var(--text);font-weight:700;">${esc(o.id)}</code></td><td><b>${esc(o.company)}</b></td><td>${(o.products||[]).length} item(ns)</td><td><span class="pill ${pillClass(o.vendor)}">${esc(o.vendor)}</span></td><td>${esc(o.status)}</td><td>${esc(o.nextAction||'—')}</td></tr>`).join(''):'<tr><td colspan="6"><div class="empty">Nenhum processo de Vendor List iniciado.<br>Atualize o campo Vendor List nas oportunidades.</div></td></tr>'}</tbody></table></div></div>`;
 }
 
 function reportsPage(root){
@@ -588,8 +651,8 @@ function reportsPage(root){
 
  root.innerHTML=head('Relatórios','Visão analítica completa de vendas, prospecção e pipeline comercial.',`
   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;">
-   <div style="display:flex;align-items:center;gap:6px;"><label style="font-size:11px;font-weight:650;">De:</label><input type="date" id="reportStartDate" onchange="renderReportsData()" style="padding:6px;border:1px solid #dce4eb;border-radius:6px;background:#fff;font-size:12px;"></div>
-   <div style="display:flex;align-items:center;gap:6px;"><label style="font-size:11px;font-weight:650;">Até:</label><input type="date" id="reportEndDate" onchange="renderReportsData()" style="padding:6px;border:1px solid #dce4eb;border-radius:6px;background:#fff;font-size:12px;"></div>
+   <div style="display:flex;align-items:center;gap:6px;"><label style="font-size:11px;font-weight:650;">De:</label><input type="date" id="reportStartDate" onchange="renderReportsData()" style="padding:6px;border:1px solid var(--line);border-radius:6px;background:var(--surface);font-size:12px;"></div>
+   <div style="display:flex;align-items:center;gap:6px;"><label style="font-size:11px;font-weight:650;">Até:</label><input type="date" id="reportEndDate" onchange="renderReportsData()" style="padding:6px;border:1px solid var(--line);border-radius:6px;background:var(--surface);font-size:12px;"></div>
    <div style="display:flex;align-items:center;gap:6px;"><label style="font-size:11px;font-weight:650;">Ano:</label><select id="reportYearFilter" onchange="renderReportsData()"><option value="">Todos</option>${years.map(y=>`<option value="${y}" ${y==currentYear?'selected':''}>${y}</option>`).join('')}</select></div>
    <button class="btn small" onclick="resetReportFilters()">Limpar Filtros</button>
   </div>
@@ -648,7 +711,7 @@ function renderReportsData(){
  if(!container) return;
 
  container.innerHTML = `
- <div style="font-size:13px;font-weight:700;color:var(--navy);margin:5px 0 10px 0;text-transform:uppercase;letter-spacing:.6px;">📈 Indicadores de Oportunidades / Vendas</div>
+ <div style="font-size:13px;font-weight:700;color:var(--text);margin:5px 0 10px 0;text-transform:uppercase;letter-spacing:.6px;">📈 Indicadores de Oportunidades / Vendas</div>
  <div class="cards">
   ${stat('Total Oportunidades',totalOpps,'◎','Registros no filtro')}
   ${stat('Valor Bruto Oportunidades',money(totalVal),'＄','Soma dos orçamentos')}
@@ -656,7 +719,7 @@ function renderReportsData(){
   ${stat('Taxa de Conversão',conversionRate+'%','★',activeClients+' clientes fechados')}
  </div>
 
- <div style="font-size:13px;font-weight:700;color:var(--navy);margin:20px 0 10px 0;text-transform:uppercase;letter-spacing:.6px;">🏛️ Indicadores de Licitações e Editais Petronect</div>
+ <div style="font-size:13px;font-weight:700;color:var(--text);margin:20px 0 10px 0;text-transform:uppercase;letter-spacing:.6px;">🏛️ Indicadores de Licitações e Editais Petronect</div>
  <div class="cards">
   ${stat('Total Licitações/Editais',totalPetronect,'◈','Editais no filtro')}
   ${stat('Editais Ativos',petronectActiveCount,'◷','Em andamento')}
@@ -667,16 +730,12 @@ function renderReportsData(){
  <div class="grid2" style="margin-top:16px;">
   <div class="panel"><h3>Oportunidades por Status</h3>${byStatus.length?byStatus.map(x=>`<div class="bar-row"><span>${esc(x.s)}</span><div class="bar"><i style="width:${100*x.n/Math.max(1,totalOpps)}%"></i></div><b>${x.n}</b></div>`).join(''):'<div class="empty">Sem dados para exibir.</div>'}</div>
   <div class="panel"><h3>Status Licitações Petronect</h3>${byPetronectStatus.length?byPetronectStatus.map(x=>`<div class="bar-row"><span>${esc(x.s)}</span><div class="bar"><i style="width:${100*x.n/Math.max(1,totalPetronect)}%"></i></div><b>${x.n}</b></div>`).join(''):'<div class="empty">Sem dados para exibir.</div>'}</div>
- </div>
- <div class="grid2" style="margin-top:16px;">
-  <div class="panel"><h3>Origem Comercial</h3>${bySource.length?bySource.map(x=>`<div class="bar-row"><span>${esc(x.s)}</span><div class="bar"><i style="width:${100*x.n/Math.max(1,totalOpps)}%"></i></div><b>${x.n}</b></div>`).join(''):'<div class="empty">Sem dados para exibir.</div>'}</div>
-  <div class="panel"><h3>Resumo de Performance Geral</h3><div style="padding:10px 0;font-size:13px;line-height:1.6;"><div>• Negócios convertidos (Clientes Ativos): <b>${activeClients}</b></div><div>• Oportunidades perdidas: <b>${lostOpps}</b></div><div>• Licitações ganhas: <b>${petronectWon}</b></div><div>• Total de empresas na base: <b>${db.companies.length}</b></div><div>• Total de contatos cadastrados: <b>${db.contacts.length}</b></div><div>• Atividades registradas: <b>${db.activities.length}</b></div></div></div>
  </div>`;
 }
 
 function settingsPage(root){
  root.innerHTML=head('Backup e configurações','Proteja seus dados e mantenha uma cópia fora do navegador.')+`
- <div class="notice warn"><b>Importante:</b> os registros ficam armazenados neste navegador e neste perfil de usuário. Limpar os dados do navegador pode apagar sua base. Faça backups regulares.</div>
+ <div class="notice warn"><b>Importante:</b> os registros ficam armazenados neste navegador e neste perfil de usuário. Faça backups regulares.</div>
  <div class="settings-grid">
   <div class="panel">
    <h3>Exportar backup completo (JSON)</h3>
@@ -687,7 +746,7 @@ function settingsPage(root){
    <h3>Exportar cadastro específico (CSV)</h3>
    <p class="muted">Escolha qual base específica você deseja baixar separadamente em formato CSV para o Excel:</p>
    <div style="display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap;">
-    <select id="exportSelectType" style="padding:8px;border-radius:8px;border:1px solid #dce4eb;background:#fff;">
+    <select id="exportSelectType" style="padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--surface);">
      <option value="companies">Empresas</option>
      <option value="contacts">Contatos</option>
      <option value="activities">Atividades</option>
@@ -797,24 +856,12 @@ function renderOpportunityContacts(){
         <div style="padding-bottom:2px;"><button type="button" class="btn small danger" onclick="removeOpportunityContact(${index})">✕</button></div>
       </div>
     </div>
-  `).join('') || '<div class="empty" style="padding:15px;font-size:13px;">Nenhum contato adicionado. Clique em "Adicionar Contato" para incluir.</div>';
+  `).join('') || '<div class="empty" style="padding:15px;font-size:13px;">Nenhum contato adicionado.</div>';
 }
 
-function addOpportunityContactItem(){
-  currentOpportunityContacts.push({name:'', role:'', email:'', phone:'', rolebuy:'Compras'});
-  renderOpportunityContacts();
-}
-
-function removeOpportunityContact(index){
-  currentOpportunityContacts.splice(index, 1);
-  renderOpportunityContacts();
-}
-
-function updateOpportunityContact(index, fieldName, val){
-  if(currentOpportunityContacts[index]){
-    currentOpportunityContacts[index][fieldName] = val;
-  }
-}
+function addOpportunityContactItem(){ currentOpportunityContacts.push({name:'', role:'', email:'', phone:'', rolebuy:'Compras'}); renderOpportunityContacts(); }
+function removeOpportunityContact(index){ currentOpportunityContacts.splice(index, 1); renderOpportunityContacts(); }
+function updateOpportunityContact(index, fieldName, val){ if(currentOpportunityContacts[index]) currentOpportunityContacts[index][fieldName] = val; }
 
 function openOpportunity(id=null){
   let o=db.opportunities.find(x=>x.id===id)||{};
@@ -822,17 +869,15 @@ function openOpportunity(id=null){
   if(currentProductsList.length === 0 && o.product){
     currentProductsList.push({name: o.product, desc: '', qty: o.quantity||1, unit: 'UN', unitValue: o.value||0});
   }
-
   currentOpportunityContacts = o.contactsList ? JSON.parse(JSON.stringify(o.contactsList)) : [];
   let companyActivities = o.company ? db.activities.filter(a => a.company.toLowerCase() === o.company.toLowerCase()).sort((a,b)=>(b.date||'').localeCompare(a.date||'')) : [];
 
   openModal(id?'Editar oportunidade':'Nova oportunidade', `
-    <div style="display:flex;flex-direction:column;gap:20px;">
-      
-      ${id?`<div class="field"><label>ID do Registro</label><input type="text" readonly value="${esc(o.id)}" style="background:#eee;font-weight:700;"></div>`:''}
+    <div style="display:flex;flex-direction:column;gap:15px;">
+      ${id?`<div class="field"><label>ID do Registro</label><input type="text" readonly value="${esc(o.id)}" style="background:var(--line);font-weight:700;"></div>`:''}
 
-      <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
-        <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Dados Principais da Empresa</h3>
+      <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+        <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Dados Principais da Empresa</h3>
         <div class="form-grid">
           <div class="field"><label>Empresa / razão social</label><input id="o_company" type="text" value="${esc(o.company)}" oninput="handleCompanyAutoFill(this.value)"></div>
           ${field('CNPJ','o_cnpj',o.cnpj)}
@@ -843,8 +888,8 @@ function openOpportunity(id=null){
         </div>
       </div>
 
-      <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
-        <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">📋 2. Informações Comerciais e Licitação</h3>
+      <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+        <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📋 2. Informações Comerciais e Licitação</h3>
         <div class="form-grid">
           ${field('Origem da oportunidade','o_source',o.source,'text',['PNCP','Compras.gov.br','Portal estadual/municipal','Portal privado','Indicação','LinkedIn','Pesquisa Google','Outro'])}
           ${field('Nº do processo / licitação','o_process',o.process)}
@@ -858,72 +903,46 @@ function openOpportunity(id=null){
         </div>
       </div>
 
-      <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
-        <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">🏛️ 3. Órgão Comprador</h3>
-        <div class="form-grid">
-          ${field('Nome do órgão comprador','o_buyer',o.buyer)}
-          ${field('CNPJ do órgão','o_buyer_cnpj',o.buyerCnpj)}
-          ${field('Responsável no órgão','o_buyer_resp',o.buyerResp)}
-          ${field('Cargo do responsável','o_buyer_cargo',o.buyerCargo)}
-          <div class="field full">${field('Endereço do órgão','o_buyer_address',o.buyerAddress,'text',null,true)}</div>
-        </div>
+      <!-- SANFONA PARA ÓRGÃO COMPRADOR (MENOS POLUIÇÃO) -->
+      <div class="accordion-header" onclick="toggleAccordion('accBuyer')"><span>🏛️ 3. Órgão Comprador (Clique para expandir)</span><span>▼</span></div>
+      <div id="accBuyer" class="accordion-content form-grid" style="background:var(--bg);padding:15px;border:1px solid var(--line);border-radius:8px;">
+        ${field('Nome do órgão comprador','o_buyer',o.buyer)}
+        ${field('CNPJ do órgão','o_buyer_cnpj',o.buyerCnpj)}
+        ${field('Responsável no órgão','o_buyer_resp',o.buyerResp)}
+        ${field('Cargo do responsável','o_buyer_cargo',o.buyerCargo)}
+        <div class="field full">${field('Endereço do órgão','o_buyer_address',o.buyerAddress,'text',null,true)}</div>
       </div>
 
-      <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
+      <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;">
-          <h3 style="margin:0;font-size:14px;color:var(--navy);">👥 4. Contatos da Oportunidade</h3>
+          <h3 style="margin:0;font-size:14px;color:var(--text);">👥 4. Contatos da Oportunidade</h3>
           <button type="button" class="btn small primary" onclick="addOpportunityContactItem()">＋ Adicionar Contato</button>
         </div>
-        <div id="opportunityContactsContainer" style="max-height:280px;overflow-y:auto;border:1px solid var(--line);padding:10px;border-radius:8px;background:#fff;"></div>
+        <div id="opportunityContactsContainer" style="max-height:280px;overflow-y:auto;border:1px solid var(--line);padding:10px;border-radius:8px;background:var(--surface);"></div>
       </div>
 
-      <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
+      <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;">
-          <h3 style="margin:0;font-size:14px;color:var(--navy);">📦 5. Produtos / Itens da Oportunidade</h3>
+          <h3 style="margin:0;font-size:14px;color:var(--text);">📦 5. Produtos / Itens da Oportunidade</h3>
           <button type="button" class="btn small primary" onclick="addProductItem()">＋ Adicionar Item</button>
         </div>
-        <div id="productItemsContainer" style="max-height:280px;overflow-y:auto;border:1px solid var(--line);padding:10px;border-radius:8px;background:#fff;"></div>
+        <div id="productItemsContainer" style="max-height:280px;overflow-y:auto;border:1px solid var(--line);padding:10px;border-radius:8px;background:var(--surface);"></div>
       </div>
 
-      <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
-        <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">🕒 6. Acompanhamento e Histórico</h3>
+      <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+        <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">🕒 6. Acompanhamento e Histórico</h3>
         <div class="form-grid">
           ${field('Próxima ação','o_next',o.nextAction,'text',null,true)}
           ${field('Data do próximo contato','o_nextdate',o.nextDate,'date')}
           <div class="field full">${field('Observações','o_notes',o.notes,'textarea',null,true)}</div>
         </div>
-        
-        <div style="margin-top:15px;">
-          <label style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;display:block;">Histórico de Atividades Anteriores</label>
-          <div style="border:1px solid var(--line);padding:10px;border-radius:8px;background:#fff;max-height:180px;overflow-y:auto;">
-            ${companyActivities.length > 0 ? companyActivities.map(a=>`<div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #e4eaf0;font-size:12px;"><b>${fmtDate(a.date)}</b> · [${esc(a.type)}] ${esc(a.summary||'—')} <div class="muted">Próximo passo: ${esc(a.next||'—')}</div></div>`).join('') : '<div class="empty" style="padding:10px;font-size:12px;">Nenhuma atividade registrada para esta empresa.</div>'}
-          </div>
-        </div>
       </div>
-
     </div>
   `, ()=>{
     let company=val('o_company');
     if(!company){alert('Informe o nome da empresa.');return}
-
     let totalValue = currentProductsList.reduce((acc, item)=> acc + ((Number(item.qty)||0)*(Number(item.unitValue)||0)), 0);
     let recordId = o.id ? o.id : generateCustomId('OP', db.opportunities);
-
-    currentOpportunityContacts.forEach(c => {
-      if(c.name && !db.contacts.some(existing => existing.name.toLowerCase() === c.name.toLowerCase() && existing.company.toLowerCase() === company.toLowerCase())){
-        db.contacts.unshift({
-          id: generateCustomId('CT', db.contacts),
-          name: c.name,
-          company: company,
-          role: c.role || '',
-          rolebuy: c.rolebuy || 'Compras',
-          phone: c.phone || '',
-          email: c.email || '',
-          lastDate: today(),
-          notes: 'Cadastrado via Oportunidade'
-        });
-      }
-    });
 
     let data={
       id: recordId,
@@ -959,17 +978,11 @@ function openOpportunity(id=null){
 
     if(o.id) db.opportunities=db.opportunities.map(x=>x.id===id?data:x);
     else db.opportunities.unshift(data);
-
-    if(!db.companies.some(c=>c.name.toLowerCase()===company.toLowerCase())){
-      let compId = generateCustomId('EM', db.companies);
-      db.companies.push({id:compId,name:company,cnpj:data.cnpj,address:data.address,segment:data.segment,city:data.city,uf:data.uf});
-    }
     saveDB(); closeModal(); render();
   });
 
   renderProductItems();
   renderOpportunityContacts();
-  if($('#modalSaveBtn')) $('#modalSaveBtn').onclick = () => { if(modalSaveFn) modalSaveFn(); };
 }
 
 function editOpportunity(id){openOpportunity(id)}
@@ -978,9 +991,9 @@ function openCompany(id=null){
  let c=db.companies.find(x=>x.id===id)||{};
  openModal(id?'Editar empresa':'Nova empresa',`
   <div style="display:flex;flex-direction:column;gap:20px;">
-   ${id?`<div class="field"><label>ID do Registro</label><input type="text" readonly value="${esc(c.id)}" style="background:#eee;font-weight:700;"></div>`:''}
-   <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
-    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Dados da Empresa</h3>
+   ${id?`<div class="field"><label>ID do Registro</label><input type="text" readonly value="${esc(c.id)}" style="background:var(--line);font-weight:700;"></div>`:''}
+   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Dados da Empresa</h3>
     <div class="form-grid">
      ${field('Razão social / empresa','c_name',c.name)}
      ${field('Nome fantasia','c_trade',c.trade)}
@@ -991,8 +1004,8 @@ function openCompany(id=null){
      <div class="field full">${field('Endereço','c_address',c.address,'text',null,true)}</div>
     </div>
    </div>
-   <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
-    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">📞 2. Contato e Observações</h3>
+   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📞 2. Contato e Observações</h3>
     <div class="form-grid">
      ${field('Telefone','c_phone',c.phone,'tel')}
      ${field('E-mail','c_email',c.email,'email')}
@@ -1009,9 +1022,9 @@ function openContact(id=null){
  let c=db.contacts.find(x=>x.id===id)||{};
  openModal(id?'Editar contato':'Novo contato',`
   <div style="display:flex;flex-direction:column;gap:20px;">
-   ${id?`<div class="field"><label>ID do Registro</label><input type="text" readonly value="${esc(c.id)}" style="background:#eee;font-weight:700;"></div>`:''}
-   <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
-    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Informações do Contato</h3>
+   ${id?`<div class="field"><label>ID do Registro</label><input type="text" readonly value="${esc(c.id)}" style="background:var(--line);font-weight:700;"></div>`:''}
+   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Informações do Contato</h3>
     <div class="form-grid">
      ${field('Nome do contato','ct_name',c.name)}
      ${field('Empresa','ct_company',c.company)}
@@ -1019,8 +1032,8 @@ function openContact(id=null){
      ${field('Papel na compra','ct_rolebuy',c.rolebuy||'Compras','text',['Compras','Suprimentos','Engenharia','Manutenção','Obras','Comercial','Diretoria','Cadastro de fornecedores','Outro'])}
     </div>
    </div>
-   <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
-    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">📞 2. Comunicação e Detalhes</h3>
+   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📞 2. Comunicação e Detalhes</h3>
     <div class="form-grid">
      ${field('Telefone','ct_phone',c.phone,'tel')}
      ${field('E-mail','ct_email',c.email,'email')}
@@ -1037,40 +1050,31 @@ function editContact(id){openContact(id)}
 
 function openActivity(oppId = null){
  let opp = oppId ? db.opportunities.find(o => o.id === oppId) : null;
- let defaultCompany = opp ? opp.company : '';
- let defaultContact = opp ? opp.contact : '';
- let defaultNext = opp ? opp.nextAction : '';
- let defaultNextDate = opp ? opp.nextDate : today();
-
  openModal('Registrar atividade',`
-  <div style="display:flex;flex-direction:column;gap:20px;">
-   <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
-    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Dados da Atividade</h3>
+  <div style="display:flex;flex-direction:column;gap:15px;">
+   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Dados da Atividade</h3>
     <div class="form-grid">
      ${field('Data','a_date',today(),'date')}
      ${field('Tipo de atividade','a_type','Ligação','text',['Pesquisa','Ligação','E-mail','WhatsApp','LinkedIn','Reunião','Envio de apresentação','Cotação','Follow-up','Homologação','Outro'])}
-     ${field('Empresa','a_company',defaultCompany)}
-     ${field('Contato','a_contact',defaultContact)}
+     ${field('Empresa','a_company',opp?opp.company:'')}
+     ${field('Contato','a_contact',opp?opp.contact:'')}
     </div>
    </div>
-   <div style="background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;">
-    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px;">📋 2. Detalhes e Próximos Passos</h3>
+   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📋 2. Detalhes e Próximos Passos</h3>
     <div class="form-grid">
      <div class="field full">${field('Resumo / resultado','a_summary','','textarea',null,true)}</div>
      <div class="field full">${field('Objeção / necessidade identificada','a_objection','','textarea',null,true)}</div>
-     <div class="field full">${field('Próximo passo','a_next',defaultNext,'textarea',null,true)}</div>
-     ${field('Nova data do próximo contato','a_nextdate',defaultNextDate,'date')}
+     <div class="field full">${field('Próximo passo','a_next',opp?opp.nextAction:'','textarea',null,true)}</div>
+     ${field('Nova data do próximo contato','a_nextdate',opp?opp.nextDate:today(),'date')}
     </div>
    </div>
   </div>
  `,()=>{
   let company=val('a_company');
   if(!company){alert('Informe a empresa.');return}
-
   let recordId = generateCustomId('AT', db.activities);
-  let nextDateVal = val('a_nextdate');
-  let nextStepVal = val('a_next');
-
   db.activities.unshift({
    id:recordId,
    date:val('a_date'),
@@ -1079,17 +1083,9 @@ function openActivity(oppId = null){
    type:val('a_type'),
    summary:val('a_summary'),
    objection:val('a_objection'),
-   next:nextStepVal,
+   next:val('a_next'),
    done:false
   });
-
-  let oppMatch = db.opportunities.find(o => o.company.toLowerCase() === company.toLowerCase() || o.id === oppId);
-  if(oppMatch){
-   oppMatch.lastContact = val('a_date');
-   if(nextStepVal) oppMatch.nextAction = nextStepVal;
-   if(nextDateVal) oppMatch.nextDate = nextDateVal;
-  }
-
   saveDB(); closeModal(); render();
  });
 }
