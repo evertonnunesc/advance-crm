@@ -7,15 +7,133 @@
 <style>
 :root{--navy:#142d48;--navy2:#1c3c5c;--green:#24966b;--bg:#f3f6f8;--surface:#fff;--text:#1d2935;--muted:#718096;--line:#e4eaf0;--red:#c84d4d;--amber:#b7791f;--shadow:0 8px 24px rgba(20,45,72,.07)}
 [data-theme="dark"]{--navy:#1a202c;--navy2:#2d3748;--green:#319795;--bg:#121212;--surface:#1e1e1e;--text:#e2e8f0;--muted:#a0aec0;--line:#2d3748;--red:#e53e3e;--amber:#d69e2e;--shadow:0 8px 24px rgba(0,0,0,.3)}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 Inter,Segoe UI,Arial,sans-serif;transition:background .3s,color .3s}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:248px;background:var(--navy);color:#fff;padding:22px 15px;display:flex;flex-direction:column;z-index:5;overflow-y:auto}.brand{display:flex;align-items:center;gap:11px;padding:3px 9px 25px}.brand-mark{width:39px;height:39px;border-radius:11px;background:var(--green);display:grid;place-items:center;font-weight:800;font-size:20px}.brand strong{display:block;font-size:14px;letter-spacing:.5px}.brand small{color:#a9bdce;font-size:9px;letter-spacing:.8px}.nav-label{font-size:10px;color:#89a2b8;letter-spacing:1.4px;padding:12px 12px 7px}.nav button{width:100%;border:0;background:transparent;color:#d5e0e9;padding:11px 12px;text-align:left;border-radius:8px;margin:2px 0;display:flex;gap:12px;align-items:center}.nav button:hover,.nav button.active{background:#254663;color:#fff}.nav .ico{width:18px;text-align:center;font-size:16px}.nav-sub{display:none;flex-direction:column;padding-left:18px;margin:2px 0 4px;border-left:1px solid #34516b;margin-left:20px}.nav-sub.open{display:flex}.nav-sub button{padding:8px 12px;font-size:13px}.nav .caret{margin-left:auto;font-size:10px;opacity:.75;transition:transform .2s}.nav button.expanded .caret{transform:rotate(180deg)}.side-bottom{margin-top:auto;border-top:1px solid #34516b;padding:15px 10px 0;color:#a9bdce;font-size:11px}.main{margin-left:248px;min-height:100vh}.topbar{height:68px;background:var(--surface);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 30px;position:sticky;top:0;z-index:4}.crumb{color:var(--muted);font-size:12px}.top-actions{display:flex;align-items:center;gap:12px}.avatar{width:36px;height:36px;background:#e2f1eb;color:#18734f;border-radius:50%;display:grid;place-items:center;font-weight:700;cursor:pointer;border:2px solid var(--green);overflow:hidden;flex-shrink:0;transition:transform .15s}.avatar:hover{transform:scale(1.05)}.avatar img{width:100%;height:100%;object-fit:cover}.content{padding:28px 30px;max-width:1650px;margin:auto}.page-head{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:22px;flex-wrap:wrap}.page-head h1{margin:0 0 5px;font-size:24px;color:var(--text)}.page-head p{margin:0;color:var(--muted)}.btn{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:9px 13px;border-radius:8px;font-weight:600;display:inline-flex;gap:7px;align-items:center}.btn:hover{opacity:0.9}.btn.primary{background:var(--green);border-color:var(--green);color:#fff}.btn.dark{background:var(--navy);color:#fff;border-color:var(--navy)}.btn.danger{color:var(--red);border-color:#f5d2d2;background:var(--surface)}.btn.small{padding:6px 9px;font-size:12px}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:20px}.cards-6{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:13px;margin-bottom:20px}@media(max-width:1280px){.cards-6{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:960px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:768px){.cards-6{grid-template-columns:repeat(2,minmax(0,1fr))}}.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:var(--shadow);display:flex;flex-direction:column}.stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;font-weight:600}.stat-icon{width:31px;height:31px;border-radius:9px;background:var(--line);color:var(--green);display:grid;place-items:center;flex-shrink:0}.stat strong{display:block;font-size:27px;color:var(--text);margin:10px 0 4px}.stat small{color:var(--muted);font-size:11px;line-height:1.35;opacity:.85}.grid2{display:grid;grid-template-columns:1.1fr 1fr;gap:16px}@media(max-width:1100px){.grid2{grid-template-columns:1fr}}.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:var(--shadow);min-width:0}.panel h3{margin:0 0 15px;font-size:15px;color:var(--text)}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:760px}th{text-align:left;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.7px;background:var(--line);padding:11px 12px;white-space:nowrap}td{padding:12px;border-top:1px solid var(--line);vertical-align:middle}tbody tr:hover{opacity:0.95}.muted{color:var(--muted)}.pill{display:inline-block;padding:4px 8px;border-radius:30px;background:var(--line);color:var(--text);font-size:11px;font-weight:650;white-space:nowrap}.pill.green{background:#e4f4ec;color:#19734e}.pill.amber{background:#fff4dc;color:#98650d}.pill.red{background:#fdeaea;color:#a43e3e}.pill.blue{background:#e8f1fb;color:#315f91}.pill.purple{background:#f3e8fb;color:#7b3191}.toolbar{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:14px}.field{display:flex;flex-direction:column;gap:5px;min-width:0}.field label{font-size:11px;font-weight:650;color:var(--muted);white-space:nowrap}.field input,.field select,.field textarea,.toolbar input,.toolbar select{border:1px solid var(--line);border-radius:8px;padding:8px 9px;background:var(--surface);color:var(--text);outline:none;min-width:0;font-size:13px}.field input:focus,.field select:focus,.field textarea:focus,.toolbar input:focus{border-color:var(--green);box-shadow:0 0 0 3px var(--line)}.toolbar input{min-width:220px}.toolbar select{min-width:150px}.empty{padding:35px;text-align:center;color:var(--muted)}.empty b{display:block;color:var(--text);margin-bottom:5px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.field.full{grid-column:1/-1}.field textarea{min-height:78px;resize:vertical}.modal-back{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:20;display:none;align-items:center;justify-content:center;padding:18px}.modal-back.show{display:flex}.modal{background:var(--surface);border-radius:14px;width:min(1300px,100%);max-height:94vh;overflow:auto;box-shadow:0 20px 70px rgba(0,0,0,.5)}.modal.modal-sm{width:min(460px,100%)}.modal-head{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.modal-head h2{margin:0;color:var(--text);font-size:18px}.modal-body{padding:20px 22px}.modal-foot{padding:14px 22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:9px}.close{border:0;background:transparent;font-size:22px;color:var(--muted)}.notice{background:var(--surface);border:1px solid var(--line);color:var(--text);padding:12px 14px;border-radius:9px;margin-bottom:16px}.notice.warn{background:var(--surface);border-color:var(--amber);color:var(--amber)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 Inter,Segoe UI,Arial,sans-serif;transition:background .3s,color .3s}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.app{min-height:100vh}
+
+/* Sidebar & Estado Recolhido / Responsivo */
+.sidebar{position:fixed;inset:0 auto 0 0;width:248px;background:var(--navy);color:#fff;padding:22px 15px;display:flex;flex-direction:column;z-index:15;overflow-y:auto;transition:transform .28s ease, width .28s ease}
+.sidebar-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:14;backdrop-filter:blur(1px)}
+.sidebar-backdrop.show{display:block}
+.sidebar-close-mobile{display:none;background:rgba(255,255,255,.1);border:0;color:#fff;width:30px;height:30px;border-radius:8px;place-items:center;font-size:16px;margin-left:auto}
+
+.brand{display:flex;align-items:center;gap:11px;padding:3px 9px 25px}
+.brand-mark{width:39px;height:39px;border-radius:11px;background:var(--green);display:grid;place-items:center;font-weight:800;font-size:20px;flex-shrink:0}
+.brand strong{display:block;font-size:14px;letter-spacing:.5px}
+.brand small{color:#a9bdce;font-size:9px;letter-spacing:.8px}
+.nav-label{font-size:10px;color:#89a2b8;letter-spacing:1.4px;padding:12px 12px 7px}
+.nav button{width:100%;border:0;background:transparent;color:#d5e0e9;padding:11px 12px;text-align:left;border-radius:8px;margin:2px 0;display:flex;gap:12px;align-items:center}
+.nav button:hover,.nav button.active{background:#254663;color:#fff}
+.nav .ico{width:18px;text-align:center;font-size:16px}
+.nav-sub{display:none;flex-direction:column;padding-left:18px;margin:2px 0 4px;border-left:1px solid #34516b;margin-left:20px}
+.nav-sub.open{display:flex}
+.nav-sub button{padding:8px 12px;font-size:13px}
+.nav .caret{margin-left:auto;font-size:10px;opacity:.75;transition:transform .2s}
+.nav button.expanded .caret{transform:rotate(180deg)}
+.side-bottom{margin-top:auto;border-top:1px solid #34516b;padding:15px 10px 0;color:#a9bdce;font-size:11px}
+
+.main{margin-left:248px;min-height:100vh;transition:margin-left .28s ease}
+body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
+body.sidebar-collapsed .main{margin-left:0}
+
+.topbar{height:68px;background:var(--surface);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 24px;position:sticky;top:0;z-index:10;gap:10px}
+.crumb{color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.top-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.sidebar-toggle-btn{border:1px solid var(--line);background:var(--surface);color:var(--text);width:36px;height:36px;border-radius:8px;display:grid;place-items:center;font-size:17px;flex-shrink:0;transition:.15s}
+.sidebar-toggle-btn:hover{border-color:var(--green);color:var(--green)}
+
+.avatar{width:36px;height:36px;background:#e2f1eb;color:#18734f;border-radius:50%;display:grid;place-items:center;font-weight:700;cursor:pointer;border:2px solid var(--green);overflow:hidden;flex-shrink:0;transition:transform .15s}
+.avatar:hover{transform:scale(1.05)}
+.avatar img{width:100%;height:100%;object-fit:cover}
+
+.content{padding:26px 28px;max-width:1650px;margin:auto}
+.page-head{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:22px;flex-wrap:wrap}
+.page-head h1{margin:0 0 5px;font-size:24px;color:var(--text)}
+.page-head p{margin:0;color:var(--muted)}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:9px 13px;border-radius:8px;font-weight:600;display:inline-flex;gap:7px;align-items:center}
+.btn:hover{opacity:0.9}
+.btn.primary{background:var(--green);border-color:var(--green);color:#fff}
+.btn.dark{background:var(--navy);color:#fff;border-color:var(--navy)}
+.btn.danger{color:var(--red);border-color:#f5d2d2;background:var(--surface)}
+.btn.small{padding:6px 9px;font-size:12px}
+
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:20px}
+.cards-6{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:13px;margin-bottom:20px}
+@media(max-width:1280px){.cards-6{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:960px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.cards,.cards-6{grid-template-columns:1fr}}
+
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;font-weight:600}
+.stat-icon{width:31px;height:31px;border-radius:9px;background:var(--line);color:var(--green);display:grid;place-items:center;flex-shrink:0}
+.stat strong{display:block;font-size:27px;color:var(--text);margin:10px 0 4px}
+.stat small{color:var(--muted);font-size:11px;line-height:1.35;opacity:.85}
+
+.grid2{display:grid;grid-template-columns:1.1fr 1fr;gap:16px}
+@media(max-width:1100px){.grid2{grid-template-columns:1fr}}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:var(--shadow);min-width:0}
+.panel h3{margin:0 0 15px;font-size:15px;color:var(--text)}
+.table-wrap{overflow:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:760px}
+th{text-align:left;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.7px;background:var(--line);padding:11px 12px;white-space:nowrap}
+td{padding:12px;border-top:1px solid var(--line);vertical-align:middle}
+tbody tr:hover{opacity:0.95}
+.muted{color:var(--muted)}
+.pill{display:inline-block;padding:4px 8px;border-radius:30px;background:var(--line);color:var(--text);font-size:11px;font-weight:650;white-space:nowrap}
+.pill.green{background:#e4f4ec;color:#19734e}
+.pill.amber{background:#fff4dc;color:#98650d}
+.pill.red{background:#fdeaea;color:#a43e3e}
+.pill.blue{background:#e8f1fb;color:#315f91}
+.pill.purple{background:#f3e8fb;color:#7b3191}
+
+.toolbar{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.field{display:flex;flex-direction:column;gap:5px;min-width:0}
+.field label{font-size:11px;font-weight:650;color:var(--muted);white-space:nowrap}
+.field input,.field select,.field textarea,.toolbar input,.toolbar select{border:1px solid var(--line);border-radius:8px;padding:8px 9px;background:var(--surface);color:var(--text);outline:none;min-width:0;font-size:13px}
+.field input:focus,.field select:focus,.field textarea:focus,.toolbar input:focus{border-color:var(--green);box-shadow:0 0 0 3px var(--line)}
+.toolbar input{min-width:220px;flex:1}
+.toolbar select{min-width:150px}
+
+.empty{padding:35px;text-align:center;color:var(--muted)}
+.empty b{display:block;color:var(--text);margin-bottom:5px}
+
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+@media(max-width:680px){.form-grid{grid-template-columns:1fr}}
+.field.full{grid-column:1/-1}
+.field textarea{min-height:78px;resize:vertical}
+
+.modal-back{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:25;display:none;align-items:center;justify-content:center;padding:14px}
+.modal-back.show{display:flex}
+.modal{background:var(--surface);border-radius:14px;width:min(1300px,100%);max-height:94vh;overflow:auto;box-shadow:0 20px 70px rgba(0,0,0,.5)}
+.modal.modal-sm{width:min(460px,100%)}
+.modal-head{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.modal-head h2{margin:0;color:var(--text);font-size:17px}
+.modal-body{padding:18px 20px}
+.modal-foot{padding:14px 20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:9px;flex-wrap:wrap}
+.close{border:0;background:transparent;font-size:22px;color:var(--muted)}
+.notice{background:var(--surface);border:1px solid var(--line);color:var(--text);padding:12px 14px;border-radius:9px;margin-bottom:16px}
+.notice.warn{background:var(--surface);border-color:var(--amber);color:var(--amber)}
 
 .due-scroll-container { max-height: 410px; overflow-y: auto; padding-right: 4px; display: flex; flex-direction: column; gap: 8px; }
+.movements-scroll-container { max-height: 238px; overflow-y: auto; border: 1px solid var(--line); border-radius: 8px; }
+.movements-scroll-container thead th { position: sticky; top: 0; z-index: 2; background: var(--line); }
+
 .activity-card { width: 100%; border-left: 3px solid var(--line); padding: 12px; position: relative; cursor: pointer; transition: 0.15s; background: var(--surface); border-radius: 6px; border: 1px solid var(--line); }
 .activity-card:hover { border-color: var(--green); }
 
-.bar-row{display:grid;grid-template-columns:160px 1fr 35px;align-items:center;gap:10px;margin:11px 0;font-size:12px}.bar{height:8px;background:var(--line);border-radius:20px;overflow:hidden}.bar i{display:block;height:100%;background:var(--green);border-radius:20px}.settings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.hide{display:none!important}.mobile-menu{display:none}
+.bar-row{display:grid;grid-template-columns:160px 1fr 35px;align-items:center;gap:10px;margin:11px 0;font-size:12px}
+@media(max-width:480px){.bar-row{grid-template-columns:115px 1fr 30px}}
+.bar{height:8px;background:var(--line);border-radius:20px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--green);border-radius:20px}
 
-.product-item-row { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; position: relative; }
+.settings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+@media(max-width:850px){.settings-grid{grid-template-columns:1fr}}
+.hide{display:none!important}
+
+.product-item-row { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; position: relative; overflow-x: auto; }
 .kanban-board { display: grid; grid-template-columns: repeat(7, minmax(240px, 1fr)); gap: 14px; overflow-x: auto; padding-bottom: 15px; align-items: start; }
 .kanban-col { background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 12px; min-height: 500px; display: flex; flex-direction: column; }
 .kanban-col h4 { margin: 0 0 12px 0; font-size: 13px; color: var(--text); display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--line); padding-bottom: 8px; }
@@ -23,7 +141,7 @@
 .kanban-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px; box-shadow: 0 2px 5px rgba(0,0,0,.04); cursor: grab; }
 .kanban-card:hover { border-color: var(--green); }
 
-.pricing-item-grid { display: grid; grid-template-columns: 70px 1.6fr 70px 85px 75px 85px 95px 80px 80px 85px 35px; gap: 5px; align-items: end; }
+.pricing-item-grid { display: grid; grid-template-columns: 70px 1.6fr 70px 85px 75px 85px 95px 80px 80px 85px 35px; gap: 5px; align-items: end; min-width: 820px; }
 .accordion-header { background: var(--bg); padding: 10px 14px; border-radius: 8px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 13px; border: 1px solid var(--line); margin-bottom: 10px; }
 .accordion-content { display: none; margin-bottom: 15px; }
 .accordion-content.show { display: grid; }
@@ -36,6 +154,7 @@
 .legend-dot { width: 11px; height: 11px; border-radius: 3px; display: inline-block; flex-shrink: 0; }
 
 .mini-summary-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 14px; }
+@media(max-width:520px){.mini-summary-grid{grid-template-columns:1fr}}
 .mini-box { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
 .todo-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); transition: .15s; }
 .todo-item:hover { border-color: var(--green); }
@@ -43,8 +162,9 @@
 /* Login & User Menu */
 .login-screen { position: fixed; inset: 0; background: linear-gradient(135deg, #0f2338 0%, #1c3c5c 100%); z-index: 100; display: flex; align-items: center; justify-content: center; padding: 20px; }
 .login-box { background: var(--surface); color: var(--text); border-radius: 16px; width: min(410px, 100%); padding: 34px 30px; box-shadow: 0 24px 60px rgba(0,0,0,.45); border: 1px solid var(--line); }
-.login-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
-.login-brand .brand-mark { width: 44px; height: 44px; font-size: 22px; color: #fff; }
+.login-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; transition: all .2s ease; }
+.login-brand .brand-mark { width: 46px; height: 46px; font-size: 20px; color: #fff; overflow: hidden; border: 2px solid var(--green); }
+.login-brand .brand-mark img { width: 100%; height: 100%; object-fit: cover; }
 .user-menu-wrap { position: relative; display: flex; align-items: center; gap: 8px; }
 .user-dropdown { position: absolute; top: 48px; right: 0; width: 250px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 12px 32px rgba(0,0,0,.18); z-index: 50; display: none; overflow: hidden; }
 .user-dropdown.open { display: block; }
@@ -55,6 +175,18 @@
 .user-dropdown button:hover { background: var(--bg); color: var(--green); }
 .user-dropdown button.danger-item { color: var(--red); border-top: 1px solid var(--line); }
 .user-dropdown button.danger-item:hover { background: #fdeaea; }
+
+/* Media Queries Tablet e Mobile */
+@media(max-width:900px){
+  .sidebar { transform: translateX(-100%); box-shadow: 8px 0 30px rgba(0,0,0,.35); }
+  .sidebar.mobile-open { transform: translateX(0); }
+  .sidebar-close-mobile { display: grid; }
+  .main { margin-left: 0 !important; }
+  .topbar { padding: 0 14px; }
+  .content { padding: 18px 14px; }
+  .page-head h1 { font-size: 20px; }
+  #topUserName { display: none; }
+}
 </style>
 </head>
 <body data-theme="light">
@@ -62,17 +194,17 @@
 <!-- TELA DE LOGIN -->
 <div class="login-screen" id="loginScreen">
   <div class="login-box">
-    <div class="login-brand">
-      <div class="brand-mark">A</div>
-      <div>
-        <strong style="display:block;font-size:17px;letter-spacing:.5px;">ADVANCE TINTAS</strong>
-        <small style="color:var(--muted);font-size:11px;">Advance CRM · Acesso Restrito</small>
+    <div class="login-brand" id="loginBrandHeader">
+      <div class="brand-mark" id="loginAvatarPreview">A</div>
+      <div style="min-width:0;flex:1;">
+        <strong id="loginTitlePreview" style="display:block;font-size:17px;letter-spacing:.4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">ADVANCE TINTAS</strong>
+        <small id="loginSubtitlePreview" style="color:var(--muted);font-size:11px;">Advance CRM · Acesso Restrito</small>
       </div>
     </div>
     <form id="loginForm" style="display:flex;flex-direction:column;gap:14px;">
       <div class="field">
         <label>Usuário</label>
-        <input type="text" id="loginUser" placeholder="Digite seu usuário" autocomplete="username" required>
+        <input type="text" id="loginUser" placeholder="Digite seu usuário" autocomplete="username" oninput="updateLoginIdentityPreview(this.value)" required>
       </div>
       <div class="field">
         <label>Senha</label>
@@ -94,8 +226,13 @@
 </div>
 
 <div class="app" id="appContainer" style="display:none;">
+<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="closeMobileSidebar()"></div>
 <aside class="sidebar" id="sidebar">
-  <div class="brand"><div class="brand-mark">A</div><div><strong>ADVANCE TINTAS</strong><small>DESENVOLVIDO POR: EVERTON NUNES</small></div></div>
+  <div class="brand">
+    <div class="brand-mark">A</div>
+    <div><strong>ADVANCE TINTAS</strong><small>DESENVOLVIDO POR: EVERTON NUNES</small></div>
+    <button type="button" class="sidebar-close-mobile" onclick="closeMobileSidebar()" title="Fechar menu">✕</button>
+  </div>
   <div class="nav-label">GESTÃO COMERCIAL</div>
   <nav class="nav" id="nav">
     <button class="active" data-page="dashboard"><span class="ico">▦</span>Dashboard</button>
@@ -114,12 +251,12 @@
     <button data-page="activities"><span class="ico">✓</span>Tarefas e Atividades</button>
     <button data-page="vendor"><span class="ico">★</span>Vendor List</button>
   </nav>
-  <div class="side-bottom">Advance CRM · Versão 3.7<br>Dados armazenados neste navegador</div>
+  <div class="side-bottom">Advance CRM · Versão 3.8<br>Dados armazenados neste navegador</div>
 </aside>
 <main class="main">
   <header class="topbar">
-    <div style="display:flex;align-items:center;gap:12px">
-      <button class="btn mobile-menu" id="menuBtn">☰</button>
+    <div style="display:flex;align-items:center;gap:12px;min-width:0;">
+      <button type="button" class="sidebar-toggle-btn" id="sidebarToggleBtn" onclick="toggleSidebar()" title="Mostrar / Ocultar Menu Lateral">☰</button>
       <span class="crumb">Advance Tintas / <b id="crumb">Dashboard</b></span>
     </div>
     <div class="top-actions">
@@ -212,6 +349,63 @@ const today=()=>new Date().toISOString().slice(0,10);
 const fmtDate=d=>d?new Date(d+'T12:00:00').toLocaleDateString('pt-BR'):'—';
 const money=v=>v?Number(v).toLocaleString('pt-BR',{style:'currency',currency:'BRL'}):'—';
 
+/* ==================== CONTROLE DO MENU LATERAL (DESKTOP & MOBILE) ==================== */
+function toggleSidebar(){
+  let isMobile = window.innerWidth <= 900;
+  let sb = $('#sidebar');
+  let bd = $('#sidebarBackdrop');
+  if(isMobile){
+    let opening = !sb.classList.contains('mobile-open');
+    sb.classList.toggle('mobile-open', opening);
+    if(bd) bd.classList.toggle('show', opening);
+  } else {
+    document.body.classList.toggle('sidebar-collapsed');
+    localStorage.setItem('advance_sidebar_collapsed', document.body.classList.contains('sidebar-collapsed') ? '1' : '0');
+  }
+}
+
+function closeMobileSidebar(){
+  let sb = $('#sidebar');
+  let bd = $('#sidebarBackdrop');
+  if(sb) sb.classList.remove('mobile-open');
+  if(bd) bd.classList.remove('show');
+}
+
+if(localStorage.getItem('advance_sidebar_collapsed') === '1' && window.innerWidth > 900){
+  document.body.classList.add('sidebar-collapsed');
+}
+
+/* ==================== IDENTIDADE DINÂMICA NA TELA DE LOGIN ==================== */
+function updateLoginIdentityPreview(usernameVal){
+  let uClean = String(usernameVal || '').trim().toLowerCase();
+  let avatarEl = $('#loginAvatarPreview');
+  let titleEl = $('#loginTitlePreview');
+  let subEl = $('#loginSubtitlePreview');
+  if(!avatarEl || !titleEl || !subEl) return;
+
+  if(!uClean){
+    avatarEl.innerHTML = 'A';
+    titleEl.textContent = 'ADVANCE TINTAS';
+    subEl.textContent = 'Advance CRM · Acesso Restrito';
+    return;
+  }
+
+  let matched = (db.users || []).find(u => u.username.toLowerCase() === uClean);
+  if(matched){
+    titleEl.textContent = matched.name;
+    subEl.textContent = matched.role === 'admin' ? 'Advance Tintas · Administrador' : 'Advance Tintas · Comercial';
+    if(matched.avatar){
+      avatarEl.innerHTML = `<img src="${matched.avatar}" alt="${esc(matched.name)}">`;
+    } else {
+      avatarEl.textContent = getInitials(matched.name);
+    }
+  } else {
+    avatarEl.innerHTML = 'A';
+    titleEl.textContent = 'ADVANCE TINTAS';
+    subEl.textContent = 'Advance CRM · Acesso Restrito';
+  }
+}
+
 /* ==================== AUTENTICAÇÃO, SESSÃO E PERMISSÕES ==================== */
 function isAdmin(){ return currentUser && currentUser.role === 'admin'; }
 
@@ -300,6 +494,7 @@ $('#loginForm').onsubmit = e => {
 
 function logoutUser(){
   closeUserMenu();
+  closeMobileSidebar();
   currentUser = null;
   localStorage.removeItem(SESSION_KEY);
   sessionStorage.removeItem(SESSION_KEY);
@@ -307,6 +502,7 @@ function logoutUser(){
   $('#loginScreen').style.display = 'flex';
   $('#loginUser').value = '';
   $('#loginPass').value = '';
+  updateLoginIdentityPreview('');
 }
 
 function openChangePasswordModal(forced = false){
@@ -550,7 +746,7 @@ const pillClass=s=>['Cliente ativo','Vendor List aprovado','Aprovado','Ganha','P
 
 function setPage(p){
  page=p;
- $('#sidebar').classList.remove('open');
+ closeMobileSidebar();
  document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===p));
 
  const isOppGroup=['opportunities','companies','contacts'].includes(p);
@@ -570,7 +766,6 @@ function setPage(p){
 }
 $('#nav').addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)setPage(b.dataset.page)});
 document.querySelectorAll('.nav button[data-page]').forEach(b=>b.addEventListener('click',()=>setPage(b.dataset.page)));
-$('#menuBtn').onclick=()=>$('#sidebar').classList.toggle('open');
 
 let modalLocked = false;
 function closeModal(force=false){
@@ -702,7 +897,7 @@ function dashboardPage(root){
   context: h.responsible || 'Sistema',
   detail: h.description || '—'
  }));
- let recentMovements = [...movActs, ...movPortals].sort((a,b)=>(b.date||'').localeCompare(a.date||'')).slice(0, 7);
+ let recentMovements = [...movActs, ...movPortals].sort((a,b)=>(b.date||'').localeCompare(a.date||'')).slice(0, 25);
 
  root.innerHTML = head('Centro de Comando Geral','Visão consolidada de oportunidades, editais Petronect, portais, homologações e tarefas do dia.') +
 
@@ -716,7 +911,7 @@ function dashboardPage(root){
  <div class="grid2">
   <div style="display:flex;flex-direction:column;gap:16px;">
    <div class="panel">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:6px;">
      <h3 style="margin:0;">Saúde dos Portais & Petronect</h3>
      <div style="display:flex;gap:6px;">
       <button class="btn small" onclick="setPage('portals_panel')">Ver Portais</button>
@@ -779,8 +974,8 @@ function dashboardPage(root){
     <button class="btn small" onclick="setPage('activities')">Ver todas</button>
    </div>
    ${pendingTasks.length ? `
-    <div style="display:flex;flex-direction:column;gap:8px;max-height:310px;overflow-y:auto;">
-     ${pendingTasks.slice(0,8).map(t=>`
+    <div style="display:flex;flex-direction:column;gap:8px;max-height:238px;overflow-y:auto;padding-right:2px;">
+     ${pendingTasks.slice(0,12).map(t=>`
       <div class="todo-item">
        <input type="checkbox" style="margin-top:3px;" onchange="toggleActivityDone('${t.id}')" title="Marcar como concluída">
        <div style="flex:1;min-width:0;cursor:pointer;" onclick="editActivity('${t.id}')">
@@ -801,19 +996,19 @@ function dashboardPage(root){
   <div class="panel">
    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
     <h3 style="margin:0;">Últimas Movimentações (Geral)</h3>
-    <span class="muted" style="font-size:11px;">Atividades e Portais</span>
+    <span class="muted" style="font-size:11px;">Role para ver mais (${recentMovements.length})</span>
    </div>
    ${recentMovements.length ? `
-    <div class="table-wrap">
-     <table style="min-width:460px;">
-      <thead><tr><th>Data</th><th>Origem</th><th>Assunto / Portal</th><th>Detalhes</th></tr></thead>
+    <div class="table-wrap movements-scroll-container">
+     <table style="min-width:440px;">
+      <thead><tr><th style="padding:8px 10px;">Data</th><th style="padding:8px 10px;">Origem</th><th style="padding:8px 10px;">Assunto / Portal</th><th style="padding:8px 10px;">Detalhes</th></tr></thead>
       <tbody>
        ${recentMovements.map(m=>`
         <tr>
-         <td style="white-space:nowrap;">${fmtDate(m.date)}</td>
-         <td><span class="pill ${m.pill}" style="font-size:10px;">${esc(m.origin)}</span></td>
-         <td><b>${esc(m.subject)}</b><div class="muted" style="font-size:11px;">${esc(m.context)}</div></td>
-         <td style="font-size:12px;">${esc(m.detail)}</td>
+         <td style="white-space:nowrap;padding:8px 10px;font-size:12px;">${fmtDate(m.date)}</td>
+         <td style="padding:8px 10px;"><span class="pill ${m.pill}" style="font-size:10px;padding:3px 7px;">${esc(m.origin)}</span></td>
+         <td style="padding:8px 10px;font-size:12px;"><b>${esc(m.subject)}</b><div class="muted" style="font-size:11px;">${esc(m.context)}</div></td>
+         <td style="padding:8px 10px;font-size:12px;">${esc(m.detail)}</td>
         </tr>
        `).join('')}
       </tbody>
@@ -917,7 +1112,7 @@ function portalsPanelPage(root){
  }
  let conicBg = gradientParts.length ? `conic-gradient(${gradientParts.join(', ')})` : 'conic-gradient(var(--line) 0% 100%)';
 
- root.innerHTML = head('Gestão de Portais · Painel','Visão geral de homologações, acessos, credenciais e vencimentos.',`<div style="display:flex;gap:8px;"><button class="btn" onclick="openPortalHistoryModal()">＋ Registrar Alteração</button><button class="btn primary" onclick="openPortalModal()">＋ Novo Portal</button></div>`) +
+ root.innerHTML = head('Gestão de Portais · Painel','Visão geral de homologações, acessos, credenciais e vencimentos.',`<div style="display:flex;gap:8px;flex-wrap:wrap;"><button class="btn" onclick="openPortalHistoryModal()">＋ Registrar Alteração</button><button class="btn primary" onclick="openPortalModal()">＋ Novo Portal</button></div>`) +
  portalsNavBar('panel') +
  `<div class="cards-6">
   ${stat('Total Cadastrados', total, '⊕', 'Todos os portais registrados na base comercial.')}
@@ -1136,7 +1331,7 @@ function openPortalModal(id = null){
 
    ${id ? `
    <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;flex-wrap:wrap;gap:6px;">
      <h3 style="margin:0;font-size:14px;color:var(--text);">◷ 4. Histórico de Alterações deste Portal</h3>
      <button type="button" class="btn small primary" onclick="closeModal(); openPortalHistoryModal(null, '${p.id}')">＋ Registrar Alteração</button>
     </div>
@@ -1310,7 +1505,7 @@ let petronectViewMode = 'table';
 
 function petronectPage(root){
  root.innerHTML=head('Portal Petronect','Gerenciamento de editais, prazos de postagem e precificação de propostas.',`
-  <div style="display:flex;gap:8px;align-items:center;">
+  <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
    <div style="background:var(--line);padding:3px;border-radius:8px;display:flex;gap:3px;">
     <button class="btn small ${petronectViewMode==='table'?'primary':''}" onclick="petronectViewMode='table';render()">📋 Tabela</button>
     <button class="btn small ${petronectViewMode==='kanban'?'primary':''}" onclick="petronectViewMode='kanban';render()">📊 Kanban</button>
@@ -1443,7 +1638,7 @@ function renderPetronectItems(){
   if(!isParticipating){
    return `
     <div class="product-item-row" data-index="${index}">
-     <div class="product-item-grid" style="grid-template-columns: 80px 2.5fr 100px 110px 90px 110px 130px 40px;">
+     <div class="product-item-grid" style="display:grid;grid-template-columns: 80px 2.5fr 100px 110px 90px 110px 130px 40px;gap:6px;align-items:end;min-width:760px;">
       <div class="field"><label>Item</label><input type="text" value="${esc(item.itemCode||'')}" oninput="updatePetronectItem(${index}, 'itemCode', this.value)" placeholder="Ex: 01"></div>
       <div class="field"><label>Descritivo</label><input type="text" value="${esc(item.summary)}" oninput="updatePetronectItem(${index}, 'summary', this.value)" placeholder="Especificação técnica"></div>
       <div class="field"><label>Quantidade</label><input type="number" value="${qty}" oninput="updatePetronectItem(${index}, 'qty', this.value)"></div>
@@ -1557,7 +1752,7 @@ function openPetronectModal(id=null){
 
  openModal(id?'Editar Edital Petronect':'Novo Edital Petronect',`
   <div style="display:flex;flex-direction:column;gap:15px;">
-   ${id?`<div style="display:flex;justify-content:space-between;align-items:center;"><div class="field" style="flex:1;"><label>ID do Registro</label><input type="text" readonly value="${esc(p.id)}" style="background:var(--line);font-weight:700;"></div><div><button type="button" class="btn primary" onclick="generatePetronectPDF('${p.id}')">📄 Gerar Proposta PDF</button></div></div>`:''}
+   ${id?`<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;"><div class="field" style="flex:1;"><label>ID do Registro</label><input type="text" readonly value="${esc(p.id)}" style="background:var(--line);font-weight:700;"></div><div><button type="button" class="btn primary" onclick="generatePetronectPDF('${p.id}')">📄 Gerar Proposta PDF</button></div></div>`:''}
    
    <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
     <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Informações do Edital e Decisão</h3>
@@ -1576,7 +1771,7 @@ function openPetronectModal(id=null){
    </div>
 
    <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;flex-wrap:wrap;gap:6px;">
      <h3 style="margin:0;font-size:14px;color:var(--text);">📦 Itens / Descritivo do Edital (Proposta)</h3>
      <button type="button" class="btn small primary" onclick="addPetronectItem()">＋ Adicionar Item</button>
     </div>
@@ -2029,7 +2224,7 @@ function renderProductItems(){
  if(!container) return;
  container.innerHTML = currentProductsList.map((item, index)=>`
   <div class="product-item-row" data-index="${index}">
-   <div class="product-item-grid" style="grid-template-columns: 2fr 3fr 1fr 1fr 1fr auto;">
+   <div class="product-item-grid" style="display:grid;grid-template-columns: 2fr 3fr 1fr 1fr 1fr auto;gap:6px;align-items:end;min-width:620px;">
     <div class="field"><label>Produto / item</label><input type="text" value="${esc(item.name)}" oninput="updateProductItem(${index}, 'name', this.value)"></div>
     <div class="field"><label>Descrição / especificação</label><input type="text" value="${esc(item.desc)}" oninput="updateProductItem(${index}, 'desc', this.value)"></div>
     <div class="field"><label>Quantidade</label><input type="number" value="${item.qty||1}" oninput="updateProductItem(${index}, 'qty', this.value)"></div>
@@ -2075,7 +2270,7 @@ function renderOpportunityContacts(){
   if(!container) return;
   container.innerHTML = currentOpportunityContacts.map((c, index)=>`
     <div class="product-item-row" data-contact-index="${index}">
-      <div class="product-item-grid" style="grid-template-columns: 2fr 1.5fr 2fr 1.5fr auto;">
+      <div class="product-item-grid" style="display:grid;grid-template-columns: 2fr 1.5fr 2fr 1.5fr auto;gap:6px;align-items:end;min-width:580px;">
         <div class="field"><label>Nome do contato</label><input type="text" value="${esc(c.name)}" oninput="updateOpportunityContact(${index}, 'name', this.value)"></div>
         <div class="field"><label>Cargo / área</label><input type="text" value="${esc(c.role)}" oninput="updateOpportunityContact(${index}, 'role', this.value)"></div>
         <div class="field"><label>E-mail</label><input type="email" value="${esc(c.email)}" oninput="updateOpportunityContact(${index}, 'email', this.value)"></div>
@@ -2140,7 +2335,7 @@ function openOpportunity(id=null){
       </div>
 
       <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;flex-wrap:wrap;gap:6px;">
           <h3 style="margin:0;font-size:14px;color:var(--text);">👥 4. Contatos da Oportunidade</h3>
           <button type="button" class="btn small primary" onclick="addOpportunityContactItem()">＋ Adicionar Contato</button>
         </div>
@@ -2148,7 +2343,7 @@ function openOpportunity(id=null){
       </div>
 
       <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;flex-wrap:wrap;gap:6px;">
           <h3 style="margin:0;font-size:14px;color:var(--text);">📦 5. Produtos / Itens da Oportunidade</h3>
           <button type="button" class="btn small primary" onclick="addProductItem()">＋ Adicionar Item</button>
         </div>
