@@ -40,9 +40,25 @@ body.sidebar-collapsed .main{margin-left:0}
 
 .topbar{height:68px;background:var(--surface);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 24px;position:sticky;top:0;z-index:10;gap:10px}
 .crumb{color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.top-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.top-actions{display:flex;align-items:center;gap:9px;flex-shrink:0}
 .sidebar-toggle-btn{border:1px solid var(--line);background:var(--surface);color:var(--text);width:36px;height:36px;border-radius:8px;display:grid;place-items:center;font-size:17px;flex-shrink:0;transition:.15s}
 .sidebar-toggle-btn:hover{border-color:var(--green);color:var(--green)}
+
+.global-search-trigger{border:1px solid var(--line);background:var(--bg);color:var(--muted);padding:7px 12px;border-radius:8px;display:flex;align-items:center;gap:8px;font-size:12px;min-width:190px;justify-content:space-between;transition:.15s}
+.global-search-trigger:hover{border-color:var(--green);color:var(--text)}
+.global-search-trigger kbd{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:10px;font-family:inherit;color:var(--muted)}
+
+.notif-wrap{position:relative}
+.notif-btn{border:1px solid var(--line);background:var(--surface);color:var(--text);width:36px;height:36px;border-radius:8px;display:grid;place-items:center;font-size:16px;position:relative;transition:.15s}
+.notif-btn:hover{border-color:var(--green)}
+.notif-badge{position:absolute;top:-5px;right:-5px;background:var(--red);color:#fff;font-size:10px;font-weight:800;min-width:18px;height:18px;border-radius:99px;display:grid;place-items:center;padding:0 4px;border:2px solid var(--surface)}
+.notif-dropdown{position:absolute;top:46px;right:0;width:330px;max-width:90vw;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 32px rgba(0,0,0,.2);z-index:50;display:none;overflow:hidden}
+.notif-dropdown.open{display:block}
+.notif-head{padding:12px 15px;background:var(--bg);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700}
+.notif-list{max-height:310px;overflow-y:auto}
+.notif-item{padding:10px 14px;border-bottom:1px solid var(--line);cursor:pointer;transition:.15s;font-size:12px}
+.notif-item:hover{background:var(--bg)}
+.notif-item:last-child{border-bottom:0}
 
 .avatar{width:36px;height:36px;background:#e2f1eb;color:#18734f;border-radius:50%;display:grid;place-items:center;font-weight:700;cursor:pointer;border:2px solid var(--green);overflow:hidden;flex-shrink:0;transition:transform .15s}
 .avatar:hover{transform:scale(1.05)}
@@ -108,7 +124,7 @@ tbody tr:hover{opacity:0.95}
 .modal-back{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:25;display:none;align-items:center;justify-content:center;padding:14px}
 .modal-back.show{display:flex}
 .modal{background:var(--surface);border-radius:14px;width:min(1300px,100%);max-height:94vh;overflow:auto;box-shadow:0 20px 70px rgba(0,0,0,.5)}
-.modal.modal-sm{width:min(460px,100%)}
+.modal.modal-sm{width:min(540px,100%)}
 .modal-head{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
 .modal-head h2{margin:0;color:var(--text);font-size:17px}
 .modal-body{padding:18px 20px}
@@ -159,6 +175,25 @@ tbody tr:hover{opacity:0.95}
 .todo-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); transition: .15s; }
 .todo-item:hover { border-color: var(--green); }
 
+/* Checklist & Resumo Financeiro Petronect */
+.doc-checklist-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+@media(max-width:760px){.doc-checklist-grid{grid-template-columns:repeat(2, minmax(0, 1fr))}}
+@media(max-width:480px){.doc-checklist-grid{grid-template-columns:1fr}}
+.doc-check-card { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); font-size: 12px; cursor: pointer; }
+.doc-check-card:hover { border-color: var(--green); }
+.pn-finance-bar { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px; margin-bottom: 12px; }
+@media(max-width:760px){.pn-finance-bar{grid-template-columns:repeat(2, minmax(0, 1fr))}}
+.pn-fin-box small { display: block; font-size: 10px; color: var(--muted); text-transform: uppercase; font-weight: 700; }
+.pn-fin-box strong { font-size: 15px; color: var(--text); }
+
+/* Timeline dentro da Oportunidade */
+.opp-timeline { display: flex; flex-direction: column; gap: 8px; max-height: 250px; overflow-y: auto; }
+.opp-tl-item { border-left: 3px solid var(--green); background: var(--surface); border-top: 1px solid var(--line); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); border-radius: 6px; padding: 9px 12px; font-size: 12px; }
+
+/* Busca Global */
+.gsearch-item { padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; margin-bottom: 7px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 10px; background: var(--bg); }
+.gsearch-item:hover { border-color: var(--green); background: var(--surface); }
+
 /* Login & User Menu */
 .login-screen { position: fixed; inset: 0; background: linear-gradient(135deg, #0f2338 0%, #1c3c5c 100%); z-index: 100; display: flex; align-items: center; justify-content: center; padding: 20px; }
 .login-box { background: var(--surface); color: var(--text); border-radius: 16px; width: min(410px, 100%); padding: 34px 30px; box-shadow: 0 24px 60px rgba(0,0,0,.45); border: 1px solid var(--line); }
@@ -186,6 +221,8 @@ tbody tr:hover{opacity:0.95}
   .content { padding: 18px 14px; }
   .page-head h1 { font-size: 20px; }
   #topUserName { display: none; }
+  .global-search-trigger { min-width: auto; padding: 7px 10px; }
+  .global-search-trigger span.gs-text, .global-search-trigger kbd { display: none; }
 }
 </style>
 </head>
@@ -251,7 +288,7 @@ tbody tr:hover{opacity:0.95}
     <button data-page="activities"><span class="ico">✓</span>Tarefas e Atividades</button>
     <button data-page="vendor"><span class="ico">★</span>Vendor List</button>
   </nav>
-  <div class="side-bottom">Advance CRM · Versão 3.8<br>Dados armazenados neste navegador</div>
+  <div class="side-bottom">Advance CRM · Versão 4.0<br>Dados armazenados neste navegador</div>
 </aside>
 <main class="main">
   <header class="topbar">
@@ -260,7 +297,24 @@ tbody tr:hover{opacity:0.95}
       <span class="crumb">Advance Tintas / <b id="crumb">Dashboard</b></span>
     </div>
     <div class="top-actions">
-      <button class="btn small" onclick="toggleTheme()" title="Alternar Modo Escuro/Claro">🌓 Tema</button>
+      <button type="button" class="global-search-trigger" onclick="openGlobalSearchModal()" title="Busca Rápida Global (Ctrl + K)">
+        <span>🔍 <span class="gs-text">Busca rápida...</span></span>
+        <kbd>Ctrl+K</kbd>
+      </button>
+      <div class="notif-wrap" id="notifWrap">
+        <button type="button" class="notif-btn" onclick="toggleNotifDropdown()" title="Alertas e Vencimentos">
+          🔔
+          <span class="notif-badge hide" id="notifBadge">0</span>
+        </button>
+        <div class="notif-dropdown" id="notifDropdown">
+          <div class="notif-head">
+            <span>🔔 Alertas & Vencimentos</span>
+            <span class="muted" id="notifCountText">0 pendência(s)</span>
+          </div>
+          <div class="notif-list" id="notifList"></div>
+        </div>
+      </div>
+      <button class="btn small" onclick="toggleTheme()" title="Alternar Modo Escuro/Claro">🌓</button>
       <span class="muted" style="font-size:12px" id="topUserName">Modo offline</span>
       <div class="user-menu-wrap" id="userMenuWrap">
         <div class="avatar" id="topUserAvatar" onclick="toggleUserMenu()" title="Menu do Usuário">A</div>
@@ -341,13 +395,23 @@ function loadDB(){
     return emptyDB();
   }
 }
-function saveDB(){localStorage.setItem(DBKEY,JSON.stringify(db));}
+function saveDB(){
+  localStorage.setItem(DBKEY,JSON.stringify(db));
+  updateNotifications();
+}
 
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const today=()=>new Date().toISOString().slice(0,10);
 const fmtDate=d=>d?new Date(d+'T12:00:00').toLocaleDateString('pt-BR'):'—';
 const money=v=>v?Number(v).toLocaleString('pt-BR',{style:'currency',currency:'BRL'}):'—';
+
+function daysDiffFromToday(dateStr){
+  if(!dateStr) return null;
+  let d1 = new Date(today() + 'T12:00:00');
+  let d2 = new Date(dateStr + 'T12:00:00');
+  return Math.round((d2 - d1) / 86400000);
+}
 
 /* ==================== CONTROLE DO MENU LATERAL (DESKTOP & MOBILE) ==================== */
 function toggleSidebar(){
@@ -374,6 +438,192 @@ function closeMobileSidebar(){
 if(localStorage.getItem('advance_sidebar_collapsed') === '1' && window.innerWidth > 900){
   document.body.classList.add('sidebar-collapsed');
 }
+
+/* ==================== CENTRAL DE NOTIFICAÇÕES (SININHO) & BUSCA GLOBAL ==================== */
+function getAlertItems(){
+  let alerts = [];
+  let td = today();
+
+  (db.opportunities || []).filter(o => o.nextDate && !o.done && !['Perdido','Cliente ativo'].includes(o.status) && o.nextDate <= td).forEach(o => {
+    alerts.push({
+      kind: 'opp', id: o.id,
+      title: o.company || 'Oportunidade',
+      sub: (o.nextDate < td ? '⚠️ Follow-up atrasado: ' : '📅 Follow-up hoje: ') + (o.nextAction || 'Contatar'),
+      date: o.nextDate,
+      urgent: o.nextDate < td
+    });
+  });
+
+  (db.petronect || []).filter(p => p.closingDate && !['Declinada','Ganha','Perdida','Encerrada'].includes(p.status)).forEach(p => {
+    let diff = daysDiffFromToday(p.closingDate);
+    if(diff !== null && diff <= 2){
+      alerts.push({
+        kind: 'petronect', id: p.id,
+        title: 'Petronect: ' + p.opportunity,
+        sub: diff < 0 ? '⚠️ Edital vencido' : (diff === 0 ? '🔥 Encerra HOJE!' : `⏳ Encerra em ${diff} dia(s)`),
+        date: p.closingDate,
+        urgent: diff <= 0
+      });
+    }
+  });
+
+  (db.portals || []).filter(pt => pt.expiryDate && pt.status !== 'Inativo').forEach(pt => {
+    let diff = daysDiffFromToday(pt.expiryDate);
+    if(diff !== null && diff <= 30){
+      alerts.push({
+        kind: 'portal', id: pt.id,
+        title: 'Portal: ' + pt.name,
+        sub: diff < 0 ? '🚫 Cadastro/Certidão VENCIDA' : `⚠️ Vence em ${diff} dia(s)`,
+        date: pt.expiryDate,
+        urgent: diff < 0
+      });
+    }
+  });
+
+  (db.activities || []).filter(a => !a.done && a.nextDate && a.nextDate <= td).forEach(a => {
+    alerts.push({
+      kind: 'act', id: a.id,
+      title: a.title || a.summary || a.type,
+      sub: (a.nextDate < td ? '⚠️ Tarefa atrasada' : '📌 Tarefa vence hoje') + (a.company && a.company !== 'Geral / Interno' ? ' · ' + a.company : ''),
+      date: a.nextDate,
+      urgent: a.nextDate < td
+    });
+  });
+
+  return alerts.sort((a,b) => (a.date || '').localeCompare(b.date || ''));
+}
+
+function updateNotifications(){
+  let items = getAlertItems();
+  let badge = $('#notifBadge');
+  let countTxt = $('#notifCountText');
+  let listEl = $('#notifList');
+  if(!badge || !listEl) return;
+
+  if(items.length > 0){
+    badge.textContent = items.length > 99 ? '99+' : items.length;
+    badge.classList.remove('hide');
+  } else {
+    badge.classList.add('hide');
+  }
+  if(countTxt) countTxt.textContent = `${items.length} alerta(s)`;
+
+  if(!items.length){
+    listEl.innerHTML = `<div style="padding:20px;text-align:center;color:var(--muted);font-size:12px;">Tudo em dia! Nenhum alerta urgente.</div>`;
+    return;
+  }
+
+  listEl.innerHTML = items.map(it => {
+    let fn = it.kind === 'opp' ? `openOpportunity('${it.id}')` :
+             it.kind === 'petronect' ? `openPetronectModal('${it.id}')` :
+             it.kind === 'portal' ? `openPortalModal('${it.id}')` : `editActivity('${it.id}')`;
+    return `
+      <div class="notif-item" onclick="closeNotifDropdown(); ${fn}">
+        <div style="display:flex;justify-content:space-between;gap:6px;align-items:center;">
+          <b style="color:${it.urgent ? 'var(--red)' : 'var(--text)'};">${esc(it.title)}</b>
+          <span class="muted" style="font-size:10px;white-space:nowrap;">${fmtDate(it.date)}</span>
+        </div>
+        <div class="muted" style="font-size:11px;margin-top:2px;">${esc(it.sub)}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+function toggleNotifDropdown(){
+  let dd = $('#notifDropdown');
+  if(dd){
+    updateNotifications();
+    dd.classList.toggle('open');
+  }
+}
+function closeNotifDropdown(){
+  let dd = $('#notifDropdown');
+  if(dd) dd.classList.remove('open');
+}
+
+function openGlobalSearchModal(){
+  openModal('🔍 Busca Rápida Global', `
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <input type="text" id="globalSearchInput" placeholder="Digite empresa, CNPJ, edital Petronect, portal, contato ou tarefa..." oninput="runGlobalSearch(this.value)" style="padding:11px 13px;border:2px solid var(--green);border-radius:10px;font-size:14px;background:var(--surface);color:var(--text);outline:none;">
+      <div id="globalSearchResults" style="max-height:360px;overflow-y:auto;"></div>
+    </div>
+  `, () => closeModal(), `<button class="btn" onclick="closeModal()">Fechar (Esc)</button>`, true);
+  setTimeout(() => {
+    let inp = $('#globalSearchInput');
+    if(inp){ inp.focus(); runGlobalSearch(''); }
+  }, 60);
+}
+
+function runGlobalSearch(qRaw){
+  let q = String(qRaw || '').trim().toLowerCase();
+  let resEl = $('#globalSearchResults');
+  if(!resEl) return;
+
+  if(!q){
+    resEl.innerHTML = `<div class="empty" style="padding:20px;font-size:12px;">Digite qualquer termo para buscar instantaneamente em todas as bases do sistema.</div>`;
+    return;
+  }
+
+  let results = [];
+  (db.opportunities || []).forEach(o => {
+    if([o.id, o.company, o.cnpj, o.process, o.source, o.city].join(' ').toLowerCase().includes(q)){
+      results.push({ type: 'Oportunidade', pill: 'blue', title: o.company, sub: `${o.id} · ${o.status} · ${o.cnpj || ''}`, action: `closeModal(); openOpportunity('${o.id}')` });
+    }
+  });
+  (db.petronect || []).forEach(p => {
+    if([p.id, p.opportunity, p.city, p.status].join(' ').toLowerCase().includes(q)){
+      results.push({ type: 'Petronect', pill: 'purple', title: p.opportunity, sub: `${p.id} · ${p.status} · Encerra: ${fmtDate(p.closingDate)}`, action: `closeModal(); openPetronectModal('${p.id}')` });
+    }
+  });
+  (db.portals || []).forEach(pt => {
+    if([pt.id, pt.name, pt.company, pt.cnpj, pt.login].join(' ').toLowerCase().includes(q)){
+      results.push({ type: 'Portal', pill: 'green', title: pt.name, sub: `${pt.id} · ${pt.company || ''} · Status: ${pt.status}`, action: `closeModal(); openPortalModal('${pt.id}')` });
+    }
+  });
+  (db.companies || []).forEach(c => {
+    if([c.id, c.name, c.trade, c.cnpj, c.city].join(' ').toLowerCase().includes(q)){
+      results.push({ type: 'Empresa', pill: '', title: c.name, sub: `${c.id} · ${c.cnpj || ''} · ${c.city || ''}`, action: `closeModal(); openCompany('${c.id}')` });
+    }
+  });
+  (db.contacts || []).forEach(ct => {
+    if([ct.id, ct.name, ct.company, ct.email, ct.phone].join(' ').toLowerCase().includes(q)){
+      results.push({ type: 'Contato', pill: '', title: ct.name, sub: `${ct.company || ''} · ${ct.email || ct.phone || ''}`, action: `closeModal(); openContact('${ct.id}')` });
+    }
+  });
+  (db.activities || []).forEach(a => {
+    if([a.id, a.title, a.company, a.summary].join(' ').toLowerCase().includes(q)){
+      results.push({ type: 'Tarefa / Atividade', pill: 'amber', title: a.title || a.summary || a.type, sub: `${a.company || 'Geral'} · ${fmtDate(a.date)}`, action: `closeModal(); editActivity('${a.id}')` });
+    }
+  });
+
+  if(!results.length){
+    resEl.innerHTML = `<div class="empty" style="padding:20px;font-size:12px;">Nenhum registro encontrado para "<b>${esc(qRaw)}</b>".</div>`;
+    return;
+  }
+
+  resEl.innerHTML = results.slice(0, 25).map(r => `
+    <div class="gsearch-item" onclick="${r.action}">
+      <div style="min-width:0;">
+        <b style="display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(r.title)}</b>
+        <small class="muted">${esc(r.sub)}</small>
+      </div>
+      <span class="pill ${r.pill}">${esc(r.type)}</span>
+    </div>
+  `).join('');
+}
+
+document.addEventListener('keydown', e => {
+  if((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k'){
+    if(currentUser){
+      e.preventDefault();
+      openGlobalSearchModal();
+    }
+  } else if(e.key === 'Escape'){
+    closeNotifDropdown();
+    closeUserMenu();
+    if(!modalLocked && $('#modalBack')?.classList.contains('show')) closeModal();
+  }
+});
 
 /* ==================== IDENTIDADE DINÂMICA NA TELA DE LOGIN ==================== */
 function updateLoginIdentityPreview(usernameVal){
@@ -434,6 +684,7 @@ function closeUserMenu(){
 }
 document.addEventListener('click', e => {
   if(!e.target.closest('#userMenuWrap')) closeUserMenu();
+  if(!e.target.closest('#notifWrap')) closeNotifDropdown();
 });
 
 function checkExistingSession(){
@@ -454,6 +705,7 @@ function enterApp(){
   $('#loginScreen').style.display = 'none';
   $('#appContainer').style.display = 'block';
   updateTopbarUser();
+  updateNotifications();
   render();
   if(currentUser.mustChangePassword){
     setTimeout(() => openChangePasswordModal(true), 120);
@@ -677,29 +929,92 @@ function generatePetronectPDF(id){
   let p = db.petronect.find(x => x.id === id);
   if(!p) return;
   let w = window.open('', '_blank');
+  let totalGeral = 0;
   let itemsHtml = (p.items||[]).map((item, idx)=>{
     let qty = Number(item.qty)||1;
     let unit = (item.unit||'').trim();
     let vol = Number(item.volume)||1;
+    let unitLower = unit.toLowerCase();
+    let isLiter = unitLower.includes('litro') || unitLower.includes('ml') || unitLower.includes('mililitro');
+    let calcQty = isLiter ? (vol > 0 ? qty / vol : qty) : qty;
+
     let fp = Number(item.fullPrice)||0;
     let icms = Number(item.icmsDiscountFactor)||1;
     let disc = Number(item.discountPct)||0;
     let baseIcms = fp * icms;
     let finalP = baseIcms * (1 - (disc/100));
-    return `<tr><td>${idx+1}</td><td>${esc(item.itemCode||'—')}</td><td>${esc(item.summary)}</td><td>${qty} ${unit}</td><td>${vol}L</td><td>${esc(item.color||'—')}</td><td><b>${money(finalP)}</b></td></tr>`;
+    let subTotal = finalP * calcQty;
+    totalGeral += subTotal;
+    return `<tr><td>${idx+1}</td><td>${esc(item.itemCode||'—')}</td><td>${esc(item.summary)}</td><td>${qty} ${unit}</td><td>${vol}L</td><td>${esc(item.color||'—')}</td><td>${money(finalP)}</td><td><b>${money(subTotal)}</b></td></tr>`;
   }).join('');
 
   w.document.write(`
     <html><head><title>Proposta Edital ${esc(p.opportunity)}</title>
     <style>body{font-family:Arial,sans-serif;padding:30px;color:#333;}h2{color:#142d48;border-bottom:2px solid #142d48;padding-bottom:5px;}table{width:100%;border-collapse:collapse;margin-top:20px;}th,td{border:1px solid #ddd;padding:8px;font-size:12px;text-align:left;}th{background:#f8fafb;}</style>
     </head><body>
-    <h2>ADVANCE TINTAS - PROPOSTA COMERCIAL</h2>
+    <h2>ADVANCE TINTAS - PROPOSTA COMERCIAL (PETRONECT)</h2>
     <p><b>Edital / Oportunidade:</b> ${esc(p.opportunity)}</p>
-    <p><b>Data de Encerramento:</b> ${fmtDate(p.closingDate)} às ${esc(p.closingTime||'23:59')}</p>
+    <p><b>Data de Encerramento:</b> ${fmtDate(p.closingDate)} às ${esc(p.closingTime||'23:59')} · <b>Prazo Entrega:</b> ${esc(p.deliveryTime||'30 dias')}</p>
     <p><b>Local:</b> ${esc(p.city||'—')}/${esc(p.uf||'—')}</p>
     <h3>Relação de Itens da Proposta</h3>
-    <table><thead><tr><th>#</th><th>Item</th><th>Descritivo</th><th>Qtd</th><th>Volume</th><th>Cor</th><th>Preço Final</th></tr></thead><tbody>${itemsHtml}</tbody></table>
-    <p style="margin-top:30px;font-size:11px;color:#77;text-align:right;">Gerado por Advance CRM em ${today()}</p>
+    <table><thead><tr><th>#</th><th>Item</th><th>Descritivo</th><th>Qtd</th><th>Volume</th><th>Cor</th><th>Unit. Final</th><th>Total Item</th></tr></thead><tbody>${itemsHtml}</tbody></table>
+    <p style="margin-top:16px;font-size:15px;text-align:right;"><b>Valor Total Estimado da Proposta: ${money(totalGeral)}</b></p>
+    <p style="margin-top:30px;font-size:11px;color:#777;text-align:right;">Gerado por Advance CRM em ${fmtDate(today())}</p>
+    <script>window.print();<\/script></body></html>
+  `);
+  w.document.close();
+}
+
+function generateOpportunityPDF(id){
+  let o = db.opportunities.find(x => x.id === id);
+  if(!o) return;
+  let w = window.open('', '_blank');
+  let items = o.products || [];
+  let totalGeral = 0;
+  let itemsHtml = items.map((item, idx) => {
+    let q = Number(item.qty) || 0;
+    let uv = Number(item.unitValue) || 0;
+    let tot = q * uv;
+    totalGeral += tot;
+    return `<tr><td>${idx+1}</td><td><b>${esc(item.name)}</b><br><small style="color:#666;">${esc(item.desc||'')}</small></td><td>${q} ${esc(item.unit||'UN')}</td><td>${money(uv)}</td><td><b>${money(tot)}</b></td></tr>`;
+  }).join('') || `<tr><td colspan="5">Nenhum item detalhado na oportunidade.</td></tr>`;
+
+  let primaryContact = (o.contactsList && o.contactsList[0]) ? o.contactsList[0] : null;
+
+  w.document.write(`
+    <html><head><title>Proposta Comercial - ${esc(o.company)}</title>
+    <style>
+      body{font-family:Arial,sans-serif;padding:32px;color:#222;line-height:1.45;}
+      .header{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #142d48;padding-bottom:12px;margin-bottom:20px;}
+      .header h1{margin:0;color:#142d48;font-size:22px;}
+      .box{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:14px;margin-bottom:18px;font-size:13px;}
+      table{width:100%;border-collapse:collapse;margin-top:10px;}
+      th,td{border:1px solid #cbd5e1;padding:9px;font-size:12px;text-align:left;}
+      th{background:#142d48;color:#fff;}
+      .total-box{margin-top:16px;text-align:right;font-size:16px;color:#142d48;}
+    </style>
+    </head><body>
+    <div class="header">
+      <div><h1>ADVANCE TINTAS</h1><small style="color:#64748b;">Revestimentos Industriais e Alta Performance</small></div>
+      <div style="text-align:right;font-size:12px;"><b>PROPOSTA COMERCIAL</b><br>Ref: ${esc(o.id)}<br>Data: ${fmtDate(today())}</div>
+    </div>
+    <div class="box">
+      <b>Cliente:</b> ${esc(o.company)} ${o.cnpj ? '· CNPJ: ' + esc(o.cnpj) : ''}<br>
+      <b>Endereço:</b> ${esc(o.address || '—')} (${esc(o.city || '—')}/${esc(o.uf || '—')})<br>
+      ${primaryContact ? `<b>A/C:</b> ${esc(primaryContact.name)} ${primaryContact.role ? '('+esc(primaryContact.role)+')' : ''} · ${esc(primaryContact.email || primaryContact.phone || '')}<br>` : ''}
+      ${o.process ? `<b>Processo / Cotação:</b> ${esc(o.process)}<br>` : ''}
+      ${o.contractTerm ? `<b>Condição / Prazo:</b> ${esc(o.contractTerm)}` : ''}
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>Produto / Especificação Técnica</th><th>Qtd</th><th>Valor Unit.</th><th>Valor Total</th></tr></thead>
+      <tbody>${itemsHtml}</tbody>
+    </table>
+    <div class="total-box">Valor Total da Proposta: <b>${money(totalGeral || o.value || 0)}</b></div>
+    ${o.notes ? `<div style="margin-top:20px;font-size:12px;color:#475569;"><b>Observações Comerciais:</b><br>${esc(o.notes)}</div>` : ''}
+    <div style="margin-top:36px;border-top:1px solid #e2e8f0;padding-top:10px;font-size:11px;color:#64748b;display:flex;justify-content:space-between;">
+      <span>Responsável Comercial: ${esc(o.owner || 'Equipe Advance Tintas')}</span>
+      <span>Advance CRM</span>
+    </div>
     <script>window.print();<\/script></body></html>
   `);
   w.document.close();
@@ -736,6 +1051,8 @@ const statusOptions=['Novo lead','Pesquisa em andamento','Contato identificado',
 const petronectStatusOptions=['Declinada','Analisando','Sala de colaboração','Postada','Ganha','Perdida','Encerrada'];
 const vendorOptions=['Não iniciado','Mapear requisitos','Documentação enviada','Em análise','Aprovado','Reprovado','Não se aplica'];
 const activityTypes=['Tarefa / To-Do','Planilha / Relatório','Administrativo','Ligação','E-mail','WhatsApp','Reunião','Cotação','Follow-up','Homologação','Pesquisa','LinkedIn','Envio de apresentação','Outro'];
+const lossReasonOptions=['Preço / Condição comercial','Prazo de entrega','Concorrente local / regional','Falta de homologação / especificações','Escopo técnico / produto fora de linha','Cancelado / adiado pelo cliente','Sem retorno do comprador','Outro'];
+const petronectChecklistItems=['CRCC Petrobras válido','Certidões Negativas (CND / FGTS / Trabalhista)','Boletim Técnico e FISPQ','Atestado de Capacidade Técnica','Planilha de Custos e Frete revisada','Garantia / Declarações do Edital'];
 
 const portalStatusOptions=['Ativo','Pendente','Em cadastro','Bloqueado','Inativo','Atualização necessária'];
 const portalCategoryOptions=['Compras','Licitações','Cadastro de fornecedores','Cotações','Homologação','ERP / Cliente','Outros'];
@@ -842,21 +1159,28 @@ function setDashDueFilter(f){
 
 function dashboardPage(root){
  const portalsList = db.portals || [];
- const openOpps = db.opportunities.filter(o=>!['Perdido','Cliente ativo'].includes(o.status)&&!o.done).length;
- const overdueOpps = db.opportunities.filter(o=>o.nextDate&&o.nextDate<today()&&!['Perdido','Cliente ativo'].includes(o.status)&&!o.done).length;
+ const openOppsList = db.opportunities.filter(o=>!['Perdido','Cliente ativo'].includes(o.status)&&!o.done);
+ const openOpps = openOppsList.length;
+ const overdueOpps = openOppsList.filter(o=>o.nextDate&&o.nextDate<today()).length;
+ const staleOpps = openOppsList.filter(o => {
+  let refDate = o.updated || o.created;
+  let diff = daysDiffFromToday(refDate);
+  return diff !== null && diff <= -15;
+ });
+
  const petronectActive = db.petronect.filter(p=>!['Declinada','Ganha','Perdida','Encerrada'].includes(p.status)).length;
  const petronectAnalisando = db.petronect.filter(p=>p.status==='Analisando').length;
  const petronectPostada = db.petronect.filter(p=>p.status==='Postada').length;
  const petronectGanha = db.petronect.filter(p=>p.status==='Ganha').length;
 
  const portalsActive = portalsList.filter(p=>p.status==='Ativo').length;
- const portalsAttention = portalsList.filter(p=>['Pendente','Bloqueado','Atualização necessária','Em cadastro'].includes(p.status) || (p.expiryDate && p.expiryDate < today() && p.status !== 'Inativo')).length;
+ const portalsAttention = portalsList.filter(p=>['Pendente','Bloqueado','Atualização necessária','Em cadastro'].includes(p.status) || (p.expiryDate && daysDiffFromToday(p.expiryDate) <= 30 && p.status !== 'Inativo')).length;
  const vendorActive = db.opportunities.filter(o=>o.vendor && !['Não iniciado','Não se aplica','Aprovado','Reprovado'].includes(o.vendor)).length;
 
  const pendingTasks = db.activities.filter(a=>!a.done);
  const overdueTasks = pendingTasks.filter(a=>a.nextDate && a.nextDate < today()).length;
 
- let oppDue = db.opportunities.filter(o=>o.nextDate&&!o.done&&!['Perdido','Cliente ativo'].includes(o.status)).map(o=>({
+ let oppDue = openOppsList.filter(o=>o.nextDate).map(o=>({
   type:'opp', id:o.id, title:o.company||'Empresa não informada', date:o.nextDate, desc:o.nextAction||'Follow-up comercial'
  }));
  let petronectDue = db.petronect.filter(p=>p.closingDate&&p.status!=='Declinada'&&!['Ganha','Perdida','Encerrada'].includes(p.status)).map(p=>({
@@ -901,10 +1225,17 @@ function dashboardPage(root){
 
  root.innerHTML = head('Centro de Comando Geral','Visão consolidada de oportunidades, editais Petronect, portais, homologações e tarefas do dia.') +
 
+ (staleOpps.length ? `
+  <div class="notice warn" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+   <div><b>⏳ Leads sem movimentação (+15 dias):</b> Você tem <b>${staleOpps.length}</b> oportunidade(s) aberta(s) sem atualização há mais de 15 dias (${staleOpps.slice(0,3).map(x=>esc(x.company)).join(', ')}${staleOpps.length>3?'...':''}).</div>
+   <button class="btn small" onclick="openOpportunity('${staleOpps[0].id}')">Revisar primeiro</button>
+  </div>
+ ` : '') +
+
  `<div class="cards">
-  ${stat('Oportunidades Abertas', openOpps, '◎', `${overdueOpps} follow-up(s) atrasado(s) · ${db.companies.length} empresas`)}
+  ${stat('Oportunidades Abertas', openOpps, '◎', `${overdueOpps} follow-up(s) atrasado(s) · ${staleOpps.length} parada(s) +15d`)}
   ${stat('Editais Petronect Ativos', petronectActive, '◈', `${petronectAnalisando} analisando · ${petronectPostada} postada(s)`)}
-  ${stat('Portais & Homologações', `${portalsActive} / ${portalsList.length}`, '⊕', `${portalsAttention} portal(is) pendente/vencido · ${vendorActive} Vendor List`)}
+  ${stat('Portais & Homologações', `${portalsActive} / ${portalsList.length}`, '⊕', `${portalsAttention} portal(is) pendente/vencendo · ${vendorActive} Vendor List`)}
   ${stat('Tarefas Pendentes (To-Do)', pendingTasks.length, '✓', `${overdueTasks} atrasada(s) · Rotina e acompanhamento`)}
  </div>
 
@@ -920,7 +1251,7 @@ function dashboardPage(root){
     </div>
     <div class="mini-summary-grid">
      <div class="mini-box"><span>⊕ Portais Ativos</span><span class="pill green">${portalsActive}</span></div>
-     <div class="mini-box"><span>⚠ Portais Atenção / Vencidos</span><span class="pill ${portalsAttention?'red':'blue'}">${portalsAttention}</span></div>
+     <div class="mini-box"><span>⚠ Portais Atenção / Vencendo</span><span class="pill ${portalsAttention?'red':'blue'}">${portalsAttention}</span></div>
      <div class="mini-box"><span>◈ Petronect em Análise</span><span class="pill purple">${petronectAnalisando}</span></div>
      <div class="mini-box"><span>★ Petronect Ganhas</span><span class="pill green">${petronectGanha}</span></div>
     </div>
@@ -943,10 +1274,12 @@ function dashboardPage(root){
    ${filteredDue.length?`
     <div class="due-scroll-container">
      ${filteredDue.map(item=>{
-      let isExp = item.date < today();
-      let isTom = item.date === new Date(new Date().getTime()+86400000).toISOString().slice(0,10);
-      let badgeText = isExp ? 'Vencido' : (isTom ? 'Vence Amanhã' : 'Agendado');
-      let badgeClass = isExp ? 'red' : (isTom ? 'amber' : 'blue');
+      let diff = daysDiffFromToday(item.date);
+      let isExp = diff !== null && diff < 0;
+      let isTom = diff === 1;
+      let isSoon30 = item.type === 'portal' && diff !== null && diff >= 0 && diff <= 30;
+      let badgeText = isExp ? 'Vencido' : (diff === 0 ? 'Vence Hoje' : (isTom ? 'Vence Amanhã' : (isSoon30 ? `Vence em ${diff}d` : 'Agendado')));
+      let badgeClass = isExp ? 'red' : ((diff === 0 || isTom || isSoon30) ? 'amber' : 'blue');
       let clickFn = item.type==='opp' ? `openOpportunity('${item.id}')` : (item.type==='petronect' ? `openPetronectModal('${item.id}')` : (item.type==='portal' ? `openPortalModal('${item.id}')` : (item.type==='portal_hist' ? `openPortalHistoryModal('${item.id}')` : `editActivity('${item.id}')`)));
       let typeLabel = item.type==='petronect' ? 'Edital' : (item.type==='opp' ? 'Oportunidade' : (item.type==='portal' || item.type==='portal_hist' ? 'Portal' : 'Tarefa'));
       let doneBtn = item.type==='opp' ? `<button class="btn small" onclick="event.stopPropagation(); toggleOpportunityDone('${item.id}')" title="Concluir">✓</button>` : (item.type==='act' ? `<button class="btn small" onclick="event.stopPropagation(); toggleActivityDone('${item.id}')" title="Concluir">✓</button>` : (item.type==='portal_hist' ? `<button class="btn small" onclick="event.stopPropagation(); togglePortalHistoryDone('${item.id}')" title="Concluir">✓</button>` : ''));
@@ -1023,7 +1356,7 @@ function dashboardPage(root){
 function toolbar(placeholder,filters=''){return `<div class="toolbar"><input id="search" placeholder="${placeholder}">${filters}<button class="btn small" onclick="exportCSVCurrent()">⇩ Exportar CSV</button></div>`}
 
 function opportunitiesPage(root){
- root.innerHTML=head('Oportunidades','Registre licitações, contratos, projetos e potenciais negócios.',`<button class="btn primary" onclick="openOpportunity()">＋ Nova oportunidade</button>`)+toolbar('Buscar empresa, produto, processo ou CNPJ...',`<select id="statusFilter"><option value="">Todos os status</option>${statusOptions.map(s=>`<option>${s}</option>`).join('')}</select><select id="priorityFilter"><option value="">Todas prioridades</option><option>Alta</option><option>Média</option><option>Baixa</option></select>`)+`<div class="panel"><div class="table-wrap"><table><thead><tr><th>Status</th><th>ID</th><th>Empresa / oportunidade</th><th>Produtos / Itens</th><th>Origem / processo</th><th>Potencial</th><th>Status</th><th>Próximo contato</th><th>Ações</th></tr></thead><tbody id="rows"></tbody></table></div></div>`;
+ root.innerHTML=head('Oportunidades','Registre licitações, contratos, projetos e potenciais negócios.',`<button class="btn primary" onclick="openOpportunity()">＋ Nova oportunidade</button>`)+toolbar('Buscar empresa, produto, processo ou CNPJ...',`<select id="statusFilter"><option value="">Todos os status</option>${statusOptions.map(s=>`<option>${s}</option>`).join('')}</select><select id="priorityFilter"><option value="">Todas prioridades</option><option>Urgente</option><option>Alta</option><option>Normal</option><option>Baixa</option></select>`)+`<div class="panel"><div class="table-wrap"><table><thead><tr><th>Status</th><th>ID</th><th>Empresa / oportunidade</th><th>Produtos / Valor</th><th>Origem / processo</th><th>Prioridade</th><th>Status</th><th>Próximo contato</th><th>Ações</th></tr></thead><tbody id="rows"></tbody></table></div></div>`;
  const draw=()=>{
   let q=$('#search').value.toLowerCase(),s=$('#statusFilter').value,p=$('#priorityFilter').value;
   let arr=db.opportunities.filter(o=>{
@@ -1031,15 +1364,28 @@ function opportunitiesPage(root){
    let matchText=[o.id,o.company,prodText,o.process,o.cnpj,o.source,o.address].join(' ').toLowerCase();
    return matchText.includes(q)&&(!s||o.status===s)&&(!p||o.priority===p);
   });
-  $('#rows').innerHTML=arr.length?arr.map(o=>`
+  $('#rows').innerHTML=arr.length?arr.map(o=>{
+   let refDate = o.updated || o.created;
+   let isStale = !o.done && !['Perdido','Cliente ativo'].includes(o.status) && refDate && daysDiffFromToday(refDate) <= -15;
+   return `
    <tr style="${o.done?'opacity:0.5;background:var(--bg);':''}">
     <td style="text-align:center;"><input type="checkbox" ${o.done?'checked':''} onchange="toggleOpportunityDone('${o.id}')" title="Marcar como concluído"></td>
     <td><code style="font-size:12px;background:var(--line);padding:2px 6px;border-radius:4px;color:var(--text);font-weight:700;">${esc(o.id)}</code></td>
-    <td><b style="${o.done?'text-decoration:line-through;':''}">${esc(o.company||'Sem empresa')}</b><div class="muted">${esc(o.city||'')}${o.uf?'/'+esc(o.uf):''} · ${esc(o.segment||'')}</div></td>
-    <td>${esc((o.products||[]).length > 0 ? `${o.products.length} item(ns)` : '0')}</td>
+    <td>
+     <b style="${o.done?'text-decoration:line-through;':''}">${esc(o.company||'Sem empresa')}</b>
+     ${isStale ? '<span class="pill amber" style="font-size:9px;padding:2px 5px;margin-left:4px;">Parado +15d</span>' : ''}
+     <div class="muted">${esc(o.city||'')}${o.uf?'/'+esc(o.uf):''} · ${esc(o.segment||'')}</div>
+    </td>
+    <td>
+     <div>${esc((o.products||[]).length > 0 ? `${o.products.length} item(ns)` : '0')}</div>
+     <div class="muted" style="font-size:11px;"><b>${money(o.value)}</b></div>
+    </td>
     <td>${esc(o.source||'—')}<div class="muted">${esc(o.process||'')}</div></td>
-    <td><span class="pill ${o.priority==='Alta'?'green':''}">${esc(o.priority||'—')}</span></td>
-    <td><span class="pill ${pillClass(o.status)}">${esc(o.status)}</span></td>
+    <td><span class="pill ${['Alta','Urgente'].includes(o.priority)?'green':''}">${esc(o.priority||'—')}</span></td>
+    <td>
+     <span class="pill ${pillClass(o.status)}">${esc(o.status)}</span>
+     ${o.status === 'Perdido' && o.lossReason ? `<div class="muted" style="font-size:10px;margin-top:2px;">Motivo: ${esc(o.lossReason)}</div>` : ''}
+    </td>
     <td>${fmtDate(o.nextDate)}</td>
     <td>
      <div style="display:flex;gap:5px;">
@@ -1048,14 +1394,14 @@ function opportunitiesPage(root){
      </div>
     </td>
    </tr>
-  `).join(''):`<tr><td colspan="9"><div class="empty"><b>Nenhuma oportunidade encontrada</b>Experimente alterar os filtros ou cadastrar uma oportunidade.</div></td></tr>`;
+  `}).join(''):`<tr><td colspan="9"><div class="empty"><b>Nenhuma oportunidade encontrada</b>Experimente alterar os filtros ou cadastrar uma oportunidade.</div></td></tr>`;
  };
  $('#search').oninput=draw;$('#statusFilter').onchange=draw;$('#priorityFilter').onchange=draw;draw();
 }
 
 function toggleOpportunityDone(id){
  let opp = db.opportunities.find(o => o.id === id);
- if(opp){ opp.done = !opp.done; saveDB(); render(); }
+ if(opp){ opp.done = !opp.done; opp.updated = today(); saveDB(); render(); }
 }
 
 function toggleActivityDone(actId){
@@ -1088,7 +1434,7 @@ function portalsPanelPage(root){
  let bloqueados = list.filter(p => p.status === 'Bloqueado').length;
  let inativos = list.filter(p => p.status === 'Inativo').length;
  let atualizacao = list.filter(p => p.status === 'Atualização necessária').length;
- let vencidos = list.filter(p => p.expiryDate && p.expiryDate < today() && p.status !== 'Inativo').length;
+ let vencidosOuVencendo = list.filter(p => p.expiryDate && daysDiffFromToday(p.expiryDate) <= 30 && p.status !== 'Inativo').length;
 
  const distItems = [
   { label: 'Ativo', count: ativos, color: '#24966b' },
@@ -1120,7 +1466,7 @@ function portalsPanelPage(root){
   ${stat('Pendentes', pendentes, '◷', 'Pendente: cadastro aguardando alguma etapa ou aprovação.')}
   ${stat('Bloqueados', bloqueados, '✕', 'Bloqueado: acesso impedido ou conta bloqueada.')}
   ${stat('Atualização Necessária', atualizacao, '↻', 'Atualização necessária: cadastro ou documentação que precisa de atualização.')}
-  ${stat('Vencidos', vencidos, '⚠', 'Portais com data de validade ou homologação expirada.')}
+  ${stat('Vencidos / < 30 dias', vencidosOuVencendo, '⚠', 'Portais com validade expirada ou vencendo nos próximos 30 dias.')}
  </div>
 
  <div class="panel">
@@ -1177,7 +1523,9 @@ function portalsBasePage(root){
   });
 
   $('#rows').innerHTML = arr.length ? arr.map(p => {
-   let isExpired = p.expiryDate && p.expiryDate < today() && p.status !== 'Inativo';
+   let diff = (p.expiryDate && p.status !== 'Inativo') ? daysDiffFromToday(p.expiryDate) : null;
+   let isExpired = diff !== null && diff < 0;
+   let isSoon30 = diff !== null && diff >= 0 && diff <= 30;
    return `
     <tr>
      <td><code style="font-size:12px;background:var(--line);padding:2px 6px;border-radius:4px;color:var(--text);font-weight:700;">${esc(p.id)}</code></td>
@@ -1194,7 +1542,8 @@ function portalsBasePage(root){
       <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap;">
        ${p.login ? `<button class="btn small" style="padding:2px 6px;font-size:11px;" onclick="copyText('${esc(p.login)}','Login')" title="Copiar Login">📋 User</button>` : ''}
        ${p.password ? `<button class="btn small" style="padding:2px 6px;font-size:11px;" onclick="copyText('${esc(p.password)}','Senha')" title="Copiar Senha">🔑 Senha</button>` : ''}
-       ${p.link ? `<a href="${esc(p.link)}" target="_blank" class="btn small" style="padding:2px 6px;font-size:11px;text-decoration:none;" title="Abrir Portal">🔗 Abrir</a>` : ''}
+       ${p.link ? `<a href="${esc(p.link)}" target="_blank" class="btn small" style="padding:2px 6px;font-size:11px;text-decoration:none;" title="Abrir Portal">🔗 Portal</a>` : ''}
+       ${p.docsLink ? `<a href="${esc(p.docsLink)}" target="_blank" class="btn small" style="padding:2px 6px;font-size:11px;text-decoration:none;" title="Pasta de Documentos">📂 Docs</a>` : ''}
       </div>
      </td>
      <td>${esc(p.responsible || '—')}</td>
@@ -1203,6 +1552,7 @@ function portalsBasePage(root){
      <td>
       ${fmtDate(p.expiryDate)}
       ${isExpired ? '<div><span class="pill red" style="font-size:10px;padding:2px 6px;">Vencido</span></div>' : ''}
+      ${isSoon30 ? `<div><span class="pill amber" style="font-size:10px;padding:2px 6px;">Vence em ${diff}d</span></div>` : ''}
      </td>
      <td>
       <div style="display:flex;gap:5px;">
@@ -1296,7 +1646,8 @@ function openPortalModal(id = null){
      ${field('Segmento','pt_segment',p.segment || 'Indústria','text',portalSegmentOptions)}
      ${field('CNPJ Cadastrado','pt_cnpj',p.cnpj)}
      ${field('Data de Cadastro','pt_created',p.createdDate || today(),'date')}
-     <div class="field full">${field('Link de Acesso (URL)','pt_link',p.link,'url',null,true)}</div>
+     ${field('Link de Acesso (URL)','pt_link',p.link,'url')}
+     ${field('Link Pasta de Documentos (Drive / Rede)','pt_docs_link',p.docsLink,'url')}
     </div>
    </div>
 
@@ -1369,6 +1720,7 @@ function openPortalModal(id = null){
    cnpj: val('pt_cnpj'),
    createdDate: val('pt_created'),
    link: val('pt_link'),
+   docsLink: val('pt_docs_link'),
    login: val('pt_login'),
    password: val('pt_password'),
    email: val('pt_email'),
@@ -1532,14 +1884,21 @@ function petronectPage(root){
     let isDeclined = p.status === 'Declinada';
     let isExpired = p.closingDate && p.closingDate < today() && !['Ganha','Perdida','Declinada','Encerrada'].includes(p.status);
     let isTomorrow = p.closingDate && (new Date(p.closingDate+'T12:00:00') - new Date(today()+'T12:00:00') === 86400000) && p.status !== 'Declinada';
+    let docsChecked = (p.checklist || []).length;
 
     return `
      <tr style="${isDeclined?'opacity:0.4;text-decoration:line-through;':''}">
       <td><code style="font-size:12px;background:var(--line);padding:2px 6px;border-radius:4px;color:var(--text);font-weight:700;">${esc(p.id)}</code></td>
       <td>${fmtDate(p.date)}</td>
-      <td><b>${esc(p.opportunity)}</b></td>
+      <td>
+       <b>${esc(p.opportunity)}</b>
+       ${docsChecked > 0 ? `<div class="muted" style="font-size:10px;">Docs: ${docsChecked}/${petronectChecklistItems.length}</div>` : ''}
+      </td>
       <td><span class="pill ${pillClass(p.participate||'Pendente')}">${esc(p.participate||'Pendente')}</span></td>
-      <td><span class="pill ${pillClass(p.status)}">${esc(p.status)}</span></td>
+      <td>
+       <span class="pill ${pillClass(p.status)}">${esc(p.status)}</span>
+       ${p.status === 'Perdida' && p.lossReason ? `<div class="muted" style="font-size:10px;margin-top:2px;">Motivo: ${esc(p.lossReason)}</div>` : ''}
+      </td>
       <td>${fmtDate(p.closingDate)} ${p.closingTime?'('+p.closingTime+')':''} ${isExpired?'<span class="pill red" style="font-size:10px;">Vencido</span>':''} ${isTomorrow?'<span class="pill amber" style="font-size:10px;">Vence Amanhã</span>':''}</td>
       <td><b>${esc(p.quarter||'—')}</b></td>
       <td>${esc(p.city||'—')}${p.uf?'/'+esc(p.uf):''}</td>
@@ -1596,7 +1955,15 @@ function dropPetronect(e, newStatus){
  e.preventDefault();
  if(!draggedPetronectId) return;
  let item = db.petronect.find(p=>p.id === draggedPetronectId);
- if(item){ item.status = newStatus; saveDB(); render(); }
+ if(item){
+  if(newStatus === 'Perdida' && !item.lossReason){
+   draggedPetronectId = null;
+   openPetronectModal(item.id, 'Perdida');
+   return;
+  }
+  item.status = newStatus;
+  saveDB(); render();
+ }
  draggedPetronectId = null;
 }
 function deletePetronect(id){
@@ -1608,6 +1975,48 @@ function deletePetronect(id){
 }
 
 let currentPetronectItems = [];
+
+function updatePetronectFinanceSummary(){
+ let box = $('#pnFinanceSummaryBox');
+ if(!box) return;
+ let isParticipating = $('#pn_participate') ? $('#pn_participate').value === 'Sim' : false;
+ if(!isParticipating || currentPetronectItems.length === 0){
+  box.style.display = 'none';
+  return;
+ }
+ box.style.display = 'grid';
+
+ let totalRevenue = 0;
+ let totalCost = 0;
+
+ currentPetronectItems.forEach(item => {
+  let qty = Number(item.qty) || 1;
+  let unit = (item.unit || '').trim().toLowerCase();
+  let volume = Number(item.volume) || 1;
+  let isLiter = unit.includes('litro') || unit.includes('ml') || unit.includes('mililitro');
+  let calcQty = isLiter ? (volume > 0 ? (qty / volume) : qty) : qty;
+
+  let fullPrice = Number(item.fullPrice) || 0;
+  let icmsDiscountFactor = Number(item.icmsDiscountFactor) || 1;
+  let discountPct = Number(item.discountPct) || 0;
+  let costPrice = Number(item.costPrice) || 0;
+
+  let finalUnitPrice = (fullPrice * icmsDiscountFactor) * (1 - (discountPct / 100));
+  totalRevenue += finalUnitPrice * calcQty;
+  totalCost += costPrice * calcQty;
+ });
+
+ let netProfit = totalRevenue - totalCost;
+ let avgMargin = (totalRevenue > 0 && totalCost > 0) ? ((netProfit / totalRevenue) * 100).toFixed(1) + '%' : '—';
+ let marginColor = (totalRevenue > 0 && totalCost > 0 && (netProfit / totalRevenue) < 0.1) ? 'var(--red)' : 'var(--green)';
+
+ box.innerHTML = `
+  <div class="pn-fin-box"><small>Receita Total Proposta</small><strong>${money(totalRevenue)}</strong></div>
+  <div class="pn-fin-box"><small>Custo Total Estimado</small><strong>${totalCost > 0 ? money(totalCost) : '—'}</strong></div>
+  <div class="pn-fin-box"><small>Lucro Bruto Estimado</small><strong style="color:${totalCost > 0 ? marginColor : 'var(--text)'};">${totalCost > 0 ? money(netProfit) : '—'}</strong></div>
+  <div class="pn-fin-box"><small>Margem Média</small><strong style="color:${marginColor};">${avgMargin}</strong></div>
+ `;
+}
 
 function renderPetronectItems(){
  let isParticipating = $('#pn_participate') ? $('#pn_participate').value === 'Sim' : false;
@@ -1632,7 +2041,7 @@ function renderPetronectItems(){
   let finalPrice = stepIcmsVal * (1 - (discountPct / 100));
   let pricePerLiter = isLiter ? (volume > 0 ? (finalPrice / volume) : 0) : 0;
   
-  let profitMargin = costPrice > 0 ? (((finalPrice - (costPrice * (isLiter ? computedTotalQty : qty))) / finalPrice) * 100).toFixed(1) : '—';
+  let profitMargin = costPrice > 0 ? (((finalPrice - costPrice) / finalPrice) * 100).toFixed(1) : '—';
   let marginColor = (profitMargin !== '—' && Number(profitMargin) < 10) ? 'var(--red)' : 'var(--green)';
 
   if(!isParticipating){
@@ -1677,6 +2086,8 @@ function renderPetronectItems(){
    `;
   }
  }).join('') || '<div class="empty" style="padding:15px;font-size:13px;">Nenhum item cadastrado. Clique no botão abaixo para incluir.</div>';
+
+ updatePetronectFinanceSummary();
 }
 
 function addPetronectItem(){
@@ -1693,6 +2104,7 @@ function updatePetronectItem(index, fieldName, val){
  if(currentPetronectItems[index]){
   currentPetronectItems[index][fieldName] = val;
   updatePricingRowCalculations(index);
+  updatePetronectFinanceSummary();
  }
 }
 
@@ -1716,7 +2128,7 @@ function updatePricingRowCalculations(index){
  let stepIcmsVal = fullPrice * icmsDiscountFactor;
  let finalPrice = stepIcmsVal * (1 - (discountPct / 100));
  let pricePerLiter = isLiter ? (volume > 0 ? (finalPrice / volume) : 0) : 0;
- let profitMargin = costPrice > 0 ? (((finalPrice - (costPrice * (isLiter ? computedTotalQty : qty))) / finalPrice) * 100).toFixed(1) : '—';
+ let profitMargin = costPrice > 0 ? (((finalPrice - costPrice) / finalPrice) * 100).toFixed(1) : '—';
  let marginColor = (profitMargin !== '—' && Number(profitMargin) < 10) ? 'var(--red)' : 'var(--green)';
 
  let spans = row.querySelectorAll('div[style*="margin-top"] span');
@@ -1746,8 +2158,15 @@ function handleClosingDateChange(dateVal){
 function toggleParticipationBlock(val){ renderPetronectItems(); }
 function toggleAccordion(id){ $('#'+id).classList.toggle('show'); }
 
-function openPetronectModal(id=null){
+function togglePetronectLossReason(statusVal){
+ let wrap = $('#pnLossReasonWrap');
+ if(wrap) wrap.style.display = statusVal === 'Perdida' ? 'flex' : 'none';
+}
+
+function openPetronectModal(id=null, forceStatus=null){
  let p = db.petronect.find(x=>x.id===id)||{};
+ let currentStatus = forceStatus || p.status || 'Analisando';
+ let savedChecklist = Array.isArray(p.checklist) ? p.checklist : [];
  currentPetronectItems = p.items ? JSON.parse(JSON.stringify(p.items)) : [];
 
  openModal(id?'Editar Edital Petronect':'Novo Edital Petronect',`
@@ -1758,7 +2177,19 @@ function openPetronectModal(id=null){
     <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Informações do Edital e Decisão</h3>
     <div class="form-grid">
      ${field('Data de Cadastro','pn_date',p.date||today(),'date')}
-     ${field('Status Petronect','pn_status',p.status||'Analisando','text',petronectStatusOptions)}
+     <div class="field">
+      <label>Status Petronect</label>
+      <select id="pn_status" onchange="togglePetronectLossReason(this.value)">
+       ${petronectStatusOptions.map(s=>`<option ${s===currentStatus?'selected':''}>${esc(s)}</option>`).join('')}
+      </select>
+     </div>
+     <div class="field full" id="pnLossReasonWrap" style="display:${currentStatus==='Perdida'?'flex':'none'};">
+      <label style="color:var(--red);">Motivo da Perda do Edital *</label>
+      <select id="pn_loss_reason">
+       <option value="">Selecione o motivo...</option>
+       ${lossReasonOptions.map(r=>`<option ${r===p.lossReason?'selected':''}>${esc(r)}</option>`).join('')}
+      </select>
+     </div>
      <div class="field"><label>Vai Participar?</label><select id="pn_participate" onchange="toggleParticipationBlock(this.value)"><option ${p.participate==='Pendente'?'selected':''}>Pendente</option><option ${p.participate==='Sim'?'selected':''}>Sim</option><option ${p.participate==='Não'?'selected':''}>Não</option></select></div>
      ${field('Oportunidade / Número do Edital','pn_opportunity',p.opportunity)}
      ${field('Data de Encerramento','pn_closing',p.closingDate,'date')}
@@ -1771,21 +2202,42 @@ function openPetronectModal(id=null){
    </div>
 
    <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">✅ 2. Checklist de Documentação & Habilitação</h3>
+    <div class="doc-checklist-grid">
+     ${petronectChecklistItems.map((docLabel, idx) => `
+      <label class="doc-check-card">
+       <input type="checkbox" class="pn-doc-chk" value="${esc(docLabel)}" ${savedChecklist.includes(docLabel) ? 'checked' : ''}>
+       <span>${esc(docLabel)}</span>
+      </label>
+     `).join('')}
+    </div>
+   </div>
+
+   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;flex-wrap:wrap;gap:6px;">
-     <h3 style="margin:0;font-size:14px;color:var(--text);">📦 Itens / Descritivo do Edital (Proposta)</h3>
+     <h3 style="margin:0;font-size:14px;color:var(--text);">📦 3. Itens / Descritivo do Edital (Proposta)</h3>
      <button type="button" class="btn small primary" onclick="addPetronectItem()">＋ Adicionar Item</button>
     </div>
+    <div id="pnFinanceSummaryBox" class="pn-finance-bar" style="display:none;"></div>
     <div id="petronectItemsContainer" style="max-height:380px;overflow-y:auto;border:1px solid var(--line);padding:10px;border-radius:8px;background:var(--surface);"></div>
    </div>
 
    <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
-    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📝 Observações</h3>
+    <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📝 4. Observações</h3>
     <div class="form-grid"><div class="field full">${field('Observações','pn_obs',p.obs,'textarea',null,true)}</div></div>
    </div>
   </div>
  `,()=>{
   let opp = val('pn_opportunity');
   if(!opp){alert('Informe a oportunidade / número do edital.');return}
+  let statusVal = val('pn_status');
+  let lossReasonVal = val('pn_loss_reason');
+  if(statusVal === 'Perdida' && !lossReasonVal){
+   alert('Informe o motivo da perda do edital antes de salvar.');
+   return;
+  }
+
+  let checkedDocs = [...document.querySelectorAll('.pn-doc-chk:checked')].map(el => el.value);
   let closingVal = val('pn_closing');
   let quarterVal = computeQuarter(closingVal);
   let recordId = p.id ? p.id : generateCustomId('PN', db.petronect);
@@ -1793,7 +2245,8 @@ function openPetronectModal(id=null){
   let data = {
    id: recordId,
    date: val('pn_date'),
-   status: val('pn_status'),
+   status: statusVal,
+   lossReason: statusVal === 'Perdida' ? lossReasonVal : '',
    participate: val('pn_participate'),
    opportunity: opp,
    closingDate: closingVal,
@@ -1802,6 +2255,7 @@ function openPetronectModal(id=null){
    deliveryTime: val('pn_delivery'),
    city: val('pn_city'),
    uf: val('pn_uf').toUpperCase(),
+   checklist: checkedDocs,
    items: currentPetronectItems,
    obs: val('pn_obs')
   };
@@ -1874,7 +2328,7 @@ function reportsPage(root){
  let years = [...new Set([...db.opportunities.map(o => (o.created||today()).slice(0,4)), ...db.petronect.map(p => (p.date||today()).slice(0,4))])].sort().reverse();
  if(!years.includes(String(currentYear))) years.unshift(String(currentYear));
 
- root.innerHTML=head('Relatórios','Visão analítica completa de vendas, prospecção e pipeline comercial.',`
+ root.innerHTML=head('Relatórios','Visão analítica completa de vendas, prospecção, motivos de perda e pipeline comercial.',`
   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;">
    <div style="display:flex;align-items:center;gap:6px;"><label style="font-size:11px;font-weight:650;">De:</label><input type="date" id="reportStartDate" onchange="renderReportsData()" style="padding:6px;border:1px solid var(--line);border-radius:6px;background:var(--surface);font-size:12px;"></div>
    <div style="display:flex;align-items:center;gap:6px;"><label style="font-size:11px;font-weight:650;">Até:</label><input type="date" id="reportEndDate" onchange="renderReportsData()" style="padding:6px;border:1px solid var(--line);border-radius:6px;background:var(--surface);font-size:12px;"></div>
@@ -1906,7 +2360,7 @@ function renderReportsData(){
   let y = parts[0];
   if(selYear && y !== selYear) return false;
   return true;
-}
+ }
 
  let filteredOpps = db.opportunities.filter(o => filterItem(o.created || today()));
  let filteredPetronect = db.petronect.filter(p => filterItem(p.date || today()));
@@ -1930,6 +2384,12 @@ function renderReportsData(){
  let byStatus=statusOptions.map(s=>({s,n:filteredOpps.filter(o=>o.status===s).length})).filter(x=>x.n);
  let byPetronectStatus=petronectStatusOptions.map(s=>({s,n:filteredPetronect.filter(p=>p.status===s).length})).filter(x=>x.n);
 
+ let allLosses = [
+  ...filteredOpps.filter(o => o.status === 'Perdido' && o.lossReason).map(o => o.lossReason),
+  ...filteredPetronect.filter(p => p.status === 'Perdida' && p.lossReason).map(p => p.lossReason)
+ ];
+ let lossCounts = lossReasonOptions.map(r => ({ r, n: allLosses.filter(x => x === r).length })).filter(x => x.n > 0).sort((a,b) => b.n - a.n);
+
  let container = $('#reportsContent');
  if(!container) return;
 
@@ -1952,6 +2412,11 @@ function renderReportsData(){
  <div class="grid2" style="margin-top:16px;">
   <div class="panel"><h3>Oportunidades por Status</h3>${byStatus.length?byStatus.map(x=>`<div class="bar-row"><span>${esc(x.s)}</span><div class="bar"><i style="width:${100*x.n/Math.max(1,totalOpps)}%"></i></div><b>${x.n}</b></div>`).join(''):'<div class="empty">Sem dados para exibir.</div>'}</div>
   <div class="panel"><h3>Status Licitações Petronect</h3>${byPetronectStatus.length?byPetronectStatus.map(x=>`<div class="bar-row"><span>${esc(x.s)}</span><div class="bar"><i style="width:${100*x.n/Math.max(1,totalPetronect)}%"></i></div><b>${x.n}</b></div>`).join(''):'<div class="empty">Sem dados para exibir.</div>'}</div>
+ </div>
+
+ <div class="panel" style="margin-top:16px;">
+  <h3>📉 Análise de Motivos de Perda (Oportunidades + Editais Petronect)</h3>
+  ${lossCounts.length ? lossCounts.map(x => `<div class="bar-row" style="grid-template-columns:230px 1fr 40px;"><span>${esc(x.r)}</span><div class="bar"><i style="width:${100*x.n/Math.max(1,allLosses.length)}%;background:var(--red);"></i></div><b>${x.n}</b></div>`).join('') : '<div class="empty" style="padding:20px;">Nenhuma perda registrada com motivo neste período.</div>'}
  </div>`;
 }
 
@@ -2285,6 +2750,11 @@ function addOpportunityContactItem(){ currentOpportunityContacts.push({name:'', 
 function removeOpportunityContact(index){ currentOpportunityContacts.splice(index, 1); renderOpportunityContacts(); }
 function updateOpportunityContact(index, fieldName, val){ if(currentOpportunityContacts[index]) currentOpportunityContacts[index][fieldName] = val; }
 
+function toggleOppLossReason(statusVal){
+  let wrap = $('#oppLossReasonWrap');
+  if(wrap) wrap.style.display = statusVal === 'Perdido' ? 'flex' : 'none';
+}
+
 function openOpportunity(id=null){
   let o=db.opportunities.find(x=>x.id===id)||{};
   currentProductsList = o.products ? JSON.parse(JSON.stringify(o.products)) : [];
@@ -2293,10 +2763,18 @@ function openOpportunity(id=null){
   }
   currentOpportunityContacts = o.contactsList ? JSON.parse(JSON.stringify(o.contactsList)) : [];
   let defaultOwner = o.owner || (currentUser ? currentUser.name : '');
+  let curStatus = o.status || 'Novo lead';
+
+  let linkedActivities = id ? db.activities.filter(a => a.oppId === id || (o.company && a.company && a.company.toLowerCase() === o.company.toLowerCase())).sort((a,b) => (b.date||'').localeCompare(a.date||'')) : [];
 
   openModal(id?'Editar oportunidade':'Nova oportunidade', `
     <div style="display:flex;flex-direction:column;gap:15px;">
-      ${id?`<div class="field"><label>ID do Registro</label><input type="text" readonly value="${esc(o.id)}" style="background:var(--line);font-weight:700;"></div>`:''}
+      ${id?`
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+          <div class="field" style="flex:1;"><label>ID do Registro</label><input type="text" readonly value="${esc(o.id)}" style="background:var(--line);font-weight:700;"></div>
+          <div><button type="button" class="btn primary" onclick="generateOpportunityPDF('${o.id}')">📄 Gerar Proposta PDF</button></div>
+        </div>
+      `:''}
 
       <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
         <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Dados Principais da Empresa</h3>
@@ -2319,8 +2797,20 @@ function openOpportunity(id=null){
           ${field('Responsável interno','o_owner',defaultOwner,'text')}
           ${field('Potencial comercial','o_potential',o.potential||'A validar','text',['Alto','Médio','Baixo','A validar'])}
           ${field('Prioridade','o_priority',o.priority||'Normal','text',['Urgente','Alta','Normal','Baixa'])}
-          ${field('Status comercial','o_status',o.status||'Novo lead','text',statusOptions)}
+          <div class="field">
+            <label>Status comercial</label>
+            <select id="o_status" onchange="toggleOppLossReason(this.value)">
+              ${statusOptions.map(s=>`<option ${s===curStatus?'selected':''}>${esc(s)}</option>`).join('')}
+            </select>
+          </div>
           ${field('Status Vendor List','o_vendor',o.vendor||'Não iniciado','text',vendorOptions)}
+          <div class="field full" id="oppLossReasonWrap" style="display:${curStatus==='Perdido'?'flex':'none'};">
+            <label style="color:var(--red);">Motivo da Perda *</label>
+            <select id="o_loss_reason">
+              <option value="">Selecione o motivo...</option>
+              ${lossReasonOptions.map(r=>`<option ${r===o.lossReason?'selected':''}>${esc(r)}</option>`).join('')}
+            </select>
+          </div>
           <div class="field full">${field('Link do edital / fonte','o_link',o.link,'url',null,true)}</div>
         </div>
       </div>
@@ -2350,8 +2840,31 @@ function openOpportunity(id=null){
         <div id="productItemsContainer" style="max-height:280px;overflow-y:auto;border:1px solid var(--line);padding:10px;border-radius:8px;background:var(--surface);"></div>
       </div>
 
+      ${id ? `
       <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
-        <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">🕒 6. Acompanhamento e Histórico</h3>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;flex-wrap:wrap;gap:6px;">
+          <h3 style="margin:0;font-size:14px;color:var(--text);">🕒 6. Timeline / Histórico de Interações (${linkedActivities.length})</h3>
+          <button type="button" class="btn small primary" onclick="closeModal(); openActivity('${o.id}')">＋ Registrar Follow-up</button>
+        </div>
+        ${linkedActivities.length ? `
+          <div class="opp-timeline">
+            ${linkedActivities.map(act => `
+              <div class="opp-tl-item">
+                <div style="display:flex;justify-content:space-between;align-items:center;gap:6px;margin-bottom:3px;">
+                  <b>${esc(act.title || act.type)}</b>
+                  <span class="muted" style="font-size:11px;">${fmtDate(act.date)} · <span class="pill" style="font-size:10px;padding:1px 6px;">${esc(act.type)}</span></span>
+                </div>
+                <div>${esc(act.summary || '—')}</div>
+                ${act.next ? `<div class="muted" style="font-size:11px;margin-top:3px;">Próximo passo: ${esc(act.next)} ${act.nextDate ? '('+fmtDate(act.nextDate)+')' : ''}</div>` : ''}
+              </div>
+            `).join('')}
+          </div>
+        ` : '<div class="empty" style="padding:15px;font-size:12px;">Nenhuma interação registrada para esta oportunidade ainda. Clique em "+ Registrar Follow-up".</div>'}
+      </div>
+      ` : ''}
+
+      <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+        <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📝 7. Próxima Ação e Observações</h3>
         <div class="form-grid">
           ${field('Próxima ação','o_next',o.nextAction,'text',null,true)}
           ${field('Data do próximo contato','o_nextdate',o.nextDate,'date')}
@@ -2362,6 +2875,13 @@ function openOpportunity(id=null){
   `, ()=>{
     let company=val('o_company');
     if(!company){alert('Informe o nome da empresa.');return}
+    let statusVal = val('o_status');
+    let lossReasonVal = val('o_loss_reason');
+    if(statusVal === 'Perdido' && !lossReasonVal){
+      alert('Informe o motivo da perda antes de salvar.');
+      return;
+    }
+
     let totalValue = currentProductsList.reduce((acc, item)=> acc + ((Number(item.qty)||0)*(Number(item.unitValue)||0)), 0);
     let recordId = o.id ? o.id : generateCustomId('OP', db.opportunities);
 
@@ -2378,6 +2898,7 @@ function openOpportunity(id=null){
       value: totalValue,
       source:val('o_source'),
       process:val('o_process'),
+      link:val('o_link'),
       buyer:val('o_buyer'),
       buyerCnpj:val('o_buyer_cnpj'),
       buyerResp:val('o_buyer_resp'),
@@ -2387,7 +2908,8 @@ function openOpportunity(id=null){
       owner:val('o_owner'),
       potential:val('o_potential'),
       priority:val('o_priority'),
-      status:val('o_status'),
+      status:statusVal,
+      lossReason: statusVal === 'Perdido' ? lossReasonVal : '',
       vendor:val('o_vendor'),
       nextAction:val('o_next'),
       nextDate:val('o_nextdate'),
@@ -2473,17 +2995,17 @@ function openActivity(oppId = null, editId = null){
  let opp = oppId ? db.opportunities.find(o => o.id === oppId) : null;
  let act = editId ? db.activities.find(a => a.id === editId) : null;
  let companyVal = act ? (act.company === 'Geral / Interno' ? '' : act.company) : (opp ? opp.company : '');
- let contactVal = act ? (act.contact || '') : (opp ? (opp.contact || '') : '');
+ let contactVal = act ? (act.contact || '') : (opp && opp.contactsList && opp.contactsList[0] ? opp.contactsList[0].name : '');
 
- openModal(act ? 'Editar Tarefa / Atividade' : 'Nova Tarefa / Atividade',`
+ openModal(act ? 'Editar Tarefa / Atividade' : (opp ? `Registrar Follow-up · ${opp.company}` : 'Nova Tarefa / Atividade'),`
   <div style="display:flex;flex-direction:column;gap:15px;">
    ${act?`<div class="field"><label>ID do Registro</label><input type="text" readonly value="${esc(act.id)}" style="background:var(--line);font-weight:700;"></div>`:''}
    <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
     <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. O que precisa ser feito / Registro</h3>
     <div class="form-grid">
-     <div class="field full"><label>Título / Assunto da Tarefa</label><input id="a_title" type="text" value="${esc(act?act.title:'')}" placeholder="Ex: Atualizar planilha de canais de vendas, Ligar para cliente X..."></div>
+     <div class="field full"><label>Título / Assunto da Tarefa</label><input id="a_title" type="text" value="${esc(act?act.title:(opp?'Follow-up comercial':''))}" placeholder="Ex: Atualizar planilha de canais de vendas, Ligar para cliente X..."></div>
      ${field('Data do registro','a_date',act?act.date:today(),'date')}
-     ${field('Tipo','a_type',act?act.type:'Tarefa / To-Do','text',activityTypes)}
+     ${field('Tipo','a_type',act?act.type:(opp?'Follow-up':'Tarefa / To-Do'),'text',activityTypes)}
      <div class="field"><label>Empresa vinculada <span class="muted" style="font-weight:400;">(opcional)</span></label><input id="a_company" type="text" value="${esc(companyVal)}" placeholder="Deixe vazio se for tarefa interna"></div>
      <div class="field"><label>Contato <span class="muted" style="font-weight:400;">(opcional)</span></label><input id="a_contact" type="text" value="${esc(contactVal)}" placeholder="Opcional"></div>
     </div>
@@ -2504,8 +3026,12 @@ function openActivity(oppId = null, editId = null){
   if(!title && !summary){alert('Informe ao menos o título da tarefa ou os detalhes.');return}
   let company = val('a_company') || 'Geral / Interno';
   let recordId = act ? act.id : generateCustomId('AT', db.activities);
+  let nextStep = val('a_next');
+  let nextDt = val('a_nextdate');
+
   let data = {
    id: recordId,
+   oppId: act ? (act.oppId || null) : (opp ? opp.id : null),
    title: title || summary.slice(0, 60),
    date: val('a_date'),
    company,
@@ -2513,11 +3039,18 @@ function openActivity(oppId = null, editId = null){
    type: val('a_type'),
    summary: summary,
    objection: val('a_objection'),
-   next: val('a_next'),
-   nextDate: val('a_nextdate'),
+   next: nextStep,
+   nextDate: nextDt,
    done: act ? act.done : false,
    createdBy: act ? (act.createdBy || '') : (currentUser ? currentUser.name : '')
   };
+
+  if(opp){
+   opp.updated = today();
+   if(nextStep) opp.nextAction = nextStep;
+   if(nextDt) opp.nextDate = nextDt;
+  }
+
   if(act) db.activities = db.activities.map(x => x.id === editId ? data : x);
   else db.activities.unshift(data);
   saveDB(); closeModal(); render();
