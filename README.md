@@ -1,8 +1,3 @@
-# advance-crm
-CRM comercial da Advance Tintas
-
-https://evertonnunesc.github.io/advance-crm/
-
 # 🎨 Advance CRM — Sistema de Gestão Comercial, Licitações & Portais B2B
 
 ![Status](https://img.shields.io/badge/Status-Produção-24966b?style=for-the-badge)
@@ -11,7 +6,12 @@ https://evertonnunesc.github.io/advance-crm/
 
 Desenvolvido por **Everton Nunes** para otimizar a operação comercial, prospecção industrial e gestão de editais e portais de compras da **Advance Tintas**.
 
----
+**Link:** https://evertonnunesc.github.io/advance-crm/
+
+## <a name="layout"></a> 💻 Layout
+
+<img src="assets/images/login.png" alt="Everton Store">
+<img src="assets/images/inicio.png" alt="Everton Store">
 
 ## 🎯 O Problema Resolvido
 
