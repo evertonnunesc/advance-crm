@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advance CRM | DESENVOLVIDO POR: EVERTON NUNES</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="light">
+
+<!-- TELA DE LOGIN -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-box">
+    <div class="login-brand" id="loginBrandHeader">
+      <div class="brand-mark" id="loginAvatarPreview">A</div>
+      <div style="min-width:0;flex:1;">
+        <strong id="loginTitlePreview" style="display:block;font-size:17px;letter-spacing:.4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">ADVANCE TINTAS</strong>
+        <small id="loginSubtitlePreview" style="color:var(--muted);font-size:11px;">Advance CRM · Acesso Restrito</small>
+      </div>
+    </div>
+    <form id="loginForm" style="display:flex;flex-direction:column;gap:14px;">
+      <div class="field">
+        <label>Usuário</label>
+        <input type="text" id="loginUser" placeholder="Digite seu usuário" autocomplete="username" oninput="updateLoginIdentityPreview(this.value)" required>
+      </div>
+      <div class="field">
+        <label>Senha</label>
+        <div style="display:flex;gap:6px;">
+          <input type="password" id="loginPass" placeholder="Digite sua senha" autocomplete="current-password" style="flex:1;" required>
+          <button type="button" class="btn small" onclick="togglePasswordVis('loginPass')" title="Mostrar/Ocultar">👁️</button>
+        </div>
+      </div>
+      <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);cursor:pointer;">
+        <input type="checkbox" id="loginRemember" checked> Manter conectado neste navegador
+      </label>
+      <div id="loginError" style="color:var(--red);font-size:12px;font-weight:600;display:none;"></div>
+      <button type="submit" class="btn primary" style="justify-content:center;padding:11px;font-size:14px;margin-top:4px;">Entrar no Sistema</button>
+    </form>
+    <div style="margin-top:18px;padding-top:12px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);text-align:center;">
+      DESENVOLVIDO POR: EVERTON NUNES
+    </div>
+  </div>
+</div>
+
+<div class="app" id="appContainer" style="display:none;">
+<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="closeMobileSidebar()"></div>
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <div class="brand-mark">A</div>
+    <div><strong>ADVANCE TINTAS</strong><small>DESENVOLVIDO POR: EVERTON NUNES</small></div>
+    <button type="button" class="sidebar-close-mobile" onclick="closeMobileSidebar()" title="Fechar menu">✕</button>
+  </div>
+  <div class="nav-label">GESTÃO COMERCIAL</div>
+  <nav class="nav" id="nav">
+    <button class="active" data-page="dashboard"><span class="ico">▦</span>Dashboard</button>
+    <button data-page="opportunities" id="oppMenuBtn"><span class="ico">◎</span>Oportunidades<span class="caret">▼</span></button>
+    <div class="nav-sub" id="oppSubmenu">
+      <button data-page="companies"><span class="ico">▣</span>Empresas</button>
+      <button data-page="contacts"><span class="ico">♙</span>Contatos</button>
+    </div>
+    <button data-page="petronect"><span class="ico">◈</span>Petronect</button>
+    <button data-page="portals_panel" id="portalsMenuBtn"><span class="ico">⊕</span>Portais<span class="caret">▼</span></button>
+    <div class="nav-sub" id="portalsSubmenu">
+      <button data-page="portals_panel"><span class="ico">◫</span>Painel</button>
+      <button data-page="portals_base"><span class="ico">▤</span>Base de Portais</button>
+      <button data-page="portals_history"><span class="ico">◷</span>Histórico</button>
+    </div>
+    <button data-page="activities"><span class="ico">✓</span>Tarefas e Atividades</button>
+    <button data-page="vendor"><span class="ico">★</span>Vendor List</button>
+  </nav>
+  <div class="side-bottom">Advance CRM · Versão 4.0<br>Dados armazenados neste navegador</div>
+</aside>
+<main class="main">
+  <header class="topbar">
+    <div style="display:flex;align-items:center;gap:12px;min-width:0;">
+      <button type="button" class="sidebar-toggle-btn" id="sidebarToggleBtn" onclick="toggleSidebar()" title="Mostrar / Ocultar Menu Lateral">☰</button>
+      <span class="crumb">Advance Tintas / <b id="crumb">Dashboard</b></span>
+    </div>
+    <div class="top-actions">
+      <button type="button" class="global-search-trigger" onclick="openGlobalSearchModal()" title="Busca Rápida Global (Ctrl + K)">
+        <span>🔍 <span class="gs-text">Busca rápida...</span></span>
+        <kbd>Ctrl+K</kbd>
+      </button>
+      <div class="notif-wrap" id="notifWrap">
+        <button type="button" class="notif-btn" onclick="toggleNotifDropdown()" title="Alertas e Vencimentos">
+          🔔
+          <span class="notif-badge hide" id="notifBadge">0</span>
+        </button>
+        <div class="notif-dropdown" id="notifDropdown">
+          <div class="notif-head">
+            <span>🔔 Alertas & Vencimentos</span>
+            <span class="muted" id="notifCountText">0 pendência(s)</span>
+          </div>
+          <div class="notif-list" id="notifList"></div>
+        </div>
+      </div>
+      <button class="btn small" onclick="toggleTheme()" title="Alternar Modo Escuro/Claro">🌓</button>
+      <span class="muted" style="font-size:12px" id="topUserName">Modo offline</span>
+      <div class="user-menu-wrap" id="userMenuWrap">
+        <div class="avatar" id="topUserAvatar" onclick="toggleUserMenu()" title="Menu do Usuário">A</div>
+        <div class="user-dropdown" id="userDropdown">
+          <div class="user-dropdown-head">
+            <strong id="dropUserName">Administrador</strong>
+            <small id="dropUserRole">Perfil: Admin</small>
+          </div>
+          <button onclick="closeUserMenu(); openAvatarModal()">📷 Alterar Foto / Avatar</button>
+          <button onclick="closeUserMenu(); openChangePasswordModal(false)">🔑 Alterar Minha Senha</button>
+          <button onclick="closeUserMenu(); setPage('reports')">▥ Relatórios</button>
+          <button onclick="closeUserMenu(); setPage('settings')">💾 Backup e Configurações</button>
+          <button class="danger-item" onclick="logoutUser()">🚪 Sair / Trocar Usuário</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="content" id="content"></section>
+</main>
+</div>
+
+<div class="modal-back" id="modalBack">
+ <div class="modal" id="modalBox">
+  <div class="modal-head"><h2 id="modalTitle">Cadastro</h2><button class="close" id="modalCloseBtn">×</button></div>
+  <div class="modal-body" id="modalBody"></div>
+  <div class="modal-foot" id="modalFoot">
+   <button class="btn" id="modalCancelBtn">Cancelar</button>
+   <button class="btn primary" id="modalSaveBtn">Salvar registro</button>
+  </div>
+ </div>
+</div>
+<input type="file" id="importFile" accept=".json,application/json" class="hide">
+<input type="file" id="avatarFileInput" accept="image/*" class="hide">
+
+<script src="js/main.js"></script>
+</body>
+</html>
