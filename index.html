@@ -4,222 +4,1412 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Advance CRM | DESENVOLVIDO POR: EVERTON NUNES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#142d48;--navy2:#1c3c5c;--green:#24966b;--bg:#f3f6f8;--surface:#fff;--text:#1d2935;--muted:#718096;--line:#e4eaf0;--red:#c84d4d;--amber:#b7791f;--shadow:0 8px 24px rgba(20,45,72,.07)}
-[data-theme="dark"]{--navy:#1a202c;--navy2:#2d3748;--green:#319795;--bg:#121212;--surface:#1e1e1e;--text:#e2e8f0;--muted:#a0aec0;--line:#2d3748;--red:#e53e3e;--amber:#d69e2e;--shadow:0 8px 24px rgba(0,0,0,.3)}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 Inter,Segoe UI,Arial,sans-serif;transition:background .3s,color .3s}
-button,input,select,textarea{font:inherit}
-button{cursor:pointer}
-.app{min-height:100vh}
+:root {
+  /* Paleta ERP Corporativa - Light */
+  --navy: #0f172a;
+  --navy2: #1e293b;
+  --navy-hover: rgba(255, 255, 255, 0.08);
+  --green: #10b981;
+  --green-dark: #059669;
+  --green-soft: rgba(16, 185, 129, 0.12);
+  --bg: #f1f5f9;
+  --surface: #ffffff;
+  --surface-alt: #f8fafc;
+  --text: #0f172a;
+  --text-secondary: #334155;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --line-strong: #cbd5e1;
+  --red: #ef4444;
+  --red-soft: #fef2f2;
+  --amber: #f59e0b;
+  --amber-soft: #fffbeb;
+  --blue: #3b82f6;
+  --blue-soft: #eff6ff;
+  --purple: #8b5cf6;
+  --purple-soft: #f5f3ff;
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -2px rgba(15, 23, 42, 0.03);
+  --shadow-lg: 0 20px 40px -12px rgba(15, 23, 42, 0.18);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --sidebar-w: 256px;
+  --sidebar-collapsed-w: 74px;
+}
 
-/* Sidebar & Estado Recolhido / Responsivo */
-.sidebar{position:fixed;inset:0 auto 0 0;width:248px;background:var(--navy);color:#fff;padding:22px 15px;display:flex;flex-direction:column;z-index:15;overflow-y:auto;transition:transform .28s ease, width .28s ease}
-.sidebar-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:14;backdrop-filter:blur(1px)}
-.sidebar-backdrop.show{display:block}
-.sidebar-close-mobile{display:none;background:rgba(255,255,255,.1);border:0;color:#fff;width:30px;height:30px;border-radius:8px;place-items:center;font-size:16px;margin-left:auto}
+[data-theme="dark"] {
+  --navy: #090d16;
+  --navy2: #111827;
+  --navy-hover: rgba(255, 255, 255, 0.07);
+  --green: #10b981;
+  --green-dark: #34d399;
+  --green-soft: rgba(16, 185, 129, 0.16);
+  --bg: #0b1120;
+  --surface: #131c31;
+  --surface-alt: #19233c;
+  --text: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --muted: #94a3b8;
+  --line: #1e293b;
+  --line-strong: #334155;
+  --red: #f87171;
+  --red-soft: rgba(239, 68, 68, 0.15);
+  --amber: #fbbf24;
+  --amber-soft: rgba(245, 158, 11, 0.15);
+  --blue: #60a5fa;
+  --blue-soft: rgba(59, 130, 246, 0.15);
+  --purple: #a78bfa;
+  --purple-soft: rgba(139, 92, 246, 0.15);
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 24px 50px rgba(0, 0, 0, 0.6);
+}
 
-.brand{display:flex;align-items:center;gap:11px;padding:3px 9px 25px}
-.brand-mark{width:39px;height:39px;border-radius:11px;background:var(--green);display:grid;place-items:center;font-weight:800;font-size:20px;flex-shrink:0}
-.brand strong{display:block;font-size:14px;letter-spacing:.5px}
-.brand small{color:#a9bdce;font-size:9px;letter-spacing:.8px}
-.nav-label{font-size:10px;color:#89a2b8;letter-spacing:1.4px;padding:12px 12px 7px}
-.nav button{width:100%;border:0;background:transparent;color:#d5e0e9;padding:11px 12px;text-align:left;border-radius:8px;margin:2px 0;display:flex;gap:12px;align-items:center}
-.nav button:hover,.nav button.active{background:#254663;color:#fff}
-.nav .ico{width:18px;text-align:center;font-size:16px}
-.nav-sub{display:none;flex-direction:column;padding-left:18px;margin:2px 0 4px;border-left:1px solid #34516b;margin-left:20px}
-.nav-sub.open{display:flex}
-.nav-sub button{padding:8px 12px;font-size:13px}
-.nav .caret{margin-left:auto;font-size:10px;opacity:.75;transition:transform .2s}
-.nav button.expanded .caret{transform:rotate(180deg)}
-.side-bottom{margin-top:auto;border-top:1px solid #34516b;padding:15px 10px 0;color:#a9bdce;font-size:11px}
+* { box-sizing: border-box; }
 
-.main{margin-left:248px;min-height:100vh;transition:margin-left .28s ease}
-body.sidebar-collapsed .sidebar{transform:translateX(-100%)}
-body.sidebar-collapsed .main{margin-left:0}
+/* Scrollbars Elegantes */
+::-webkit-scrollbar { width: 7px; height: 7px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
 
-.topbar{height:68px;background:var(--surface);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 24px;position:sticky;top:0;z-index:10;gap:10px}
-.crumb{color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.top-actions{display:flex;align-items:center;gap:9px;flex-shrink:0}
-.sidebar-toggle-btn{border:1px solid var(--line);background:var(--surface);color:var(--text);width:36px;height:36px;border-radius:8px;display:grid;place-items:center;font-size:17px;flex-shrink:0;transition:.15s}
-.sidebar-toggle-btn:hover{border-color:var(--green);color:var(--green)}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 13.5px/1.5 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background .25s ease, color .25s ease;
+  font-variant-numeric: tabular-nums;
+}
 
-.global-search-trigger{border:1px solid var(--line);background:var(--bg);color:var(--muted);padding:7px 12px;border-radius:8px;display:flex;align-items:center;gap:8px;font-size:12px;min-width:190px;justify-content:space-between;transition:.15s}
-.global-search-trigger:hover{border-color:var(--green);color:var(--text)}
-.global-search-trigger kbd{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:10px;font-family:inherit;color:var(--muted)}
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+.app { min-height: 100vh; }
 
-.notif-wrap{position:relative}
-.notif-btn{border:1px solid var(--line);background:var(--surface);color:var(--text);width:36px;height:36px;border-radius:8px;display:grid;place-items:center;font-size:16px;position:relative;transition:.15s}
-.notif-btn:hover{border-color:var(--green)}
-.notif-badge{position:absolute;top:-5px;right:-5px;background:var(--red);color:#fff;font-size:10px;font-weight:800;min-width:18px;height:18px;border-radius:99px;display:grid;place-items:center;padding:0 4px;border:2px solid var(--surface)}
-.notif-dropdown{position:absolute;top:46px;right:0;width:330px;max-width:90vw;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 32px rgba(0,0,0,.2);z-index:50;display:none;overflow:hidden}
-.notif-dropdown.open{display:block}
-.notif-head{padding:12px 15px;background:var(--bg);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700}
-.notif-list{max-height:310px;overflow-y:auto}
-.notif-item{padding:10px 14px;border-bottom:1px solid var(--line);cursor:pointer;transition:.15s;font-size:12px}
-.notif-item:hover{background:var(--bg)}
-.notif-item:last-child{border-bottom:0}
+/* ==================== SIDEBAR ERP RETRÁTIL (ICON-ONLY + HOVER EXPAND) ==================== */
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: var(--sidebar-w);
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy2) 100%);
+  color: #f8fafc;
+  padding: 18px 12px;
+  display: flex;
+  flex-direction: column;
+  z-index: 20;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  transition: width .26s cubic-bezier(0.4, 0, 0.2, 1), transform .28s ease, box-shadow .26s ease;
+}
 
-.avatar{width:36px;height:36px;background:#e2f1eb;color:#18734f;border-radius:50%;display:grid;place-items:center;font-weight:700;cursor:pointer;border:2px solid var(--green);overflow:hidden;flex-shrink:0;transition:transform .15s}
-.avatar:hover{transform:scale(1.05)}
-.avatar img{width:100%;height:100%;object-fit:cover}
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(9, 13, 22, 0.6);
+  z-index: 19;
+  backdrop-filter: blur(2px);
+}
+.sidebar-backdrop.show { display: block; }
 
-.content{padding:26px 28px;max-width:1650px;margin:auto}
-.page-head{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:22px;flex-wrap:wrap}
-.page-head h1{margin:0 0 5px;font-size:24px;color:var(--text)}
-.page-head p{margin:0;color:var(--muted)}
-.btn{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:9px 13px;border-radius:8px;font-weight:600;display:inline-flex;gap:7px;align-items:center}
-.btn:hover{opacity:0.9}
-.btn.primary{background:var(--green);border-color:var(--green);color:#fff}
-.btn.dark{background:var(--navy);color:#fff;border-color:var(--navy)}
-.btn.danger{color:var(--red);border-color:#f5d2d2;background:var(--surface)}
-.btn.small{padding:6px 9px;font-size:12px}
+.sidebar-close-mobile {
+  display: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 0;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  place-items: center;
+  font-size: 15px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
 
-.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:20px}
-.cards-6{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:13px;margin-bottom:20px}
-@media(max-width:1280px){.cards-6{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:960px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){.cards,.cards-6{grid-template-columns:1fr}}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 6px 20px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  min-height: 58px;
+}
 
-.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:var(--shadow);display:flex;flex-direction:column}
-.stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;font-weight:600}
-.stat-icon{width:31px;height:31px;border-radius:9px;background:var(--line);color:var(--green);display:grid;place-items:center;flex-shrink:0}
-.stat strong{display:block;font-size:27px;color:var(--text);margin:10px 0 4px}
-.stat small{color:var(--muted);font-size:11px;line-height:1.35;opacity:.85}
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 18px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+}
 
-.grid2{display:grid;grid-template-columns:1.1fr 1fr;gap:16px}
-@media(max-width:1100px){.grid2{grid-template-columns:1fr}}
+.brand-info {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: opacity .2s ease;
+}
 
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:var(--shadow);min-width:0}
-.panel h3{margin:0 0 15px;font-size:15px;color:var(--text)}
-.table-wrap{overflow:auto;-webkit-overflow-scrolling:touch}
-table{border-collapse:collapse;width:100%;min-width:760px}
-th{text-align:left;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.7px;background:var(--line);padding:11px 12px;white-space:nowrap}
-td{padding:12px;border-top:1px solid var(--line);vertical-align:middle}
-tbody tr:hover{opacity:0.95}
-.muted{color:var(--muted)}
-.pill{display:inline-block;padding:4px 8px;border-radius:30px;background:var(--line);color:var(--text);font-size:11px;font-weight:650;white-space:nowrap}
-.pill.green{background:#e4f4ec;color:#19734e}
-.pill.amber{background:#fff4dc;color:#98650d}
-.pill.red{background:#fdeaea;color:#a43e3e}
-.pill.blue{background:#e8f1fb;color:#315f91}
-.pill.purple{background:#f3e8fb;color:#7b3191}
+.brand strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .5px;
+  color: #ffffff;
+}
 
-.toolbar{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:14px}
-.field{display:flex;flex-direction:column;gap:5px;min-width:0}
-.field label{font-size:11px;font-weight:650;color:var(--muted);white-space:nowrap}
-.field input,.field select,.field textarea,.toolbar input,.toolbar select{border:1px solid var(--line);border-radius:8px;padding:8px 9px;background:var(--surface);color:var(--text);outline:none;min-width:0;font-size:13px}
-.field input:focus,.field select:focus,.field textarea:focus,.toolbar input:focus{border-color:var(--green);box-shadow:0 0 0 3px var(--line)}
-.toolbar input{min-width:220px;flex:1}
-.toolbar select{min-width:150px}
+.brand small {
+  display: block;
+  color: #94a3b8;
+  font-size: 9.5px;
+  letter-spacing: .6px;
+  margin-top: 1px;
+}
 
-.empty{padding:35px;text-align:center;color:var(--muted)}
-.empty b{display:block;color:var(--text);margin-bottom:5px}
+.nav-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 1.3px;
+  padding: 14px 12px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-transform: uppercase;
+}
 
-.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
-@media(max-width:680px){.form-grid{grid-template-columns:1fr}}
-.field.full{grid-column:1/-1}
-.field textarea{min-height:78px;resize:vertical}
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
 
-.modal-back{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:25;display:none;align-items:center;justify-content:center;padding:14px}
-.modal-back.show{display:flex}
-.modal{background:var(--surface);border-radius:14px;width:min(1300px,100%);max-height:94vh;overflow:auto;box-shadow:0 20px 70px rgba(0,0,0,.5)}
-.modal.modal-sm{width:min(540px,100%)}
-.modal-head{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
-.modal-head h2{margin:0;color:var(--text);font-size:17px}
-.modal-body{padding:18px 20px}
-.modal-foot{padding:14px 20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:9px;flex-wrap:wrap}
-.close{border:0;background:transparent;font-size:22px;color:var(--muted)}
-.notice{background:var(--surface);border:1px solid var(--line);color:var(--text);padding:12px 14px;border-radius:9px;margin-bottom:16px}
-.notice.warn{background:var(--surface);border-color:var(--amber);color:var(--amber)}
+.nav button {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #cbd5e1;
+  padding: 10px 12px;
+  text-align: left;
+  border-radius: 10px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-weight: 500;
+  font-size: 13.5px;
+  white-space: nowrap;
+  position: relative;
+  transition: background .18s ease, color .18s ease, padding .2s ease;
+}
 
-.due-scroll-container { max-height: 410px; overflow-y: auto; padding-right: 4px; display: flex; flex-direction: column; gap: 8px; }
-.movements-scroll-container { max-height: 238px; overflow-y: auto; border: 1px solid var(--line); border-radius: 8px; }
-.movements-scroll-container thead th { position: sticky; top: 0; z-index: 2; background: var(--line); }
+.nav button:hover {
+  background: var(--navy-hover);
+  color: #ffffff;
+}
 
-.activity-card { width: 100%; border-left: 3px solid var(--line); padding: 12px; position: relative; cursor: pointer; transition: 0.15s; background: var(--surface); border-radius: 6px; border: 1px solid var(--line); }
-.activity-card:hover { border-color: var(--green); }
+.nav button.active {
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.22) 0%, rgba(16, 185, 129, 0.08) 100%);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: inset 3px 0 0 var(--green);
+}
 
-.bar-row{display:grid;grid-template-columns:160px 1fr 35px;align-items:center;gap:10px;margin:11px 0;font-size:12px}
-@media(max-width:480px){.bar-row{grid-template-columns:115px 1fr 30px}}
-.bar{height:8px;background:var(--line);border-radius:20px;overflow:hidden}
-.bar i{display:block;height:100%;background:var(--green);border-radius:20px}
+.nav .ico {
+  width: 24px;
+  height: 24px;
+  display: inline-grid;
+  place-items: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  color: #94a3b8;
+  transition: color .18s ease, transform .18s ease;
+}
 
-.settings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
-@media(max-width:850px){.settings-grid{grid-template-columns:1fr}}
-.hide{display:none!important}
+.nav button:hover .ico,
+.nav button.active .ico {
+  color: var(--green);
+}
 
-.product-item-row { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; position: relative; overflow-x: auto; }
-.kanban-board { display: grid; grid-template-columns: repeat(7, minmax(240px, 1fr)); gap: 14px; overflow-x: auto; padding-bottom: 15px; align-items: start; }
-.kanban-col { background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 12px; min-height: 500px; display: flex; flex-direction: column; }
-.kanban-col h4 { margin: 0 0 12px 0; font-size: 13px; color: var(--text); display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--line); padding-bottom: 8px; }
-.kanban-cards { display: flex; flex-direction: column; gap: 10px; min-height: 400px; }
-.kanban-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px; box-shadow: 0 2px 5px rgba(0,0,0,.04); cursor: grab; }
-.kanban-card:hover { border-color: var(--green); }
+.nav-text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
-.pricing-item-grid { display: grid; grid-template-columns: 70px 1.6fr 70px 85px 75px 85px 95px 80px 80px 85px 35px; gap: 5px; align-items: end; min-width: 820px; }
-.accordion-header { background: var(--bg); padding: 10px 14px; border-radius: 8px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 13px; border: 1px solid var(--line); margin-bottom: 10px; }
+.nav-sub {
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  padding-left: 14px;
+  margin: 2px 0 6px 23px;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.nav-sub.open { display: flex; }
+
+.nav-sub button {
+  padding: 8px 10px;
+  font-size: 12.5px;
+  border-radius: 8px;
+}
+
+.nav .caret {
+  margin-left: auto;
+  font-size: 9px;
+  opacity: .7;
+  transition: transform .2s ease;
+  flex-shrink: 0;
+}
+
+.nav button.expanded .caret { transform: rotate(180deg); }
+
+.side-bottom {
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px 10px 2px;
+  color: #94a3b8;
+  font-size: 11px;
+  line-height: 1.45;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.main {
+  margin-left: var(--sidebar-w);
+  min-height: 100vh;
+  transition: margin-left .26s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ESTADO RECOLHIDO DESKTOP: APENAS ÍCONES CENTRALIZADOS + EXPANSÃO NO HOVER */
+@media (min-width: 901px) {
+  body.sidebar-collapsed .main {
+    margin-left: var(--sidebar-collapsed-w);
+  }
+
+  body.sidebar-collapsed .sidebar:not(:hover) {
+    width: var(--sidebar-collapsed-w);
+    padding: 18px 8px;
+  }
+
+  body.sidebar-collapsed .sidebar:not(:hover) .brand {
+    justify-content: center;
+    padding: 4px 0 20px;
+    gap: 0;
+  }
+
+  body.sidebar-collapsed .sidebar:not(:hover) .brand-info,
+  body.sidebar-collapsed .sidebar:not(:hover) .nav-label,
+  body.sidebar-collapsed .sidebar:not(:hover) .nav-text,
+  body.sidebar-collapsed .sidebar:not(:hover) .caret,
+  body.sidebar-collapsed .sidebar:not(:hover) .side-bottom {
+    display: none;
+  }
+
+  body.sidebar-collapsed .sidebar:not(:hover) .nav {
+    align-items: center;
+  }
+
+  body.sidebar-collapsed .sidebar:not(:hover) .nav button {
+    width: 46px;
+    height: 44px;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
+  }
+
+  body.sidebar-collapsed .sidebar:not(:hover) .nav button.active {
+    box-shadow: none;
+    background: rgba(16, 185, 129, 0.22);
+  }
+
+  body.sidebar-collapsed .sidebar:not(:hover) .nav-sub {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+    align-items: center;
+  }
+
+  body.sidebar-collapsed .sidebar:not(:hover) .nav-sub button {
+    width: 42px;
+    height: 38px;
+  }
+
+  /* Expansão suave sobre o conteúdo ao passar o mouse */
+  body.sidebar-collapsed .sidebar:hover {
+    width: var(--sidebar-w);
+    box-shadow: 12px 0 36px rgba(0, 0, 0, 0.28);
+  }
+}
+
+/* ==================== TOPBAR CORPORATIVA ==================== */
+.topbar {
+  height: 64px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 26px;
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  gap: 12px;
+  box-shadow: var(--shadow-xs);
+}
+
+.crumb {
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.crumb b {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.sidebar-toggle-btn {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text-secondary);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  transition: all .15s ease;
+}
+
+.sidebar-toggle-btn:hover {
+  border-color: var(--green);
+  color: var(--green);
+  background: var(--green-soft);
+}
+
+.global-search-trigger {
+  border: 1px solid var(--line);
+  background: var(--surface-alt);
+  color: var(--muted);
+  padding: 7px 12px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  min-width: 220px;
+  justify-content: space-between;
+  transition: all .15s ease;
+}
+
+.global-search-trigger:hover {
+  border-color: var(--green);
+  color: var(--text);
+  background: var(--surface);
+}
+
+.global-search-trigger kbd {
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: 5px;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--muted);
+}
+
+.notif-wrap { position: relative; }
+
+.notif-btn {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text-secondary);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  position: relative;
+  transition: all .15s ease;
+}
+
+.notif-btn:hover {
+  border-color: var(--green);
+  background: var(--surface-alt);
+}
+
+.notif-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: var(--red);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 99px;
+  display: grid;
+  place-items: center;
+  padding: 0 4px;
+  border: 2px solid var(--surface);
+}
+
+.notif-dropdown {
+  position: absolute;
+  top: 46px;
+  right: 0;
+  width: 350px;
+  max-width: 92vw;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  z-index: 50;
+  display: none;
+  overflow: hidden;
+}
+
+.notif-dropdown.open { display: block; }
+
+.notif-head {
+  padding: 12px 16px;
+  background: var(--surface-alt);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.notif-list { max-height: 320px; overflow-y: auto; }
+
+.notif-item {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+  transition: background .15s ease;
+  font-size: 12.5px;
+}
+
+.notif-item:hover { background: var(--surface-alt); }
+.notif-item:last-child { border-bottom: 0; }
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  background: var(--green-soft);
+  color: var(--green-dark);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  border: 2px solid var(--green);
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 3px var(--green-soft);
+}
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ==================== CONTEÚDO, CABEÇALHOS E BOTÕES ==================== */
+.content {
+  padding: 26px 28px 36px;
+  max-width: 1680px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.page-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.page-head h1 {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.page-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.btn {
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--text-secondary);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 13px;
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  box-shadow: var(--shadow-xs);
+  transition: all .15s ease;
+}
+
+.btn:hover {
+  border-color: var(--muted);
+  background: var(--surface-alt);
+  color: var(--text);
+}
+
+.btn.primary {
+  background: var(--green);
+  border-color: var(--green);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
+}
+
+.btn.primary:hover {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  color: #ffffff;
+}
+
+.btn.dark {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+
+.btn.danger {
+  color: var(--red);
+  border-color: rgba(239, 68, 68, 0.35);
+  background: var(--surface);
+}
+
+.btn.danger:hover {
+  background: var(--red-soft);
+  border-color: var(--red);
+}
+
+.btn.small {
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 7px;
+}
+
+/* ==================== KPI CARDS & PANELS ==================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.cards-6 {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+@media (max-width: 1320px) { .cards-6 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 980px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .cards, .cards-6 { grid-template-columns: 1fr; } }
+
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.stat:hover {
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+}
+
+.stat::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green), transparent);
+  opacity: .75;
+}
+
+.stat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+}
+
+.stat-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--green-soft);
+  color: var(--green-dark);
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.stat strong {
+  display: block;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin: 10px 0 4px;
+}
+
+.stat small {
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.4;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  gap: 18px;
+}
+@media (max-width: 1100px) { .grid2 { grid-template-columns: 1fr; } }
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  min-width: 0;
+}
+
+.panel h3 {
+  margin: 0 0 16px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+/* ==================== TABELAS ERP & PILLS ==================== */
+.table-wrap {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 760px;
+}
+
+th {
+  text-align: left;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  background: var(--surface-alt);
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+td {
+  padding: 12px 14px;
+  border-top: 1px solid var(--line);
+  vertical-align: middle;
+  font-size: 13px;
+}
+
+tbody tr {
+  transition: background .12s ease;
+}
+
+tbody tr:hover {
+  background: var(--surface-alt);
+}
+
+.muted { color: var(--muted); }
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 99px;
+  background: var(--surface-alt);
+  border: 1px solid var(--line-strong);
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pill.green {
+  background: var(--green-soft);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: var(--green-dark);
+}
+
+.pill.amber {
+  background: var(--amber-soft);
+  border-color: rgba(245, 158, 11, 0.35);
+  color: #b45309;
+}
+[data-theme="dark"] .pill.amber { color: #fbbf24; }
+
+.pill.red {
+  background: var(--red-soft);
+  border-color: rgba(239, 68, 68, 0.35);
+  color: #dc2626;
+}
+[data-theme="dark"] .pill.red { color: #f87171; }
+
+.pill.blue {
+  background: var(--blue-soft);
+  border-color: rgba(59, 130, 246, 0.35);
+  color: #1d4ed8;
+}
+[data-theme="dark"] .pill.blue { color: #60a5fa; }
+
+.pill.purple {
+  background: var(--purple-soft);
+  border-color: rgba(139, 92, 246, 0.35);
+  color: #6d28d9;
+}
+[data-theme="dark"] .pill.purple { color: #a78bfa; }
+
+/* ==================== TOOLBAR & FORMULÁRIOS ==================== */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+  background: var(--surface);
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-xs);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.field label {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.field input,
+.field select,
+.field textarea,
+.toolbar input,
+.toolbar select {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  padding: 8px 11px;
+  background: var(--surface);
+  color: var(--text);
+  outline: none;
+  min-width: 0;
+  font-size: 13px;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus,
+.toolbar input:focus,
+.toolbar select:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px var(--green-soft);
+}
+
+.toolbar input { min-width: 240px; flex: 1; }
+.toolbar select { min-width: 165px; }
+
+.empty {
+  padding: 36px 20px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+.empty b { display: block; color: var(--text); font-size: 14px; margin-bottom: 4px; }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+@media (max-width: 680px) { .form-grid { grid-template-columns: 1fr; } }
+.field.full { grid-column: 1 / -1; }
+.field textarea { min-height: 80px; resize: vertical; }
+
+/* ==================== MODAIS ==================== */
+.modal-back {
+  position: fixed;
+  inset: 0;
+  background: rgba(9, 13, 22, 0.65);
+  backdrop-filter: blur(3px);
+  z-index: 35;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.modal-back.show { display: flex; }
+
+.modal {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  width: min(1280px, 100%);
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  animation: modalFadeIn .18s ease-out;
+}
+.modal.modal-sm { width: min(520px, 100%); }
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-head {
+  padding: 16px 22px;
+  background: var(--surface-alt);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.modal-head h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 16.5px;
+  font-weight: 700;
+}
+
+.modal-body {
+  padding: 20px 22px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.modal-foot {
+  padding: 14px 22px;
+  background: var(--surface-alt);
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.close {
+  border: 0;
+  background: transparent;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--muted);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+.close:hover { background: var(--line); color: var(--text); }
+
+/* ==================== NOTICES, LISTAS E KANBAN ==================== */
+.notice {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 13px 16px;
+  border-radius: var(--radius-md);
+  margin-bottom: 18px;
+  font-size: 13px;
+  box-shadow: var(--shadow-xs);
+}
+
+.notice.warn {
+  background: var(--amber-soft);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: var(--text);
+}
+
+.due-scroll-container {
+  max-height: 410px;
+  overflow-y: auto;
+  padding-right: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.movements-scroll-container {
+  max-height: 245px;
+  overflow-y: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+.movements-scroll-container thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--surface-alt);
+}
+
+.activity-card {
+  width: 100%;
+  border-left: 3px solid var(--green);
+  padding: 12px 14px;
+  position: relative;
+  cursor: pointer;
+  transition: all .15s ease;
+  background: var(--surface-alt);
+  border-radius: var(--radius-sm);
+  border-top: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.activity-card:hover {
+  border-color: var(--green);
+  background: var(--surface);
+  box-shadow: var(--shadow-xs);
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 165px 1fr 38px;
+  align-items: center;
+  gap: 10px;
+  margin: 11px 0;
+  font-size: 12.5px;
+}
+@media (max-width: 480px) { .bar-row { grid-template-columns: 115px 1fr 30px; } }
+
+.bar {
+  height: 8px;
+  background: var(--line);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.bar i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--green), var(--green-dark));
+  border-radius: 99px;
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+@media (max-width: 850px) { .settings-grid { grid-template-columns: 1fr; } }
+.hide { display: none !important; }
+
+.product-item-row {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  margin-bottom: 10px;
+  position: relative;
+  overflow-x: auto;
+}
+
+.kanban-board {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(250px, 1fr));
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  align-items: start;
+}
+
+.kanban-col {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.kanban-col h4 {
+  margin: 0 0 12px 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  color: var(--text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 8px;
+}
+
+.kanban-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 400px;
+}
+
+.kanban-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  box-shadow: var(--shadow-xs);
+  cursor: grab;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.kanban-card:hover {
+  border-color: var(--green);
+  box-shadow: var(--shadow);
+}
+
+.pricing-item-grid {
+  display: grid;
+  grid-template-columns: 70px 1.6fr 70px 85px 75px 85px 95px 80px 80px 85px 35px;
+  gap: 6px;
+  align-items: end;
+  min-width: 820px;
+}
+
+.accordion-header {
+  background: var(--surface-alt);
+  padding: 11px 15px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 13px;
+  border: 1px solid var(--line);
+  margin-bottom: 10px;
+}
+.accordion-header:hover { border-color: var(--green); }
 .accordion-content { display: none; margin-bottom: 15px; }
 .accordion-content.show { display: grid; }
 
-.donut-wrap { display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; padding: 10px 0; }
-.donut-chart { width: 190px; height: 190px; border-radius: 50%; position: relative; display: grid; place-items: center; flex-shrink: 0; }
-.donut-hole { width: 112px; height: 112px; border-radius: 50%; background: var(--surface); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: inset 0 2px 6px rgba(0,0,0,.06); }
-.donut-legend { display: flex; flex-direction: column; gap: 8px; min-width: 190px; }
-.legend-item { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 12px; }
+/* Donut Chart & Resumos */
+.donut-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+.donut-chart {
+  width: 185px;
+  height: 185px;
+  border-radius: 50%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.donut-hole {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, .06);
+}
+.donut-legend { display: flex; flex-direction: column; gap: 8px; min-width: 195px; }
+.legend-item { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 12.5px; }
 .legend-dot { width: 11px; height: 11px; border-radius: 3px; display: inline-block; flex-shrink: 0; }
 
-.mini-summary-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 14px; }
-@media(max-width:520px){.mini-summary-grid{grid-template-columns:1fr}}
-.mini-box { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
-.todo-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); transition: .15s; }
-.todo-item:hover { border-color: var(--green); }
+.mini-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px;
+  margin-bottom: 14px;
+}
+@media (max-width: 520px) { .mini-summary-grid { grid-template-columns: 1fr; } }
+
+.mini-box {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+.todo-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-alt);
+  transition: all .15s ease;
+}
+.todo-item:hover {
+  border-color: var(--green);
+  background: var(--surface);
+}
 
 /* Checklist & Resumo Financeiro Petronect */
-.doc-checklist-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
-@media(max-width:760px){.doc-checklist-grid{grid-template-columns:repeat(2, minmax(0, 1fr))}}
-@media(max-width:480px){.doc-checklist-grid{grid-template-columns:1fr}}
-.doc-check-card { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); font-size: 12px; cursor: pointer; }
+.doc-checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+@media (max-width: 760px) { .doc-checklist-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .doc-checklist-grid { grid-template-columns: 1fr; } }
+
+.doc-check-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  font-size: 12px;
+  cursor: pointer;
+}
 .doc-check-card:hover { border-color: var(--green); }
-.pn-finance-bar { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px; margin-bottom: 12px; }
-@media(max-width:760px){.pn-finance-bar{grid-template-columns:repeat(2, minmax(0, 1fr))}}
+
+.pn-finance-bar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  margin-bottom: 12px;
+}
+@media (max-width: 760px) { .pn-finance-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .pn-fin-box small { display: block; font-size: 10px; color: var(--muted); text-transform: uppercase; font-weight: 700; }
 .pn-fin-box strong { font-size: 15px; color: var(--text); }
 
-/* Timeline dentro da Oportunidade */
+/* Timeline & Busca Global */
 .opp-timeline { display: flex; flex-direction: column; gap: 8px; max-height: 250px; overflow-y: auto; }
-.opp-tl-item { border-left: 3px solid var(--green); background: var(--surface); border-top: 1px solid var(--line); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); border-radius: 6px; padding: 9px 12px; font-size: 12px; }
+.opp-tl-item {
+  border-left: 3px solid var(--green);
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 9px 12px;
+  font-size: 12px;
+}
 
-/* Busca Global */
-.gsearch-item { padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; margin-bottom: 7px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 10px; background: var(--bg); }
-.gsearch-item:hover { border-color: var(--green); background: var(--surface); }
+.gsearch-item {
+  padding: 10px 13px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  margin-bottom: 7px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface-alt);
+  transition: all .15s ease;
+}
+.gsearch-item:hover {
+  border-color: var(--green);
+  background: var(--surface);
+}
 
-/* Login & User Menu */
-.login-screen { position: fixed; inset: 0; background: linear-gradient(135deg, #0f2338 0%, #1c3c5c 100%); z-index: 100; display: flex; align-items: center; justify-content: center; padding: 20px; }
-.login-box { background: var(--surface); color: var(--text); border-radius: 16px; width: min(410px, 100%); padding: 34px 30px; box-shadow: 0 24px 60px rgba(0,0,0,.45); border: 1px solid var(--line); }
-.login-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; transition: all .2s ease; }
-.login-brand .brand-mark { width: 46px; height: 46px; font-size: 20px; color: #fff; overflow: hidden; border: 2px solid var(--green); }
+/* ==================== TELA DE LOGIN & USER DROPDOWN ==================== */
+.login-screen {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top right, #1e293b 0%, #090d16 100%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-box {
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius-lg);
+  width: min(410px, 100%);
+  padding: 36px 32px;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, .55);
+  border: 1px solid var(--line);
+}
+
+.login-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.login-brand .brand-mark {
+  width: 46px;
+  height: 46px;
+  font-size: 20px;
+  color: #fff;
+  overflow: hidden;
+  border: 2px solid var(--green);
+}
 .login-brand .brand-mark img { width: 100%; height: 100%; object-fit: cover; }
-.user-menu-wrap { position: relative; display: flex; align-items: center; gap: 8px; }
-.user-dropdown { position: absolute; top: 48px; right: 0; width: 250px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 12px 32px rgba(0,0,0,.18); z-index: 50; display: none; overflow: hidden; }
-.user-dropdown.open { display: block; }
-.user-dropdown-head { padding: 14px 16px; background: var(--bg); border-bottom: 1px solid var(--line); }
-.user-dropdown-head strong { display: block; font-size: 13px; color: var(--text); }
-.user-dropdown-head small { color: var(--muted); font-size: 11px; }
-.user-dropdown button { width: 100%; border: 0; background: transparent; color: var(--text); padding: 10px 16px; text-align: left; font-size: 13px; display: flex; align-items: center; gap: 10px; transition: .15s; }
-.user-dropdown button:hover { background: var(--bg); color: var(--green); }
-.user-dropdown button.danger-item { color: var(--red); border-top: 1px solid var(--line); }
-.user-dropdown button.danger-item:hover { background: #fdeaea; }
 
-/* Media Queries Tablet e Mobile */
-@media(max-width:900px){
-  .sidebar { transform: translateX(-100%); box-shadow: 8px 0 30px rgba(0,0,0,.35); }
+.user-menu-wrap { position: relative; display: flex; align-items: center; gap: 8px; }
+
+.user-dropdown {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  width: 255px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  z-index: 50;
+  display: none;
+  overflow: hidden;
+}
+.user-dropdown.open { display: block; }
+
+.user-dropdown-head {
+  padding: 14px 16px;
+  background: var(--surface-alt);
+  border-bottom: 1px solid var(--line);
+}
+.user-dropdown-head strong { display: block; font-size: 13.5px; color: var(--text); }
+.user-dropdown-head small { color: var(--muted); font-size: 11px; }
+
+.user-dropdown button {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background .15s ease, color .15s ease;
+}
+.user-dropdown button:hover {
+  background: var(--surface-alt);
+  color: var(--green);
+}
+.user-dropdown button.danger-item {
+  color: var(--red);
+  border-top: 1px solid var(--line);
+}
+.user-dropdown button.danger-item:hover { background: var(--red-soft); }
+
+/* ==================== RESPONSIVIDADE MOBILE & TABLET ==================== */
+@media (max-width: 900px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: var(--sidebar-w);
+    box-shadow: 12px 0 36px rgba(0, 0, 0, .4);
+  }
   .sidebar.mobile-open { transform: translateX(0); }
   .sidebar-close-mobile { display: grid; }
   .main { margin-left: 0 !important; }
   .topbar { padding: 0 14px; }
-  .content { padding: 18px 14px; }
-  .page-head h1 { font-size: 20px; }
+  .content { padding: 18px 14px 28px; }
+  .page-head h1 { font-size: 19px; }
   #topUserName { display: none; }
   .global-search-trigger { min-width: auto; padding: 7px 10px; }
   .global-search-trigger span.gs-text, .global-search-trigger kbd { display: none; }
@@ -234,8 +1424,8 @@ tbody tr:hover{opacity:0.95}
     <div class="login-brand" id="loginBrandHeader">
       <div class="brand-mark" id="loginAvatarPreview">A</div>
       <div style="min-width:0;flex:1;">
-        <strong id="loginTitlePreview" style="display:block;font-size:17px;letter-spacing:.4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">ADVANCE TINTAS</strong>
-        <small id="loginSubtitlePreview" style="color:var(--muted);font-size:11px;">Advance CRM · Acesso Restrito</small>
+        <strong id="loginTitlePreview" style="display:block;font-size:17px;letter-spacing:.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">ADVANCE TINTAS</strong>
+        <small id="loginSubtitlePreview" style="color:var(--muted);font-size:11.5px;">Advance CRM · Acesso Restrito</small>
       </div>
     </div>
     <form id="loginForm" style="display:flex;flex-direction:column;gap:14px;">
@@ -256,7 +1446,7 @@ tbody tr:hover{opacity:0.95}
       <div id="loginError" style="color:var(--red);font-size:12px;font-weight:600;display:none;"></div>
       <button type="submit" class="btn primary" style="justify-content:center;padding:11px;font-size:14px;margin-top:4px;">Entrar no Sistema</button>
     </form>
-    <div style="margin-top:18px;padding-top:12px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);text-align:center;">
+    <div style="margin-top:20px;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);text-align:center;">
       DESENVOLVIDO POR: EVERTON NUNES
     </div>
   </div>
@@ -267,34 +1457,34 @@ tbody tr:hover{opacity:0.95}
 <aside class="sidebar" id="sidebar">
   <div class="brand">
     <div class="brand-mark">A</div>
-    <div><strong>ADVANCE TINTAS</strong><small>DESENVOLVIDO POR: EVERTON NUNES</small></div>
+    <div class="brand-info"><strong>ADVANCE TINTAS</strong><small>DESENVOLVIDO POR: EVERTON NUNES</small></div>
     <button type="button" class="sidebar-close-mobile" onclick="closeMobileSidebar()" title="Fechar menu">✕</button>
   </div>
   <div class="nav-label">GESTÃO COMERCIAL</div>
   <nav class="nav" id="nav">
-    <button class="active" data-page="dashboard"><span class="ico">▦</span>Dashboard</button>
-    <button data-page="opportunities" id="oppMenuBtn"><span class="ico">◎</span>Oportunidades<span class="caret">▼</span></button>
+    <button class="active" data-page="dashboard" title="Dashboard"><span class="ico">▦</span><span class="nav-text">Dashboard</span></button>
+    <button data-page="opportunities" id="oppMenuBtn" title="Oportunidades"><span class="ico">◎</span><span class="nav-text">Oportunidades</span><span class="caret">▼</span></button>
     <div class="nav-sub" id="oppSubmenu">
-      <button data-page="companies"><span class="ico">▣</span>Empresas</button>
-      <button data-page="contacts"><span class="ico">♙</span>Contatos</button>
+      <button data-page="companies" title="Empresas"><span class="ico">▣</span><span class="nav-text">Empresas</span></button>
+      <button data-page="contacts" title="Contatos"><span class="ico">♙</span><span class="nav-text">Contatos</span></button>
     </div>
-    <button data-page="petronect"><span class="ico">◈</span>Petronect</button>
-    <button data-page="portals_panel" id="portalsMenuBtn"><span class="ico">⊕</span>Portais<span class="caret">▼</span></button>
+    <button data-page="petronect" title="Petronect"><span class="ico">◈</span><span class="nav-text">Petronect</span></button>
+    <button data-page="portals_panel" id="portalsMenuBtn" title="Portais"><span class="ico">⊕</span><span class="nav-text">Portais</span><span class="caret">▼</span></button>
     <div class="nav-sub" id="portalsSubmenu">
-      <button data-page="portals_panel"><span class="ico">◫</span>Painel</button>
-      <button data-page="portals_base"><span class="ico">▤</span>Base de Portais</button>
-      <button data-page="portals_history"><span class="ico">◷</span>Histórico</button>
+      <button data-page="portals_panel" title="Painel de Portais"><span class="ico">◫</span><span class="nav-text">Painel</span></button>
+      <button data-page="portals_base" title="Base de Portais"><span class="ico">▤</span><span class="nav-text">Base de Portais</span></button>
+      <button data-page="portals_history" title="Histórico de Portais"><span class="ico">◷</span><span class="nav-text">Histórico</span></button>
     </div>
-    <button data-page="activities"><span class="ico">✓</span>Tarefas e Atividades</button>
-    <button data-page="vendor"><span class="ico">★</span>Vendor List</button>
+    <button data-page="activities" title="Tarefas e Atividades"><span class="ico">✓</span><span class="nav-text">Tarefas e Atividades</span></button>
+    <button data-page="vendor" title="Vendor List"><span class="ico">★</span><span class="nav-text">Vendor List</span></button>
   </nav>
   <div class="side-bottom">Advance CRM · Versão 4.0<br>Dados armazenados neste navegador</div>
 </aside>
 <main class="main">
   <header class="topbar">
     <div style="display:flex;align-items:center;gap:12px;min-width:0;">
-      <button type="button" class="sidebar-toggle-btn" id="sidebarToggleBtn" onclick="toggleSidebar()" title="Mostrar / Ocultar Menu Lateral">☰</button>
-      <span class="crumb">Advance Tintas / <b id="crumb">Dashboard</b></span>
+      <button type="button" class="sidebar-toggle-btn" id="sidebarToggleBtn" onclick="toggleSidebar()" title="Recolher / Expandir Menu Lateral">☰</button>
+      <span class="crumb">Advance Tintas <span style="opacity:.45;">/</span> <b id="crumb">Dashboard</b></span>
     </div>
     <div class="top-actions">
       <button type="button" class="global-search-trigger" onclick="openGlobalSearchModal()" title="Busca Rápida Global (Ctrl + K)">
@@ -314,8 +1504,8 @@ tbody tr:hover{opacity:0.95}
           <div class="notif-list" id="notifList"></div>
         </div>
       </div>
-      <button class="btn small" onclick="toggleTheme()" title="Alternar Modo Escuro/Claro">🌓</button>
-      <span class="muted" style="font-size:12px" id="topUserName">Modo offline</span>
+      <button class="btn small" onclick="toggleTheme()" title="Alternar Modo Escuro/Claro" style="height:36px;width:36px;justify-content:center;padding:0;">🌓</button>
+      <span class="muted" style="font-size:12.5px;font-weight:500;" id="topUserName">Modo offline</span>
       <div class="user-menu-wrap" id="userMenuWrap">
         <div class="avatar" id="topUserAvatar" onclick="toggleUserMenu()" title="Menu do Usuário">A</div>
         <div class="user-dropdown" id="userDropdown">
@@ -401,7 +1591,7 @@ function saveDB(){
 }
 
 const $=s=>document.querySelector(s);
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&','<':'<','>':'>','"':'"',"'":'''}[c]));
 const today=()=>new Date().toISOString().slice(0,10);
 const fmtDate=d=>d?new Date(d+'T12:00:00').toLocaleDateString('pt-BR'):'—';
 const money=v=>v?Number(v).toLocaleString('pt-BR',{style:'currency',currency:'BRL'}):'—';
@@ -805,7 +1995,7 @@ function openAvatarModal(){
   if(!currentUser) return;
   openModal('📷 Alterar Foto / Avatar', `
     <div style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:10px 0;">
-      <div id="avatarPreviewBox" style="width:92px;height:92px;border-radius:50%;background:#e2f1eb;color:#18734f;display:grid;place-items:center;font-size:32px;font-weight:800;border:3px solid var(--green);overflow:hidden;">
+      <div id="avatarPreviewBox" style="width:92px;height:92px;border-radius:50%;background:var(--green-soft);color:var(--green-dark);display:grid;place-items:center;font-size:32px;font-weight:800;border:3px solid var(--green);overflow:hidden;">
         ${currentUser.avatar ? `<img src="${currentUser.avatar}" style="width:100%;height:100%;object-fit:cover;">` : getInitials(currentUser.name)}
       </div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;">
@@ -950,7 +2140,7 @@ function generatePetronectPDF(id){
 
   w.document.write(`
     <html><head><title>Proposta Edital ${esc(p.opportunity)}</title>
-    <style>body{font-family:Arial,sans-serif;padding:30px;color:#333;}h2{color:#142d48;border-bottom:2px solid #142d48;padding-bottom:5px;}table{width:100%;border-collapse:collapse;margin-top:20px;}th,td{border:1px solid #ddd;padding:8px;font-size:12px;text-align:left;}th{background:#f8fafb;}</style>
+    <style>body{font-family:Arial,sans-serif;padding:30px;color:#333;}h2{color:#0f172a;border-bottom:2px solid #0f172a;padding-bottom:5px;}table{width:100%;border-collapse:collapse;margin-top:20px;}th,td{border:1px solid #ddd;padding:8px;font-size:12px;text-align:left;}th{background:#f8fafb;}</style>
     </head><body>
     <h2>ADVANCE TINTAS - PROPOSTA COMERCIAL (PETRONECT)</h2>
     <p><b>Edital / Oportunidade:</b> ${esc(p.opportunity)}</p>
@@ -985,13 +2175,13 @@ function generateOpportunityPDF(id){
     <html><head><title>Proposta Comercial - ${esc(o.company)}</title>
     <style>
       body{font-family:Arial,sans-serif;padding:32px;color:#222;line-height:1.45;}
-      .header{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #142d48;padding-bottom:12px;margin-bottom:20px;}
-      .header h1{margin:0;color:#142d48;font-size:22px;}
+      .header{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #0f172a;padding-bottom:12px;margin-bottom:20px;}
+      .header h1{margin:0;color:#0f172a;font-size:22px;}
       .box{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:14px;margin-bottom:18px;font-size:13px;}
       table{width:100%;border-collapse:collapse;margin-top:10px;}
       th,td{border:1px solid #cbd5e1;padding:9px;font-size:12px;text-align:left;}
-      th{background:#142d48;color:#fff;}
-      .total-box{margin-top:16px;text-align:right;font-size:16px;color:#142d48;}
+      th{background:#0f172a;color:#fff;}
+      .total-box{margin-top:16px;text-align:right;font-size:16px;color:#0f172a;}
     </style>
     </head><body>
     <div class="header">
@@ -1255,7 +2445,7 @@ function dashboardPage(root){
      <div class="mini-box"><span>◈ Petronect em Análise</span><span class="pill purple">${petronectAnalisando}</span></div>
      <div class="mini-box"><span>★ Petronect Ganhas</span><span class="pill green">${petronectGanha}</span></div>
     </div>
-    <div style="font-size:12px;font-weight:700;color:var(--muted);margin:10px 0 6px;text-transform:uppercase;letter-spacing:.5px;">Pipeline de Oportunidades</div>
+    <div style="font-size:11.5px;font-weight:700;color:var(--muted);margin:14px 0 6px;text-transform:uppercase;letter-spacing:.5px;">Pipeline de Oportunidades</div>
     ${statusOptions.slice(0,7).map(s=>{let n=db.opportunities.filter(o=>o.status===s&&!o.done).length;return `<div class="bar-row"><span>${esc(s)}</span><div class="bar"><i style="width:${db.opportunities.length?100*n/db.opportunities.length:0}%"></i></div><b>${n}</b></div>`}).join('')||'<div class="empty">Cadastre oportunidades para visualizar o pipeline.</div>'}
    </div>
   </div>
@@ -1291,8 +2481,8 @@ function dashboardPage(root){
          ${doneBtn}
         </div>
        </div>
-       <small style="display:block;margin:4px 0;">${fmtDate(item.date)} · ${esc(item.desc)}</small>
-       <div><span class="pill ${badgeClass}" style="font-size:10px;padding:2px 6px;">${badgeText}</span> <span class="pill" style="font-size:9px;padding:2px 4px;">${typeLabel}</span></div>
+       <small style="display:block;margin:4px 0;color:var(--muted);">${fmtDate(item.date)} · ${esc(item.desc)}</small>
+       <div><span class="pill ${badgeClass}" style="font-size:10px;padding:2px 7px;">${badgeText}</span> <span class="pill" style="font-size:10px;padding:2px 6px;">${typeLabel}</span></div>
       </div>`;
      }).join('')}
     </div>
@@ -1300,23 +2490,23 @@ function dashboardPage(root){
   </div>
  </div>
 
- <div class="grid2" style="margin-top:16px;">
+ <div class="grid2" style="margin-top:18px;">
   <div class="panel">
    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
     <h3 style="margin:0;">Minhas Tarefas Pendentes (To-Do)</h3>
     <button class="btn small" onclick="setPage('activities')">Ver todas</button>
    </div>
    ${pendingTasks.length ? `
-    <div style="display:flex;flex-direction:column;gap:8px;max-height:238px;overflow-y:auto;padding-right:2px;">
+    <div style="display:flex;flex-direction:column;gap:8px;max-height:245px;overflow-y:auto;padding-right:2px;">
      ${pendingTasks.slice(0,12).map(t=>`
       <div class="todo-item">
        <input type="checkbox" style="margin-top:3px;" onchange="toggleActivityDone('${t.id}')" title="Marcar como concluída">
        <div style="flex:1;min-width:0;cursor:pointer;" onclick="editActivity('${t.id}')">
         <div style="display:flex;justify-content:space-between;gap:8px;align-items:center;">
          <b style="font-size:13px;">${esc(t.title || t.summary || t.type)}</b>
-         <span class="pill" style="font-size:10px;padding:2px 6px;">${esc(t.type)}</span>
+         <span class="pill" style="font-size:10px;padding:2px 7px;">${esc(t.type)}</span>
         </div>
-        <div class="muted" style="font-size:11px;margin-top:2px;">
+        <div class="muted" style="font-size:11.5px;margin-top:2px;">
          ${esc(t.company || 'Geral / Interno')} ${t.nextDate ? '· Prazo: <b>'+fmtDate(t.nextDate)+'</b>' : ''}
         </div>
        </div>
@@ -1334,14 +2524,14 @@ function dashboardPage(root){
    ${recentMovements.length ? `
     <div class="table-wrap movements-scroll-container">
      <table style="min-width:440px;">
-      <thead><tr><th style="padding:8px 10px;">Data</th><th style="padding:8px 10px;">Origem</th><th style="padding:8px 10px;">Assunto / Portal</th><th style="padding:8px 10px;">Detalhes</th></tr></thead>
+      <thead><tr><th style="padding:9px 11px;">Data</th><th style="padding:9px 11px;">Origem</th><th style="padding:9px 11px;">Assunto / Portal</th><th style="padding:9px 11px;">Detalhes</th></tr></thead>
       <tbody>
        ${recentMovements.map(m=>`
         <tr>
-         <td style="white-space:nowrap;padding:8px 10px;font-size:12px;">${fmtDate(m.date)}</td>
-         <td style="padding:8px 10px;"><span class="pill ${m.pill}" style="font-size:10px;padding:3px 7px;">${esc(m.origin)}</span></td>
-         <td style="padding:8px 10px;font-size:12px;"><b>${esc(m.subject)}</b><div class="muted" style="font-size:11px;">${esc(m.context)}</div></td>
-         <td style="padding:8px 10px;font-size:12px;">${esc(m.detail)}</td>
+         <td style="white-space:nowrap;padding:8px 11px;font-size:12px;">${fmtDate(m.date)}</td>
+         <td style="padding:8px 11px;"><span class="pill ${m.pill}" style="font-size:10px;padding:2px 7px;">${esc(m.origin)}</span></td>
+         <td style="padding:8px 11px;font-size:12px;"><b>${esc(m.subject)}</b><div class="muted" style="font-size:11px;">${esc(m.context)}</div></td>
+         <td style="padding:8px 11px;font-size:12px;">${esc(m.detail)}</td>
         </tr>
        `).join('')}
       </tbody>
@@ -1368,23 +2558,23 @@ function opportunitiesPage(root){
    let refDate = o.updated || o.created;
    let isStale = !o.done && !['Perdido','Cliente ativo'].includes(o.status) && refDate && daysDiffFromToday(refDate) <= -15;
    return `
-   <tr style="${o.done?'opacity:0.5;background:var(--bg);':''}">
+   <tr style="${o.done?'opacity:0.5;background:var(--surface-alt);':''}">
     <td style="text-align:center;"><input type="checkbox" ${o.done?'checked':''} onchange="toggleOpportunityDone('${o.id}')" title="Marcar como concluído"></td>
-    <td><code style="font-size:12px;background:var(--line);padding:2px 6px;border-radius:4px;color:var(--text);font-weight:700;">${esc(o.id)}</code></td>
+    <td><code style="font-size:12px;background:var(--surface-alt);border:1px solid var(--line);padding:2px 6px;border-radius:5px;color:var(--text);font-weight:700;">${esc(o.id)}</code></td>
     <td>
      <b style="${o.done?'text-decoration:line-through;':''}">${esc(o.company||'Sem empresa')}</b>
-     ${isStale ? '<span class="pill amber" style="font-size:9px;padding:2px 5px;margin-left:4px;">Parado +15d</span>' : ''}
-     <div class="muted">${esc(o.city||'')}${o.uf?'/'+esc(o.uf):''} · ${esc(o.segment||'')}</div>
+     ${isStale ? '<span class="pill amber" style="font-size:9.5px;padding:2px 6px;margin-left:4px;">Parado +15d</span>' : ''}
+     <div class="muted" style="font-size:12px;">${esc(o.city||'')}${o.uf?'/'+esc(o.uf):''} · ${esc(o.segment||'')}</div>
     </td>
     <td>
      <div>${esc((o.products||[]).length > 0 ? `${o.products.length} item(ns)` : '0')}</div>
-     <div class="muted" style="font-size:11px;"><b>${money(o.value)}</b></div>
+     <div class="muted" style="font-size:12px;"><b>${money(o.value)}</b></div>
     </td>
-    <td>${esc(o.source||'—')}<div class="muted">${esc(o.process||'')}</div></td>
+    <td>${esc(o.source||'—')}<div class="muted" style="font-size:12px;">${esc(o.process||'')}</div></td>
     <td><span class="pill ${['Alta','Urgente'].includes(o.priority)?'green':''}">${esc(o.priority||'—')}</span></td>
     <td>
      <span class="pill ${pillClass(o.status)}">${esc(o.status)}</span>
-     ${o.status === 'Perdido' && o.lossReason ? `<div class="muted" style="font-size:10px;margin-top:2px;">Motivo: ${esc(o.lossReason)}</div>` : ''}
+     ${o.status === 'Perdido' && o.lossReason ? `<div class="muted" style="font-size:10.5px;margin-top:2px;">Motivo: ${esc(o.lossReason)}</div>` : ''}
     </td>
     <td>${fmtDate(o.nextDate)}</td>
     <td>
@@ -1437,12 +2627,12 @@ function portalsPanelPage(root){
  let vencidosOuVencendo = list.filter(p => p.expiryDate && daysDiffFromToday(p.expiryDate) <= 30 && p.status !== 'Inativo').length;
 
  const distItems = [
-  { label: 'Ativo', count: ativos, color: '#24966b' },
-  { label: 'Pendente', count: pendentes, color: '#d69e2e' },
-  { label: 'Em cadastro', count: emCadastro, color: '#805ad5' },
-  { label: 'Bloqueado', count: bloqueados, color: '#e53e3e' },
-  { label: 'Inativo', count: inativos, color: '#718096' },
-  { label: 'Atualização necessária', count: atualizacao, color: '#dd6b20' }
+  { label: 'Ativo', count: ativos, color: '#10b981' },
+  { label: 'Pendente', count: pendentes, color: '#f59e0b' },
+  { label: 'Em cadastro', count: emCadastro, color: '#8b5cf6' },
+  { label: 'Bloqueado', count: bloqueados, color: '#ef4444' },
+  { label: 'Inativo', count: inativos, color: '#64748b' },
+  { label: 'Atualização necessária', count: atualizacao, color: '#ea580c' }
  ];
 
  let gradientParts = [];
@@ -1528,7 +2718,7 @@ function portalsBasePage(root){
    let isSoon30 = diff !== null && diff >= 0 && diff <= 30;
    return `
     <tr>
-     <td><code style="font-size:12px;background:var(--line);padding:2px 6px;border-radius:4px;color:var(--text);font-weight:700;">${esc(p.id)}</code></td>
+     <td><code style="font-size:12px;background:var(--surface-alt);border:1px solid var(--line);padding:2px 6px;border-radius:5px;color:var(--text);font-weight:700;">${esc(p.id)}</code></td>
      <td>
       <b>${esc(p.name)}</b>
       <div class="muted" style="font-size:12px;">${esc(p.company || '—')} ${p.cnpj ? '· ' + esc(p.cnpj) : ''}</div>
@@ -1591,7 +2781,7 @@ function portalsHistoryPage(root){
   });
 
   $('#rows').innerHTML = arr.length ? arr.map(h => `
-   <tr style="${h.done ? 'opacity:0.55;background:var(--bg);' : ''}">
+   <tr style="${h.done ? 'opacity:0.55;background:var(--surface-alt);' : ''}">
     <td style="text-align:center;">
      <input type="checkbox" ${h.done ? 'checked' : ''} onchange="togglePortalHistoryDone('${h.id}')" title="Marcar como concluído">
      <div style="font-size:10px;font-weight:700;color:${h.done ? 'var(--green)' : 'var(--muted)'};">${h.done ? 'Sim' : 'Não'}</div>
@@ -1635,9 +2825,9 @@ function openPortalModal(id = null){
 
  openModal(id ? 'Editar Portal' : 'Novo Portal', `
   <div style="display:flex;flex-direction:column;gap:15px;">
-   ${id ? `<div class="field"><label>ID do Portal</label><input type="text" readonly value="${esc(p.id)}" style="background:var(--line);font-weight:700;"></div>` : ''}
+   ${id ? `<div class="field"><label>ID do Portal</label><input type="text" readonly value="${esc(p.id)}" style="background:var(--surface-alt);font-weight:700;"></div>` : ''}
 
-   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+   <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
     <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Identificação do Portal</h3>
     <div class="form-grid">
      ${field('Nome do Portal *','pt_name',p.name)}
@@ -1651,7 +2841,7 @@ function openPortalModal(id = null){
     </div>
    </div>
 
-   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+   <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
     <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">🔑 2. Credenciais e Contato Vinculado</h3>
     <div class="form-grid">
      ${field('Login / Usuário','pt_login',p.login)}
@@ -1668,7 +2858,7 @@ function openPortalModal(id = null){
     </div>
    </div>
 
-   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+   <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
     <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📅 3. Status, Datas e Responsável</h3>
     <div class="form-grid">
      ${field('Status do Portal','pt_status',p.status || 'Ativo','text',portalStatusOptions)}
@@ -1681,7 +2871,7 @@ function openPortalModal(id = null){
    </div>
 
    ${id ? `
-   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+   <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;flex-wrap:wrap;gap:6px;">
      <h3 style="margin:0;font-size:14px;color:var(--text);">◷ 4. Histórico de Alterações deste Portal</h3>
      <button type="button" class="btn small primary" onclick="closeModal(); openPortalHistoryModal(null, '${p.id}')">＋ Registrar Alteração</button>
@@ -1776,7 +2966,7 @@ function openPortalHistoryModal(editId = null, preselectedPortalId = null){
 
  openModal(h ? 'Editar Registro de Histórico' : 'Registrar Alteração no Portal', `
   <div style="display:flex;flex-direction:column;gap:15px;">
-   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+   <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
     <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Dados da Alteração</h3>
     <div class="form-grid">
      ${field('Data *','ph_date', h ? h.date : today(),'date')}
@@ -1792,7 +2982,7 @@ function openPortalHistoryModal(editId = null, preselectedPortalId = null){
     </div>
    </div>
 
-   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+   <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
     <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">🕒 2. Acompanhamento</h3>
     <div class="form-grid">
      ${field('Próxima Ação','ph_next', h ? h.nextAction : '')}
@@ -1858,9 +3048,9 @@ let petronectViewMode = 'table';
 function petronectPage(root){
  root.innerHTML=head('Portal Petronect','Gerenciamento de editais, prazos de postagem e precificação de propostas.',`
   <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
-   <div style="background:var(--line);padding:3px;border-radius:8px;display:flex;gap:3px;">
-    <button class="btn small ${petronectViewMode==='table'?'primary':''}" onclick="petronectViewMode='table';render()">📋 Tabela</button>
-    <button class="btn small ${petronectViewMode==='kanban'?'primary':''}" onclick="petronectViewMode='kanban';render()">📊 Kanban</button>
+   <div style="background:var(--surface-alt);border:1px solid var(--line);padding:3px;border-radius:9px;display:flex;gap:3px;">
+    <button class="btn small ${petronectViewMode==='table'?'primary':''}" style="border:0;box-shadow:none;" onclick="petronectViewMode='table';render()">📋 Tabela</button>
+    <button class="btn small ${petronectViewMode==='kanban'?'primary':''}" style="border:0;box-shadow:none;" onclick="petronectViewMode='kanban';render()">📊 Kanban</button>
    </div>
    <button class="btn primary" onclick="openPetronectModal()">＋ Novo Edital Petronect</button>
   </div>
@@ -1888,16 +3078,16 @@ function petronectPage(root){
 
     return `
      <tr style="${isDeclined?'opacity:0.4;text-decoration:line-through;':''}">
-      <td><code style="font-size:12px;background:var(--line);padding:2px 6px;border-radius:4px;color:var(--text);font-weight:700;">${esc(p.id)}</code></td>
+      <td><code style="font-size:12px;background:var(--surface-alt);border:1px solid var(--line);padding:2px 6px;border-radius:5px;color:var(--text);font-weight:700;">${esc(p.id)}</code></td>
       <td>${fmtDate(p.date)}</td>
       <td>
        <b>${esc(p.opportunity)}</b>
-       ${docsChecked > 0 ? `<div class="muted" style="font-size:10px;">Docs: ${docsChecked}/${petronectChecklistItems.length}</div>` : ''}
+       ${docsChecked > 0 ? `<div class="muted" style="font-size:10.5px;">Docs: ${docsChecked}/${petronectChecklistItems.length}</div>` : ''}
       </td>
       <td><span class="pill ${pillClass(p.participate||'Pendente')}">${esc(p.participate||'Pendente')}</span></td>
       <td>
        <span class="pill ${pillClass(p.status)}">${esc(p.status)}</span>
-       ${p.status === 'Perdida' && p.lossReason ? `<div class="muted" style="font-size:10px;margin-top:2px;">Motivo: ${esc(p.lossReason)}</div>` : ''}
+       ${p.status === 'Perdida' && p.lossReason ? `<div class="muted" style="font-size:10.5px;margin-top:2px;">Motivo: ${esc(p.lossReason)}</div>` : ''}
       </td>
       <td>${fmtDate(p.closingDate)} ${p.closingTime?'('+p.closingTime+')':''} ${isExpired?'<span class="pill red" style="font-size:10px;">Vencido</span>':''} ${isTomorrow?'<span class="pill amber" style="font-size:10px;">Vence Amanhã</span>':''}</td>
       <td><b>${esc(p.quarter||'—')}</b></td>
@@ -2171,9 +3361,9 @@ function openPetronectModal(id=null, forceStatus=null){
 
  openModal(id?'Editar Edital Petronect':'Novo Edital Petronect',`
   <div style="display:flex;flex-direction:column;gap:15px;">
-   ${id?`<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;"><div class="field" style="flex:1;"><label>ID do Registro</label><input type="text" readonly value="${esc(p.id)}" style="background:var(--line);font-weight:700;"></div><div><button type="button" class="btn primary" onclick="generatePetronectPDF('${p.id}')">📄 Gerar Proposta PDF</button></div></div>`:''}
+   ${id?`<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;"><div class="field" style="flex:1;"><label>ID do Registro</label><input type="text" readonly value="${esc(p.id)}" style="background:var(--surface-alt);font-weight:700;"></div><div><button type="button" class="btn primary" onclick="generatePetronectPDF('${p.id}')">📄 Gerar Proposta PDF</button></div></div>`:''}
    
-   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+   <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
     <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Informações do Edital e Decisão</h3>
     <div class="form-grid">
      ${field('Data de Cadastro','pn_date',p.date||today(),'date')}
@@ -2201,7 +3391,7 @@ function openPetronectModal(id=null, forceStatus=null){
     </div>
    </div>
 
-   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+   <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
     <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">✅ 2. Checklist de Documentação & Habilitação</h3>
     <div class="doc-checklist-grid">
      ${petronectChecklistItems.map((docLabel, idx) => `
@@ -2213,7 +3403,7 @@ function openPetronectModal(id=null, forceStatus=null){
     </div>
    </div>
 
-   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+   <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;flex-wrap:wrap;gap:6px;">
      <h3 style="margin:0;font-size:14px;color:var(--text);">📦 3. Itens / Descritivo do Edital (Proposta)</h3>
      <button type="button" class="btn small primary" onclick="addPetronectItem()">＋ Adicionar Item</button>
@@ -2222,7 +3412,7 @@ function openPetronectModal(id=null, forceStatus=null){
     <div id="petronectItemsContainer" style="max-height:380px;overflow-y:auto;border:1px solid var(--line);padding:10px;border-radius:8px;background:var(--surface);"></div>
    </div>
 
-   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+   <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
     <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📝 4. Observações</h3>
     <div class="form-grid"><div class="field full">${field('Observações','pn_obs',p.obs,'textarea',null,true)}</div></div>
    </div>
@@ -2272,12 +3462,12 @@ function openPetronectModal(id=null, forceStatus=null){
 
 function companiesPage(root){
  root.innerHTML=head('Empresas','Sua base de contas e potenciais clientes.',`<button class="btn primary" onclick="openCompany()">＋ Nova empresa</button>`)+toolbar('Buscar por empresa, CNPJ, cidade ou segmento...')+`<div class="panel"><div class="table-wrap"><table><thead><tr><th>ID</th><th>Empresa</th><th>CNPJ</th><th>Segmento</th><th>Localização</th><th>Oportunidades</th><th>Contato</th><th>Ações</th></tr></thead><tbody id="rows"></tbody></table></div></div>`;
- const draw=()=>{let q=$('#search').value.toLowerCase(),arr=db.companies.filter(c=>[c.id,c.name,c.cnpj,c.segment,c.city].join(' ').toLowerCase().includes(q));$('#rows').innerHTML=arr.length?arr.map(c=>`<tr><td><code style="font-size:12px;background:var(--line);padding:2px 6px;border-radius:4px;color:var(--text);font-weight:700;">${esc(c.id)}</code></td><td><b>${esc(c.name)}</b><div class="muted">${esc(c.trade||'')}</div></td><td>${esc(c.cnpj||'—')}</td><td>${esc(c.segment||'—')}</td><td>${esc(c.city||'—')}${c.uf?'/'+esc(c.uf):''}</td><td>${db.opportunities.filter(o=>o.companyId===c.id).length}</td><td>${esc(c.phone||c.email||'—')}</td><td><div style="display:flex;gap:5px;"><button class="btn small" onclick="editCompany('${c.id}')">Editar</button><button class="btn small danger" onclick="deleteCompany('${c.id}')">Excluir</button></div></td></tr>`).join(''):'<tr><td colspan="8"><div class="empty">Nenhuma empresa cadastrada.</div></td></tr>'};$('#search').oninput=draw;draw();
+ const draw=()=>{let q=$('#search').value.toLowerCase(),arr=db.companies.filter(c=>[c.id,c.name,c.cnpj,c.segment,c.city].join(' ').toLowerCase().includes(q));$('#rows').innerHTML=arr.length?arr.map(c=>`<tr><td><code style="font-size:12px;background:var(--surface-alt);border:1px solid var(--line);padding:2px 6px;border-radius:5px;color:var(--text);font-weight:700;">${esc(c.id)}</code></td><td><b>${esc(c.name)}</b><div class="muted" style="font-size:12px;">${esc(c.trade||'')}</div></td><td>${esc(c.cnpj||'—')}</td><td>${esc(c.segment||'—')}</td><td>${esc(c.city||'—')}${c.uf?'/'+esc(c.uf):''}</td><td>${db.opportunities.filter(o=>o.companyId===c.id).length}</td><td>${esc(c.phone||c.email||'—')}</td><td><div style="display:flex;gap:5px;"><button class="btn small" onclick="editCompany('${c.id}')">Editar</button><button class="btn small danger" onclick="deleteCompany('${c.id}')">Excluir</button></div></td></tr>`).join(''):'<tr><td colspan="8"><div class="empty">Nenhuma empresa cadastrada.</div></td></tr>'};$('#search').oninput=draw;draw();
 }
 
 function contactsPage(root){
  root.innerHTML=head('Contatos','Compradores, suprimentos, engenharia e responsáveis por homologação.',`<button class="btn primary" onclick="openContact()">＋ Novo contato</button>`)+toolbar('Buscar nome, empresa, cargo, e-mail...')+`<div class="panel"><div class="table-wrap"><table><thead><tr><th>ID</th><th>Nome</th><th>Empresa</th><th>Cargo / área</th><th>Telefone</th><th>E-mail</th><th>Último contato</th><th>Ações</th></tr></thead><tbody id="rows"></tbody></table></div></div>`;
- const draw=()=>{let q=$('#search').value.toLowerCase(),arr=db.contacts.filter(c=>[c.id,c.name,c.company,c.role,c.email,c.phone].join(' ').toLowerCase().includes(q));$('#rows').innerHTML=arr.length?arr.map(c=>`<tr><td><code style="font-size:12px;background:var(--line);padding:2px 6px;border-radius:4px;color:var(--text);font-weight:700;">${esc(c.id)}</code></td><td><b>${esc(c.name)}</b></td><td>${esc(c.company||'—')}</td><td>${esc(c.role||'—')}</td><td>${esc(c.phone||'—')}</td><td>${esc(c.email||'—')}</td><td>${fmtDate(c.lastDate)}</td><td><div style="display:flex;gap:5px;"><button class="btn small" onclick="editContact('${c.id}')">Editar</button><button class="btn small danger" onclick="deleteContact('${c.id}')">Excluir</button></div></td></tr>`).join(''):'<tr><td colspan="8"><div class="empty">Nenhum contato cadastrado.</div></td></tr>'};$('#search').oninput=draw;draw();
+ const draw=()=>{let q=$('#search').value.toLowerCase(),arr=db.contacts.filter(c=>[c.id,c.name,c.company,c.role,c.email,c.phone].join(' ').toLowerCase().includes(q));$('#rows').innerHTML=arr.length?arr.map(c=>`<tr><td><code style="font-size:12px;background:var(--surface-alt);border:1px solid var(--line);padding:2px 6px;border-radius:5px;color:var(--text);font-weight:700;">${esc(c.id)}</code></td><td><b>${esc(c.name)}</b></td><td>${esc(c.company||'—')}</td><td>${esc(c.role||'—')}</td><td>${esc(c.phone||'—')}</td><td>${esc(c.email||'—')}</td><td>${fmtDate(c.lastDate)}</td><td><div style="display:flex;gap:5px;"><button class="btn small" onclick="editContact('${c.id}')">Editar</button><button class="btn small danger" onclick="deleteContact('${c.id}')">Excluir</button></div></td></tr>`).join(''):'<tr><td colspan="8"><div class="empty">Nenhum contato cadastrado.</div></td></tr>'};$('#search').oninput=draw;draw();
 }
 
 function activitiesPage(root){
@@ -2296,9 +3486,9 @@ function activitiesPage(root){
    let isGeral = !a.company || a.company === 'Geral / Interno';
    let mainTitle = a.title || a.summary || a.type;
    return `
-    <tr style="${a.done?'opacity:0.55;background:var(--bg);':''}">
+    <tr style="${a.done?'opacity:0.55;background:var(--surface-alt);':''}">
      <td style="text-align:center;"><input type="checkbox" ${a.done?'checked':''} onchange="toggleActivityDone('${a.id}')" title="Marcar como concluída"></td>
-     <td><code style="font-size:12px;background:var(--line);padding:2px 6px;border-radius:4px;color:var(--text);font-weight:700;">${esc(a.id)}</code></td>
+     <td><code style="font-size:12px;background:var(--surface-alt);border:1px solid var(--line);padding:2px 6px;border-radius:5px;color:var(--text);font-weight:700;">${esc(a.id)}</code></td>
      <td>${fmtDate(a.date)}</td>
      <td><b style="${a.done?'text-decoration:line-through;':''}">${esc(mainTitle)}</b>${a.contact?`<div class="muted" style="font-size:12px;">Contato: ${esc(a.contact)}</div>`:''}</td>
      <td>${isGeral?'<span class="pill blue">Geral / Interno</span>':`<b>${esc(a.company)}</b>`}</td>
@@ -2320,7 +3510,7 @@ function activitiesPage(root){
 
 function vendorPage(root){
  let arr=db.opportunities.filter(o=>o.vendor&&o.vendor!=='Não iniciado'&&o.vendor!=='Não se aplica');
- root.innerHTML=head('Vendor List','Acompanhe cadastros, documentação e homologações de fornecedores.',`<button class="btn primary" onclick="setPage('opportunities')">＋ Gerenciar oportunidades</button>`)+`<div class="cards">${stat('Em mapeamento',arr.filter(o=>o.vendor==='Mapear requisitos').length,'⌕','Requisitos a identificar')}${stat('Documentação enviada',arr.filter(o=>o.vendor==='Documentação enviada').length,'⇧','Aguardando análise')}${stat('Em análise',arr.filter(o=>o.vendor==='Em análise').length,'◷','Processos pendentes')}${stat('Aprovados',arr.filter(o=>o.vendor==='Aprovado').length,'✓','Fornecedores homologados')}</div><div class="panel"><div class="table-wrap"><table><thead><tr><th>ID</th><th>Empresa</th><th>Quantidade de Itens</th><th>Status Vendor List</th><th>Status comercial</th><th>Próxima ação</th></tr></thead><tbody>${arr.length?arr.map(o=>`<tr><td><code style="font-size:12px;background:var(--line);padding:2px 6px;border-radius:4px;color:var(--text);font-weight:700;">${esc(o.id)}</code></td><td><b>${esc(o.company)}</b></td><td>${(o.products||[]).length} item(ns)</td><td><span class="pill ${pillClass(o.vendor)}">${esc(o.vendor)}</span></td><td>${esc(o.status)}</td><td>${esc(o.nextAction||'—')}</td></tr>`).join(''):'<tr><td colspan="6"><div class="empty">Nenhum processo de Vendor List iniciado.<br>Atualize o campo Vendor List nas oportunidades.</div></td></tr>'}</tbody></table></div></div>`;
+ root.innerHTML=head('Vendor List','Acompanhe cadastros, documentação e homologações de fornecedores.',`<button class="btn primary" onclick="setPage('opportunities')">＋ Gerenciar oportunidades</button>`)+`<div class="cards">${stat('Em mapeamento',arr.filter(o=>o.vendor==='Mapear requisitos').length,'⌕','Requisitos a identificar')}${stat('Documentação enviada',arr.filter(o=>o.vendor==='Documentação enviada').length,'⇧','Aguardando análise')}${stat('Em análise',arr.filter(o=>o.vendor==='Em análise').length,'◷','Processos pendentes')}${stat('Aprovados',arr.filter(o=>o.vendor==='Aprovado').length,'✓','Fornecedores homologados')}</div><div class="panel"><div class="table-wrap"><table><thead><tr><th>ID</th><th>Empresa</th><th>Quantidade de Itens</th><th>Status Vendor List</th><th>Status comercial</th><th>Próxima ação</th></tr></thead><tbody>${arr.length?arr.map(o=>`<tr><td><code style="font-size:12px;background:var(--surface-alt);border:1px solid var(--line);padding:2px 6px;border-radius:5px;color:var(--text);font-weight:700;">${esc(o.id)}</code></td><td><b>${esc(o.company)}</b></td><td>${(o.products||[]).length} item(ns)</td><td><span class="pill ${pillClass(o.vendor)}">${esc(o.vendor)}</span></td><td>${esc(o.status)}</td><td>${esc(o.nextAction||'—')}</td></tr>`).join(''):'<tr><td colspan="6"><div class="empty">Nenhum processo de Vendor List iniciado.<br>Atualize o campo Vendor List nas oportunidades.</div></td></tr>'}</tbody></table></div></div>`;
 }
 
 function reportsPage(root){
@@ -2330,9 +3520,9 @@ function reportsPage(root){
 
  root.innerHTML=head('Relatórios','Visão analítica completa de vendas, prospecção, motivos de perda e pipeline comercial.',`
   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;">
-   <div style="display:flex;align-items:center;gap:6px;"><label style="font-size:11px;font-weight:650;">De:</label><input type="date" id="reportStartDate" onchange="renderReportsData()" style="padding:6px;border:1px solid var(--line);border-radius:6px;background:var(--surface);font-size:12px;"></div>
-   <div style="display:flex;align-items:center;gap:6px;"><label style="font-size:11px;font-weight:650;">Até:</label><input type="date" id="reportEndDate" onchange="renderReportsData()" style="padding:6px;border:1px solid var(--line);border-radius:6px;background:var(--surface);font-size:12px;"></div>
-   <div style="display:flex;align-items:center;gap:6px;"><label style="font-size:11px;font-weight:650;">Ano:</label><select id="reportYearFilter" onchange="renderReportsData()"><option value="">Todos</option>${years.map(y=>`<option value="${y}" ${y==currentYear?'selected':''}>${y}</option>`).join('')}</select></div>
+   <div style="display:flex;align-items:center;gap:6px;"><label style="font-size:11px;font-weight:650;">De:</label><input type="date" id="reportStartDate" onchange="renderReportsData()" style="padding:6px 8px;border:1px solid var(--line-strong);border-radius:7px;background:var(--surface);color:var(--text);font-size:12px;"></div>
+   <div style="display:flex;align-items:center;gap:6px;"><label style="font-size:11px;font-weight:650;">Até:</label><input type="date" id="reportEndDate" onchange="renderReportsData()" style="padding:6px 8px;border:1px solid var(--line-strong);border-radius:7px;background:var(--surface);color:var(--text);font-size:12px;"></div>
+   <div style="display:flex;align-items:center;gap:6px;"><label style="font-size:11px;font-weight:650;">Ano:</label><select id="reportYearFilter" onchange="renderReportsData()" style="padding:6px 8px;border:1px solid var(--line-strong);border-radius:7px;background:var(--surface);color:var(--text);font-size:12px;"><option value="">Todos</option>${years.map(y=>`<option value="${y}" ${y==currentYear?'selected':''}>${y}</option>`).join('')}</select></div>
    <button class="btn small" onclick="resetReportFilters()">Limpar Filtros</button>
   </div>
  `)+
@@ -2394,14 +3584,14 @@ function renderReportsData(){
  if(!container) return;
 
  container.innerHTML = `
- <div style="font-size:13px;font-weight:700;color:var(--text);margin:5px 0 10px 0;text-transform:uppercase;letter-spacing:.6px;">📈 Indicadores de Oportunidades / Vendas</div>
+ <div style="font-size:12px;font-weight:700;color:var(--muted);margin:5px 0 10px 0;text-transform:uppercase;letter-spacing:.6px;">📈 Indicadores de Oportunidades / Vendas</div>
  <div class="cards">
   ${stat('Total Oportunidades',totalOpps,'◎','Registros no filtro')}
   ${stat('Valor Bruto Oportunidades',money(totalVal),'＄','Soma dos orçamentos')}
   ${stat('Pipeline Ponderado',money(weightedVal),'↗','Previsão de fechamento')}
   ${stat('Taxa de Conversão',conversionRate+'%','★',activeClients+' clientes fechados')}
  </div>
- <div style="font-size:13px;font-weight:700;color:var(--text);margin:20px 0 10px 0;text-transform:uppercase;letter-spacing:.6px;">🏛️ Indicadores de Licitações e Editais Petronect</div>
+ <div style="font-size:12px;font-weight:700;color:var(--muted);margin:20px 0 10px 0;text-transform:uppercase;letter-spacing:.6px;">🏛️ Indicadores de Licitações e Editais Petronect</div>
  <div class="cards">
   ${stat('Total Licitações/Editais',totalPetronect,'◈','Editais no filtro')}
   ${stat('Editais Ativos',petronectActiveCount,'◷','Em andamento')}
@@ -2439,11 +3629,11 @@ function settingsPage(root){
       <thead><tr><th>ID</th><th>Nome Completo</th><th>Login (Usuário)</th><th>Perfil</th><th>Senha Atual (Visível Admin)</th><th>1º Acesso</th><th>Status</th><th>Ações</th></tr></thead>
       <tbody>
        ${usersList.map((u, idx) => `
-        <tr style="${!u.active ? 'opacity:0.55;background:var(--bg);' : ''}">
-         <td><code style="font-size:12px;background:var(--line);padding:2px 6px;border-radius:4px;font-weight:700;">${esc(u.id)}</code></td>
+        <tr style="${!u.active ? 'opacity:0.55;background:var(--surface-alt);' : ''}">
+         <td><code style="font-size:12px;background:var(--surface-alt);border:1px solid var(--line);padding:2px 6px;border-radius:5px;font-weight:700;">${esc(u.id)}</code></td>
          <td>
           <div style="display:flex;align-items:center;gap:8px;">
-           <div style="width:28px;height:28px;border-radius:50%;background:#e2f1eb;color:#18734f;display:grid;place-items:center;font-weight:700;font-size:11px;overflow:hidden;flex-shrink:0;">
+           <div style="width:28px;height:28px;border-radius:50%;background:var(--green-soft);color:var(--green-dark);display:grid;place-items:center;font-weight:700;font-size:11px;overflow:hidden;flex-shrink:0;">
             ${u.avatar ? `<img src="${u.avatar}" style="width:100%;height:100%;object-fit:cover;">` : getInitials(u.name)}
            </div>
            <b>${esc(u.name)}</b>
@@ -2453,7 +3643,7 @@ function settingsPage(root){
          <td><span class="pill ${u.role==='admin'?'purple':'blue'}">${u.role==='admin'?'Administrador':'Usuário'}</span></td>
          <td>
           <div style="display:flex;align-items:center;gap:6px;">
-           <code id="adm_pwd_span_${idx}" data-real="${esc(u.password)}" data-shown="false" style="background:var(--line);padding:3px 7px;border-radius:5px;font-weight:700;">••••••••</code>
+           <code id="adm_pwd_span_${idx}" data-real="${esc(u.password)}" data-shown="false" style="background:var(--surface-alt);border:1px solid var(--line);padding:3px 7px;border-radius:5px;font-weight:700;">••••••••</code>
            <button type="button" class="btn small" style="padding:2px 6px;font-size:11px;" onclick="toggleAdminRowPwd(${idx})" title="Mostrar/Ocultar Senha">👁️</button>
            <button type="button" class="btn small" style="padding:2px 6px;font-size:11px;" onclick="copyText('${esc(u.password)}','Senha de ${esc(u.name)}')" title="Copiar Senha">📋</button>
           </div>
@@ -2489,7 +3679,7 @@ function settingsPage(root){
    <h3>Exportar cadastro específico (CSV)</h3>
    <p class="muted">Escolha qual base específica você deseja baixar separadamente em formato CSV para o Excel:</p>
    <div style="display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap;">
-    <select id="exportSelectType" style="padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--surface);">
+    <select id="exportSelectType" style="padding:8px 10px;border-radius:8px;border:1px solid var(--line-strong);background:var(--surface);color:var(--text);">
      <option value="companies">Empresas</option>
      <option value="contacts">Contatos</option>
      <option value="activities">Atividades / Tarefas</option>
@@ -2566,7 +3756,7 @@ function openUserModal(id = null){
     <div class="field full">
      <label>${u ? 'Senha Atual do Usuário (visível para Admin)' : 'Senha Padrão Gerada Automaticamente'}</label>
      <div style="display:flex;gap:6px;">
-      <input type="text" id="usr_password" value="${esc(initialPwd)}" ${!u ? 'readonly style="background:var(--line);font-weight:700;"' : ''}>
+      <input type="text" id="usr_password" value="${esc(initialPwd)}" ${!u ? 'readonly style="background:var(--surface-alt);font-weight:700;"' : ''}>
       ${u ? `<button type="button" class="btn small" onclick="resetUserToDefaultPwd()">↻ Resetar p/ Padrão</button>` : ''}
      </div>
      <small class="muted" id="usr_pwd_hint">${u ? 'Você pode editar manualmente ou clicar em "Resetar p/ Padrão" para forçar nova senha no próximo login.' : 'Regra: Inicial do primeiro nome + inicial do último sobrenome + 1234.'}</small>
@@ -2771,12 +3961,12 @@ function openOpportunity(id=null){
     <div style="display:flex;flex-direction:column;gap:15px;">
       ${id?`
         <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
-          <div class="field" style="flex:1;"><label>ID do Registro</label><input type="text" readonly value="${esc(o.id)}" style="background:var(--line);font-weight:700;"></div>
+          <div class="field" style="flex:1;"><label>ID do Registro</label><input type="text" readonly value="${esc(o.id)}" style="background:var(--surface-alt);font-weight:700;"></div>
           <div><button type="button" class="btn primary" onclick="generateOpportunityPDF('${o.id}')">📄 Gerar Proposta PDF</button></div>
         </div>
       `:''}
 
-      <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+      <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
         <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Dados Principais da Empresa</h3>
         <div class="form-grid">
           <div class="field"><label>Empresa / razão social</label><input id="o_company" type="text" value="${esc(o.company)}" oninput="handleCompanyAutoFill(this.value)"></div>
@@ -2788,7 +3978,7 @@ function openOpportunity(id=null){
         </div>
       </div>
 
-      <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+      <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
         <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📋 2. Informações Comerciais e Licitação</h3>
         <div class="form-grid">
           ${field('Origem da oportunidade','o_source',o.source,'text',['PNCP','Compras.gov.br','Portal estadual/municipal','Portal privado','Indicação','LinkedIn','Pesquisa Google','Outro'])}
@@ -2816,7 +4006,7 @@ function openOpportunity(id=null){
       </div>
 
       <div class="accordion-header" onclick="toggleAccordion('accBuyer')"><span>🏛️ 3. Órgão Comprador (Clique para expandir)</span><span>▼</span></div>
-      <div id="accBuyer" class="accordion-content form-grid" style="background:var(--bg);padding:15px;border:1px solid var(--line);border-radius:8px;">
+      <div id="accBuyer" class="accordion-content form-grid" style="background:var(--surface-alt);padding:15px;border:1px solid var(--line);border-radius:8px;">
         ${field('Nome do órgão comprador','o_buyer',o.buyer)}
         ${field('CNPJ do órgão','o_buyer_cnpj',o.buyerCnpj)}
         ${field('Responsável no órgão','o_buyer_resp',o.buyerResp)}
@@ -2824,7 +4014,7 @@ function openOpportunity(id=null){
         <div class="field full">${field('Endereço do órgão','o_buyer_address',o.buyerAddress,'text',null,true)}</div>
       </div>
 
-      <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+      <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;flex-wrap:wrap;gap:6px;">
           <h3 style="margin:0;font-size:14px;color:var(--text);">👥 4. Contatos da Oportunidade</h3>
           <button type="button" class="btn small primary" onclick="addOpportunityContactItem()">＋ Adicionar Contato</button>
@@ -2832,7 +4022,7 @@ function openOpportunity(id=null){
         <div id="opportunityContactsContainer" style="max-height:280px;overflow-y:auto;border:1px solid var(--line);padding:10px;border-radius:8px;background:var(--surface);"></div>
       </div>
 
-      <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+      <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;flex-wrap:wrap;gap:6px;">
           <h3 style="margin:0;font-size:14px;color:var(--text);">📦 5. Produtos / Itens da Oportunidade</h3>
           <button type="button" class="btn small primary" onclick="addProductItem()">＋ Adicionar Item</button>
@@ -2841,7 +4031,7 @@ function openOpportunity(id=null){
       </div>
 
       ${id ? `
-      <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+      <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:6px;flex-wrap:wrap;gap:6px;">
           <h3 style="margin:0;font-size:14px;color:var(--text);">🕒 6. Timeline / Histórico de Interações (${linkedActivities.length})</h3>
           <button type="button" class="btn small primary" onclick="closeModal(); openActivity('${o.id}')">＋ Registrar Follow-up</button>
@@ -2863,7 +4053,7 @@ function openOpportunity(id=null){
       </div>
       ` : ''}
 
-      <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+      <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
         <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📝 7. Próxima Ação e Observações</h3>
         <div class="form-grid">
           ${field('Próxima ação','o_next',o.nextAction,'text',null,true)}
@@ -2934,8 +4124,8 @@ function openCompany(id=null){
  let c=db.companies.find(x=>x.id===id)||{};
  openModal(id?'Editar empresa':'Nova empresa',`
   <div style="display:flex;flex-direction:column;gap:20px;">
-   ${id?`<div class="field"><label>ID do Registro</label><input type="text" readonly value="${esc(c.id)}" style="background:var(--line);font-weight:700;"></div>`:''}
-   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+   ${id?`<div class="field"><label>ID do Registro</label><input type="text" readonly value="${esc(c.id)}" style="background:var(--surface-alt);font-weight:700;"></div>`:''}
+   <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
     <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Dados da Empresa</h3>
     <div class="form-grid">
      ${field('Razão social / empresa','c_name',c.name)}
@@ -2947,7 +4137,7 @@ function openCompany(id=null){
      <div class="field full">${field('Endereço','c_address',c.address,'text',null,true)}</div>
     </div>
    </div>
-   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+   <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
     <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📞 2. Contato e Observações</h3>
     <div class="form-grid">
      ${field('Telefone','c_phone',c.phone,'tel')}
@@ -2965,8 +4155,8 @@ function openContact(id=null){
  let c=db.contacts.find(x=>x.id===id)||{};
  openModal(id?'Editar contato':'Novo contato',`
   <div style="display:flex;flex-direction:column;gap:20px;">
-   ${id?`<div class="field"><label>ID do Registro</label><input type="text" readonly value="${esc(c.id)}" style="background:var(--line);font-weight:700;"></div>`:''}
-   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+   ${id?`<div class="field"><label>ID do Registro</label><input type="text" readonly value="${esc(c.id)}" style="background:var(--surface-alt);font-weight:700;"></div>`:''}
+   <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
     <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. Informações do Contato</h3>
     <div class="form-grid">
      ${field('Nome do contato','ct_name',c.name)}
@@ -2975,7 +4165,7 @@ function openContact(id=null){
      ${field('Papel na compra','ct_rolebuy',c.rolebuy||'Compras','text',['Compras','Suprimentos','Engenharia','Manutenção','Obras','Comercial','Diretoria','Cadastro de fornecedores','Outro'])}
     </div>
    </div>
-   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+   <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
     <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📞 2. Comunicação e Detalhes</h3>
     <div class="form-grid">
      ${field('Telefone','ct_phone',c.phone,'tel')}
@@ -2999,8 +4189,8 @@ function openActivity(oppId = null, editId = null){
 
  openModal(act ? 'Editar Tarefa / Atividade' : (opp ? `Registrar Follow-up · ${opp.company}` : 'Nova Tarefa / Atividade'),`
   <div style="display:flex;flex-direction:column;gap:15px;">
-   ${act?`<div class="field"><label>ID do Registro</label><input type="text" readonly value="${esc(act.id)}" style="background:var(--line);font-weight:700;"></div>`:''}
-   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+   ${act?`<div class="field"><label>ID do Registro</label><input type="text" readonly value="${esc(act.id)}" style="background:var(--surface-alt);font-weight:700;"></div>`:''}
+   <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
     <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📌 1. O que precisa ser feito / Registro</h3>
     <div class="form-grid">
      <div class="field full"><label>Título / Assunto da Tarefa</label><input id="a_title" type="text" value="${esc(act?act.title:(opp?'Follow-up comercial':''))}" placeholder="Ex: Atualizar planilha de canais de vendas, Ligar para cliente X..."></div>
@@ -3010,7 +4200,7 @@ function openActivity(oppId = null, editId = null){
      <div class="field"><label>Contato <span class="muted" style="font-weight:400;">(opcional)</span></label><input id="a_contact" type="text" value="${esc(contactVal)}" placeholder="Opcional"></div>
     </div>
    </div>
-   <div style="background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:15px;">
+   <div style="background:var(--surface-alt);border:1px solid var(--line);border-radius:10px;padding:15px;">
     <h3 style="margin:0 0 12px 0;font-size:14px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:6px;">📋 2. Detalhes, Acompanhamento e Prazo</h3>
     <div class="form-grid">
      <div class="field full">${field('Detalhes / Checklist / Resultado','a_summary',act?act.summary:'','textarea',null,true)}</div>
