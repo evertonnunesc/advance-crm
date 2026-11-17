@@ -35,8 +35,8 @@
 ## 💻 Layout & Telas
 
 <p align="center">
-  <img src="assets/img/login.png" alt="Tela de Login" width="48%">
-  <img src="assets/img/inicio.png" alt="Dashboard Principal" width="48%">
+  <img src="assets/img/print-login.png" alt="Tela de Login" width="48%">
+  <img src="assets/img/print-dashboard.png" alt="Dashboard Principal" width="48%">
 </p>
 
 ---
