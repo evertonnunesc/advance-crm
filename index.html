@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Advance CRM | DESENVOLVIDO POR: EVERTON NUNES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-theme="light">
@@ -14,8 +17,8 @@
     <div class="login-brand" id="loginBrandHeader">
       <div class="brand-mark" id="loginAvatarPreview">A</div>
       <div style="min-width:0;flex:1;">
-        <strong id="loginTitlePreview" style="display:block;font-size:17px;letter-spacing:.4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">ADVANCE TINTAS</strong>
-        <small id="loginSubtitlePreview" style="color:var(--muted);font-size:11px;">Advance CRM · Acesso Restrito</small>
+        <strong id="loginTitlePreview" style="display:block;font-size:17px;letter-spacing:.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">ADVANCE TINTAS</strong>
+        <small id="loginSubtitlePreview" style="color:var(--muted);font-size:11.5px;">Advance CRM · Acesso Restrito</small>
       </div>
     </div>
     <form id="loginForm" style="display:flex;flex-direction:column;gap:14px;">
@@ -36,7 +39,7 @@
       <div id="loginError" style="color:var(--red);font-size:12px;font-weight:600;display:none;"></div>
       <button type="submit" class="btn primary" style="justify-content:center;padding:11px;font-size:14px;margin-top:4px;">Entrar no Sistema</button>
     </form>
-    <div style="margin-top:18px;padding-top:12px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);text-align:center;">
+    <div style="margin-top:20px;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);text-align:center;">
       DESENVOLVIDO POR: EVERTON NUNES
     </div>
   </div>
@@ -47,34 +50,34 @@
 <aside class="sidebar" id="sidebar">
   <div class="brand">
     <div class="brand-mark">A</div>
-    <div><strong>ADVANCE TINTAS</strong><small>DESENVOLVIDO POR: EVERTON NUNES</small></div>
+    <div class="brand-info"><strong>ADVANCE TINTAS</strong><small>DESENVOLVIDO POR: EVERTON NUNES</small></div>
     <button type="button" class="sidebar-close-mobile" onclick="closeMobileSidebar()" title="Fechar menu">✕</button>
   </div>
   <div class="nav-label">GESTÃO COMERCIAL</div>
   <nav class="nav" id="nav">
-    <button class="active" data-page="dashboard"><span class="ico">▦</span>Dashboard</button>
-    <button data-page="opportunities" id="oppMenuBtn"><span class="ico">◎</span>Oportunidades<span class="caret">▼</span></button>
+    <button class="active" data-page="dashboard" title="Dashboard"><span class="ico">▦</span><span class="nav-text">Dashboard</span></button>
+    <button data-page="opportunities" id="oppMenuBtn" title="Oportunidades"><span class="ico">◎</span><span class="nav-text">Oportunidades</span><span class="caret">▼</span></button>
     <div class="nav-sub" id="oppSubmenu">
-      <button data-page="companies"><span class="ico">▣</span>Empresas</button>
-      <button data-page="contacts"><span class="ico">♙</span>Contatos</button>
+      <button data-page="companies" title="Empresas"><span class="ico">▣</span><span class="nav-text">Empresas</span></button>
+      <button data-page="contacts" title="Contatos"><span class="ico">♙</span><span class="nav-text">Contatos</span></button>
     </div>
-    <button data-page="petronect"><span class="ico">◈</span>Petronect</button>
-    <button data-page="portals_panel" id="portalsMenuBtn"><span class="ico">⊕</span>Portais<span class="caret">▼</span></button>
+    <button data-page="petronect" title="Petronect"><span class="ico">◈</span><span class="nav-text">Petronect</span></button>
+    <button data-page="portals_panel" id="portalsMenuBtn" title="Portais"><span class="ico">⊕</span><span class="nav-text">Portais</span><span class="caret">▼</span></button>
     <div class="nav-sub" id="portalsSubmenu">
-      <button data-page="portals_panel"><span class="ico">◫</span>Painel</button>
-      <button data-page="portals_base"><span class="ico">▤</span>Base de Portais</button>
-      <button data-page="portals_history"><span class="ico">◷</span>Histórico</button>
+      <button data-page="portals_panel" title="Painel de Portais"><span class="ico">◫</span><span class="nav-text">Painel</span></button>
+      <button data-page="portals_base" title="Base de Portais"><span class="ico">▤</span><span class="nav-text">Base de Portais</span></button>
+      <button data-page="portals_history" title="Histórico de Portais"><span class="ico">◷</span><span class="nav-text">Histórico</span></button>
     </div>
-    <button data-page="activities"><span class="ico">✓</span>Tarefas e Atividades</button>
-    <button data-page="vendor"><span class="ico">★</span>Vendor List</button>
+    <button data-page="activities" title="Tarefas e Atividades"><span class="ico">✓</span><span class="nav-text">Tarefas e Atividades</span></button>
+    <button data-page="vendor" title="Vendor List"><span class="ico">★</span><span class="nav-text">Vendor List</span></button>
   </nav>
   <div class="side-bottom">Advance CRM · Versão 4.0<br>Dados armazenados neste navegador</div>
 </aside>
 <main class="main">
   <header class="topbar">
     <div style="display:flex;align-items:center;gap:12px;min-width:0;">
-      <button type="button" class="sidebar-toggle-btn" id="sidebarToggleBtn" onclick="toggleSidebar()" title="Mostrar / Ocultar Menu Lateral">☰</button>
-      <span class="crumb">Advance Tintas / <b id="crumb">Dashboard</b></span>
+      <button type="button" class="sidebar-toggle-btn" id="sidebarToggleBtn" onclick="toggleSidebar()" title="Recolher / Expandir Menu Lateral">☰</button>
+      <span class="crumb">Advance Tintas <span style="opacity:.45;">/</span> <b id="crumb">Dashboard</b></span>
     </div>
     <div class="top-actions">
       <button type="button" class="global-search-trigger" onclick="openGlobalSearchModal()" title="Busca Rápida Global (Ctrl + K)">
@@ -94,8 +97,8 @@
           <div class="notif-list" id="notifList"></div>
         </div>
       </div>
-      <button class="btn small" onclick="toggleTheme()" title="Alternar Modo Escuro/Claro">🌓</button>
-      <span class="muted" style="font-size:12px" id="topUserName">Modo offline</span>
+      <button class="btn small" onclick="toggleTheme()" title="Alternar Modo Escuro/Claro" style="height:36px;width:36px;justify-content:center;padding:0;">🌓</button>
+      <span class="muted" style="font-size:12.5px;font-weight:500;" id="topUserName">Modo offline</span>
       <div class="user-menu-wrap" id="userMenuWrap">
         <div class="avatar" id="topUserAvatar" onclick="toggleUserMenu()" title="Menu do Usuário">A</div>
         <div class="user-dropdown" id="userDropdown">
@@ -131,4 +134,4 @@
 
 <script src="js/main.js"></script>
 </body>
-</html>
+</html> 
